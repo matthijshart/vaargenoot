@@ -21,7 +21,8 @@ proefvaart. Gevoel: gemak, rustige luxe, alles glijdt.
 - `/content` alle teksten, prijzen, aannames en fotoverwijzingen
 - `/lib` motion-varianten, validatie, hulpfuncties
 - `/fonts` lokaal gehoste Newsreader
-- `/public/foto` definitieve foto's, `/public/foto/tmp` plaatshouders
+- `/foto-bron` bronfoto's (niet uitgeleverd), `/scripts/foto-crops.mjs` snijdt daaruit `/public/foto/*.jpg`
+- `/public/foto` foto's op de site, `/public/foto/tmp` plaatshouders
 - `/public/foto/lagen` lagen van de sloep van bovenaf (transparante PNG, zelfde kader), `/tmp` plaatshouders
 - `/scripts/plaatshouders.mjs` en `/scripts/lagen.mjs` maken de plaatshouders
 

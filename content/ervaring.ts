@@ -17,5 +17,5 @@ export const ervaring = {
     { kop: "Schipper als je zelf drinkt", tekst: "Boek een schipper en hef het glas." },
     { kop: "Zonder een boot te kopen", tekst: "Een vast bedrag per maand. Genieten zonder bezit." },
   ],
-  beelden: [foto.detailKoelkast, foto.detailLaadstekker],
+  beelden: [foto.detailKoelkast, foto.detailTafel],
 };

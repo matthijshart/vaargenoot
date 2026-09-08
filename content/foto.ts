@@ -1,44 +1,49 @@
 /**
- * Alle beelden op de site. Vervang de bestanden in public/foto/tmp/
- * door de definitieve foto's in public/foto/ en pas hier het pad aan.
- * Zie TODO.md voor de shotlist.
+ * Alle beelden op de site. De huidige foto's zijn uitsnedes uit één
+ * bronfoto (foto-bron/sloep-bovenaf.png) via scripts/foto-crops.mjs.
+ * Zie TODO.md voor de shotlist van definitieve foto's.
  */
-import hero from "@/public/foto/tmp/01-hero.jpg";
-import sloepAmstel from "@/public/foto/tmp/02-sloep-amstel.jpg";
-import sloepPrinsen from "@/public/foto/tmp/03-sloep-prinsen.jpg";
-import schipper from "@/public/foto/tmp/04-schipper.jpg";
-import detailKoelkast from "@/public/foto/tmp/05-detail-koelkast.jpg";
-import detailLaadstekker from "@/public/foto/tmp/06-detail-laadstekker.jpg";
-import zijgracht from "@/public/foto/tmp/07-zijgracht.jpg";
+import hero from "@/public/foto/hero.jpg";
+import sloepAmstel from "@/public/foto/amstel.jpg";
+import sloepPrinsen from "@/public/foto/prinsen.jpg";
+import schipper from "@/public/foto/schipper.jpg";
+import detailKoelkast from "@/public/foto/detail-koelkast.jpg";
+import detailTafel from "@/public/foto/detail-tafel.jpg";
+import zijgracht from "@/public/foto/zijgracht.jpg";
+import sloepBovenaf from "@/public/foto/sloep-bovenaf.jpg";
 
 export const foto = {
   hero: {
     src: hero,
-    alt: "Elektrische sloep bij de Magere Brug in het gouden uur, gasten aan tafel",
+    alt: "Sloep van bovenaf in de gracht, gasten aan een lange tafel",
   },
   sloepAmstel: {
     src: sloepAmstel,
-    alt: "Sloep Amstel, driekwart van voren, in de ochtend",
+    alt: "Sloep Amstel van bovenaf, met tafel, kussens en schipper",
   },
   sloepPrinsen: {
     src: sloepPrinsen,
-    alt: "Sloep Prinsen van bovenaf, ligdek vol kussens",
+    alt: "Achterdek van de sloep met de lange tafel",
   },
   schipper: {
     src: schipper,
-    alt: "Schipper aan het roer, gasten proosten in tegenlicht",
+    alt: "Schipper aan het roer, met de ijsemmer naast zich",
   },
   detailKoelkast: {
     src: detailKoelkast,
-    alt: "Koelkast aan boord met ijs en flessen",
+    alt: "IJsemmer met flessen aan boord",
   },
-  detailLaadstekker: {
-    src: detailLaadstekker,
-    alt: "Laadstekker aan de ligplaats in de avond",
+  detailTafel: {
+    src: detailTafel,
+    alt: "De lange tafel aan boord, gedekt",
   },
   zijgracht: {
     src: zijgracht,
-    alt: "Sloep afgemeerd in een stille zijgracht, lantaarn aan",
+    alt: "Sloep in een stille gracht, gezien van bovenaf",
+  },
+  sloepBovenaf: {
+    src: sloepBovenaf,
+    alt: "De hele sloep van bovenaf",
   },
 } as const;
 

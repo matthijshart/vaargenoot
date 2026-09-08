@@ -3,6 +3,7 @@
 import { m, useMotionValue, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import { foto } from "@/content/foto";
 import { lagen, type Laag } from "@/content/lagen";
 import { cn } from "@/lib/utils";
 import { Container } from "./ui/Container";
@@ -46,6 +47,10 @@ export function SloepLagen() {
 
   const kopOpacity = useTransform(voortgang, (v) => (reduced ? 1 : 1 - deel(v, 0.84, 0.91)));
   const slotOpacity = useTransform(voortgang, (v) => (reduced ? 0 : deel(v, 0.92, 1)));
+  // Aan het eind wisselt de stapel naar de echte foto.
+  const stapelOpacity = useTransform(voortgang, (v) => (reduced ? 1 : 1 - deel(v, 0.9, 0.98)));
+  const fotoOpacity = useTransform(voortgang, (v) => (reduced ? 0 : deel(v, 0.9, 0.98)));
+  const fotoScale = useTransform(voortgang, (v) => (reduced ? 1 : 0.96 + 0.04 * deel(v, 0.9, 1)));
 
   if (reduced) {
     return (
@@ -66,7 +71,7 @@ export function SloepLagen() {
   return (
     <section ref={kader} id="sloepen" className="relative scroll-mt-0 bg-nacht text-wit" style={{ height: "400vh" }}>
       <div className="sticky top-0 h-svh overflow-hidden">
-        <Container className="flex h-full flex-col py-14 sm:py-16">
+        <Container className="flex h-full flex-col pt-20 pb-10 sm:pt-24 sm:pb-14">
           <div className="relative shrink-0">
             <m.div style={{ opacity: kopOpacity }}>
               <Kop />
@@ -80,8 +85,25 @@ export function SloepLagen() {
           </div>
 
           <div className="grid min-h-0 flex-1 grid-rows-[1fr_auto] gap-6 lg:grid-cols-12 lg:grid-rows-1 lg:items-center lg:gap-16">
-            <div className="min-h-0 lg:col-span-7">
-              <Stapel voortgang={voortgang} />
+            <div className="relative min-h-0 lg:col-span-7">
+              <m.div style={{ opacity: stapelOpacity }} className="h-full">
+                <Stapel voortgang={voortgang} />
+              </m.div>
+              <m.div
+                style={{ opacity: fotoOpacity, scale: fotoScale }}
+                className="absolute inset-0 mx-auto flex max-w-[520px] items-center justify-center"
+              >
+                <div className="relative aspect-square max-h-full w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={foto.sloepBovenaf.src}
+                    alt={foto.sloepBovenaf.alt}
+                    fill
+                    sizes="(min-width: 1024px) 520px, 80vw"
+                    placeholder="blur"
+                    className="object-cover"
+                  />
+                </div>
+              </m.div>
             </div>
             <Lijst voortgang={voortgang} className="lg:col-span-5" />
           </div>

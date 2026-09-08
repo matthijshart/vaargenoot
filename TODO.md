@@ -2,24 +2,19 @@
 
 ## Foto's
 
-Er staan nog geen echte foto's in `public/foto/`. Externe bronnen (Unsplash,
-Pexels, Wikimedia) waren vanuit de bouwomgeving niet bereikbaar, dus de
-plaatshouders in `public/foto/tmp/` zijn gegenereerd met
-`scripts/plaatshouders.mjs` in de kleuren van het palet. Ze hebben de juiste
-beeldverhoudingen, zodat de layout niet verschuift als de echte foto's komen.
+Er is nu één echte bronfoto: `foto-bron/sloep-bovenaf.png` (1194 x 1212,
+via GitHub geüpload). Alle beelden op de site zijn uitsnedes daaruit, gemaakt
+door `scripts/foto-crops.mjs`. Dat werkt, maar let op:
 
-Vervangen: zet de definitieve foto's in `public/foto/` en pas de paden aan in
-`content/foto.ts`. Gebruik dezelfde beeldverhoudingen.
+- De resolutie is laag voor de hero op grote schermen. Een bron van minimaal
+  2400 pixels breed is nodig.
+- Op de foto staat een tas met een merknaam (Fever-Tree) en kijken mensen in
+  de camera. Voor de definitieve site: eigen foto's zonder merken van derden.
+- De plaatshouders in `public/foto/tmp/` worden niet meer gebruikt, behalve
+  door `scripts/plaatshouders.mjs`. Ze kunnen weg zodra de shotlist er is.
 
-| Bestand nu                              | Vervangen door | Verhouding |
-| --------------------------------------- | -------------- | ---------- |
-| `public/foto/tmp/01-hero.jpg`           | shot 01        | 16:8       |
-| `public/foto/tmp/02-sloep-amstel.jpg`   | shot 02        | 4:3        |
-| `public/foto/tmp/03-sloep-prinsen.jpg`  | shot 03        | 4:3        |
-| `public/foto/tmp/04-schipper.jpg`       | shot 04        | 5:6        |
-| `public/foto/tmp/05-detail-koelkast.jpg`| shot 05        | 1:1        |
-| `public/foto/tmp/06-detail-laadstekker.jpg` | shot 06    | 1:1        |
-| `public/foto/tmp/07-zijgracht.jpg`      | shot 07        | 4:3        |
+Nieuwe bron: zet de foto in `foto-bron/`, pas de kaders aan in
+`scripts/foto-crops.mjs`, draai het script.
 
 ### Referentiefoto's
 
