@@ -1,3 +1,4 @@
+import { Aandeel } from "@/components/Aandeel";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Inzicht } from "@/components/Inzicht";
@@ -14,6 +15,7 @@ export default function Home() {
         <Inzicht />
         <ZoWerktHet />
         <Sloepen />
+        <Aandeel />
       </main>
       <Footer />
     </>
