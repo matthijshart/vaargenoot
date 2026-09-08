@@ -21,10 +21,6 @@ Vervangen: zet de definitieve foto's in `public/foto/` en pas de paden aan in
 | `public/foto/tmp/06-detail-laadstekker.jpg` | shot 06    | 1:1        |
 | `public/foto/tmp/07-zijgracht.jpg`      | shot 07        | 4:3        |
 
-Shots 05 en 06 (details) staan klaar in `content/foto.ts` maar zijn nog niet
-op de pagina geplaatst. Kandidaat: naast de sectie Inbegrepen of in de
-sloepenkaarten.
-
 ### Referentiefoto's
 
 In de chat zijn drie referentiefoto's gedeeld: een sloep van bovenaf met
@@ -88,6 +84,12 @@ Niets hiervan is verzonnen.
 - Vaker varen dan het vaste aantal: is dat gratis of tegen een tarief? Nu
   staat er "Als de sloep vrij is" zonder bedrag.
 - FAQ schade: eigen risico en afhandeling (`content/vragen.ts`).
+- FAQ hulp onderweg: de site belooft één aanspreekpunt en bereikbaarheid
+  tijdens het varen. Bevestig telefoonnummer en tijden (`content/vragen.ts`).
+- Sectie "Een dag op het water": barbecue en zwemmen staan als onderdeel
+  van de dienst. Bevestig of er een barbecue aan boord is of dat je die
+  meeneemt (`content/ervaring.ts`).
+- Schoonmaak na elke vaart staat op meerdere plekken. Bevestig.
 - FAQ opzeggen: opzegtermijn (`content/vragen.ts`).
 - De showcase noemt "Stil en uitstootvrij, ook na 2030". Dat volgt uit de
   uitstootvrije zone vanaf 2030; controleer of dat zo mag staan.

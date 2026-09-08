@@ -1,5 +1,6 @@
 import { Aanmelden } from "@/components/Aanmelden";
 import { Aandeel } from "@/components/Aandeel";
+import { Ervaring } from "@/components/Ervaring";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Inbegrepen } from "@/components/Inbegrepen";
@@ -18,6 +19,7 @@ export default function Home() {
       <main id="top" className="flex-1">
         <Hero />
         <Inzicht />
+        <Ervaring />
         <ZoWerktHet />
         <SloepLagen />
         <Sloepen />

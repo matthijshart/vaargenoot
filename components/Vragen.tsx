@@ -74,7 +74,7 @@ export function Vragen() {
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <SectieKop label={vragen.label} kop={vragen.kop} />
+            <SectieKop label={vragen.label} kop={vragen.kop} intro={vragen.intro} />
           </div>
           <ul className="border-t border-nevel lg:col-span-8">
             {vragen.lijst.map((v, i) => (
