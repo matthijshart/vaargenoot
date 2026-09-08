@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 import { sectieVariants, viewportOnce } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,7 @@ export function Sectie({
 }) {
   const reduced = useReducedMotion();
   return (
-    <motion.section
+    <m.section
       id={id}
       className={cn(
         "scroll-mt-16 py-20 sm:py-28 lg:py-32",
@@ -35,6 +35,6 @@ export function Sectie({
       variants={sectieVariants}
     >
       {children}
-    </motion.section>
+    </m.section>
   );
 }

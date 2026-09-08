@@ -11,14 +11,17 @@ type Props = Omit<ImageProps, "src" | "alt" | "placeholder"> & {
   ratio?: string;
   className?: string;
   fotoClassName?: string;
+  /** Meteen zichtbaar, zonder fade via JavaScript. Voor de hero. */
+  direct?: boolean;
 };
 
 /**
  * Foto in vaste verhouding, met blur-placeholder en zachte fade bij laden.
  * Nooit een harde pop: opacity 0 naar 1 in 0,6 s.
  */
-export function Foto({ src, alt, ratio, className, fotoClassName, sizes, priority, ...rest }: Props) {
+export function Foto({ src, alt, ratio, className, fotoClassName, sizes, priority, direct, ...rest }: Props) {
   const [geladen, setGeladen] = useState(false);
+  const zichtbaar = direct || geladen;
 
   return (
     <div
@@ -32,10 +35,10 @@ export function Foto({ src, alt, ratio, className, fotoClassName, sizes, priorit
         sizes={sizes}
         priority={priority}
         placeholder="blur"
-        onLoad={() => setGeladen(true)}
+        onLoad={direct ? undefined : () => setGeladen(true)}
         className={cn(
           "object-cover transition-opacity duration-[600ms] ease-zacht motion-reduce:transition-none",
-          geladen ? "opacity-100" : "opacity-0",
+          zichtbaar ? "opacity-100" : "opacity-0",
           fotoClassName,
         )}
         {...rest}

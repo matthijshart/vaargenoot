@@ -19,7 +19,9 @@ export function AnkerLink({ href, children, onClick, ...rest }: Props) {
     const doel = document.querySelector(href);
     if (!doel) return;
     e.preventDefault();
-    lenis.scrollTo(doel as HTMLElement, { offset: -72 });
+    // Respecteer de scroll-margin-top van het doel, net als een gewone ankerlink.
+    const marge = parseInt(getComputedStyle(doel).scrollMarginTop, 10) || 0;
+    lenis.scrollTo(doel as HTMLElement, { offset: -marge });
     history.replaceState(null, "", href);
   }
 

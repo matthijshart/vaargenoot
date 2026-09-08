@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "framer-motion";
+import { m, useMotionValueEvent, useReducedMotion, useScroll } from "framer-motion";
 import { useState } from "react";
 import { nav, site } from "@/content/site";
 import { cn } from "@/lib/utils";
@@ -30,7 +30,7 @@ export function Nav() {
   });
 
   return (
-    <motion.header
+    <m.header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-300",
         gescrold
@@ -68,6 +68,6 @@ export function Nav() {
           {site.ctaKort}
         </KnopLink>
       </nav>
-    </motion.header>
+    </m.header>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 import { useId, useState } from "react";
 import { vragen } from "@/content/vragen";
 import { cn } from "@/lib/utils";
@@ -49,7 +49,7 @@ function Vraag({
       </h3>
       <AnimatePresence initial={false}>
         {open && (
-          <motion.div
+          <m.div
             id={id}
             key="antwoord"
             initial={reduced ? false : { height: 0, opacity: 0 }}
@@ -59,7 +59,7 @@ function Vraag({
             className="overflow-hidden"
           >
             <p className="max-w-[58ch] pb-6 text-[16px] leading-relaxed text-zacht">{antwoord}</p>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </li>

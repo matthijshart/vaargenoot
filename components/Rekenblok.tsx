@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 import { useId, useState } from "react";
 import { aandeelTekst, passendAandeel } from "@/content/aandeel";
 import { aandeelPerVaart, eigenSloepPerVaart } from "@/content/kosten";
@@ -15,7 +15,7 @@ function Wissel({ sleutel, children, className }: { sleutel: string; children: R
   return (
     <span className={`relative inline-grid ${className ?? ""}`}>
       <AnimatePresence initial={false} mode="popLayout">
-        <motion.span
+        <m.span
           key={sleutel}
           className="col-start-1 row-start-1"
           initial={reduced ? false : { opacity: 0 }}
@@ -24,7 +24,7 @@ function Wissel({ sleutel, children, className }: { sleutel: string; children: R
           transition={{ duration: 0.18, ease: "linear" }}
         >
           {children}
-        </motion.span>
+        </m.span>
       </AnimatePresence>
     </span>
   );

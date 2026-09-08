@@ -1,15 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Newsreader } from "next/font/google";
+import { Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import { LenisProvider } from "@/components/LenisProvider";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const newsreader = Newsreader({
+/**
+ * Newsreader, alleen gewicht 300, met de optische-maat-as (opsz 6 tot 72).
+ * Lokaal gehost omdat de volledige variabele versie van Google 132 KB is
+ * en deze instantie 58 KB. Bron: Google Fonts, Newsreader v26, latin.
+ */
+const newsreader = localFont({
+  src: "../fonts/newsreader-300-opsz-latin.woff2",
   variable: "--font-newsreader",
-  subsets: ["latin"],
-  weight: "variable",
-  axes: ["opsz"],
+  weight: "300",
+  style: "normal",
   display: "swap",
+  adjustFontFallback: "Times New Roman",
 });
 
 const manrope = Manrope({

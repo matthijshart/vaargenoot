@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 import { useActionState, useState, type ChangeEvent, type FocusEvent } from "react";
 import { vraagProefvaartAan, type AanmeldStatus } from "@/app/actions";
 import { aanmelden } from "@/content/aanmelden";
@@ -107,7 +107,7 @@ export function Aanmelden() {
               <div className="relative mt-2 min-h-14">
                 <AnimatePresence initial={false} mode="wait">
                   {klaar ? (
-                    <motion.div
+                    <m.div
                       key="klaar"
                       role="status"
                       initial={reduced ? false : { opacity: 0, y: 12 }}
@@ -120,9 +120,9 @@ export function Aanmelden() {
                         <p className="font-medium text-nacht">{aanmelden.klaar}</p>
                         <p className="mt-0.5 text-[15px] text-zacht">{aanmelden.bevestiging}</p>
                       </div>
-                    </motion.div>
+                    </m.div>
                   ) : (
-                    <motion.div
+                    <m.div
                       key="knop"
                       initial={false}
                       exit={reduced ? undefined : { opacity: 0, y: -8 }}
@@ -131,7 +131,7 @@ export function Aanmelden() {
                       <Knop type="submit" disabled={bezig} className="w-full sm:w-auto">
                         {bezig ? aanmelden.bezig : aanmelden.knop}
                       </Knop>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>
@@ -178,7 +178,7 @@ function Fout({ id, tekst }: { id: string; tekst?: string }) {
   return (
     <AnimatePresence initial={false}>
       {tekst && (
-        <motion.p
+        <m.p
           id={id}
           key={id}
           initial={{ height: 0, opacity: 0 }}
@@ -188,7 +188,7 @@ function Fout({ id, tekst }: { id: string; tekst?: string }) {
           className="overflow-hidden text-[13px] text-gracht"
         >
           <span className="block pt-2">{tekst}</span>
-        </motion.p>
+        </m.p>
       )}
     </AnimatePresence>
   );

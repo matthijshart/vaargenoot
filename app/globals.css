@@ -175,3 +175,31 @@ html.lenis body {
 .schuif:focus-visible::-moz-range-thumb {
   box-shadow: 0 0 0 3px var(--color-lucht);
 }
+
+/* Hero-entree zonder te wachten op JavaScript. */
+@keyframes opkomen {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes foto-opkomen {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.opkomen {
+  animation: opkomen 0.7s var(--ease-zacht) both;
+  animation-delay: var(--vertraging, 0s);
+}
+.foto-opkomen {
+  animation: foto-opkomen 1.4s var(--ease-zacht) both;
+  animation-delay: 0.16s;
+}
