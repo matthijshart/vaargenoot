@@ -1,3 +1,4 @@
+import { Aanmelden } from "@/components/Aanmelden";
 import { Aandeel } from "@/components/Aandeel";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -22,6 +23,7 @@ export default function Home() {
         <Schipper />
         <Inbegrepen />
         <Vragen />
+        <Aanmelden />
       </main>
       <Footer />
     </>
