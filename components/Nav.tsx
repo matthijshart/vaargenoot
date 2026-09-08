@@ -82,7 +82,8 @@ export function Nav() {
           </ul>
 
           <div className="flex items-center gap-2">
-            <KnopLink href="#aanmelden" className="h-10 px-5 text-[14px]">
+            {/* Vaste breedte: geen verschuiving als het lettertype wisselt. */}
+          <KnopLink href="#aanmelden" className="h-10 min-w-[178px] px-5 text-[14px]">
               {site.ctaKort}
             </KnopLink>
             <button
