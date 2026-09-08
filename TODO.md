@@ -46,21 +46,34 @@ toch tijdelijk gebruiken, zet ze dan in `public/foto/tmp/` en pas
 06 Detail laadstekker aan de ligplaats, avond.
 07 Sloep afgemeerd in een stille zijgracht, lantaarn aan.
 
-## Sloep in 3D
+## Sloep in lagen
 
-De sectie `components/SloepShowcase.tsx` is scrollgestuurd: de sloep draait
-uit een perspectiefhoek naar voren en de punten verschijnen na elkaar. Dat
-werkt nu met één foto. Voor een echte rondgang (de sloep van alle kanten,
-Apple-stijl) is nodig, één van de twee:
+De sectie `components/SloepLagen.tsx` bouwt de sloep bij het scrollen laag
+voor laag op: romp, ligdek, kussens, tafel, geluid en koelkast, bimini. De
+lagen nu zijn schematische plaatshouders uit `scripts/lagen.mjs`.
 
-1. Een framereeks: 72 tot 120 beelden van de sloep die rondom draait,
-   gelijke belichting en achtergrond, 1600 x 1200, als
-   `public/foto/360/amstel/0001.webp` en verder. De showcase kan die reeks
-   dan op een canvas afspelen op basis van de scrollpositie.
-2. Een 3D-model (GLB) van de sloep, dan met react-three-fiber. Zwaarder in
-   laadtijd, wel vrij te draaien.
+Voor echte lagen zijn zes beelden nodig van dezelfde sloep, van bovenaf,
+zelfde camera, zelfde kader (staand, 3:4, bijvoorbeeld 1200 x 1600):
 
-Optie 1 is sneller te maken, lichter en past beter bij "alles glijdt".
+1. `01-romp.png`: alleen de kale romp met vloer.
+2. `02-ligdek.png`: alleen het ligdek en de vloerdelen.
+3. `03-kussens.png`: alleen de kussens.
+4. `04-tafel.png`: alleen de tafel.
+5. `05-geluid-koelkast.png`: alleen speakers en koelkast.
+6. `06-bimini.png`: alleen de bimini.
+
+Transparante achtergrond, elk beeld alleen zijn eigen onderdeel. Twee manieren:
+
+- Uit een 3D-model (Blender): per onderdeel renderen met dezelfde camera.
+  Het mooiste resultaat.
+- Met AI-beeldgeneratie: eerst één volledig beeld van bovenaf, daarna per
+  stap een onderdeel laten weghalen (zie de prompts in de chat). Dat levert
+  opeenstapelende beelden zonder transparantie op. Die werken ook, maar dan
+  zonder de open ruimte tussen de lagen: zet dan `STAP` in
+  `components/SloepLagen.tsx` op 0.
+
+Zet de bestanden in `public/foto/lagen/` en pas de imports in
+`content/lagen.ts` aan.
 
 ## Inhoud die nog bevestigd moet worden
 

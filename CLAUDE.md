@@ -16,13 +16,14 @@ proefvaart. Gevoel: gemak, rustige luxe, alles glijdt.
 ## Structuur
 
 - `/app` layout, page, actions, globals.css
-- `/components` secties (Hero, Inzicht, ZoWerktHet, SloepShowcase, Sloepen, Aandeel, Rekenblok, Schipper, Inbegrepen, Vragen, Aanmelden, Nav, Footer)
+- `/components` secties (Hero, Inzicht, ZoWerktHet, SloepLagen, Sloepen, Aandeel, Rekenblok, Schipper, Inbegrepen, Vragen, Aanmelden, Nav, Footer)
 - `/components/ui` primitieven (Knop, Foto, Sectie, SectieKop, Container, AnkerLink, Vinkje)
 - `/content` alle teksten, prijzen, aannames en fotoverwijzingen
 - `/lib` motion-varianten, validatie, hulpfuncties
 - `/fonts` lokaal gehoste Newsreader
 - `/public/foto` definitieve foto's, `/public/foto/tmp` plaatshouders
-- `/scripts/plaatshouders.mjs` maakt de plaatshouders
+- `/public/foto/lagen` lagen van de sloep van bovenaf (transparante PNG, zelfde kader), `/tmp` plaatshouders
+- `/scripts/plaatshouders.mjs` en `/scripts/lagen.mjs` maken de plaatshouders
 
 ## Tokens
 
@@ -63,7 +64,7 @@ Overige tokens: `font-kop` (Newsreader), `font-sans` (Manrope),
 
 - Lenis smooth scroll, ankerlinks via `AnkerLink` (Lenis `scrollTo`).
 - Hero-entree via CSS-keyframes (`opkomen` voor tekst, `foto-opkomen` voor de foto: alleen schaal 1.04 naar 1, geen opacity, anders telt de LCP pas na de fade), parallax via Framer Motion.
-- `SloepShowcase` is de enige scrollgestuurde sectie: vastgepind, 300vh, `useScroll` en `useTransform`. Bij reduced motion een gewone sectie.
+- `SloepLagen` is de enige scrollgestuurde sectie: vastgepind, 400vh, `useScroll` en `useTransform` met functies (geen keyframes: framer-motion zet die om in een native ScrollTimeline die hier het verkeerde element volgt). Bij reduced motion een gewone sectie.
 - Secties komen één keer op via `components/ui/Sectie.tsx` (whileInView, once). Nooit per element, nooit per kaartje.
 - Framer Motion via `LazyMotion` met `domAnimation` en `strict`: gebruik `m.` in plaats van `motion.`.
 - `prefers-reduced-motion`: alles uit, direct zichtbaar. Gebruik `useReducedMotion` in nieuwe componenten.

@@ -5,7 +5,7 @@ import { Hero } from "@/components/Hero";
 import { Inbegrepen } from "@/components/Inbegrepen";
 import { Inzicht } from "@/components/Inzicht";
 import { Schipper } from "@/components/Schipper";
-import { SloepShowcase } from "@/components/SloepShowcase";
+import { SloepLagen } from "@/components/SloepLagen";
 import { Sloepen } from "@/components/Sloepen";
 import { Vragen } from "@/components/Vragen";
 import { ZoWerktHet } from "@/components/ZoWerktHet";
@@ -19,7 +19,7 @@ export default function Home() {
         <Hero />
         <Inzicht />
         <ZoWerktHet />
-        <SloepShowcase />
+        <SloepLagen />
         <Sloepen />
         <Aandeel />
         <Schipper />
