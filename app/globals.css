@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/*
+  Vaargenoot design tokens.
+  Tailwind v4 kent geen theme.extend; tokens leven hier in @theme.
+  Gebruik uitsluitend deze kleurnamen.
+*/
+@theme {
+  --color-nacht: #0b1f33;
+  --color-gracht: #1f4e79;
+  --color-lucht: #a7c7e7;
+  --color-nevel: #dce6f0;
+  --color-schuim: #f4f7fa;
+  --color-wit: #ffffff;
+  --color-messing: #c9a26b;
+  --color-inkt: #0f1b26;
+  --color-zacht: #5a6b7c;
+
+  --font-kop: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+
+  --ease-zacht: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --breakpoint-xs: 30rem;
+}
+
+@layer base {
+  html {
+    background: var(--color-schuim);
+    color: var(--color-inkt);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100%;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-kop);
+    font-weight: 300;
+    font-variation-settings: "opsz" 72;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-variation-settings: "opsz" 32;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-lucht);
+    color: var(--color-nacht);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-lucht);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+  }
+}
+
+@utility maat {
+  max-width: 62ch;
+}
+
+@utility kop-groot {
+  font-variation-settings: "opsz" 72;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}
+
+/* Bewegen mag niet verplicht zijn */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
