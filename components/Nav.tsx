@@ -64,7 +64,7 @@ export function Nav() {
           ))}
         </ul>
 
-        <KnopLink href="#aanmelden" className="px-5 py-2.5 text-[14px]">
+        <KnopLink href="#aanmelden" className="h-10 px-5 text-[14px]">
           {site.ctaKort}
         </KnopLink>
       </nav>

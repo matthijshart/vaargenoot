@@ -5,7 +5,7 @@ import { AnkerLink } from "./AnkerLink";
 type Variant = "primair" | "licht" | "omlijnd";
 
 const basis =
-  "inline-flex items-center justify-center rounded-full px-6 py-3 text-[15px] font-medium leading-none transition-[background-color,color,transform,border-color] duration-150 ease-zacht active:scale-[0.98] disabled:opacity-60 disabled:active:scale-100 whitespace-nowrap";
+  "inline-flex h-11 items-center justify-center rounded-full px-6 text-[15px] font-medium leading-none transition-[background-color,color,transform,border-color] duration-150 ease-zacht active:scale-[0.98] disabled:opacity-60 disabled:active:scale-100 whitespace-nowrap";
 
 const varianten: Record<Variant, string> = {
   primair: "bg-nacht text-wit hover:bg-gracht",

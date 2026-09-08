@@ -163,7 +163,8 @@ function Lijst({ voortgang, className }: { voortgang: MotionValue<number>; class
 
 function LijstItem({ laag, index, voortgang }: { laag: Laag; index: number; voortgang: MotionValue<number> }) {
   const [a, b] = venster(index);
-  const opacity = useTransform(voortgang, (v) => 0.35 + 0.65 * deel(v, a, b));
+  // Minimaal 0,6: ook de nog niet actieve regels blijven leesbaar (contrast).
+  const opacity = useTransform(voortgang, (v) => 0.6 + 0.4 * deel(v, a, b));
   const x = useTransform(voortgang, (v) => 10 * (1 - deel(v, a, b)));
 
   return (
