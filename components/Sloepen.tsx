@@ -15,13 +15,14 @@ export function Sloepen() {
 
         <div className="mt-14 grid gap-14 md:grid-cols-2 md:gap-10 lg:mt-20 lg:gap-16">
           {sloepen.lijst.map((sloep) => (
-            <article key={sloep.naam}>
+            <article key={sloep.naam} className="group">
               <Foto
                 src={sloep.beeld.src}
                 alt={sloep.beeld.alt}
                 ratio="4 / 3"
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="rounded-2xl"
+                className="group rounded-2xl"
+                fotoClassName="transition-transform duration-700 ease-zacht md:group-hover:scale-[1.04]"
               />
               <h3 className="mt-8 text-[32px] text-nacht sm:text-[36px]">{sloep.naam}</h3>
               <dl className="mt-5 divide-y divide-nevel border-y border-nevel text-[15px]">

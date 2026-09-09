@@ -1,6 +1,7 @@
 import { ervaring } from "@/content/ervaring";
 import { Container } from "./ui/Container";
 import { Foto } from "./ui/Foto";
+import { PuntKaarten } from "./ui/PuntKaarten";
 import { Sectie } from "./ui/Sectie";
 import { SectieKop } from "./ui/SectieKop";
 
@@ -8,32 +9,27 @@ export function Ervaring() {
   return (
     <Sectie id="ervaring" className="bg-wit">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-6">
-            <SectieKop label={ervaring.label} kop={ervaring.kop} intro={ervaring.intro} />
-            <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 sm:gap-x-8 sm:gap-y-6">
-              {ervaring.punten.map((punt) => (
-                <li key={punt.kop} className="border-t border-nevel pt-4">
-                  <h3 className="font-sans text-[15px] font-medium text-nacht sm:text-[16px]">{punt.kop}</h3>
-                  <p className="mt-1 hidden max-w-[30ch] text-[15px] leading-relaxed text-zacht sm:block">{punt.tekst}</p>
-                </li>
-              ))}
-            </ul>
+        <SectieKop label={ervaring.label} kop={ervaring.kop} intro={ervaring.intro} />
+        <div className="mt-10 grid gap-10 lg:mt-14 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-7">
+            <PuntKaarten punten={ervaring.punten} kolommen={2} toon="schuim" />
           </div>
-          <div className="grid grid-cols-2 gap-4 self-center lg:col-span-6 lg:gap-6">
+          <div className="grid grid-cols-2 gap-4 self-center lg:col-span-5 lg:gap-5">
             <Foto
               src={ervaring.beelden[0].src}
               alt={ervaring.beelden[0].alt}
               ratio="1 / 1"
-              sizes="(min-width: 1024px) 25vw, 50vw"
-              className="rounded-2xl"
+              sizes="(min-width: 1024px) 20vw, 50vw"
+              className="group rounded-2xl"
+              fotoClassName="transition-transform duration-700 ease-zacht md:group-hover:scale-[1.04]"
             />
             <Foto
               src={ervaring.beelden[1].src}
               alt={ervaring.beelden[1].alt}
               ratio="1 / 1"
-              sizes="(min-width: 1024px) 25vw, 50vw"
-              className="rounded-2xl sm:mt-10"
+              sizes="(min-width: 1024px) 20vw, 50vw"
+              className="group rounded-2xl sm:mt-10"
+              fotoClassName="transition-transform duration-700 ease-zacht md:group-hover:scale-[1.04]"
             />
           </div>
         </div>

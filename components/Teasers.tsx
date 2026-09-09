@@ -31,7 +31,7 @@ export function VerwijsTeasers() {
     <Sectie id="meer" className="bg-wit py-16 sm:py-20 lg:py-24">
       <Container className="grid gap-10 md:grid-cols-2 md:gap-12">
         {items.map((t) => (
-          <div key={t.href} className="border-t border-nevel pt-6">
+          <div key={t.href} className="group border-t border-nevel pt-6 transition-colors duration-300 md:hover:border-gracht">
             <p className="mb-2 text-[14px] font-medium text-gracht">{t.label}</p>
             <h2 className="text-[26px] text-nacht sm:text-[30px]">{t.kop}</h2>
             <p className="mt-3 max-w-[42ch] text-[15px] leading-relaxed text-zacht sm:text-[16px]">{t.tekst}</p>

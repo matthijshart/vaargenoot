@@ -25,7 +25,7 @@ export function Aandeel() {
               aandeelTekst.inbegrepen,
             ];
             return (
-              <li key={a.id} className="flex flex-col rounded-2xl border border-wit/15 p-6 sm:p-8">
+              <li key={a.id} className="flex flex-col rounded-2xl border border-wit/15 p-6 transition-[transform,border-color,background-color] duration-300 ease-zacht sm:p-8 md:hover:-translate-y-1 md:hover:border-lucht/60 md:hover:bg-wit/[0.04]">
                 <p className="font-kop text-[26px] font-light leading-tight text-wit">{a.naam}</p>
                 <p className="mt-1 text-[14px] text-lucht">{a.onder}</p>
                 {a.prijs === null ? (

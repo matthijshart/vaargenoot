@@ -2,6 +2,7 @@ import { bedrijven } from "@/content/bedrijven";
 import { Container } from "./ui/Container";
 import { Foto } from "./ui/Foto";
 import { KnopLink } from "./ui/Knop";
+import { PuntKaarten } from "./ui/PuntKaarten";
 import { Sectie } from "./ui/Sectie";
 import { SectieKop } from "./ui/SectieKop";
 
@@ -12,14 +13,7 @@ export function Bedrijven() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <SectieKop label={bedrijven.label} kop={bedrijven.kop} intro={bedrijven.intro} />
-            <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 sm:gap-x-8 sm:gap-y-6">
-              {bedrijven.punten.map((punt) => (
-                <li key={punt.kop} className="border-t border-nevel pt-4">
-                  <h3 className="font-sans text-[15px] font-medium text-nacht sm:text-[16px]">{punt.kop}</h3>
-                  <p className="mt-1 hidden max-w-[32ch] text-[15px] leading-relaxed text-zacht sm:block">{punt.tekst}</p>
-                </li>
-              ))}
-            </ul>
+            <PuntKaarten punten={bedrijven.punten} kolommen={2} toon="wit" className="mt-10" />
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
               <KnopLink href="#aanmelden">{bedrijven.cta}</KnopLink>
               <p className="max-w-[36ch] text-[14px] leading-relaxed text-zacht">{bedrijven.ctaTekst}</p>
@@ -31,7 +25,8 @@ export function Bedrijven() {
               alt={bedrijven.beeld.alt}
               ratio="1 / 1"
               sizes="(min-width: 1024px) 40vw, 100vw"
-              className="rounded-2xl"
+              className="group rounded-2xl"
+              fotoClassName="transition-transform duration-700 ease-zacht md:group-hover:scale-[1.04]"
             />
           </div>
         </div>
