@@ -137,11 +137,11 @@ Winter: de site zegt dat je buiten het seizoen ook vaart (Light Festival,
 winterdagen, fleecedekens). Tegelijk staat "winterstalling" in de hero als
 inbegrepen. Bevestig hoe die twee samengaan.
 
-## Deeleigenaar
+## Deel-eigenaar
 
-De site zegt nu overal dat je deeleigenaar wordt, met maximaal vier
+De site zegt nu overal dat je deel-eigenaar wordt, met maximaal vier
 sloepmaten per sloep (volgt uit het kleinste aandeel, een kwart).
-"Deeleigenaar" heeft juridische betekenis. Zorg dat de overeenkomst dat
+"Deel-eigenaar" heeft juridische betekenis. Zorg dat de overeenkomst dat
 waarmaakt, of pas het woord aan als de structuur een gebruiksrecht wordt.
 
 ## Verdeelsysteem

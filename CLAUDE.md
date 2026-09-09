@@ -76,7 +76,7 @@ Overige tokens: `font-kop` (Newsreader), `font-sans` (Manrope),
 
 Nederlands, je-vorm, korte zinnen, actieve werkwoorden. Geen gedachtestreepjes,
 geen uitroeptekens, geen pijltjes in knoppen, geen opsommingstekens in lopende
-tekst. Gebruik "aandeel", "sloepmaat" en "deeleigenaar"; "maximaal vier
+tekst. Gebruik "aandeel", "sloepmaat" en "deel-eigenaar"; "maximaal vier
 sloepmaten per sloep" is de exclusiviteitsclaim (volgt uit het kleinste
 aandeel, een kwart). Laat
 "indicatief" staan bij elke prijs. Verzin geen feiten of cijfers; ontbreekt

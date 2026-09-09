@@ -7,7 +7,7 @@ import { foto } from "./foto";
 export const bedrijven = {
   label: "Voor bedrijven",
   kop: "Een sloep voor je bedrijf. Altijd klaar.",
-  intro: "Je bedrijf wordt deeleigenaar van een sloep. Zonder aanschaf, zonder beheer, alles inbegrepen.",
+  intro: "Je bedrijf wordt deel-eigenaar van een sloep. Zonder aanschaf, zonder beheer, alles inbegrepen.",
   punten: [
     { kop: "Voor je mensen", tekst: "Een vrijdagmiddag op het water. Daar blijven mensen voor." },
     { kop: "Je eigen uitjes", tekst: "Teamdag, jubileum, zomerborrel. De sloep ligt klaar." },

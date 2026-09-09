@@ -3,7 +3,7 @@ export const site = {
   plaats: "Amsterdam",
   titel: "Sloepmaten. Jouw sloep. Onze zorg.",
   omschrijving:
-    "Word deeleigenaar van een hoogwaardige, grote elektrische sloep in de Amsterdamse grachten, van alle gemakken voorzien. Geen gedoe, gewoon varen. Zes nieuwe sloepen in vaarseizoen 2027.",
+    "Word deel-eigenaar van een hoogwaardige, grote elektrische sloep in de Amsterdamse grachten, van alle gemakken voorzien. Geen gedoe, gewoon varen. Zes nieuwe sloepen in vaarseizoen 2027.",
   seizoen: "vaarseizoen 2027",
   /** Eén werkwoord op elke knop. */
   cta: "Aanmelden voor 2027",

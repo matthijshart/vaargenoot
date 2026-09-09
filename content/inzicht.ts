@@ -4,6 +4,6 @@ export const inzicht = {
   intro: "De eigenaar betaalt door. Ligplaats, verzekering, onderhoud, stalling.",
   draai: {
     kop: "Sloepmaten draait het om.",
-    tekst: "Een sloep die vaart in plaats van wacht. Jij wordt deeleigenaar, wij regelen de rest.",
+    tekst: "Een sloep die vaart in plaats van wacht. Jij wordt deel-eigenaar, wij regelen de rest.",
   },
 };

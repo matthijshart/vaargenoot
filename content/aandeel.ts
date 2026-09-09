@@ -19,7 +19,7 @@ export const aandeelTekst = {
   label: "Jouw aandeel",
   kop: "Een vast bedrag per maand. Verder niets.",
   intro:
-    "Je wordt deeleigenaar van een specifieke sloep, met maximaal vier sloepmaten. Of je neemt de hele sloep voor jezelf.",
+    "Je wordt deel-eigenaar van een specifieke sloep, met maximaal vier sloepmaten. Of je neemt de hele sloep voor jezelf.",
   perMaand: "per maand",
   indicatief: "indicatief",
   opAanvraag: "Op aanvraag",

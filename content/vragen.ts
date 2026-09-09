@@ -9,7 +9,7 @@ export const vragen = {
   intro: "Jij vaart, wij regelen de rest. Staat je vraag er niet bij? Laat je gegevens achter, dan nemen we contact met je op.",
   lijst: [
     {
-      vraag: "Word ik echt deeleigenaar?",
+      vraag: "Word ik echt deel-eigenaar?",
       antwoord:
         "Ja. Je krijgt een vast aandeel in een specifieke sloep, samen met maximaal drie andere sloepmaten. De juridische inrichting staat in de overeenkomst, in gewone taal. Je leest hem rustig door voordat je iets tekent.",
     },
