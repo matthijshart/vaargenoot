@@ -15,6 +15,7 @@ export const ervaring = {
     { kop: "Ligdek en ijskast", tekst: "Liggen in de zon, koud drinken binnen handbereik." },
     { kop: "Een dagje zwemmen", tekst: "Aanmeren op een stille plek en het water in." },
     { kop: "Schipper als je zelf drinkt", tekst: "Boek een schipper en hef het glas." },
+    { kop: "Ook in de winter", tekst: "Het Light Festival, soep en thee, fleecedekens aan boord." },
     { kop: "Zonder een boot te kopen", tekst: "Een vast bedrag per maand. Genieten zonder bezit." },
   ],
   beelden: [foto.detailKoelkast, foto.detailTafel],

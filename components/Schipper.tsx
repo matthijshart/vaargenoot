@@ -8,7 +8,7 @@ import { Vinkje } from "./ui/Vinkje";
 
 export function Schipper() {
   return (
-    <Sectie id="schipper" className="bg-wit">
+    <Sectie id="schipper">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">

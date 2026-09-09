@@ -1,3 +1,4 @@
+import { Bedrijven } from "@/components/Bedrijven";
 import { Aanmelden } from "@/components/Aanmelden";
 import { Aandeel } from "@/components/Aandeel";
 import { Ervaring } from "@/components/Ervaring";
@@ -25,6 +26,7 @@ export default function Home() {
         <Sloepen />
         <Aandeel />
         <Schipper />
+        <Bedrijven />
         <Inbegrepen />
         <Vragen />
         <Aanmelden />

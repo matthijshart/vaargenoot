@@ -101,6 +101,10 @@ export function Aandeel() {
           </table>
         </div>
 
+        <p className="mt-8 max-w-[52ch] text-[15px] leading-relaxed text-lucht sm:text-[16px]">
+          {aandeelTekst.winter}
+        </p>
+
         <div className="mt-16 lg:mt-24">
           <Rekenblok />
         </div>

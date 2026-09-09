@@ -3,7 +3,7 @@
 import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 import { useId, useState } from "react";
 import { aandeelTekst, passendAandeel } from "@/content/aandeel";
-import { aandeelPerVaart, eigenSloepPerVaart } from "@/content/kosten";
+import { aandeelPerJaar, aandeelPerVaart, eigenSloepPerJaar, eigenSloepPerVaart } from "@/content/kosten";
 import { euro } from "@/lib/utils";
 
 const MIN = 1;
@@ -38,6 +38,8 @@ export function Rekenblok() {
   const aandeel = passendAandeel(vaarten);
   const perVaart = aandeelPerVaart(aandeel.prijs, vaarten);
   const eigen = eigenSloepPerVaart(vaarten);
+  const jaar = aandeelPerJaar(aandeel.prijs);
+  const eigenJaar = eigenSloepPerJaar();
   const procent = ((vaarten - MIN) / (MAX - MIN)) * 100;
 
   return (
@@ -69,6 +71,7 @@ export function Rekenblok() {
             <span>{MIN}</span>
             <span>{MAX}</span>
           </div>
+          <p className="mt-4 text-[13px] text-lucht/80">{t.seizoen}</p>
         </div>
       </div>
 
@@ -85,22 +88,40 @@ export function Rekenblok() {
           </p>
         </div>
 
-        <dl className="divide-y divide-wit/15 border-y border-wit/15">
-          <div className="flex items-baseline justify-between gap-6 py-4">
-            <dt className="text-[15px] text-lucht">Vaargenoot, {t.perVaart}</dt>
-            <dd className="font-kop text-[28px] font-light leading-none text-messing tabular-nums">
-              <Wissel sleutel={`v-${Math.round(perVaart)}`}>{euro(perVaart)}</Wissel>
-            </dd>
-          </div>
-          <div className="flex items-baseline justify-between gap-6 py-4">
-            <dt className="text-[15px] text-lucht">
-              {t.eigen}, {t.perVaart}
-            </dt>
-            <dd className="font-kop text-[28px] font-light leading-none text-wit/80 tabular-nums">
-              <Wissel sleutel={`e-${Math.round(eigen)}`}>{euro(eigen)}</Wissel>
-            </dd>
-          </div>
-        </dl>
+        <div className="grid gap-x-8 gap-y-2 sm:grid-cols-2">
+          <dl className="divide-y divide-wit/15 border-y border-wit/15">
+            <div className="py-3">
+              <dt className="text-[13px] text-lucht">Vaargenoot, {t.perVaart}</dt>
+              <dd className="mt-1 font-kop text-[30px] font-light leading-none text-messing tabular-nums">
+                <Wissel sleutel={`v-${Math.round(perVaart)}`}>{euro(perVaart)}</Wissel>
+              </dd>
+            </div>
+            <div className="py-3">
+              <dt className="text-[13px] text-lucht">Vaargenoot, {t.perJaar}</dt>
+              <dd className="mt-1 font-kop text-[24px] font-light leading-none text-wit tabular-nums">
+                <Wissel sleutel={`j-${jaar}`}>{euro(jaar)}</Wissel>
+              </dd>
+            </div>
+          </dl>
+          <dl className="divide-y divide-wit/15 border-y border-wit/15">
+            <div className="py-3">
+              <dt className="text-[13px] text-lucht">
+                {t.eigen}, {t.perVaart}
+              </dt>
+              <dd className="mt-1 font-kop text-[30px] font-light leading-none text-wit/70 tabular-nums">
+                <Wissel sleutel={`e-${Math.round(eigen)}`}>{euro(eigen)}</Wissel>
+              </dd>
+            </div>
+            <div className="py-3">
+              <dt className="text-[13px] text-lucht">
+                {t.eigen}, {t.perJaar}
+              </dt>
+              <dd className="mt-1 font-kop text-[24px] font-light leading-none text-wit/70 tabular-nums">
+                {euro(eigenJaar)}
+              </dd>
+            </div>
+          </dl>
+        </div>
 
         <p className="text-[13px] leading-relaxed text-lucht/80">
           {t.eigenToelichting} {t.aannames}

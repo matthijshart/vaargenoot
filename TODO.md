@@ -94,13 +94,26 @@ Niets hiervan is verzonnen.
 
 ## Rekenblok
 
-Met de opgegeven aannames (`content/kosten.ts`) is een eigen elektrische
-sloep per vaart goedkoper dan een half aandeel vanaf ongeveer 10 vaarten
-per maand. De vergelijking staat er eerlijk. Als dat niet de bedoeling is,
-moeten de aannames of de prijs van een half aandeel anders.
+Aannames in `content/kosten.ts`: aanschaf 80.000, restwaarde 35% na tien
+jaar, liggeld circa 6.000 per jaar, winterstalling circa 4.000 per jaar.
+Onderhoud, verzekering, vignet en stroom staan op 0 en zijn bewust niet
+meegerekend; de toelichting op de site zegt dat ook. Met deze aannames is
+Vaargenoot bij elk aantal vaarten per vaart goedkoper dan een eigen sloep.
 
 De berekening gaat ervan uit dat het maandbedrag twaalf maanden loopt en de
-vaarten per maand binnen het seizoen van zeven maanden vallen.
+vaarten per maand binnen het vaarseizoen van zeven maanden vallen. Welke
+maanden dat zijn staat nergens: bevestigen.
+
+Winter: de site zegt dat je buiten het seizoen ook vaart (Light Festival,
+winterdagen, fleecedekens). Tegelijk staat "winterstalling" in de hero als
+inbegrepen. Bevestig hoe die twee samengaan, bijvoorbeeld: de sloep blijft
+in het water en wordt winterklaar gemaakt.
+
+## Bedrijven
+
+Sectie "Voor bedrijven" op de voorpagina, met keuze "Een aandeel voor mijn
+bedrijf" in het formulier. Nog te bevestigen: geldt dezelfde prijstabel, en
+is er een zakelijk aanbod met schipper standaard erbij.
 
 ## Formulier
 

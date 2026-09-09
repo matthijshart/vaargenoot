@@ -12,6 +12,7 @@ export const aanmelden = {
     { waarde: "achtste", label: "Een achtste" },
     { waarde: "kwart", label: "Een kwart" },
     { waarde: "half", label: "Een half" },
+    { waarde: "bedrijf", label: "Een aandeel voor mijn bedrijf" },
     { waarde: "weet-niet", label: "Weet ik nog niet" },
   ],
   knop: "Vraag een proefvaart aan",

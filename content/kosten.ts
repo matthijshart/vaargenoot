@@ -1,24 +1,25 @@
 /**
  * Aannames voor de vergelijking met een eigen elektrische sloep.
- * Alle bedragen in euro en indicatief.
+ * Alle bedragen in euro en indicatief. Bewust conservatief: onderhoud,
+ * verzekering, vignet en stroom zijn nog niet meegerekend.
  */
 export const kosten = {
   /** Aanschafprijs van een vergelijkbare elektrische sloep. */
-  aanschaf: 85000,
+  aanschaf: 80000,
   /** Restwaarde als deel van de aanschaf, na de afschrijvingsperiode. */
   restwaarde: 0.35,
   /** Afschrijvingsperiode in jaren. */
   jaren: 10,
-  /** Ligplaats in de stad, per jaar. */
-  ligplaats: 2400,
-  /** Verzekering, per jaar. */
-  verzekering: 700,
-  /** Onderhoud, per jaar. */
-  onderhoud: 1800,
-  /** Winterstalling, per jaar. */
-  stalling: 1100,
-  /** Vignet en stroom voor het laden, per jaar. */
-  vignetEnStroom: 500,
+  /** Liggeld in de stad, per jaar, circa. */
+  ligplaats: 6000,
+  /** Winterstalling, per jaar, circa. */
+  stalling: 4000,
+  /** Onderhoud, per jaar. Nog niet meegerekend. */
+  onderhoud: 0,
+  /** Verzekering, per jaar. Nog niet meegerekend. */
+  verzekering: 0,
+  /** Vignet en stroom voor het laden, per jaar. Nog niet meegerekend. */
+  vignetEnStroom: 0,
   /** Vaarseizoen in maanden. Vaarten per maand gelden binnen het seizoen. */
   seizoenMaanden: 7,
   /** Het maandbedrag van een aandeel loopt het hele jaar door. */
@@ -34,9 +35,9 @@ export function afschrijvingPerJaar() {
 export function vasteKostenPerJaar() {
   return (
     kosten.ligplaats +
-    kosten.verzekering +
-    kosten.onderhoud +
     kosten.stalling +
+    kosten.onderhoud +
+    kosten.verzekering +
     kosten.vignetEnStroom
   );
 }
@@ -51,7 +52,12 @@ export function eigenSloepPerVaart(vaartenPerMaand: number) {
   return eigenSloepPerJaar() / (vaartenPerMaand * kosten.seizoenMaanden);
 }
 
+/** Jaarbedrag van een aandeel. */
+export function aandeelPerJaar(maandbedrag: number) {
+  return maandbedrag * kosten.maandenPerJaar;
+}
+
 /** Kosten per vaart bij een aandeel, bij dit aantal vaarten per maand in het seizoen. */
 export function aandeelPerVaart(maandbedrag: number, vaartenPerMaand: number) {
-  return (maandbedrag * kosten.maandenPerJaar) / (vaartenPerMaand * kosten.seizoenMaanden);
+  return aandeelPerJaar(maandbedrag) / (vaartenPerMaand * kosten.seizoenMaanden);
 }

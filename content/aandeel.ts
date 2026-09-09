@@ -31,20 +31,24 @@ export const aandeelTekst = {
   label: "Jouw aandeel",
   kop: "Een vast bedrag per maand. Verder niets.",
   intro:
-    "Je kiest een aandeel in een specifieke sloep. Dat geeft je vaste vaarten per maand. Is de sloep vrij, dan vaar je vaker.",
+    "Je kiest een aandeel in een specifieke sloep. Dat geeft je vaste vaarten per maand in het vaarseizoen. Is de sloep vrij, dan vaar je vaker.",
+  winter:
+    "En buiten het seizoen? Dan vaar je ook. Het Amsterdam Light Festival, een knusse winterdag met soep en thee, met onze fleecedekens aan boord.",
   indicatief: "indicatief",
   rekenblok: {
     kop: "Hoe vaak wil je varen?",
-    tekst: "Schuif en zie welk aandeel bij je past en wat een vaart je kost.",
+    tekst: "Schuif en zie welk aandeel bij je past, wat een vaart je kost, en wat een eigen sloep je zou kosten.",
     vaarten: "vaarten per maand",
     vaart: "vaart per maand",
     past: "past bij jou",
     perVaart: "per vaart",
+    perJaar: "per jaar",
     perMaand: "per maand",
+    seizoen: "vaarten per maand in het vaarseizoen",
     eigen: "Eigen elektrische sloep",
     eigenToelichting:
-      "Bij hetzelfde aantal vaarten, met afschrijving, ligplaats, verzekering, onderhoud, stalling, vignet en stroom.",
-    aannames: "Alle bedragen zijn indicatief. De aannames staan in de code.",
+      "Eigen sloep: circa 80.000 euro aanschaf, circa 6.000 euro liggeld en 4.000 euro winterstalling per jaar, afgeschreven over tien jaar. Onderhoud, verzekering, vignet en stroom zijn nog niet meegerekend.",
+    aannames: "Alle bedragen zijn indicatief.",
   },
 };
 
