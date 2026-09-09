@@ -28,6 +28,7 @@ export const aandeelTekst = {
   vaker: "Vaker varen als de sloep vrij is",
   eigenSchipper: "Schipper bij te boeken",
   inbegrepen: "Alles inbegrepen",
+  inbegrepenLijst: "Inbegrepen: ligplaats met laadpunt, stroom, onderhoud, verzekering, schoonmaak, winterklaar en vignet. Schipper bij te boeken.",
   cta: "Aanmelden voor 2027",
   winter:
     "En buiten het seizoen? Dan vaar je ook. Het Amsterdam Light Festival, een knusse winterdag met soep en thee, met onze fleecedekens aan boord.",

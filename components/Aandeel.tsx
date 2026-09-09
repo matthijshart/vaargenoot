@@ -60,6 +60,7 @@ export function Aandeel() {
 
         <div className="mt-10 flex flex-col gap-8 lg:mt-14 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           <div className="max-w-[56ch] space-y-4 text-[15px] leading-relaxed text-lucht sm:text-[16px]">
+            <p className="text-wit">{aandeelTekst.inbegrepenLijst}</p>
             <p>{aandeelTekst.winter}</p>
             <p className="text-[14px] text-lucht/80">{aandeelTekst.vergelijking}</p>
           </div>

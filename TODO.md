@@ -38,6 +38,14 @@ toch tijdelijk gebruiken, zet ze dan in `public/foto/tmp/` en pas
 06 Detail laadstekker aan de ligplaats, avond.
 07 Sloep afgemeerd in een stille zijgracht, lantaarn aan.
 
+## Weggehaald van de pagina, bewaard in de code
+
+Om de pagina kort te houden staan deze secties niet meer in `app/page.tsx`:
+Inzicht (kern staat in Een dag op het water, de vignetdata in de FAQ),
+SloepLagen (komt terug zodra er echte lagen zijn), Schipper (staat op drie
+andere plekken) en Inbegrepen (één regel onder de prijskaarten). Terugzetten
+is één import en één regel in `app/page.tsx`.
+
 ## Sloep in lagen
 
 De sectie `components/SloepLagen.tsx` bouwt de sloep bij het scrollen laag

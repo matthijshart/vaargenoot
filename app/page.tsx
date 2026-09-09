@@ -4,10 +4,6 @@ import { Aandeel } from "@/components/Aandeel";
 import { Ervaring } from "@/components/Ervaring";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
-import { Inbegrepen } from "@/components/Inbegrepen";
-import { Inzicht } from "@/components/Inzicht";
-import { Schipper } from "@/components/Schipper";
-import { SloepLagen } from "@/components/SloepLagen";
 import { Sloepen } from "@/components/Sloepen";
 import { Verdelen } from "@/components/Verdelen";
 import { Vragen } from "@/components/Vragen";
@@ -20,16 +16,12 @@ export default function Home() {
       <Nav />
       <main id="top" className="flex-1">
         <Hero />
-        <Inzicht />
         <Ervaring />
         <Sloepen />
         <Aandeel />
         <Bedrijven />
         <ZoWerktHet />
         <Verdelen />
-        <SloepLagen />
-        <Schipper />
-        <Inbegrepen />
         <Vragen />
         <Aanmelden />
       </main>

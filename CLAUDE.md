@@ -17,7 +17,7 @@ knoptekst overal: `site.cta`. Gevoel: gemak, rustige luxe, alles glijdt.
 ## Structuur
 
 - `/app` layout, page, actions, globals.css
-- `/components` secties in paginavolgorde: Hero, Inzicht, Ervaring, Sloepen, Aandeel, Bedrijven, ZoWerktHet, Verdelen, SloepLagen, Schipper, Inbegrepen, Vragen, Aanmelden; plus Nav, Footer
+- `/components` secties in paginavolgorde: Hero, Ervaring, Sloepen, Aandeel, Bedrijven, ZoWerktHet, Verdelen, Vragen, Aanmelden; plus Nav, Footer. Bewaard maar niet op de pagina: Inzicht, SloepLagen, Schipper, Inbegrepen, Weekstrook
 - `/components/ui` primitieven (Knop, Foto, Sectie, SectieKop, Container, AnkerLink, Vinkje)
 - `/content` alle teksten, prijzen, aannames en fotoverwijzingen
 - `/docs/reserveren.md` de opzet van het verdeelsysteem (punten, weekendgrens, ruilen)
@@ -67,7 +67,7 @@ Overige tokens: `font-kop` (Newsreader), `font-sans` (Manrope),
 
 - Lenis smooth scroll, ankerlinks via `AnkerLink` (Lenis `scrollTo`).
 - Hero-entree via CSS-keyframes (`opkomen` voor tekst, `foto-opkomen` voor de foto: alleen schaal 1.04 naar 1, geen opacity, anders telt de LCP pas na de fade), parallax via Framer Motion.
-- `SloepLagen` en `Verdelen` zijn de scrollgestuurde secties: vastgepind (400vh en 350vh), `useScroll` en `useTransform` met functies (geen keyframes: framer-motion zet die om in een native ScrollTimeline die hier het verkeerde element volgt). Bij reduced motion een gewone sectie.
+- `Verdelen` is de scrollgestuurde sectie op de pagina (vastgepind, 350vh); `SloepLagen` (400vh) staat klaar voor als er echte lagen zijn. Beide: `useScroll` en `useTransform` met functies (geen keyframes: framer-motion zet die om in een native ScrollTimeline die hier het verkeerde element volgt). Bij reduced motion een gewone sectie.
 - Secties komen één keer op via `components/ui/Sectie.tsx` (whileInView, once). Nooit per element, nooit per kaartje.
 - Framer Motion via `LazyMotion` met `domAnimation` en `strict`: gebruik `m.` in plaats van `motion.`.
 - `prefers-reduced-motion`: alles uit, direct zichtbaar. Gebruik `useReducedMotion` in nieuwe componenten.

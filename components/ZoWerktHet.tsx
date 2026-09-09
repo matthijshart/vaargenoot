@@ -2,7 +2,6 @@ import { stappen } from "@/content/stappen";
 import { Container } from "./ui/Container";
 import { Sectie } from "./ui/Sectie";
 import { SectieKop } from "./ui/SectieKop";
-import { Weekstrook } from "./Weekstrook";
 
 export function ZoWerktHet() {
   return (
@@ -20,11 +19,6 @@ export function ZoWerktHet() {
               <p className="mt-3 max-w-[38ch] text-[16px] leading-relaxed text-zacht">
                 {stap.tekst}
               </p>
-              {i === 1 && (
-                <div className="mt-6 max-w-xs">
-                  <Weekstrook />
-                </div>
-              )}
             </li>
           ))}
         </ol>
