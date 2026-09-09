@@ -7,8 +7,7 @@ import { foto } from "./foto";
 export const ervaring = {
   label: "Een dag op het water",
   kop: "Alles van een eigen sloep, zonder het gedoe.",
-  intro:
-    "Een boot vraagt meer werk dan je denkt. Ligplaats, laden, onderhoud, schoonmaak, winterstalling. Bij Vaargenoot doe je alleen het leuke deel.",
+  intro: "Een boot vraagt meer werk dan je denkt. Bij Vaargenoot doe je alleen het leuke deel.",
   punten: [
     { kop: "Met de hele club", tekst: "Vrienden, familie, collega's. Iedereen past aan boord." },
     { kop: "Barbecue met je gezin", tekst: "Een lange avond op het water, het eten komt van boord." },

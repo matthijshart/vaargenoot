@@ -6,8 +6,7 @@
 export const vragen = {
   label: "Vragen",
   kop: "Veelgestelde vragen",
-  intro:
-    "Wij leveren een dienst, geen boot. Jij vaart, wij regelen alles eromheen. Heb je een vraag die hier niet staat, dan krijg je gewoon antwoord van een mens.",
+  intro: "Wij leveren een dienst, geen boot. Jij vaart, wij regelen de rest. Andere vraag? Je krijgt antwoord van een mens.",
   lijst: [
     {
       vraag: "Ben ik echt eigenaar?",

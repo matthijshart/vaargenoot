@@ -7,8 +7,8 @@ export type Sloep = {
 };
 
 /**
- * Specificaties die nog niet vaststaan staan als "volgt".
- * Zie TODO.md.
+ * Alleen specificaties die vaststaan. Vaartijd op een lading en ligplaats
+ * komen erbij zodra ze bekend zijn, zie TODO.md.
  */
 const aanBoord = "Koelkast, tafel, ligdek, kussens, bimini, geluid";
 
@@ -24,9 +24,7 @@ export const sloepen = {
         { label: "Lengte", waarde: "7,5 m" },
         { label: "Personen", waarde: "10" },
         { label: "Aandrijving", waarde: "Elektrisch" },
-        { label: "Vaartijd op een lading", waarde: "volgt" },
         { label: "Aan boord", waarde: aanBoord },
-        { label: "Ligplaats", waarde: "volgt" },
       ],
     },
     {
@@ -36,9 +34,7 @@ export const sloepen = {
         { label: "Lengte", waarde: "8,5 m" },
         { label: "Personen", waarde: "12" },
         { label: "Aandrijving", waarde: "Elektrisch" },
-        { label: "Vaartijd op een lading", waarde: "volgt" },
         { label: "Aan boord", waarde: aanBoord },
-        { label: "Ligplaats", waarde: "volgt" },
       ],
     },
   ] satisfies Sloep[],

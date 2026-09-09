@@ -22,7 +22,7 @@ export function AnkerLink({ href, children, onClick, ...rest }: Props) {
     // Respecteer de scroll-margin-top van het doel, net als een gewone ankerlink.
     const marge = parseInt(getComputedStyle(doel).scrollMarginTop, 10) || 0;
     // Even wachten zodat een sluitend menu de scroll weer vrijgeeft.
-    requestAnimationFrame(() => lenis.scrollTo(doel as HTMLElement, { offset: -marge }));
+    requestAnimationFrame(() => lenis.scrollTo(doel as HTMLElement, { offset: -marge, force: true }));
     history.replaceState(null, "", href);
   }
 

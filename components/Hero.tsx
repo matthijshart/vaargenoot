@@ -76,13 +76,13 @@ export function Hero() {
         <p className="mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[14px] text-zacht sm:mt-8 sm:text-[15px]">
           <span className="font-medium text-nacht">Inbegrepen</span>
           {hero.inbegrepen.map((punt, i) => (
-            <span key={punt} className="flex items-baseline gap-2">
+            <span key={punt} className={i >= 3 ? "hidden items-baseline gap-2 sm:flex" : "flex items-baseline gap-2"}>
               {i > 0 && <span aria-hidden className="text-nevel">·</span>}
               {punt}
             </span>
           ))}
-          <span aria-hidden className="text-nevel">·</span>
-          <span>{hero.optioneel}</span>
+          <span aria-hidden className="hidden text-nevel sm:inline">·</span>
+          <span className="hidden sm:inline">{hero.optioneel}</span>
         </p>
       </Container>
     </section>

@@ -7,24 +7,23 @@ import { foto } from "./foto";
 export const bedrijven = {
   label: "Voor bedrijven",
   kop: "Een sloep voor je bedrijf. Altijd klaar.",
-  intro:
-    "Neem een aandeel op naam van je bedrijf. Dan ligt er altijd een fijne, luxe sloep voor je klaar. Zonder aanschaf, zonder gedoe, met alles erop en eraan.",
+  intro: "Een aandeel op naam van je bedrijf. Altijd een luxe sloep klaar, zonder aanschaf en zonder gedoe.",
   punten: [
     {
       kop: "Voor je mensen",
-      tekst: "Een vrijdagmiddag op het water is een reden om bij je te werken.",
+      tekst: "Een vrijdagmiddag op het water. Daar blijven mensen voor.",
     },
     {
       kop: "Je eigen uitjes",
-      tekst: "Teamdag, jubileum, zomerborrel. De sloep ligt schoon en opgeladen klaar.",
+      tekst: "Teamdag, jubileum, zomerborrel. De sloep ligt klaar.",
     },
     {
       kop: "Gasten uit het buitenland",
-      tekst: "Amsterdam laten zien vanaf het water. Dat vergeten ze niet.",
+      tekst: "Amsterdam vanaf het water. Dat vergeten ze niet.",
     },
     {
       kop: "Met schipper",
-      tekst: "Boek een schipper bij elke vaart. Jij bent gastheer, wij varen.",
+      tekst: "Jij bent gastheer, wij varen.",
     },
   ],
   cta: "Plan een proefvaart",

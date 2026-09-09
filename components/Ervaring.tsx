@@ -11,11 +11,11 @@ export function Ervaring() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
             <SectieKop label={ervaring.label} kop={ervaring.kop} intro={ervaring.intro} />
-            <ul className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+            <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 sm:gap-x-8 sm:gap-y-6">
               {ervaring.punten.map((punt) => (
                 <li key={punt.kop} className="border-t border-nevel pt-4">
-                  <h3 className="font-sans text-[16px] font-medium text-nacht">{punt.kop}</h3>
-                  <p className="mt-1 max-w-[30ch] text-[15px] leading-relaxed text-zacht">{punt.tekst}</p>
+                  <h3 className="font-sans text-[15px] font-medium text-nacht sm:text-[16px]">{punt.kop}</h3>
+                  <p className="mt-1 hidden max-w-[30ch] text-[15px] leading-relaxed text-zacht sm:block">{punt.tekst}</p>
                 </li>
               ))}
             </ul>
@@ -33,7 +33,7 @@ export function Ervaring() {
               alt={ervaring.beelden[1].alt}
               ratio="1 / 1"
               sizes="(min-width: 1024px) 25vw, 50vw"
-              className="mt-10 rounded-2xl"
+              className="rounded-2xl sm:mt-10"
             />
           </div>
         </div>

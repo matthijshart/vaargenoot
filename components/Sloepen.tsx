@@ -28,9 +28,7 @@ export function Sloepen() {
                 {sloep.specs.map((spec) => (
                   <div key={spec.label} className="grid grid-cols-[11rem_1fr] gap-4 py-3">
                     <dt className="text-zacht">{spec.label}</dt>
-                    <dd className={spec.waarde === "volgt" ? "text-zacht/70" : "text-inkt"}>
-                      {spec.waarde}
-                    </dd>
+                    <dd className="text-inkt">{spec.waarde}</dd>
                   </div>
                 ))}
               </dl>

@@ -27,5 +27,5 @@ export const aandeelTekst = {
   winter:
     "En buiten het seizoen? Dan vaar je ook. Het Amsterdam Light Festival, een knusse winterdag met soep en thee, met onze fleecedekens aan boord.",
   vergelijking:
-    "Ter vergelijking: een eigen elektrische sloep kost al snel 15.200 euro per jaar aan afschrijving, liggeld en winterstalling. Onderhoud, verzekering, vignet en stroom komen daar nog bij. Alle bedragen zijn indicatief.",
+    "Ter vergelijking: een eigen elektrische sloep kost al snel 15.200 euro per jaar aan afschrijving, liggeld en winterstalling. Onderhoud en verzekering komen daar nog bij. Indicatief.",
 };

@@ -4,18 +4,15 @@ export const stappen = {
   lijst: [
     {
       kop: "Kies je sloep en je aandeel",
-      tekst:
-        "De Amstel of de Prinsen. Een achtste, een kwart of een half. Je kiest wat past bij hoe vaak je wilt varen.",
+      tekst: "De Amstel of de Prinsen. Een achtste, een kwart of een half.",
     },
     {
       kop: "Reserveer in de app",
-      tekst:
-        "Kies een dag en een dagdeel. Je ziet meteen wat vrij is. Is de sloep vrij, dan vaar je ook buiten je vaste vaarten.",
+      tekst: "Kies een dag en een dagdeel. Je ziet meteen wat vrij is.",
     },
     {
       kop: "Stap aan boord",
-      tekst:
-        "De sloep ligt schoon en opgeladen op de ligplaats. Jij stapt aan boord en vaart weg.",
+      tekst: "De sloep ligt schoon en opgeladen klaar. Jij vaart weg.",
     },
   ],
   week: {

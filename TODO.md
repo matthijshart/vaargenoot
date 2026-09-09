@@ -68,11 +68,11 @@ Zet de bestanden in `public/foto/lagen/` en pas de imports in
 
 ## Inhoud die nog bevestigd moet worden
 
-Deze punten staan op de site als "volgt" of zijn bewust algemeen gehouden.
-Niets hiervan is verzonnen.
+Er staat nergens meer "volgt" op de site. Wat niet vaststaat, is weggelaten
+of bewust algemeen gehouden. Niets is verzonnen.
 
-- Vaartijd op een lading, per sloep (`content/sloepen.ts`).
-- Ligplaats, per sloep (`content/sloepen.ts`).
+- Vaartijd op een lading en ligplaats, per sloep. Staan niet op de site tot
+  ze bekend zijn; toevoegen in `content/sloepen.ts`.
 - Vaker varen dan het vaste aantal: is dat gratis of tegen een tarief? Nu
   staat er "Vaker varen als de sloep vrij is" zonder bedrag.
 - FAQ schade: eigen risico en afhandeling (`content/vragen.ts`).

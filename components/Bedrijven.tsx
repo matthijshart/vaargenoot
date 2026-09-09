@@ -12,17 +12,17 @@ export function Bedrijven() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <SectieKop label={bedrijven.label} kop={bedrijven.kop} intro={bedrijven.intro} />
-            <ul className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+            <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 sm:gap-x-8 sm:gap-y-6">
               {bedrijven.punten.map((punt) => (
                 <li key={punt.kop} className="border-t border-nevel pt-4">
-                  <h3 className="font-sans text-[16px] font-medium text-nacht">{punt.kop}</h3>
-                  <p className="mt-1 max-w-[32ch] text-[15px] leading-relaxed text-zacht">{punt.tekst}</p>
+                  <h3 className="font-sans text-[15px] font-medium text-nacht sm:text-[16px]">{punt.kop}</h3>
+                  <p className="mt-1 hidden max-w-[32ch] text-[15px] leading-relaxed text-zacht sm:block">{punt.tekst}</p>
                 </li>
               ))}
             </ul>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
               <KnopLink href="#aanmelden">{bedrijven.cta}</KnopLink>
-              <p className="max-w-[36ch] text-[14px] leading-relaxed text-zacht">{bedrijven.ctaTekst}</p>
+              <p className="hidden max-w-[36ch] text-[14px] leading-relaxed text-zacht sm:block">{bedrijven.ctaTekst}</p>
             </div>
           </div>
           <div className="self-center lg:col-span-5">
