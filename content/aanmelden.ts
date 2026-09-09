@@ -1,6 +1,6 @@
 export const aanmelden = {
   label: "Aanmelden",
-  kop: "Word een van de eerste vaargenoten.",
+  kop: "Word een van de eerste sloepmaten.",
   intro:
     "Zes nieuwe sloepen in vaarseizoen 2027. Vol is vol. Meld je aan voor een aandeel, of vraag eerst meer informatie.",
   velden: {

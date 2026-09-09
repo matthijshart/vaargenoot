@@ -1,9 +1,9 @@
 export const site = {
-  naam: "Vaargenoot",
+  naam: "Sloepmaten",
   plaats: "Amsterdam",
-  titel: "Vaargenoot. Jouw sloep. Onze zorg.",
+  titel: "Sloepmaten. Jouw sloep. Onze zorg.",
   omschrijving:
-    "Word deeleigenaar van een elektrische sloep in de Amsterdamse grachten. Maximaal vier vaargenoten per sloep, alles inbegrepen. Zes nieuwe sloepen in vaarseizoen 2027.",
+    "Word deeleigenaar van een elektrische sloep in de Amsterdamse grachten. Maximaal vier sloepmaten per sloep, alles inbegrepen. Zes nieuwe sloepen in vaarseizoen 2027.",
   seizoen: "vaarseizoen 2027",
   /** Eén werkwoord op elke knop. */
   cta: "Aanmelden voor 2027",

@@ -116,7 +116,7 @@ inbegrepen. Bevestig hoe die twee samengaan.
 ## Deeleigenaar
 
 De site zegt nu overal dat je deeleigenaar wordt, met maximaal vier
-vaargenoten per sloep (volgt uit het kleinste aandeel, een kwart).
+sloepmaten per sloep (volgt uit het kleinste aandeel, een kwart).
 "Deeleigenaar" heeft juridische betekenis. Zorg dat de overeenkomst dat
 waarmaakt, of pas het woord aan als de structuur een gebruiksrecht wordt.
 

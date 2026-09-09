@@ -11,7 +11,7 @@ export const vragen = {
     {
       vraag: "Word ik echt deeleigenaar?",
       antwoord:
-        "Ja. Je krijgt een vast aandeel in een specifieke sloep, samen met maximaal drie andere vaargenoten. De juridische inrichting staat in de overeenkomst, in gewone taal. Je leest hem rustig door voordat je iets tekent.",
+        "Ja. Je krijgt een vast aandeel in een specifieke sloep, samen met maximaal drie andere sloepmaten. De juridische inrichting staat in de overeenkomst, in gewone taal. Je leest hem rustig door voordat je iets tekent.",
     },
     {
       vraag: "Wat als ik onderweg hulp nodig heb?",

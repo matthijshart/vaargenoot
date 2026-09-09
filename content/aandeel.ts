@@ -10,8 +10,8 @@ export type Aandeel = {
 };
 
 export const aandelen: Aandeel[] = [
-  { id: "kwart", naam: "Een kwart", onder: "Met maximaal drie andere vaargenoten", vaarten: 8, prijs: 695 },
-  { id: "half", naam: "Een half", onder: "Met één andere vaargenoot", vaarten: 16, prijs: 1195 },
+  { id: "kwart", naam: "Een kwart", onder: "Met maximaal drie andere sloepmaten", vaarten: 8, prijs: 695 },
+  { id: "half", naam: "Een half", onder: "Met één andere sloepmaat", vaarten: 16, prijs: 1195 },
   { id: "heel", naam: "De hele sloep", onder: "Alleen jij, of je bedrijf", vaarten: null, prijs: null },
 ];
 
@@ -19,7 +19,7 @@ export const aandeelTekst = {
   label: "Jouw aandeel",
   kop: "Een vast bedrag per maand. Verder niets.",
   intro:
-    "Je wordt deeleigenaar van een specifieke sloep, met maximaal vier vaargenoten. Of je neemt de hele sloep voor jezelf.",
+    "Je wordt deeleigenaar van een specifieke sloep, met maximaal vier sloepmaten. Of je neemt de hele sloep voor jezelf.",
   perMaand: "per maand",
   indicatief: "indicatief",
   opAanvraag: "Op aanvraag",

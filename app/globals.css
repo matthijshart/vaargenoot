@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
-  Vaargenoot design tokens.
+  Sloepmaten design tokens.
   Tailwind v4 kent geen theme.extend; tokens leven hier in @theme.
   Gebruik uitsluitend deze kleurnamen.
 */

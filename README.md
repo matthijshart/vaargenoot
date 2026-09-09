@@ -1,4 +1,4 @@
-# Vaargenoot
+# Sloepmaten
 
 Landingspagina voor gedeeld eigendom van elektrische sloepen in Amsterdam.
 

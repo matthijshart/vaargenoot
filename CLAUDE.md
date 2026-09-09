@@ -1,7 +1,7 @@
-# Vaargenoot
+# Sloepmaten
 
 Gedeeld eigendom van elektrische sloepen in de Amsterdamse grachten. Leden
-(vaargenoten) betalen een vast maandbedrag voor een aandeel in een specifieke
+(sloepmaten) betalen een vast maandbedrag voor een aandeel in een specifieke
 sloep, alles inbegrepen. Zes nieuwe sloepen in vaarseizoen 2027, vol is vol.
 De site heeft één doel: aanmelden voor 2027, of voor meer informatie. Eén
 knoptekst overal: `site.cta`. Gevoel: gemak, rustige luxe, alles glijdt.
@@ -75,8 +75,8 @@ Overige tokens: `font-kop` (Newsreader), `font-sans` (Manrope),
 
 Nederlands, je-vorm, korte zinnen, actieve werkwoorden. Geen gedachtestreepjes,
 geen uitroeptekens, geen pijltjes in knoppen, geen opsommingstekens in lopende
-tekst. Gebruik "aandeel", "vaargenoot" en "deeleigenaar"; "maximaal vier
-vaargenoten per sloep" is de exclusiviteitsclaim (volgt uit het kleinste
+tekst. Gebruik "aandeel", "sloepmaat" en "deeleigenaar"; "maximaal vier
+sloepmaten per sloep" is de exclusiviteitsclaim (volgt uit het kleinste
 aandeel, een kwart). Laat
 "indicatief" staan bij elke prijs. Verzin geen feiten of cijfers; ontbreekt
 iets, zet het in TODO.md.
