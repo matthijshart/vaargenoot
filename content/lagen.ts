@@ -49,7 +49,7 @@ export const lagen = {
     {
       id: "tafel",
       kop: "Grote tafel",
-      tekst: "In het midden, met plek voor 10 personen eromheen.",
+      tekst: "In het midden, met plek voor iedereen eromheen.",
       beeld: tafel,
       alt: "Grote tafel in het midden van de sloep",
     },

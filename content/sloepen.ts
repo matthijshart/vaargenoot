@@ -22,7 +22,7 @@ export const sloepen = {
       beeld: foto.sloepAmstel,
       specs: [
         { label: "Lengte", waarde: "7,5 m" },
-        { label: "Personen", waarde: "10" },
+        { label: "Personen", waarde: "tot 45" },
         { label: "Aandrijving", waarde: "Elektrisch" },
         { label: "Aan boord", waarde: aanBoord },
       ],
@@ -32,7 +32,7 @@ export const sloepen = {
       beeld: foto.sloepPrinsen,
       specs: [
         { label: "Lengte", waarde: "8,5 m" },
-        { label: "Personen", waarde: "12" },
+        { label: "Personen", waarde: "tot 30" },
         { label: "Aandrijving", waarde: "Elektrisch" },
         { label: "Aan boord", waarde: aanBoord },
       ],

@@ -66,6 +66,16 @@ Transparante achtergrond, elk beeld alleen zijn eigen onderdeel. Twee manieren:
 Zet de bestanden in `public/foto/lagen/` en pas de imports in
 `content/lagen.ts` aan.
 
+## Personenaantallen
+
+Amstel tot 45 personen, Prinsen tot 30 (opgegeven). De lengtes uit de
+oorspronkelijke brief staan er nog: Amstel 7,5 m, Prinsen 8,5 m. Die twee
+passen niet bij elkaar, en de kleinere sloep heeft nu het grootste aantal.
+Bevestig de lengtes en welk model welk aantal heeft. Let ook op: boven de
+twaalf opvarenden gelden in Nederland andere regels dan voor pleziervaart,
+en de FAQ zegt dat een vaarbewijs onder 15 meter en 20 km/u niet nodig is.
+Check of dat zo blijft.
+
 ## Inhoud die nog bevestigd moet worden
 
 Er staat nergens meer "volgt" op de site. Wat niet vaststaat, is weggelaten
