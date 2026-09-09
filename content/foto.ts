@@ -1,6 +1,6 @@
 /**
- * Alle beelden op de site. De huidige foto's zijn uitsnedes uit één
- * bronfoto (foto-bron/sloep-bovenaf.png) via scripts/foto-crops.mjs.
+ * Alle beelden op de site. De huidige foto's komen uit twee bronfoto's in
+ * foto-bron/ via scripts/foto-crops.mjs.
  * Zie TODO.md voor de shotlist van definitieve foto's.
  */
 import hero from "@/public/foto/hero.jpg";
@@ -23,7 +23,7 @@ export const foto = {
   },
   sloepPrinsen: {
     src: sloepPrinsen,
-    alt: "Achterdek van de sloep met de lange tafel",
+    alt: "Sloep Prinsen met bimini, varend in een brede vaart",
   },
   schipper: {
     src: schipper,
