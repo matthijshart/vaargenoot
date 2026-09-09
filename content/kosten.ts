@@ -2,6 +2,8 @@
  * Aannames voor de vergelijking met een eigen elektrische sloep.
  * Alle bedragen in euro en indicatief. Bewust conservatief: onderhoud,
  * verzekering, vignet en stroom zijn nog niet meegerekend.
+ * Het rekenblok is van de site gehaald; de zin onder de aandelen noemt
+ * het jaarbedrag uit eigenSloepPerJaar(). Pas beide aan als dit verandert.
  */
 export const kosten = {
   /** Aanschafprijs van een vergelijkbare elektrische sloep. */

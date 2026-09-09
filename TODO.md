@@ -73,11 +73,8 @@ Niets hiervan is verzonnen.
 
 - Vaartijd op een lading, per sloep (`content/sloepen.ts`).
 - Ligplaats, per sloep (`content/sloepen.ts`).
-- Reserveren vooruit, per aandeel (`content/aandeel.ts`).
-- Weekenden, per aandeel (`content/aandeel.ts`).
-- Schipper bijboeken, prijs of voorwaarden (`content/aandeel.ts`).
 - Vaker varen dan het vaste aantal: is dat gratis of tegen een tarief? Nu
-  staat er "Als de sloep vrij is" zonder bedrag.
+  staat er "Vaker varen als de sloep vrij is" zonder bedrag.
 - FAQ schade: eigen risico en afhandeling (`content/vragen.ts`).
 - FAQ hulp onderweg: de site belooft één aanspreekpunt en bereikbaarheid
   tijdens het varen. Bevestig telefoonnummer en tijden (`content/vragen.ts`).
@@ -92,22 +89,24 @@ Niets hiervan is verzonnen.
 - Vaarbewijs: de grens van 15 meter en 20 km/u staat in de FAQ. Controleer of
   de topsnelheid van beide sloepen daaronder blijft.
 
-## Rekenblok
+## Prijzen
 
-Aannames in `content/kosten.ts`: aanschaf 80.000, restwaarde 35% na tien
-jaar, liggeld circa 6.000 per jaar, winterstalling circa 4.000 per jaar.
-Onderhoud, verzekering, vignet en stroom staan op 0 en zijn bewust niet
-meegerekend; de toelichting op de site zegt dat ook. Met deze aannames is
-Vaargenoot bij elk aantal vaarten per vaart goedkoper dan een eigen sloep.
+Drie aandelen, elk met maandprijs, vaste vaarten in het vaarseizoen, vaker
+varen als de sloep vrij is, alles inbegrepen. Het rekenblok met
+schuifregelaar is bewust weggehaald: simpel en helder. Onder de kaarten
+staat één vergelijkingszin: een eigen sloep kost circa 15.200 euro per jaar
+(aannames in `content/kosten.ts`: 80.000 aanschaf, 35% restwaarde na tien
+jaar, 6.000 liggeld, 4.000 winterstalling; onderhoud, verzekering, vignet en
+stroom niet meegerekend). Verandert een aanname, pas dan ook de zin in
+`content/aandeel.ts` aan.
 
-De berekening gaat ervan uit dat het maandbedrag twaalf maanden loopt en de
-vaarten per maand binnen het vaarseizoen van zeven maanden vallen. Welke
-maanden dat zijn staat nergens: bevestigen.
+Niet meer op de site, wel nog te bepalen: reserveren vooruit, weekenden,
+schipper bijboeken (prijs of voorwaarden). Ook: welke zeven maanden het
+vaarseizoen zijn.
 
 Winter: de site zegt dat je buiten het seizoen ook vaart (Light Festival,
 winterdagen, fleecedekens). Tegelijk staat "winterstalling" in de hero als
-inbegrepen. Bevestig hoe die twee samengaan, bijvoorbeeld: de sloep blijft
-in het water en wordt winterklaar gemaakt.
+inbegrepen. Bevestig hoe die twee samengaan.
 
 ## Bedrijven
 

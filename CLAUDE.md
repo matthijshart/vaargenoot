@@ -16,7 +16,7 @@ proefvaart. Gevoel: gemak, rustige luxe, alles glijdt.
 ## Structuur
 
 - `/app` layout, page, actions, globals.css
-- `/components` secties (Hero, Inzicht, Ervaring, Bedrijven, ZoWerktHet, SloepLagen, Sloepen, Aandeel, Rekenblok, Schipper, Inbegrepen, Vragen, Aanmelden, Nav, Footer)
+- `/components` secties (Hero, Inzicht, Ervaring, Bedrijven, ZoWerktHet, SloepLagen, Sloepen, Aandeel, Schipper, Inbegrepen, Vragen, Aanmelden, Nav, Footer)
 - `/components/ui` primitieven (Knop, Foto, Sectie, SectieKop, Container, AnkerLink, Vinkje)
 - `/content` alle teksten, prijzen, aannames en fotoverwijzingen
 - `/lib` motion-varianten, validatie, hulpfuncties
@@ -39,7 +39,7 @@ Tailwind v4 kent geen `theme.extend`; de tokens staan in `@theme` in
 | nevel   | #DCE6F0 | lijnen, randen, tabellen                             |
 | schuim  | #F4F7FA | achtergrond                                          |
 | wit     | #FFFFFF | velden, tekst op donker                              |
-| messing | #C9A26B | één warm accent: slider, bevestiging, kleine details. Niet voor knoppen |
+| messing | #C9A26B | één warm accent: vinkjes, bevestiging, kleine details. Niet voor knoppen |
 | inkt    | #0F1B26 | broodtekst                                           |
 | zacht   | #5A6B7C | secundaire tekst                                     |
 

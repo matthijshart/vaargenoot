@@ -117,64 +117,6 @@ html.lenis body {
   }
 }
 
-/* Schuifregelaar in het rekenblok. Messing als enige warme accent. */
-.schuif {
-  --vul: 0%;
-  appearance: none;
-  height: 28px;
-  background: transparent;
-  cursor: pointer;
-}
-.schuif::-webkit-slider-runnable-track {
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(
-    to right,
-    var(--color-messing) var(--vul),
-    color-mix(in srgb, var(--color-wit) 25%, transparent) var(--vul)
-  );
-}
-.schuif::-moz-range-track {
-  height: 2px;
-  border-radius: 2px;
-  background: color-mix(in srgb, var(--color-wit) 25%, transparent);
-}
-.schuif::-moz-range-progress {
-  height: 2px;
-  border-radius: 2px;
-  background: var(--color-messing);
-}
-.schuif::-webkit-slider-thumb {
-  appearance: none;
-  width: 22px;
-  height: 22px;
-  margin-top: -10px;
-  border-radius: 999px;
-  background: var(--color-messing);
-  border: 3px solid var(--color-nacht);
-  box-shadow: 0 0 0 1px var(--color-messing);
-  transition: transform 150ms var(--ease-zacht);
-}
-.schuif::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 999px;
-  background: var(--color-messing);
-  border: 3px solid var(--color-nacht);
-  box-shadow: 0 0 0 1px var(--color-messing);
-}
-.schuif:active::-webkit-slider-thumb {
-  transform: scale(1.15);
-}
-.schuif:focus-visible {
-  outline: none;
-}
-.schuif:focus-visible::-webkit-slider-thumb {
-  box-shadow: 0 0 0 3px var(--color-lucht);
-}
-.schuif:focus-visible::-moz-range-thumb {
-  box-shadow: 0 0 0 3px var(--color-lucht);
-}
 
 /* Hero-entree zonder te wachten op JavaScript. */
 @keyframes opkomen {
