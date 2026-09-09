@@ -15,5 +15,5 @@ export const ervaring = {
     { kop: "Schipper aan boord", tekst: "Boek er een bij en zit zelf aan tafel." },
     { kop: "Ook in de winter", tekst: "Het Light Festival, soep en thee, fleecedekens aan boord." },
   ],
-  beelden: [foto.detailKoelkast, foto.grachtBrug],
+  beelden: [foto.greenEgg, foto.detailKoelkast],
 };

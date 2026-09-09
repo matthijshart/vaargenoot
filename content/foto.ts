@@ -11,6 +11,7 @@ import detailKoelkast from "@/public/foto/detail-koelkast.jpg";
 import detailTafel from "@/public/foto/detail-tafel.jpg";
 import grachtBrug from "@/public/foto/gracht-brug.jpg";
 import grachtBloemen from "@/public/foto/gracht-bloemen.jpg";
+import greenEgg from "@/public/foto/green-egg.jpg";
 import sloepBovenaf from "@/public/foto/sloep-bovenaf.jpg";
 
 export const foto = {
@@ -41,6 +42,10 @@ export const foto = {
   grachtBrug: {
     src: grachtBrug,
     alt: "Brug over een Amsterdamse gracht, met grachtenpanden en bomen",
+  },
+  greenEgg: {
+    src: greenEgg,
+    alt: "Twee Big Green Eggs en champagnekoelers aan boord van de sloep",
   },
   grachtBloemen: {
     src: grachtBloemen,

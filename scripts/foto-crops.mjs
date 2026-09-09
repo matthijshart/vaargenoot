@@ -29,6 +29,10 @@ console.log("ok gracht-brug 736x552");
 await sharp("foto-bron/gracht-bloemen.jpeg").extract({ left: 0, top: 400, width: 736, height: 736 }).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/gracht-bloemen.jpg`);
 console.log("ok gracht-bloemen 736x736");
 
+// Green Egg op de sloep, vierkant rond de eggs en de koelers.
+await sharp("foto-bron/green-egg-boot.png").extract({ left: 340, top: 0, width: 949, height: 949 }).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/green-egg.jpg`);
+console.log("ok green-egg 949x949");
+
 // Prinsen: het zijaanzicht, al 4:3.
 await sharp(bronZij).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/prinsen.jpg`);
 console.log("ok prinsen 768x576");
