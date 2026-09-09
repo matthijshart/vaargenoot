@@ -6,7 +6,7 @@ import { SectieKop } from "./ui/SectieKop";
 
 export function Ervaring() {
   return (
-    <Sectie id="ervaring" className="bg-wit">
+    <Sectie id="ervaring">
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">

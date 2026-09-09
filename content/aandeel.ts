@@ -16,10 +16,10 @@ export const aandelen: Aandeel[] = [
 ];
 
 export const aandeelTekst = {
-  label: "Deeleigenaar",
+  label: "Jouw aandeel",
   kop: "Een vast bedrag per maand. Verder niets.",
   intro:
-    "Je wordt deeleigenaar van een specifieke sloep, met maximaal vier vaargenoten. Of je neemt de hele sloep voor jezelf. Je aandeel geeft je vaste vaarten per maand in het vaarseizoen. Is de sloep vrij, dan vaar je vaker.",
+    "Je wordt deeleigenaar van een specifieke sloep, met maximaal vier vaargenoten. Of je neemt de hele sloep voor jezelf.",
   perMaand: "per maand",
   indicatief: "indicatief",
   opAanvraag: "Op aanvraag",
@@ -28,9 +28,9 @@ export const aandeelTekst = {
   vaker: "Vaker varen als de sloep vrij is",
   eigenSchipper: "Schipper bij te boeken",
   inbegrepen: "Alles inbegrepen",
-  cta: "Plan een proefvaart",
+  cta: "Aanmelden voor 2027",
   winter:
     "En buiten het seizoen? Dan vaar je ook. Het Amsterdam Light Festival, een knusse winterdag met soep en thee, met onze fleecedekens aan boord.",
   vergelijking:
-    "Ter vergelijking: een eigen elektrische sloep kost al snel 15.200 euro per jaar aan afschrijving, liggeld en winterstalling. Onderhoud en verzekering komen daar nog bij. Indicatief.",
+    "Ter vergelijking, indicatief: een eigen elektrische sloep kost al snel 15.200 euro per jaar aan afschrijving, liggeld en winterstalling. Onderhoud en verzekering komen daar nog bij.",
 };

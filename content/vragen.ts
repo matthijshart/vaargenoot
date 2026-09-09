@@ -6,7 +6,7 @@
 export const vragen = {
   label: "Vragen",
   kop: "Veelgestelde vragen",
-  intro: "Wij leveren een dienst, geen boot. Jij vaart, wij regelen de rest. Andere vraag? Je krijgt antwoord van een mens.",
+  intro: "Jij vaart, wij regelen de rest. Staat je vraag er niet bij? Laat je gegevens achter, dan nemen we contact met je op.",
   lijst: [
     {
       vraag: "Word ik echt deeleigenaar?",
@@ -26,7 +26,7 @@ export const vragen = {
     {
       vraag: "Heb ik een vaarbewijs nodig?",
       antwoord:
-        "Nee. Onder 15 meter en 20 kilometer per uur is een vaarbewijs niet nodig. Bij je proefvaart leggen we je uit hoe de sloep werkt. Daarna vaar je zelf.",
+        "Nee. Onder 15 meter en 20 kilometer per uur is een vaarbewijs niet nodig. Voor je eerste vaart leggen we je uit hoe de sloep werkt. Daarna vaar je zelf.",
     },
     {
       vraag: "Mag ik barbecueën en zwemmen?",
@@ -39,9 +39,9 @@ export const vragen = {
         "Je belt ons en wij regelen het. De verzekering is inbegrepen, je hoeft zelf niets uit te zoeken. Wat er precies geldt, staat in de overeenkomst.",
     },
     {
-      vraag: "Kan ik een schipper boeken?",
+      vraag: "Mag ik straks nog de grachten op?",
       antwoord:
-        "Ja. Wil je zelf een glas drinken, dan boek je een schipper bij je reservering. De schipper vaart, legt aan en laadt op. Jij hebt je handen vrij.",
+        "Ja. Sinds 1 april 2025 is het centrum uitstootvrij voor pleziervaart. Wie nog op benzine of diesel vaart, mag dat met een BHG-vignet van vóór die datum tot 1 januari 2030, met een doorvaartvignet tot uiterlijk 1 januari 2028. Vanaf 2030 geldt uitstootvrij voor de hele stad. Onze sloepen zijn elektrisch, dus jij vaart overal.",
     },
     {
       vraag: "Kan ik opzeggen?",

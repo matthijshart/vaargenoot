@@ -14,8 +14,8 @@ const aanBoord = "Koelkast, tafel, ligdek, kussens, bimini, geluid";
 
 export const sloepen = {
   label: "De sloepen",
-  kop: "Twee sloepen, allebei elektrisch en stil.",
-  intro: "Beperkt aantal aandelen. Beschikbaar vanaf voorjaar 2027.",
+  kop: "Zes nieuwe sloepen in 2027.",
+  intro: "Twee modellen, allebei elektrisch en stil. Vol is vol.",
   lijst: [
     {
       naam: "Amstel",

@@ -8,6 +8,15 @@ export function Footer() {
         <div>
           <p className="font-kop text-[22px] font-light text-nacht">{site.naam}</p>
           <p className="text-[15px] text-zacht">{site.plaats}</p>
+          {site.email && (
+            <a
+              href={`mailto:${site.email}`}
+              className="mt-1 block text-[15px] text-gracht underline decoration-lucht underline-offset-4 hover:text-nacht"
+            >
+              {site.email}
+            </a>
+          )}
+          {site.kvk && <p className="mt-1 text-[13px] text-zacht">KvK {site.kvk}</p>}
         </div>
         <p className="max-w-[42ch] text-[13px] leading-relaxed text-zacht">
           {site.disclaimer}

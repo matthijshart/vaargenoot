@@ -21,11 +21,11 @@ export default function Home() {
         <Hero />
         <Inzicht />
         <Ervaring />
+        <Sloepen />
+        <Aandeel />
         <Bedrijven />
         <ZoWerktHet />
         <SloepLagen />
-        <Sloepen />
-        <Aandeel />
         <Schipper />
         <Inbegrepen />
         <Vragen />

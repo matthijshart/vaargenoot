@@ -2,21 +2,22 @@
 
 Gedeeld eigendom van elektrische sloepen in de Amsterdamse grachten. Leden
 (vaargenoten) betalen een vast maandbedrag voor een aandeel in een specifieke
-sloep, alles inbegrepen. De site heeft één doel: aanmelden voor een
-proefvaart. Gevoel: gemak, rustige luxe, alles glijdt.
+sloep, alles inbegrepen. Zes nieuwe sloepen in vaarseizoen 2027, vol is vol.
+De site heeft één doel: aanmelden voor 2027, of voor meer informatie. Eén
+knoptekst overal: `site.cta`. Gevoel: gemak, rustige luxe, alles glijdt.
 
 ## Stack
 
 - Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Framer Motion, Lenis
 - Alle beelden via `next/image` met statische import en `placeholder="blur"`
 - Content in `/content/*.ts`, geen CMS
-- Aanmeldformulier als Server Action in `app/actions.ts` (logt nu naar de console)
+- Aanmeldformulier als Server Action in `app/actions.ts`: logt altijd, mailt via Resend als `RESEND_API_KEY` en `AANMELD_NAAR` gezet zijn (zie `.env.example`)
 - Deploy op Vercel
 
 ## Structuur
 
 - `/app` layout, page, actions, globals.css
-- `/components` secties (Hero, Inzicht, Ervaring, Bedrijven, ZoWerktHet, SloepLagen, Sloepen, Aandeel, Schipper, Inbegrepen, Vragen, Aanmelden, Nav, Footer)
+- `/components` secties in paginavolgorde: Hero, Inzicht, Ervaring, Sloepen, Aandeel, Bedrijven, ZoWerktHet, SloepLagen, Schipper, Inbegrepen, Vragen, Aanmelden; plus Nav, Footer
 - `/components/ui` primitieven (Knop, Foto, Sectie, SectieKop, Container, AnkerLink, Vinkje)
 - `/content` alle teksten, prijzen, aannames en fotoverwijzingen
 - `/lib` motion-varianten, validatie, hulpfuncties

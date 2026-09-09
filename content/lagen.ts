@@ -22,7 +22,7 @@ export type Laag = {
 export const lagen = {
   label: "De sloep",
   kop: "Zo is de Amstel opgebouwd.",
-  intro: "Scroll en zie laag voor laag wat er aan boord is.",
+  intro: "Wat er aan boord is, laag voor laag.",
   slot: "Alles zit erop en eraan. Jij stapt aan boord.",
   lijst: [
     {

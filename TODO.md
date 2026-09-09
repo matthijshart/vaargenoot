@@ -126,11 +126,23 @@ Sectie "Voor bedrijven" op de voorpagina, met keuze "Een aandeel voor mijn
 bedrijf" in het formulier. Nog te bevestigen: geldt dezelfde prijstabel, en
 is er een zakelijk aanbod met schipper standaard erbij.
 
-## Formulier
+## Formulier en livegang
 
-De Server Action in `app/actions.ts` logt nu naar de console. Nog te doen:
-versturen naar Resend (mail) of Airtable (lijst), en een privacyregel bij het
-formulier.
+De Server Action in `app/actions.ts` logt elke aanmelding en mailt via
+Resend zodra `RESEND_API_KEY` en `AANMELD_NAAR` in Vercel staan (Settings,
+Environment Variables). Zonder eigen domein mailt Resend alleen naar het
+adres van je eigen Resend-account, vanaf onboarding@resend.dev. Met een
+geverifieerd domein zet je `AANMELD_VAN`. Zie `.env.example`.
+
+Nog te bevestigen voor de livegang:
+- "Aanmelden is vrijblijvend" onder de knop.
+- "Je hoort persoonlijk van ons, per e-mail": binnen welke termijn?
+- E-mailadres en KvK-nummer voor de footer (`content/site.ts`, velden
+  `email` en `kvk`; de footer toont ze zodra ze ingevuld zijn).
+- Zes nieuwe sloepen in twee modellen (Amstel en Prinsen): klopt dat?
+- "Reserveer in de app": is er een app bij de start, of wordt het een
+  ander kanaal?
+- "De meeste sloepen liggen bijna het hele jaar stil": bron of afzwakken.
 
 ## Techniek
 

@@ -36,7 +36,8 @@ export function Nav() {
   useMotionValueEvent(scrollY, "change", (y) => {
     const vorige = scrollY.getPrevious() ?? 0;
     setGescrold(y > 8);
-    if (y < 80) {
+    // Op mobiel blijft de nav altijd staan: de knop is daar de vaste weg naar het formulier.
+    if (y < 80 || window.innerWidth < 768) {
       setVerborgen(false);
       return;
     }
@@ -83,8 +84,8 @@ export function Nav() {
 
           <div className="flex items-center gap-2">
             {/* Vaste breedte: geen verschuiving als het lettertype wisselt. */}
-          <KnopLink href="#aanmelden" className="h-10 min-w-[178px] px-5 text-[14px]">
-              {site.ctaKort}
+          <KnopLink href="#aanmelden" className="h-10 min-w-[200px] px-5 text-[14px]">
+              {site.cta}
             </KnopLink>
             <button
               type="button"

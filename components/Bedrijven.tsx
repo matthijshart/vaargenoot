@@ -22,7 +22,7 @@ export function Bedrijven() {
             </ul>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
               <KnopLink href="#aanmelden">{bedrijven.cta}</KnopLink>
-              <p className="hidden max-w-[36ch] text-[14px] leading-relaxed text-zacht sm:block">{bedrijven.ctaTekst}</p>
+              <p className="max-w-[36ch] text-[14px] leading-relaxed text-zacht">{bedrijven.ctaTekst}</p>
             </div>
           </div>
           <div className="self-center lg:col-span-5">

@@ -7,26 +7,14 @@ import { foto } from "./foto";
 export const bedrijven = {
   label: "Voor bedrijven",
   kop: "Een sloep voor je bedrijf. Altijd klaar.",
-  intro: "Je bedrijf wordt deeleigenaar van een sloep. Altijd een luxe sloep klaar, zonder aanschaf en zonder gedoe.",
+  intro: "Je bedrijf wordt deeleigenaar van een sloep. Zonder aanschaf, zonder beheer, alles inbegrepen.",
   punten: [
-    {
-      kop: "Voor je mensen",
-      tekst: "Een vrijdagmiddag op het water. Daar blijven mensen voor.",
-    },
-    {
-      kop: "Je eigen uitjes",
-      tekst: "Teamdag, jubileum, zomerborrel. De sloep ligt klaar.",
-    },
-    {
-      kop: "Gasten uit het buitenland",
-      tekst: "Amsterdam vanaf het water. Dat vergeten ze niet.",
-    },
-    {
-      kop: "Met schipper",
-      tekst: "Jij bent gastheer, wij varen.",
-    },
+    { kop: "Voor je mensen", tekst: "Een vrijdagmiddag op het water. Daar blijven mensen voor." },
+    { kop: "Je eigen uitjes", tekst: "Teamdag, jubileum, zomerborrel. De sloep ligt klaar." },
+    { kop: "Gasten uit het buitenland", tekst: "Amsterdam vanaf het water. Dat vergeten ze niet." },
+    { kop: "Met schipper", tekst: "Jij bent gastheer, wij varen." },
   ],
-  cta: "Plan een proefvaart",
-  ctaTekst: "Wil je dit voor je bedrijf? Kies in het formulier voor een aandeel op naam van je bedrijf.",
+  cta: "Aanmelden voor je bedrijf",
+  ctaTekst: "Kies in het formulier voor een aandeel voor je bedrijf.",
   beeld: foto.detailTafel,
 };

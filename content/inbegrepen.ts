@@ -10,6 +10,5 @@ export const inbegrepen = {
     { kop: "Schoonmaak", tekst: "Na elke vaart weer schoon." },
     { kop: "Winterklaar", tekst: "Wij zorgen voor de sloep, ook buiten het seizoen." },
     { kop: "Vignet", tekst: "Geregeld en betaald." },
-    { kop: "Schipper", tekst: "Als je wilt, boek je er een bij." },
   ],
 };

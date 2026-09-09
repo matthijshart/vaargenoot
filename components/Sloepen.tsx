@@ -6,7 +6,7 @@ import { SectieKop } from "./ui/SectieKop";
 
 export function Sloepen() {
   return (
-    <Sectie id="sloepen-specificaties">
+    <Sectie id="sloepen-specificaties" className="bg-wit">
       <Container>
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectieKop label={sloepen.label} kop={sloepen.kop} />

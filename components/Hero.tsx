@@ -27,6 +27,9 @@ export function Hero() {
     <section className="pt-28 pb-8 sm:pt-36 sm:pb-12">
       <Container>
         <div className="max-w-3xl">
+          <p className="opkomen mb-5 text-[14px] font-medium text-gracht sm:mb-6 sm:text-[15px]">
+            {hero.boven}
+          </p>
           <h1
             className="opkomen text-[44px] leading-[1.02] text-nacht sm:text-[64px] lg:text-[80px]"
           >
@@ -43,7 +46,7 @@ export function Hero() {
             style={{ "--vertraging": "0.16s" } as React.CSSProperties}
           >
             <KnopLink href="#aanmelden">{hero.primair}</KnopLink>
-            <TekstLink href="#sloepen">{hero.secundair}</TekstLink>
+            <TekstLink href="#sloepen-specificaties">{hero.secundair}</TekstLink>
           </div>
         </div>
       </Container>
