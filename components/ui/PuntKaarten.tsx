@@ -22,8 +22,8 @@ export function PuntKaarten({
   return (
     <ul
       className={cn(
-        "-mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
-        "sm:mx-0 sm:grid sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0",
+        "-mx-5 flex w-[calc(100%+2.5rem)] min-w-0 snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        "sm:mx-0 sm:grid sm:w-full sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0",
         kolommen === 3 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2",
         className,
       )}

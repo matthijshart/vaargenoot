@@ -37,6 +37,8 @@
     min-height: 100%;
     font-weight: 400;
     line-height: 1.6;
+    /* Vangnet: niets mag de pagina breder maken dan het scherm. */
+    overflow-x: clip;
   }
 
   h1,
