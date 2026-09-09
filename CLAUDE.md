@@ -18,7 +18,7 @@ knoptekst overal: `site.cta`. Gevoel: gemak, rustige luxe, alles glijdt.
 
 - `/app` layout, page (voorpagina), actions, globals.css; onderliggende pagina's in `/app/prijzen`, `/app/bedrijven`, `/app/zo-werkt-het`, `/app/vragen`, elk via `components/Pagina.tsx` (nav, inhoud, aanmelden, footer)
 - `/components` voorpagina: Hero, Ervaring, Sloepen, PrijsTeaser en VerwijsTeasers (Teasers.tsx), Aanmelden. Onderliggend: Aandeel (/prijzen), Bedrijven (/bedrijven), ZoWerktHet en Verdelen (/zo-werkt-het), Vragen (/vragen). Bewaard maar nergens op een pagina: Inzicht, SloepLagen, Schipper, Inbegrepen, Weekstrook
-- `/components/ui` primitieven (Knop, Foto, Sectie, SectieKop, Container, AnkerLink, Vinkje, PuntKaarten: veegbare kaarten op mobiel, raster met hover op desktop)
+- `/components/ui` primitieven (Knop, Foto, Sectie, SectieKop, Container, AnkerLink, Vinkje, PuntKaarten: lijst met lijnen op mobiel, kaarten met hover vanaf sm)
 - `/content` alle teksten, prijzen, aannames en fotoverwijzingen
 - `/docs/reserveren.md` de opzet van het verdeelsysteem (punten, weekendgrens, ruilen)
 - `/lib` motion-varianten, validatie, hulpfuncties
