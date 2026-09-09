@@ -9,6 +9,7 @@ import { Inzicht } from "@/components/Inzicht";
 import { Schipper } from "@/components/Schipper";
 import { SloepLagen } from "@/components/SloepLagen";
 import { Sloepen } from "@/components/Sloepen";
+import { Verdelen } from "@/components/Verdelen";
 import { Vragen } from "@/components/Vragen";
 import { ZoWerktHet } from "@/components/ZoWerktHet";
 import { Nav } from "@/components/Nav";
@@ -25,6 +26,7 @@ export default function Home() {
         <Aandeel />
         <Bedrijven />
         <ZoWerktHet />
+        <Verdelen />
         <SloepLagen />
         <Schipper />
         <Inbegrepen />

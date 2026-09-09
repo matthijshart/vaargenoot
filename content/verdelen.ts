@@ -1,0 +1,106 @@
+/**
+ * Het verdeelsysteem, als voorbeeld in beeld. De kalender toont één week
+ * van een kwart-eigenaar. Namen en dagdelen zijn illustratief.
+ * De volledige opzet staat in docs/reserveren.md.
+ */
+export type Cel = { dag: number; dagdeel: number; wie: string };
+
+export const verdelen = {
+  label: "Eerlijk verdelen",
+  kop: "Zo verdeel je de sloep.",
+  intro: "Vaarpunten naar je aandeel, weekenden begrensd, ruilen kan altijd.",
+  slot: "Eerlijk hoef je zo niet te bevechten.",
+  sloep: "Amstel",
+  jij: "jij",
+  aandeel: "Jouw aandeel: een kwart",
+  punten: "vaarpunten",
+  weekend: "weekend",
+  van: "van",
+  dagen: ["ma", "di", "wo", "do", "vr", "za", "zo"],
+  dagdelen: ["ochtend", "middag", "avond"],
+  /** Boekingen van de andere sloepmaten, al bij de start. */
+  anderen: [
+    { dag: 6, dagdeel: 0, wie: "Anne" },
+    { dag: 4, dagdeel: 2, wie: "Tim" },
+    { dag: 2, dagdeel: 0, wie: "Bo" },
+  ] as Cel[],
+  stappen: [
+    {
+      kop: "Elke maand vaarpunten naar je aandeel",
+      tekst: "Een kwart krijgt 8 vaarpunten, een half 16. Elk vaarpunt geeft je het recht om te varen.",
+      melding: "8 vaarpunten ontvangen voor deze maand",
+      punten: 8,
+      weekend: 0,
+      jouw: [] as Cel[],
+      vrij: null as Cel | null,
+      ruil: false,
+    },
+    {
+      kop: "Doordeweeks kost 1 vaarpunt",
+      tekst: "Dinsdagmiddag geboekt. Je hebt er 7 over.",
+      melding: "Dinsdag middag geboekt, 1 vaarpunt",
+      punten: 7,
+      weekend: 0,
+      jouw: [{ dag: 1, dagdeel: 1, wie: "jij" }],
+      vrij: null,
+      ruil: false,
+    },
+    {
+      kop: "Weekend kost 2 vaarpunten",
+      tekst: "En je kunt er maximaal 2 tegelijk vooruit hebben staan. Zo blokkeert niemand de zomer.",
+      melding: "Zaterdag middag geboekt, 2 vaarpunten",
+      punten: 5,
+      weekend: 1,
+      jouw: [
+        { dag: 1, dagdeel: 1, wie: "jij" },
+        { dag: 5, dagdeel: 1, wie: "jij" },
+      ],
+      vrij: null,
+      ruil: false,
+    },
+    {
+      kop: "Vrij binnen 48 uur is gratis",
+      tekst: "Donderdagavond staat nog open. Je boekt hem voor 0 vaarpunten.",
+      melding: "Donderdag avond nog vrij, 0 vaarpunten",
+      punten: 5,
+      weekend: 1,
+      jouw: [
+        { dag: 1, dagdeel: 1, wie: "jij" },
+        { dag: 5, dagdeel: 1, wie: "jij" },
+        { dag: 3, dagdeel: 2, wie: "jij" },
+      ],
+      vrij: { dag: 3, dagdeel: 2, wie: "vrij" },
+      ruil: false,
+    },
+    {
+      kop: "Ruilen kan altijd",
+      tekst: "Anne vraagt jouw zaterdag. Jij neemt haar zondagochtend. Niemand wordt gedwongen.",
+      melding: "Geruild met Anne: zaterdag voor zondag",
+      punten: 5,
+      weekend: 1,
+      jouw: [
+        { dag: 1, dagdeel: 1, wie: "jij" },
+        { dag: 6, dagdeel: 0, wie: "jij" },
+        { dag: 3, dagdeel: 2, wie: "jij" },
+      ],
+      vrij: null,
+      ruil: true,
+    },
+    {
+      kop: "Alles zichtbaar",
+      tekst: "Iedereen ziet de kalender en zijn eigen teller. Eerlijk hoef je zo niet te bevechten.",
+      melding: "5 van 8 vaarpunten gebruikt, weekend 1 van 2",
+      punten: 5,
+      weekend: 1,
+      jouw: [
+        { dag: 1, dagdeel: 1, wie: "jij" },
+        { dag: 6, dagdeel: 0, wie: "jij" },
+        { dag: 3, dagdeel: 2, wie: "jij" },
+      ],
+      vrij: null,
+      ruil: true,
+    },
+  ],
+  maxWeekend: 2,
+  maxPunten: 8,
+};

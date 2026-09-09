@@ -130,6 +130,13 @@ sloepmaten per sloep (volgt uit het kleinste aandeel, een kwart).
 "Deeleigenaar" heeft juridische betekenis. Zorg dat de overeenkomst dat
 waarmaakt, of pas het woord aan als de structuur een gebruiksrecht wordt.
 
+## Verdeelsysteem
+
+De opzet staat in `docs/reserveren.md`, het voorbeeld op de site in
+`components/Verdelen.tsx` met de stappen in `content/verdelen.ts`. De
+namen (Anne, Tim, Bo) en de dagdelen zijn illustratief. Bevestig de
+getallen: 1, 2 en 3 vaarpunten, weekendgrens 2 en 4, 48 uur, overloop 2.
+
 ## Bedrijven
 
 Sectie "Voor bedrijven" op de voorpagina, met keuze "Een aandeel voor mijn
