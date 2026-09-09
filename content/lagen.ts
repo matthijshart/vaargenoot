@@ -21,14 +21,14 @@ export type Laag = {
  */
 export const lagen = {
   label: "De sloep",
-  kop: "Zo is de Amstel opgebouwd.",
+  kop: "Zo is de Prinsen opgebouwd.",
   intro: "Wat er aan boord is, laag voor laag.",
   slot: "Alles zit erop en eraan. Jij stapt aan boord.",
   lijst: [
     {
       id: "romp",
       kop: "Romp",
-      tekst: "7,5 meter, elektrisch en stil.",
+      tekst: "10 meter, elektrisch en stil.",
       beeld: romp,
       alt: "Romp van de sloep, van bovenaf",
     },

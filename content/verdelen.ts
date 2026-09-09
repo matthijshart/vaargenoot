@@ -20,7 +20,7 @@ export const verdelen = {
   dagdelen: ["ochtend", "middag", "avond"],
   /** Boekingen van de andere sloepmaten, al bij de start. */
   anderen: [
-    { dag: 6, dagdeel: 0, wie: "Anne" },
+    { dag: 6, dagdeel: 0, wie: "Eva" },
     { dag: 4, dagdeel: 2, wie: "Tim" },
     { dag: 2, dagdeel: 0, wie: "Bo" },
   ] as Cel[],
@@ -29,6 +29,8 @@ export const verdelen = {
       kop: "Elke maand vaarpunten naar je aandeel",
       tekst: "Een kwart krijgt 8 vaarpunten, een half 16. Elk vaarpunt geeft je het recht om te varen.",
       melding: "8 vaarpunten ontvangen voor deze maand",
+      focus: [] as Cel[],
+      focusTeller: "punten" as "punten" | "weekend" | null,
       punten: 8,
       weekend: 0,
       jouw: [] as Cel[],
@@ -39,6 +41,8 @@ export const verdelen = {
       kop: "Doordeweeks kost 1 vaarpunt",
       tekst: "Dinsdagmiddag geboekt. Je hebt er 7 over.",
       melding: "Dinsdag middag geboekt, 1 vaarpunt",
+      focus: [{ dag: 1, dagdeel: 1, wie: "jij" }] as Cel[],
+      focusTeller: "punten" as "punten" | "weekend" | null,
       punten: 7,
       weekend: 0,
       jouw: [{ dag: 1, dagdeel: 1, wie: "jij" }],
@@ -49,6 +53,8 @@ export const verdelen = {
       kop: "Weekend kost 2 vaarpunten",
       tekst: "En je kunt er maximaal 2 tegelijk vooruit hebben staan. Zo blokkeert niemand de zomer.",
       melding: "Zaterdag middag geboekt, 2 vaarpunten",
+      focus: [{ dag: 5, dagdeel: 1, wie: "jij" }] as Cel[],
+      focusTeller: "weekend" as "punten" | "weekend" | null,
       punten: 5,
       weekend: 1,
       jouw: [
@@ -62,6 +68,8 @@ export const verdelen = {
       kop: "Vrij binnen 48 uur is gratis",
       tekst: "Donderdagavond staat nog open. Je boekt hem voor 0 vaarpunten.",
       melding: "Donderdag avond nog vrij, 0 vaarpunten",
+      focus: [{ dag: 3, dagdeel: 2, wie: "jij" }] as Cel[],
+      focusTeller: null as "punten" | "weekend" | null,
       punten: 5,
       weekend: 1,
       jouw: [
@@ -74,8 +82,13 @@ export const verdelen = {
     },
     {
       kop: "Ruilen kan altijd",
-      tekst: "Anne vraagt jouw zaterdag. Jij neemt haar zondagochtend. Niemand wordt gedwongen.",
-      melding: "Geruild met Anne: zaterdag voor zondag",
+      tekst: "Eva vraagt jouw zaterdag. Jij neemt haar zondagochtend. Niemand wordt gedwongen.",
+      melding: "Geruild met Eva: zaterdag voor zondag",
+      focus: [
+        { dag: 5, dagdeel: 1, wie: "Eva" },
+        { dag: 6, dagdeel: 0, wie: "jij" },
+      ] as Cel[],
+      focusTeller: null as "punten" | "weekend" | null,
       punten: 5,
       weekend: 1,
       jouw: [
@@ -90,6 +103,8 @@ export const verdelen = {
       kop: "Alles zichtbaar",
       tekst: "Iedereen ziet de kalender en zijn eigen teller. Eerlijk hoef je zo niet te bevechten.",
       melding: "5 van 8 vaarpunten gebruikt, weekend 1 van 2",
+      focus: [] as Cel[],
+      focusTeller: "punten" as "punten" | "weekend" | null,
       punten: 5,
       weekend: 1,
       jouw: [
@@ -101,6 +116,8 @@ export const verdelen = {
       ruil: true,
     },
   ],
+  stap: "Stap",
+  scrollHint: "Scroll om verder te gaan",
   maxWeekend: 2,
   maxPunten: 8,
 };

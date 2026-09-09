@@ -10,7 +10,8 @@ export type Sloep = {
  * Alleen specificaties die vaststaan. Vaartijd op een lading en ligplaats
  * komen erbij zodra ze bekend zijn, zie TODO.md.
  */
-const aanBoord = "Koelkast, tafel, ligdek, kussens, bimini, geluid";
+const aanBoordAmstel = "Koelkast, Green Egg, tafel, ligdek, kussens, zwemtrap, geluid";
+const aanBoordPrinsen = "Koelkast, Green Egg, tafel, ligdek, kussens, bimini, zwemtrap, geluid";
 
 export const sloepen = {
   label: "De sloepen",
@@ -21,20 +22,20 @@ export const sloepen = {
       naam: "Amstel",
       beeld: foto.sloepAmstel,
       specs: [
-        { label: "Lengte", waarde: "7,5 m" },
-        { label: "Personen", waarde: "tot 45" },
+        { label: "Lengte", waarde: "10 m" },
+        { label: "Personen", waarde: "tot 30" },
         { label: "Aandrijving", waarde: "Elektrisch" },
-        { label: "Aan boord", waarde: aanBoord },
+        { label: "Aan boord", waarde: aanBoordAmstel },
       ],
     },
     {
       naam: "Prinsen",
       beeld: foto.sloepPrinsen,
       specs: [
-        { label: "Lengte", waarde: "8,5 m" },
-        { label: "Personen", waarde: "tot 30" },
+        { label: "Lengte", waarde: "10 m" },
+        { label: "Personen", waarde: "tot 45" },
         { label: "Aandrijving", waarde: "Elektrisch" },
-        { label: "Aan boord", waarde: aanBoord },
+        { label: "Aan boord", waarde: aanBoordPrinsen },
       ],
     },
   ] satisfies Sloep[],

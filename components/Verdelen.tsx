@@ -11,7 +11,8 @@ const N = verdelen.stappen.length;
 
 /**
  * Vastgepinde sectie van 350vh. Bij het scrollen loopt het voorbeeld in
- * zes stappen door: punten, doordeweeks, weekend, vrij, ruilen, teller.
+ * zes stappen door. Een voortgangsrail toont waar je bent, en in de
+ * kalender licht precies op wat in die stap verandert.
  * Bij prefers-reduced-motion staat de laatste stap stil, met alle stappen.
  */
 export function Verdelen() {
@@ -21,11 +22,9 @@ export function Verdelen() {
   const { scrollYProgress } = useScroll({ target: kader, offset: ["start start", "end end"] });
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const s = Math.min(N - 1, Math.max(0, Math.floor(v * (N + 0.4))));
+    const s = Math.min(N - 1, Math.max(0, Math.floor(v * N)));
     if (s !== stap) setStap(s);
   });
-
-  const actief = reduced ? N - 1 : stap;
 
   if (reduced) {
     return (
@@ -46,14 +45,15 @@ export function Verdelen() {
   return (
     <section ref={kader} id="verdelen" className="relative scroll-mt-0 bg-schuim" style={{ height: "350vh" }}>
       <div className="sticky top-0 h-svh overflow-hidden">
-        <Container className="flex h-full flex-col pt-20 pb-8 sm:pt-24 sm:pb-12">
+        <Container className="flex h-full flex-col pt-20 pb-6 sm:pt-24 sm:pb-10">
           <Kop />
-          <div className="grid min-h-0 flex-1 grid-rows-[1fr_auto] items-center gap-5 lg:grid-cols-12 lg:grid-rows-1 lg:gap-16">
-            <div className="flex min-h-0 items-center justify-center lg:col-span-6">
-              <Kalender stap={actief} />
+          <div className="grid min-h-0 flex-1 content-center gap-6 lg:grid-cols-12 lg:items-center lg:gap-16">
+            <div className="flex min-h-0 justify-center lg:col-span-6">
+              <Kalender stap={stap} />
             </div>
-            <Stappen actief={actief} className="lg:col-span-6" />
+            <Stappen actief={stap} className="lg:col-span-6" />
           </div>
+          <ScrollHint zichtbaar={stap === 0} />
         </Container>
       </div>
     </section>
@@ -70,15 +70,32 @@ function Kop() {
   );
 }
 
+function ScrollHint({ zichtbaar }: { zichtbaar: boolean }) {
+  return (
+    <m.div
+      aria-hidden
+      initial={false}
+      animate={{ opacity: zichtbaar ? 1 : 0, y: zichtbaar ? 0 : 6 }}
+      transition={{ duration: 0.4, ease: EASE }}
+      className="pointer-events-none absolute inset-x-0 bottom-6 hidden flex-col items-center gap-2 lg:flex"
+    >
+      <span className="text-[12px] font-medium text-zacht">{verdelen.scrollHint}</span>
+      <span className="relative h-8 w-px overflow-hidden bg-nevel">
+        <span className="scrollhint absolute left-0 top-0 h-3 w-px bg-nacht" />
+      </span>
+    </m.div>
+  );
+}
+
 function vind(lijst: Cel[], dag: number, dagdeel: number) {
   return lijst.find((c) => c.dag === dag && c.dagdeel === dagdeel);
 }
 
 function Kalender({ stap }: { stap: number }) {
   const s = verdelen.stappen[stap];
-  // Bij de ruil verhuist Anne naar zaterdagmiddag.
+  // Bij de ruil verhuist Eva naar zaterdagmiddag.
   const anderen = s.ruil
-    ? verdelen.anderen.map((c) => (c.wie === "Anne" ? { ...c, dag: 5, dagdeel: 1 } : c))
+    ? verdelen.anderen.map((c) => (c.wie === "Eva" ? { ...c, dag: 5, dagdeel: 1 } : c))
     : verdelen.anderen;
 
   return (
@@ -89,8 +106,8 @@ function Kalender({ stap }: { stap: number }) {
           <p className="text-[12px] text-zacht sm:text-[13px]">{verdelen.aandeel}</p>
         </div>
         <div className="flex items-baseline gap-4 text-right">
-          <Teller waarde={s.punten} max={verdelen.maxPunten} label={verdelen.punten} groot />
-          <Teller waarde={s.weekend} max={verdelen.maxWeekend} label={verdelen.weekend} />
+          <Teller waarde={s.punten} max={verdelen.maxPunten} label={verdelen.punten} groot actief={s.focusTeller === "punten"} />
+          <Teller waarde={s.weekend} max={verdelen.maxWeekend} label={verdelen.weekend} actief={s.focusTeller === "weekend"} />
         </div>
       </div>
 
@@ -108,14 +125,17 @@ function Kalender({ stap }: { stap: number }) {
               const mij = vind(s.jouw, k, r);
               const ander = vind(anderen, k, r);
               const vrij = s.vrij && s.vrij.dag === k && s.vrij.dagdeel === r;
+              const focus = !!vind(s.focus, k, r);
               const weekend = k >= 5;
               const inhoud = mij ? verdelen.jij : ander ? ander.wie : "";
               const sleutel = `${inhoud}-${vrij ? "vrij" : ""}`;
               return (
-                <div
+                <m.div
                   key={d + dd}
+                  animate={focus ? { scale: [1, 1.08, 1] } : { scale: 1 }}
+                  transition={{ duration: 0.6, ease: EASE }}
                   className={cn(
-                    "relative flex h-9 items-center justify-center overflow-hidden rounded-md border text-[11px] sm:h-10 sm:text-[12px]",
+                    "relative flex h-9 items-center justify-center overflow-hidden rounded-md border text-[11px] transition-shadow duration-300 sm:h-10 sm:text-[12px]",
                     mij
                       ? "border-lucht bg-lucht font-semibold text-nacht"
                       : ander
@@ -123,6 +143,7 @@ function Kalender({ stap }: { stap: number }) {
                         : weekend
                           ? "border-nevel bg-schuim"
                           : "border-nevel bg-wit",
+                    focus && "shadow-[0_0_0_2px_var(--color-messing)]",
                   )}
                 >
                   <AnimatePresence initial={false} mode="popLayout">
@@ -142,7 +163,7 @@ function Kalender({ stap }: { stap: number }) {
                       0
                     </span>
                   )}
-                </div>
+                </m.div>
               );
             })}
           </div>
@@ -168,10 +189,28 @@ function Kalender({ stap }: { stap: number }) {
   );
 }
 
-function Teller({ waarde, max, label, groot = false }: { waarde: number; max: number; label: string; groot?: boolean }) {
+function Teller({
+  waarde,
+  max,
+  label,
+  groot = false,
+  actief = false,
+}: {
+  waarde: number;
+  max: number;
+  label: string;
+  groot?: boolean;
+  actief?: boolean;
+}) {
   return (
     <div>
-      <p className={cn("font-kop font-light leading-none text-nacht tabular-nums", groot ? "text-[30px] sm:text-[34px]" : "text-[22px] sm:text-[24px]")}>
+      <p
+        className={cn(
+          "font-kop font-light leading-none tabular-nums transition-colors duration-300",
+          groot ? "text-[30px] sm:text-[34px]" : "text-[22px] sm:text-[24px]",
+          actief ? "text-messing" : "text-nacht",
+        )}
+      >
         <AnimatePresence initial={false} mode="popLayout">
           <m.span
             key={waarde}
@@ -184,7 +223,10 @@ function Teller({ waarde, max, label, groot = false }: { waarde: number; max: nu
             {waarde}
           </m.span>
         </AnimatePresence>
-        <span className="text-[13px] text-zacht"> {verdelen.van} {max}</span>
+        <span className="text-[13px] text-zacht">
+          {" "}
+          {verdelen.van} {max}
+        </span>
       </p>
       <p className="text-[11px] text-zacht sm:text-[12px]">{label}</p>
     </div>
@@ -193,48 +235,88 @@ function Teller({ waarde, max, label, groot = false }: { waarde: number; max: nu
 
 function Stappen({ actief, className }: { actief: number; className?: string }) {
   const s = verdelen.stappen[actief];
+  const pct = (actief / (N - 1)) * 100;
+
   return (
     <div className={cn("min-w-0", className)}>
-      {/* Mobiel: alleen de actieve stap. */}
+      {/* Mobiel: voortgangsbalk en de actieve stap. */}
       <div className="lg:hidden">
-        <AnimatePresence initial={false} mode="wait">
-          <m.div
-            key={actief}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.25, ease: EASE }}
-          >
-            <p className="text-[12px] text-zacht tabular-nums">
-              {actief + 1} {verdelen.van} {N}
-            </p>
-            <p className="mt-1 font-kop text-[22px] font-light leading-tight text-nacht">{s.kop}</p>
-            <p className="mt-1 text-[14px] leading-relaxed text-zacht">{s.tekst}</p>
-          </m.div>
-        </AnimatePresence>
+        <div className="flex items-center gap-3">
+          <ol className="flex flex-1 gap-1" aria-label={`${verdelen.stap} ${actief + 1} ${verdelen.van} ${N}`}>
+            {verdelen.stappen.map((st, i) => (
+              <li
+                key={st.kop}
+                className={cn(
+                  "h-1 flex-1 rounded-full transition-colors duration-300",
+                  i <= actief ? "bg-nacht" : "bg-nevel",
+                )}
+              />
+            ))}
+          </ol>
+          <span className="shrink-0 text-[12px] text-zacht tabular-nums">
+            {verdelen.stap} {actief + 1} {verdelen.van} {N}
+          </span>
+        </div>
+        <div className="mt-4 min-h-[5.5rem]">
+          <AnimatePresence initial={false} mode="wait">
+            <m.div
+              key={actief}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25, ease: EASE }}
+            >
+              <p className="font-kop text-[22px] font-light leading-tight text-nacht">{s.kop}</p>
+              <p className="mt-1 text-[14px] leading-relaxed text-zacht">{s.tekst}</p>
+            </m.div>
+          </AnimatePresence>
+        </div>
       </div>
 
-      {/* Desktop: alle stappen, de actieve licht op. */}
-      <ol className="hidden divide-y divide-nevel border-y border-nevel lg:block">
+      {/* Desktop: rail met stapnummers, de actieve stap opent. */}
+      <ol className="relative hidden pl-12 lg:block">
+        <span aria-hidden className="absolute left-[15px] top-4 bottom-4 w-px bg-nevel" />
+        <m.span
+          aria-hidden
+          className="absolute left-[15px] top-4 w-px origin-top bg-nacht"
+          initial={false}
+          animate={{ height: `calc((100% - 2rem) * ${pct / 100})` }}
+          transition={{ duration: 0.5, ease: EASE }}
+        />
         {verdelen.stappen.map((st, i) => {
           const aan = i === actief;
           const geweest = i < actief;
           return (
-            <li key={st.kop} className="py-3.5 transition-opacity duration-300" style={{ opacity: aan ? 1 : geweest ? 0.6 : 0.35 }}>
-              <div className="flex items-baseline gap-4">
-                <span className="w-5 shrink-0 font-kop text-[18px] font-light text-messing tabular-nums">{i + 1}</span>
-                <div>
-                  <p className="font-kop text-[22px] font-light leading-tight text-nacht">{st.kop}</p>
-                  <m.p
-                    initial={false}
-                    animate={{ height: aan ? "auto" : 0, opacity: aan ? 1 : 0 }}
-                    transition={{ duration: 0.3, ease: EASE }}
-                    className="overflow-hidden text-[15px] leading-relaxed text-zacht"
-                  >
-                    <span className="block pt-1">{st.tekst}</span>
-                  </m.p>
-                </div>
-              </div>
+            <li key={st.kop} className="relative py-3">
+              <span
+                aria-hidden
+                className={cn(
+                  "absolute -left-12 top-[13px] flex h-8 w-8 items-center justify-center rounded-full border text-[13px] font-medium tabular-nums transition-[background-color,border-color,color,transform] duration-300 ease-zacht",
+                  aan
+                    ? "scale-110 border-nacht bg-nacht text-wit"
+                    : geweest
+                      ? "border-nacht bg-schuim text-nacht"
+                      : "border-nevel bg-schuim text-zacht",
+                )}
+              >
+                {i + 1}
+              </span>
+              <p
+                className={cn(
+                  "font-kop text-[22px] font-light leading-tight transition-colors duration-300",
+                  aan ? "text-nacht" : geweest ? "text-nacht/70" : "text-zacht/70",
+                )}
+              >
+                {st.kop}
+              </p>
+              <m.p
+                initial={false}
+                animate={{ height: aan ? "auto" : 0, opacity: aan ? 1 : 0 }}
+                transition={{ duration: 0.3, ease: EASE }}
+                className="overflow-hidden text-[15px] leading-relaxed text-zacht"
+              >
+                <span className="block pt-1">{st.tekst}</span>
+              </m.p>
             </li>
           );
         })}

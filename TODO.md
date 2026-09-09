@@ -80,15 +80,13 @@ Transparante achtergrond, elk beeld alleen zijn eigen onderdeel. Twee manieren:
 Zet de bestanden in `public/foto/lagen/` en pas de imports in
 `content/lagen.ts` aan.
 
-## Personenaantallen
+## Sloepen
 
-Amstel tot 45 personen, Prinsen tot 30 (opgegeven). De lengtes uit de
-oorspronkelijke brief staan er nog: Amstel 7,5 m, Prinsen 8,5 m. Die twee
-passen niet bij elkaar, en de kleinere sloep heeft nu het grootste aantal.
-Bevestig de lengtes en welk model welk aantal heeft. Let ook op: boven de
-twaalf opvarenden gelden in Nederland andere regels dan voor pleziervaart,
-en de FAQ zegt dat een vaarbewijs onder 15 meter en 20 km/u niet nodig is.
-Check of dat zo blijft.
+Beide sloepen 10 meter. Amstel tot 30 personen, zonder bimini. Prinsen tot
+45 personen, met bimini. Aan boord van beide: koelkast, Green Egg, tafel,
+ligdek, kussens, zwemtrap, geluid. Let op: boven de twaalf opvarenden gelden
+in Nederland andere regels dan voor pleziervaart, en de FAQ zegt dat een
+vaarbewijs onder 15 meter en 20 km/u niet nodig is. Check of dat zo blijft.
 
 ## Inhoud die nog bevestigd moet worden
 
@@ -148,7 +146,7 @@ waarmaakt, of pas het woord aan als de structuur een gebruiksrecht wordt.
 
 De opzet staat in `docs/reserveren.md`, het voorbeeld op de site in
 `components/Verdelen.tsx` met de stappen in `content/verdelen.ts`. De
-namen (Anne, Tim, Bo) en de dagdelen zijn illustratief. Bevestig de
+namen (Eva, Tim, Bo) en de dagdelen zijn illustratief. Bevestig de
 getallen: 1, 2 en 3 vaarpunten, weekendgrens 2 en 4, 48 uur, overloop 2.
 
 ## Bedrijven

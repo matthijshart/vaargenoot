@@ -145,3 +145,21 @@ html.lenis body {
   animation: foto-opkomen 1.4s var(--ease-zacht) both;
   animation-delay: 0.16s;
 }
+
+/* Scrollhint in de verdeelsectie: een streepje dat naar beneden loopt. */
+@keyframes scrollhint {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(260%);
+    opacity: 0;
+  }
+}
+.scrollhint {
+  animation: scrollhint 1.6s var(--ease-zacht) infinite;
+}
