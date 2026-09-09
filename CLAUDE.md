@@ -16,7 +16,7 @@ proefvaart. Gevoel: gemak, rustige luxe, alles glijdt.
 ## Structuur
 
 - `/app` layout, page, actions, globals.css
-- `/components` secties (Hero, Inzicht, Ervaring, ZoWerktHet, SloepLagen, Sloepen, Aandeel, Rekenblok, Schipper, Bedrijven, Inbegrepen, Vragen, Aanmelden, Nav, Footer)
+- `/components` secties (Hero, Inzicht, Ervaring, Bedrijven, ZoWerktHet, SloepLagen, Sloepen, Aandeel, Rekenblok, Schipper, Inbegrepen, Vragen, Aanmelden, Nav, Footer)
 - `/components/ui` primitieven (Knop, Foto, Sectie, SectieKop, Container, AnkerLink, Vinkje)
 - `/content` alle teksten, prijzen, aannames en fotoverwijzingen
 - `/lib` motion-varianten, validatie, hulpfuncties

@@ -6,7 +6,7 @@ import { Weekstrook } from "./Weekstrook";
 
 export function ZoWerktHet() {
   return (
-    <Sectie id="zo-werkt-het">
+    <Sectie id="zo-werkt-het" className="bg-wit">
       <Container>
         <SectieKop label={stappen.label} kop={stappen.kop} />
 

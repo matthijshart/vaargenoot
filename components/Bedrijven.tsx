@@ -7,7 +7,7 @@ import { SectieKop } from "./ui/SectieKop";
 
 export function Bedrijven() {
   return (
-    <Sectie id="bedrijven" className="bg-wit">
+    <Sectie id="bedrijven">
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">

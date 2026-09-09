@@ -21,12 +21,12 @@ export default function Home() {
         <Hero />
         <Inzicht />
         <Ervaring />
+        <Bedrijven />
         <ZoWerktHet />
         <SloepLagen />
         <Sloepen />
         <Aandeel />
         <Schipper />
-        <Bedrijven />
         <Inbegrepen />
         <Vragen />
         <Aanmelden />
