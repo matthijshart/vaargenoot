@@ -50,7 +50,7 @@ export function Nav() {
     <>
       <m.header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-300",
+          "fixed inset-x-0 top-0 z-50 overflow-x-clip transition-[background-color,box-shadow,backdrop-filter] duration-300",
           gescrold || open
             ? "bg-schuim/80 shadow-[0_1px_0_0_var(--color-nevel)] backdrop-blur-md"
             : "bg-transparent",
@@ -84,9 +84,10 @@ export function Nav() {
 
           <div className="flex items-center gap-2">
             {/* Vaste breedte: geen verschuiving als het lettertype wisselt. */}
-          <KnopLink href="#aanmelden" className="h-10 px-4 text-[14px] sm:min-w-[200px] sm:px-5">
-              {site.cta}
-            </KnopLink>
+          <KnopLink href="#aanmelden" maat="klein" className="sm:min-w-[200px]">
+            <span className="sm:hidden">{site.ctaKort}</span>
+            <span className="hidden sm:inline">{site.cta}</span>
+          </KnopLink>
             <button
               type="button"
               aria-label={open ? "Menu sluiten" : "Menu openen"}

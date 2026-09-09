@@ -30,9 +30,7 @@ export function Hero() {
           <p className="opkomen mb-5 text-[14px] font-medium text-gracht sm:mb-6 sm:text-[15px]">
             {hero.boven}
           </p>
-          <h1
-            className="opkomen text-[44px] leading-[1.02] text-nacht sm:text-[64px] lg:text-[80px]"
-          >
+          <h1 className="opkomen text-[44px] leading-[1.02] text-nacht sm:text-[64px] lg:text-[80px]">
             {hero.kop}
           </h1>
           <p
@@ -46,7 +44,9 @@ export function Hero() {
             style={{ "--vertraging": "0.16s" } as React.CSSProperties}
           >
             <KnopLink href="#aanmelden">{hero.primair}</KnopLink>
-            <TekstLink href="#sloepen-specificaties">{hero.secundair}</TekstLink>
+            <TekstLink href="#sloepen-specificaties">
+              {hero.secundair}
+            </TekstLink>
           </div>
         </div>
       </Container>
@@ -54,23 +54,26 @@ export function Hero() {
       <div ref={kader} className="mt-14 sm:mt-20">
         <div className="mx-auto w-full max-w-6xl sm:px-8">
           <div
-            className="foto-opkomen relative overflow-hidden bg-nacht sm:rounded-2xl"
+            className="relative overflow-hidden bg-nacht sm:rounded-2xl"
             style={{ aspectRatio: "16 / 8" }}
           >
-            <m.div
-              className="absolute inset-x-0 -top-[3%] -bottom-[3%]"
-              style={reduced ? undefined : { y }}
-            >
-              <Foto
-                src={foto.hero.src}
-                alt={foto.hero.alt}
-                priority
-                direct
-                fetchPriority="high"
-                sizes="(min-width: 1152px) 1088px, 100vw"
-                className="h-full w-full bg-nacht"
-              />
-            </m.div>
+            {/* De schaal bij laden zit op deze binnenlaag, binnen het kader dat afsnijdt. */}
+            <div className="foto-opkomen absolute inset-0">
+              <m.div
+                className="absolute inset-x-0 -top-[3%] -bottom-[3%]"
+                style={reduced ? undefined : { y }}
+              >
+                <Foto
+                  src={foto.hero.src}
+                  alt={foto.hero.alt}
+                  priority
+                  direct
+                  fetchPriority="high"
+                  sizes="(min-width: 1152px) 1088px, 100vw"
+                  className="h-full w-full bg-nacht"
+                />
+              </m.div>
+            </div>
           </div>
         </div>
       </div>
@@ -79,12 +82,25 @@ export function Hero() {
         <p className="mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[14px] text-zacht sm:mt-8 sm:text-[15px]">
           <span className="font-medium text-nacht">Inbegrepen</span>
           {hero.inbegrepen.map((punt, i) => (
-            <span key={punt} className={i >= 3 ? "hidden items-baseline gap-2 sm:flex" : "flex items-baseline gap-2"}>
-              {i > 0 && <span aria-hidden className="text-nevel">·</span>}
+            <span
+              key={punt}
+              className={
+                i >= 3
+                  ? "hidden items-baseline gap-2 sm:flex"
+                  : "flex items-baseline gap-2"
+              }
+            >
+              {i > 0 && (
+                <span aria-hidden className="text-nevel">
+                  ·
+                </span>
+              )}
               {punt}
             </span>
           ))}
-          <span aria-hidden className="hidden text-nevel sm:inline">·</span>
+          <span aria-hidden className="hidden text-nevel sm:inline">
+            ·
+          </span>
           <span className="hidden sm:inline">{hero.optioneel}</span>
         </p>
       </Container>

@@ -7,6 +7,8 @@ export const site = {
   seizoen: "vaarseizoen 2027",
   /** Eén werkwoord op elke knop. */
   cta: "Aanmelden voor 2027",
+  /** Korte variant voor de nav op mobiel. */
+  ctaKort: "Aanmelden",
   disclaimer: "Prijzen en specificaties zijn indicatief.",
   /** Contactgegevens. Leeg laten tot ze vaststaan; de footer toont ze alleen als ze ingevuld zijn. */
   email: "",
