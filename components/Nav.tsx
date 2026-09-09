@@ -63,7 +63,7 @@ export function Nav() {
           className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8"
         >
           <AnkerLink
-            href="#top"
+            href="/"
             className="font-kop text-[22px] font-light tracking-tight text-nacht"
           >
             {site.naam}

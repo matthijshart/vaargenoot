@@ -38,9 +38,14 @@ toch tijdelijk gebruiken, zet ze dan in `public/foto/tmp/` en pas
 06 Detail laadstekker aan de ligplaats, avond.
 07 Sloep afgemeerd in een stille zijgracht, lantaarn aan.
 
-## Weggehaald van de pagina, bewaard in de code
+## Pagina-indeling
 
-Om de pagina kort te houden staan deze secties niet meer in `app/page.tsx`:
+De voorpagina is kort: hero, een dag op het water, de sloepen, een
+prijsregel, twee verwijzingen (bedrijven, zo werkt het) en aanmelden. De
+details staan op /prijzen, /bedrijven, /zo-werkt-het en /vragen, elk met
+het formulier onderaan.
+
+Niet meer op een pagina, bewaard in de code:
 Inzicht (kern staat in Een dag op het water, de vignetdata in de FAQ),
 SloepLagen (komt terug zodra er echte lagen zijn), Schipper (staat op drie
 andere plekken) en Inbegrepen (één regel onder de prijskaarten). Terugzetten

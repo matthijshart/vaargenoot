@@ -14,9 +14,9 @@ export const site = {
 };
 
 export const nav = [
-  { label: "De sloepen", href: "#sloepen-specificaties" },
-  { label: "Bedrijven", href: "#bedrijven" },
-  { label: "Jouw aandeel", href: "#aandeel" },
-  { label: "Zo werkt het", href: "#zo-werkt-het" },
-  { label: "Vragen", href: "#vragen" },
+  { label: "De sloepen", href: "/#sloepen-specificaties" },
+  { label: "Prijzen", href: "/prijzen" },
+  { label: "Bedrijven", href: "/bedrijven" },
+  { label: "Zo werkt het", href: "/zo-werkt-het" },
+  { label: "Vragen", href: "/vragen" },
 ] as const;

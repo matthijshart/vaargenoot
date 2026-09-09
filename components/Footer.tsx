@@ -1,4 +1,5 @@
-import { site } from "@/content/site";
+import { nav, site } from "@/content/site";
+import { AnkerLink } from "./ui/AnkerLink";
 import { Container } from "./ui/Container";
 
 export function Footer() {
@@ -18,9 +19,18 @@ export function Footer() {
           )}
           {site.kvk && <p className="mt-1 text-[13px] text-zacht">KvK {site.kvk}</p>}
         </div>
-        <p className="max-w-[42ch] text-[13px] leading-relaxed text-zacht">
-          {site.disclaimer}
-        </p>
+        <div className="flex flex-col gap-4 sm:items-end">
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-[14px]">
+            {nav.map((item) => (
+              <li key={item.href}>
+                <AnkerLink href={item.href} className="text-zacht transition-colors duration-150 hover:text-nacht">
+                  {item.label}
+                </AnkerLink>
+              </li>
+            ))}
+          </ul>
+          <p className="max-w-[42ch] text-[13px] leading-relaxed text-zacht sm:text-right">{site.disclaimer}</p>
+        </div>
       </Container>
     </footer>
   );

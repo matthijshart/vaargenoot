@@ -1,14 +1,10 @@
-import { Bedrijven } from "@/components/Bedrijven";
 import { Aanmelden } from "@/components/Aanmelden";
-import { Aandeel } from "@/components/Aandeel";
 import { Ervaring } from "@/components/Ervaring";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
-import { Sloepen } from "@/components/Sloepen";
-import { Verdelen } from "@/components/Verdelen";
-import { Vragen } from "@/components/Vragen";
-import { ZoWerktHet } from "@/components/ZoWerktHet";
 import { Nav } from "@/components/Nav";
+import { Sloepen } from "@/components/Sloepen";
+import { PrijsTeaser, VerwijsTeasers } from "@/components/Teasers";
 
 export default function Home() {
   return (
@@ -18,11 +14,8 @@ export default function Home() {
         <Hero />
         <Ervaring />
         <Sloepen />
-        <Aandeel />
-        <Bedrijven />
-        <ZoWerktHet />
-        <Verdelen />
-        <Vragen />
+        <PrijsTeaser />
+        <VerwijsTeasers />
         <Aanmelden />
       </main>
       <Footer />

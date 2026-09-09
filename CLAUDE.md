@@ -16,8 +16,8 @@ knoptekst overal: `site.cta`. Gevoel: gemak, rustige luxe, alles glijdt.
 
 ## Structuur
 
-- `/app` layout, page, actions, globals.css
-- `/components` secties in paginavolgorde: Hero, Ervaring, Sloepen, Aandeel, Bedrijven, ZoWerktHet, Verdelen, Vragen, Aanmelden; plus Nav, Footer. Bewaard maar niet op de pagina: Inzicht, SloepLagen, Schipper, Inbegrepen, Weekstrook
+- `/app` layout, page (voorpagina), actions, globals.css; onderliggende pagina's in `/app/prijzen`, `/app/bedrijven`, `/app/zo-werkt-het`, `/app/vragen`, elk via `components/Pagina.tsx` (nav, inhoud, aanmelden, footer)
+- `/components` voorpagina: Hero, Ervaring, Sloepen, PrijsTeaser en VerwijsTeasers (Teasers.tsx), Aanmelden. Onderliggend: Aandeel (/prijzen), Bedrijven (/bedrijven), ZoWerktHet en Verdelen (/zo-werkt-het), Vragen (/vragen). Bewaard maar nergens op een pagina: Inzicht, SloepLagen, Schipper, Inbegrepen, Weekstrook
 - `/components/ui` primitieven (Knop, Foto, Sectie, SectieKop, Container, AnkerLink, Vinkje)
 - `/content` alle teksten, prijzen, aannames en fotoverwijzingen
 - `/docs/reserveren.md` de opzet van het verdeelsysteem (punten, weekendgrens, ruilen)
@@ -65,7 +65,7 @@ Overige tokens: `font-kop` (Newsreader), `font-sans` (Manrope),
 
 ## Beweging
 
-- Lenis smooth scroll, ankerlinks via `AnkerLink` (Lenis `scrollTo`).
+- Lenis smooth scroll, ankerlinks via `AnkerLink` (Lenis `scrollTo` voor `#id` en `/#id` op dezelfde pagina, anders `next/link`).
 - Hero-entree via CSS-keyframes (`opkomen` voor tekst, `foto-opkomen` voor de foto: alleen schaal 1.04 naar 1, geen opacity, anders telt de LCP pas na de fade), parallax via Framer Motion.
 - `Verdelen` is de scrollgestuurde sectie op de pagina (vastgepind, 350vh); `SloepLagen` (400vh) staat klaar voor als er echte lagen zijn. Beide: `useScroll` en `useTransform` met functies (geen keyframes: framer-motion zet die om in een native ScrollTimeline die hier het verkeerde element volgt). Bij reduced motion een gewone sectie.
 - Secties komen één keer op via `components/ui/Sectie.tsx` (whileInView, once). Nooit per element, nooit per kaartje.
