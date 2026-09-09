@@ -7,7 +7,7 @@ import { foto } from "./foto";
 export const bedrijven = {
   label: "Voor bedrijven",
   kop: "Een sloep voor je bedrijf. Altijd klaar.",
-  intro: "Een aandeel op naam van je bedrijf. Altijd een luxe sloep klaar, zonder aanschaf en zonder gedoe.",
+  intro: "Je bedrijf wordt deeleigenaar van een sloep. Altijd een luxe sloep klaar, zonder aanschaf en zonder gedoe.",
   punten: [
     {
       kop: "Voor je mensen",

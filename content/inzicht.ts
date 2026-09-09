@@ -18,6 +18,6 @@ export const inzicht = {
   ],
   draai: {
     kop: "Vaargenoot draait het om.",
-    tekst: "Een sloep die vaart in plaats van wacht. Jij betaalt een vast bedrag per maand. Wij regelen de rest.",
+    tekst: "Een sloep die vaart in plaats van wacht. Jij wordt deeleigenaar, met maximaal vier vaargenoten per sloep. Wij regelen de rest.",
   },
 };

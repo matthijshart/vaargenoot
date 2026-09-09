@@ -91,7 +91,12 @@ of bewust algemeen gehouden. Niets is verzonnen.
 
 ## Prijzen
 
-Drie aandelen, elk met maandprijs, vaste vaarten in het vaarseizoen, vaker
+Drie opties: een kwart (695), een half (1.195) en de hele sloep. Voor de
+hele sloep is geen prijs opgegeven; er staat "Op aanvraag". Geef een
+maandbedrag door en ik zet het erin (`content/aandeel.ts`). Het achtste
+aandeel is weggehaald.
+
+Elk met maandprijs, vaste vaarten in het vaarseizoen, vaker
 varen als de sloep vrij is, alles inbegrepen. Het rekenblok met
 schuifregelaar is bewust weggehaald: simpel en helder. Onder de kaarten
 staat één vergelijkingszin: een eigen sloep kost circa 15.200 euro per jaar
@@ -107,6 +112,13 @@ vaarseizoen zijn.
 Winter: de site zegt dat je buiten het seizoen ook vaart (Light Festival,
 winterdagen, fleecedekens). Tegelijk staat "winterstalling" in de hero als
 inbegrepen. Bevestig hoe die twee samengaan.
+
+## Deeleigenaar
+
+De site zegt nu overal dat je deeleigenaar wordt, met maximaal vier
+vaargenoten per sloep (volgt uit het kleinste aandeel, een kwart).
+"Deeleigenaar" heeft juridische betekenis. Zorg dat de overeenkomst dat
+waarmaakt, of pas het woord aan als de structuur een gebruiksrecht wordt.
 
 ## Bedrijven
 

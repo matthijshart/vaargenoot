@@ -18,36 +18,44 @@ export function Aandeel() {
         />
 
         <ul className="mt-14 grid gap-4 md:grid-cols-3 md:gap-6 lg:mt-20">
-          {aandelen.map((a) => (
-            <li
-              key={a.id}
-              className="flex flex-col rounded-2xl border border-wit/15 p-6 sm:p-8"
-            >
-              <p className="font-kop text-[26px] font-light leading-tight text-lucht">{a.naam}</p>
-              <p className="mt-6 font-kop text-[52px] font-light leading-none text-wit tabular-nums sm:text-[56px]">
-                {euro(a.prijs)}
-              </p>
-              <p className="mt-2 text-[14px] text-lucht">
-                {aandeelTekst.perMaand}, {aandeelTekst.indicatief}
-              </p>
-              <ul className="mt-8 space-y-3 border-t border-wit/15 pt-6 text-[15px] text-wit">
-                <li className="flex items-start gap-3">
-                  <Vinkje className="mt-1 text-messing" />
-                  <span>
-                    <span className="tabular-nums">{a.vaarten}</span> {aandeelTekst.vaarten}
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Vinkje className="mt-1 text-messing" />
-                  <span>{aandeelTekst.vaker}</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Vinkje className="mt-1 text-messing" />
-                  <span>{aandeelTekst.inbegrepen}</span>
-                </li>
-              </ul>
-            </li>
-          ))}
+          {aandelen.map((a) => {
+            const punten = [
+              a.vaarten === null ? aandeelTekst.altijd : `${a.vaarten} ${aandeelTekst.vaarten}`,
+              a.vaarten === null ? aandeelTekst.eigenSchipper : aandeelTekst.vaker,
+              aandeelTekst.inbegrepen,
+            ];
+            return (
+              <li key={a.id} className="flex flex-col rounded-2xl border border-wit/15 p-6 sm:p-8">
+                <p className="font-kop text-[26px] font-light leading-tight text-wit">{a.naam}</p>
+                <p className="mt-1 text-[14px] text-lucht">{a.onder}</p>
+                {a.prijs === null ? (
+                  <>
+                    <p className="mt-6 font-kop text-[40px] font-light leading-none text-wit sm:text-[44px]">
+                      {aandeelTekst.opAanvraag}
+                    </p>
+                    <p className="mt-2 text-[14px] text-lucht">{aandeelTekst.perMaand}</p>
+                  </>
+                ) : (
+                  <>
+                    <p className="mt-6 font-kop text-[52px] font-light leading-none text-wit tabular-nums sm:text-[56px]">
+                      {euro(a.prijs)}
+                    </p>
+                    <p className="mt-2 text-[14px] text-lucht">
+                      {aandeelTekst.perMaand}, {aandeelTekst.indicatief}
+                    </p>
+                  </>
+                )}
+                <ul className="mt-8 space-y-3 border-t border-wit/15 pt-6 text-[15px] text-wit">
+                  {punten.map((punt) => (
+                    <li key={punt} className="flex items-start gap-3">
+                      <Vinkje className="mt-1 text-messing" />
+                      <span>{punt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="mt-10 flex flex-col gap-8 lg:mt-14 lg:flex-row lg:items-start lg:justify-between lg:gap-16">

@@ -9,9 +9,9 @@ export const vragen = {
   intro: "Wij leveren een dienst, geen boot. Jij vaart, wij regelen de rest. Andere vraag? Je krijgt antwoord van een mens.",
   lijst: [
     {
-      vraag: "Ben ik echt eigenaar?",
+      vraag: "Word ik echt deeleigenaar?",
       antwoord:
-        "Je hebt een vast aandeel in het gebruik van een specifieke sloep. De juridische inrichting staat in de overeenkomst, in gewone taal. Je leest hem rustig door voordat je iets tekent.",
+        "Ja. Je krijgt een vast aandeel in een specifieke sloep, samen met maximaal drie andere vaargenoten. De juridische inrichting staat in de overeenkomst, in gewone taal. Je leest hem rustig door voordat je iets tekent.",
     },
     {
       vraag: "Wat als ik onderweg hulp nodig heb?",

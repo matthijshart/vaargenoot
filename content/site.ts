@@ -3,7 +3,7 @@ export const site = {
   plaats: "Amsterdam",
   titel: "Vaargenoot. Jouw sloep. Onze zorg.",
   omschrijving:
-    "Een elektrische sloep in de Amsterdamse grachten, gedeeld met een klein aantal vaargenoten. Vast bedrag per maand, alles inbegrepen.",
+    "Word deeleigenaar van een elektrische sloep in de Amsterdamse grachten. Maximaal vier vaargenoten per sloep. Eén vast bedrag per maand, alles inbegrepen.",
   start: "voorjaar 2027",
   disclaimer: "Een concept in ontwikkeling. Prijzen en specificaties zijn indicatief.",
   ctaKort: "Plan een proefvaart",

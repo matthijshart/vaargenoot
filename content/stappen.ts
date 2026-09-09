@@ -4,7 +4,7 @@ export const stappen = {
   lijst: [
     {
       kop: "Kies je sloep en je aandeel",
-      tekst: "De Amstel of de Prinsen. Een achtste, een kwart of een half.",
+      tekst: "De Amstel of de Prinsen. Een kwart, een half of de hele sloep.",
     },
     {
       kop: "Reserveer in de app",

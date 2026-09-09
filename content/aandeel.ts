@@ -1,27 +1,32 @@
 export type Aandeel = {
-  id: "achtste" | "kwart" | "half";
+  id: "kwart" | "half" | "heel";
   naam: string;
-  /** Vaste vaarten per maand in het vaarseizoen. Vaker kan als de sloep vrij is. */
-  vaarten: number;
-  /** Maandbedrag in euro, indicatief. */
-  prijs: number;
+  /** Korte ondertitel onder de naam. */
+  onder: string;
+  /** Vaste vaarten per maand in het vaarseizoen. Null: altijd beschikbaar. */
+  vaarten: number | null;
+  /** Maandbedrag in euro, indicatief. Null: op aanvraag. */
+  prijs: number | null;
 };
 
 export const aandelen: Aandeel[] = [
-  { id: "achtste", naam: "Een achtste", vaarten: 4, prijs: 395 },
-  { id: "kwart", naam: "Een kwart", vaarten: 8, prijs: 695 },
-  { id: "half", naam: "Een half", vaarten: 16, prijs: 1195 },
+  { id: "kwart", naam: "Een kwart", onder: "Met maximaal drie andere vaargenoten", vaarten: 8, prijs: 695 },
+  { id: "half", naam: "Een half", onder: "Met één andere vaargenoot", vaarten: 16, prijs: 1195 },
+  { id: "heel", naam: "De hele sloep", onder: "Alleen jij, of je bedrijf", vaarten: null, prijs: null },
 ];
 
 export const aandeelTekst = {
-  label: "Jouw aandeel",
+  label: "Deeleigenaar",
   kop: "Een vast bedrag per maand. Verder niets.",
   intro:
-    "Je kiest een aandeel in een specifieke sloep. Dat geeft je vaste vaarten per maand in het vaarseizoen. Is de sloep vrij, dan vaar je vaker.",
+    "Je wordt deeleigenaar van een specifieke sloep, met maximaal vier vaargenoten. Of je neemt de hele sloep voor jezelf. Je aandeel geeft je vaste vaarten per maand in het vaarseizoen. Is de sloep vrij, dan vaar je vaker.",
   perMaand: "per maand",
   indicatief: "indicatief",
+  opAanvraag: "Op aanvraag",
   vaarten: "vaste vaarten per maand in het vaarseizoen",
+  altijd: "Altijd beschikbaar, alleen voor jou",
   vaker: "Vaker varen als de sloep vrij is",
+  eigenSchipper: "Schipper bij te boeken",
   inbegrepen: "Alles inbegrepen",
   cta: "Plan een proefvaart",
   winter:

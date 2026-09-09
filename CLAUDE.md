@@ -74,7 +74,9 @@ Overige tokens: `font-kop` (Newsreader), `font-sans` (Manrope),
 
 Nederlands, je-vorm, korte zinnen, actieve werkwoorden. Geen gedachtestreepjes,
 geen uitroeptekens, geen pijltjes in knoppen, geen opsommingstekens in lopende
-tekst. Gebruik "aandeel" en "vaargenoot"; "eigenaar" alleen in de FAQ. Laat
+tekst. Gebruik "aandeel", "vaargenoot" en "deeleigenaar"; "maximaal vier
+vaargenoten per sloep" is de exclusiviteitsclaim (volgt uit het kleinste
+aandeel, een kwart). Laat
 "indicatief" staan bij elke prijs. Verzin geen feiten of cijfers; ontbreekt
 iets, zet het in TODO.md.
 

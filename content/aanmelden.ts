@@ -1,7 +1,7 @@
 export const aanmelden = {
   label: "Aanmelden",
   kop: "Word een van de eerste vaargenoten.",
-  intro: "We starten voorjaar 2027. Laat je gegevens achter, dan plannen we een proefvaart.",
+  intro: "Beperkt aantal aandelen, start voorjaar 2027. Laat je gegevens achter, dan plannen we een proefvaart.",
   velden: {
     naam: "Naam",
     email: "E-mail",
@@ -9,9 +9,9 @@ export const aanmelden = {
   },
   opties: [
     { waarde: "", label: "Kies een aandeel" },
-    { waarde: "achtste", label: "Een achtste" },
     { waarde: "kwart", label: "Een kwart" },
     { waarde: "half", label: "Een half" },
+    { waarde: "heel", label: "De hele sloep" },
     { waarde: "bedrijf", label: "Een aandeel voor mijn bedrijf" },
     { waarde: "weet-niet", label: "Weet ik nog niet" },
   ],
