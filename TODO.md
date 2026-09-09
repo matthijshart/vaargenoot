@@ -2,9 +2,10 @@
 
 ## Foto's
 
-Er is nu één echte bronfoto: `foto-bron/sloep-bovenaf.png` (1194 x 1212,
-via GitHub geüpload). Alle beelden op de site zijn uitsnedes daaruit, gemaakt
-door `scripts/foto-crops.mjs`. Dat werkt, maar let op:
+Bronfoto's in `foto-bron/`: de sloep van bovenaf (1194 x 1212), het
+zijaanzicht met bimini (768 x 576), en twee grachtfoto's (736 breed).
+Alle beelden op de site zijn uitsnedes daaruit, gemaakt door
+`scripts/foto-crops.mjs`. Dat werkt, maar let op:
 
 - De resolutie is laag voor de hero op grote schermen. Een bron van minimaal
   2400 pixels breed is nodig.

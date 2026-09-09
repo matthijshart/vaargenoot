@@ -16,5 +16,5 @@ export const bedrijven = {
   ],
   cta: "Aanmelden voor je bedrijf",
   ctaTekst: "Kies in het formulier voor een aandeel voor je bedrijf.",
-  beeld: foto.detailTafel,
+  beeld: foto.grachtBloemen,
 };

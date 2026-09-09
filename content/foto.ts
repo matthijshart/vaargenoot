@@ -9,7 +9,8 @@ import sloepPrinsen from "@/public/foto/prinsen.jpg";
 import schipper from "@/public/foto/schipper.jpg";
 import detailKoelkast from "@/public/foto/detail-koelkast.jpg";
 import detailTafel from "@/public/foto/detail-tafel.jpg";
-import zijgracht from "@/public/foto/zijgracht.jpg";
+import grachtBrug from "@/public/foto/gracht-brug.jpg";
+import grachtBloemen from "@/public/foto/gracht-bloemen.jpg";
 import sloepBovenaf from "@/public/foto/sloep-bovenaf.jpg";
 
 export const foto = {
@@ -37,9 +38,13 @@ export const foto = {
     src: detailTafel,
     alt: "De lange tafel aan boord, gedekt",
   },
-  zijgracht: {
-    src: zijgracht,
-    alt: "Sloep in een stille gracht, gezien van bovenaf",
+  grachtBrug: {
+    src: grachtBrug,
+    alt: "Brug over een Amsterdamse gracht, met grachtenpanden en bomen",
+  },
+  grachtBloemen: {
+    src: grachtBloemen,
+    alt: "Stille gracht met een brug, fietsen en bloemen langs de kade",
   },
   sloepBovenaf: {
     src: sloepBovenaf,

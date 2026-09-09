@@ -19,8 +19,8 @@ export function Inzicht() {
           </div>
           <div className="lg:col-span-6">
             <Foto
-              src={foto.zijgracht.src}
-              alt={foto.zijgracht.alt}
+              src={foto.grachtBrug.src}
+              alt={foto.grachtBrug.alt}
               ratio="4 / 3"
               sizes="(min-width: 1024px) 45vw, 100vw"
               className="rounded-2xl"

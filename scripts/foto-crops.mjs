@@ -20,9 +20,14 @@ const kaders = {
   "schipper": { left: 150, top: 330, width: 420, height: 504 }, // 5:6, roer en ijsemmer
   "detail-koelkast": { left: 260, top: 440, width: 380, height: 380 }, // 1:1, ijsemmer
   "detail-tafel": { left: 520, top: 600, width: 480, height: 480 }, // 1:1, tafel
-  "zijgracht": { left: 200, top: 0, width: 994, height: 745 }, // 4:3, water en boeg
   "sloep-bovenaf": { left: 0, top: 9, width: 1194, height: 1194 }, // 1:1, alles
 };
+
+// Grachten: twee staande foto's, uitgesneden op 4:3 en 1:1.
+await sharp("foto-bron/gracht-brug.jpeg").extract({ left: 0, top: 400, width: 736, height: 552 }).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/gracht-brug.jpg`);
+console.log("ok gracht-brug 736x552");
+await sharp("foto-bron/gracht-bloemen.jpeg").extract({ left: 0, top: 400, width: 736, height: 736 }).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/gracht-bloemen.jpg`);
+console.log("ok gracht-bloemen 736x736");
 
 // Prinsen: het zijaanzicht, al 4:3.
 await sharp(bronZij).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/prinsen.jpg`);
