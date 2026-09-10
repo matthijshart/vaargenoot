@@ -199,8 +199,12 @@ waard is, nog te bevestigen voordat het op de site komt:
 - Sociale bewijskracht: klanten aan het woord, logo's, "recent geleverd".
   Kan pas met echte klanten, dus na de eerste aanmeldingen.
 - Een kennismaking als laagdrempelige stap staat nu in het formulier
-  ("Een kennismaking"). Bevestig de vorm: bellen, langskomen of een
-  proefvaart, en hoe lang.
+  ("Een kennismaking") en als knop op /bedrijven en de voorpagina. Bevestig
+  de vorm: bellen, langskomen of een proefvaart, en hoe lang.
+- De vergelijking kopen/leasen/deel-eigenaar op /bedrijven noemt voor lease
+  "al snel ruim 2.000 euro per maand, exclusief btw". Bron: de openbare
+  leaseprijzen van Bleaze (2.150 en 2.650, september 2026). Geen naam op de
+  site. Controleer af en toe of dat nog klopt (`content/vergelijk.ts`).
 
 ## Formulier en livegang
 

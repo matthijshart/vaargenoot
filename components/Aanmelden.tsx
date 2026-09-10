@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, m, useReducedMotion } from "framer-motion";
-import { useActionState, useState, type ChangeEvent, type FocusEvent } from "react";
+import { useActionState, useEffect, useState, type ChangeEvent, type FocusEvent } from "react";
 import { meldAan, type AanmeldStatus } from "@/app/actions";
 import { aanmelden } from "@/content/aanmelden";
 import { valideerVeld, type Fouten, type Invoer, type Veld } from "@/lib/validatie";
@@ -25,6 +25,18 @@ export function Aanmelden() {
   const [lokaal, setLokaal] = useState<Fouten>({});
   const [waarden, setWaarden] = useState<Invoer>({ naam: "", email: "", doel: "", aandeel: "", bedrijf: "" });
   const reduced = useReducedMotion();
+
+  // Een link naar #kennismaking (bijvoorbeeld "Plan een kennismaking") vult "Ik wil" alvast in.
+  useEffect(() => {
+    function lees() {
+      if (window.location.hash === "#kennismaking") {
+        setWaarden((w) => (w.doel ? w : { ...w, doel: "kennismaking" }));
+      }
+    }
+    lees();
+    window.addEventListener("hashchange", lees);
+    return () => window.removeEventListener("hashchange", lees);
+  }, []);
 
   const fouten: Fouten = { ...state.fouten, ...lokaal };
   const klaar = state.status === "klaar";
@@ -52,7 +64,7 @@ export function Aanmelden() {
           <div className="lg:col-span-6 lg:col-start-7">
             <form action={actie} noValidate className="grid gap-5" aria-busy={bezig}>
               <fieldset disabled={klaar} className="grid gap-5">
-                <div>
+                <div id="kennismaking" className="scroll-mt-28">
                   <p id="doel-label" className="mb-2 text-[14px] font-medium text-nacht">
                     {aanmelden.velden.doel}
                   </p>

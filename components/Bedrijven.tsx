@@ -7,10 +7,12 @@ import { KnopLink, TekstLink } from "./ui/Knop";
 import { PuntKaarten } from "./ui/PuntKaarten";
 import { Sectie } from "./ui/Sectie";
 import { SectieKop } from "./ui/SectieKop";
+import { VraagLijst } from "./ui/VraagLijst";
+import { Vergelijk } from "./Vergelijk";
 
 /**
- * De bedrijvenpagina in drie delen: wat het is, wat het oplevert,
- * en het aanbod met de prijs en de knop.
+ * De bedrijvenpagina: wat het is, wat het oplevert, de vergelijking met
+ * kopen en leasen, het aanbod met de prijs, en de vragen voor je tekent.
  */
 export function Bedrijven() {
   return (
@@ -20,10 +22,13 @@ export function Bedrijven() {
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             <div className="min-w-0 lg:col-span-7">
               <SectieKop label={bedrijven.label} kop={bedrijven.kop} intro={bedrijven.intro} />
-              <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3">
+              <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
                 <KnopLink href="#aanmelden">{bedrijven.cta}</KnopLink>
-                <TekstLink href={bedrijven.prijsHref}>{bedrijven.prijsLink}</TekstLink>
+                <KnopLink href={bedrijven.kennismakingHref} variant="omlijnd">
+                  {bedrijven.kennismaking}
+                </KnopLink>
               </div>
+              <p className="mt-4 text-[14px] text-zacht">{bedrijven.onderKnop}</p>
             </div>
             <div className="lg:col-span-5">
               <Foto
@@ -45,6 +50,8 @@ export function Bedrijven() {
           <PuntKaarten punten={bedrijven.punten} kolommen={3} toon="schuim" className="mt-10 lg:mt-14" />
         </Container>
       </Sectie>
+
+      <Vergelijk />
 
       <Sectie id="bedrijven-aanbod" donker>
         <Container>
@@ -87,17 +94,28 @@ export function Bedrijven() {
               <p className="text-wit">{bedrijven.ctaTekst}</p>
               <p className="text-[14px] text-lucht/80">{aandeelTekst.vergelijking}</p>
             </div>
-            <div className="flex shrink-0 flex-wrap items-center gap-x-7 gap-y-3">
+            <div className="flex shrink-0 flex-wrap items-center gap-x-4 gap-y-3">
               <KnopLink href="#aanmelden" variant="licht">
                 {bedrijven.cta}
               </KnopLink>
               <TekstLink
-                href={bedrijven.prijsHref}
+                href={bedrijven.kennismakingHref}
                 className="text-lucht decoration-lucht/50 hover:text-wit hover:decoration-wit"
               >
-                {bedrijven.prijsLink}
+                {bedrijven.kennismaking}
               </TekstLink>
             </div>
+          </div>
+        </Container>
+      </Sectie>
+
+      <Sectie id="bedrijven-vragen" className="bg-wit">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <SectieKop label={bedrijven.vragenLabel} kop={bedrijven.vragenKop} />
+            </div>
+            <VraagLijst lijst={bedrijven.vragen} className="lg:col-span-8" />
           </div>
         </Container>
       </Sectie>

@@ -11,9 +11,10 @@ export const teasers = {
   },
   bedrijven: {
     label: "Voor bedrijven",
-    kop: "Ook voor je bedrijf.",
-    tekst: "Voor je mensen en je klantrelaties. Zonder aanschaf, zonder beheer, met schipper als je wilt.",
-    link: "Lees meer over bedrijven",
+    kop: "Een sloep voor je bedrijf. Voor een deel van de prijs.",
+    tekst: "Je bedrijf wordt deel-eigenaar. Voor je mensen, je klanten en je naam. Geen investering, geen lease van een hele sloep die stilligt, geen beheer.",
+    punten: ["Vrijdagmiddag op het water met je team", "Klanten ontvangen aan een gedekte tafel", "Tot 40 personen, schipper bij te boeken"],
+    link: "Alles voor bedrijven",
     href: "/bedrijven",
   },
   werkt: {

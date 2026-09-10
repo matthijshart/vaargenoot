@@ -29,6 +29,8 @@ export function AnkerLink({ href, children, onClick, ...rest }: Props) {
     // Even wachten zodat een sluitend menu de scroll weer vrijgeeft.
     requestAnimationFrame(() => lenis.scrollTo(doel as HTMLElement, { offset: -marge, force: true }));
     history.replaceState(null, "", hash);
+    // replaceState geeft zelf geen hashchange; het formulier luistert ernaar.
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
   }
 
   return (

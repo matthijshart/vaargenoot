@@ -5,7 +5,7 @@ import { Fotoband } from "@/components/Fotoband";
 import { Hero } from "@/components/Hero";
 import { Nav } from "@/components/Nav";
 import { Sloepen } from "@/components/Sloepen";
-import { PrijsTeaser, VerwijsTeasers } from "@/components/Teasers";
+import { BedrijvenTeaser, PrijsTeaser, VerwijsTeasers } from "@/components/Teasers";
 
 export default function Home() {
   return (
@@ -15,6 +15,7 @@ export default function Home() {
         <Hero />
         <Ervaring />
         <Sloepen />
+        <BedrijvenTeaser />
         <Fotoband />
         <PrijsTeaser />
         <VerwijsTeasers />

@@ -17,8 +17,9 @@ knoptekst overal: `site.cta`. Gevoel: gemak, rustige luxe, alles glijdt.
 ## Structuur
 
 - `/app` layout, page (voorpagina), actions, globals.css; onderliggende pagina's in `/app/prijzen`, `/app/bedrijven`, `/app/zo-werkt-het`, `/app/vragen`, elk via `components/Pagina.tsx` (nav, inhoud, aanmelden, footer)
-- `/components` voorpagina: Hero (foto van rand tot rand, naamplaat met kop en knop, feitenbalk), Ervaring, Sloepen, Fotoband (brede foto met parallax en één regel), PrijsTeaser en VerwijsTeasers (Teasers.tsx: bedrijven, zo werkt het, vragen), Aanmelden. Onderliggend: Aandeel (/prijzen), Bedrijven (/bedrijven), ZoWerktHet en Verdelen (/zo-werkt-het), Vragen (/vragen). Bewaard maar nergens op een pagina: Inzicht, SloepLagen, Schipper, Inbegrepen, Weekstrook
-- `/components/ui` primitieven (Knop, Foto, Sectie, SectieKop, Container, AnkerLink, Vinkje, PuntKaarten: lijst met lijnen op mobiel, kaarten met hover vanaf sm)
+- `/components` voorpagina: Hero (foto van rand tot rand, naamplaat met kop en knop, feitenbalk), Ervaring, Sloepen, BedrijvenTeaser, Fotoband (brede foto met parallax en één regel), PrijsTeaser en VerwijsTeasers (Teasers.tsx: zo werkt het, vragen), Aanmelden. Onderliggend: Aandeel (/prijzen), Bedrijven met Vergelijk (/bedrijven: de verkooppagina, met kopen/leasen/deel-eigenaar en zakelijke vragen), ZoWerktHet en Verdelen (/zo-werkt-het), Vragen (/vragen). Bewaard maar nergens op een pagina: Inzicht, SloepLagen, Schipper, Inbegrepen, Weekstrook
+- `/components/ui` primitieven (Knop, Foto, Onderschrift, Sectie, SectieKop, Container, AnkerLink, Vinkje, VraagLijst, PuntKaarten: lijst met lijnen op mobiel, kaarten met hover vanaf sm)
+- Een link naar `#kennismaking` scrolt naar het formulier en vult "Ik wil" voor met een kennismaking (AnkerLink stuurt een hashchange, Aanmelden luistert)
 - `/content` alle teksten, prijzen, aannames en fotoverwijzingen
 - `/docs/reserveren.md` de opzet van het verdeelsysteem (punten, weekendgrens, ruilen)
 - `/lib` motion-varianten, validatie, hulpfuncties
