@@ -8,7 +8,7 @@ export const stappen = {
     },
     {
       kop: "Reserveer in de app",
-      tekst: "Vaarpunten naar je aandeel, weekenden begrensd, ruilen kan altijd. Je ziet meteen wat vrij is.",
+      tekst: "Je ziet meteen wat vrij is en reserveert wanneer je wilt, ook op de dag zelf. Vaarpunten naar je aandeel verdelen de weekenden eerlijk, ruilen kan altijd.",
     },
     {
       kop: "Stap aan boord",

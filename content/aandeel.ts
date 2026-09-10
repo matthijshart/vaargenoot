@@ -3,7 +3,7 @@ export type Aandeel = {
   naam: string;
   /** Korte ondertitel onder de naam. */
   onder: string;
-  /** Vaste vaarten per maand in het vaarseizoen. Null: altijd beschikbaar. */
+  /** Minimum aantal vaarten per maand in het vaarseizoen. Null: altijd beschikbaar. */
   vaarten: number | null;
   /** Maandbedrag in euro, indicatief. Null: op aanvraag. */
   prijs: number | null;
@@ -23,9 +23,11 @@ export const aandeelTekst = {
   perMaand: "per maand",
   indicatief: "indicatief",
   opAanvraag: "Op aanvraag",
-  vaarten: "vaste vaarten per maand in het vaarseizoen",
+  /** Voor de kaart: "Minstens 8 vaarten per maand in het seizoen". */
+  minstens: "Minstens",
+  vaarten: "vaarten per maand in het seizoen",
   altijd: "Altijd beschikbaar, alleen voor jou",
-  vaker: "Vaker varen als de sloep vrij is",
+  wanneer: "Varen wanneer je wilt, ook op de dag zelf",
   eigenSchipper: "Schipper bij te boeken",
   inbegrepen: "Alles inbegrepen",
   inbegrepenLijst: "Inbegrepen: ligplaats met laadpunt, stroom, onderhoud, verzekering, schoonmaak, winterklaar en vignet. Schipper bij te boeken.",

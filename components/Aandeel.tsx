@@ -20,8 +20,10 @@ export function Aandeel() {
         <ul className="mt-14 grid gap-4 md:grid-cols-3 md:gap-6 lg:mt-20">
           {aandelen.map((a) => {
             const punten = [
-              a.vaarten === null ? aandeelTekst.altijd : `${a.vaarten} ${aandeelTekst.vaarten}`,
-              a.vaarten === null ? aandeelTekst.eigenSchipper : aandeelTekst.vaker,
+              a.vaarten === null ? aandeelTekst.altijd : aandeelTekst.wanneer,
+              a.vaarten === null
+                ? aandeelTekst.eigenSchipper
+                : `${aandeelTekst.minstens} ${a.vaarten} ${aandeelTekst.vaarten}`,
               aandeelTekst.inbegrepen,
             ];
             return (

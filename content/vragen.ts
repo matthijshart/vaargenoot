@@ -16,7 +16,7 @@ export const vragen = {
     {
       vraag: "Wat als de sloep bezet is?",
       antwoord:
-        "In de app zie je meteen welke dagdelen vrij zijn. Elke maand krijg je vaarpunten naar je aandeel, en elk vaarpunt geeft je het recht om te varen. Weekenden kosten meer vaarpunten en zijn per sloepmaat begrensd, zodat niemand alles blokkeert. Is een dagdeel kort van tevoren nog vrij, dan boek je hem gratis bij. En ruilen met een andere sloepmaat kan altijd.",
+        "In de app zie je meteen welke dagdelen vrij zijn. Elke maand krijg je vaarpunten naar je aandeel, en elk vaarpunt geeft je het recht om te varen. Weekenden kosten meer vaarpunten en verdelen we eerlijk over de sloepmaten, zodat niemand alles blokkeert. Is een dagdeel kort van tevoren nog vrij, dan boek je hem gratis bij. En ruilen met een andere sloepmaat kan altijd.",
     },
     {
       vraag: "Heb ik een vaarbewijs nodig?",

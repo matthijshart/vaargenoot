@@ -19,7 +19,7 @@ export const teasers = {
   werkt: {
     label: "Zo werkt het",
     kop: "Kies je sloep, reserveer, stap aan boord.",
-    tekst: "Vaarpunten naar je aandeel, weekenden begrensd, ruilen kan altijd.",
+    tekst: "Je ziet meteen wat vrij is. Reserveren en ruilen doe je in de app, ook op de dag zelf.",
     link: "Zo werkt het",
     href: "/zo-werkt-het",
   },

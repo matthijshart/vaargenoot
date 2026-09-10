@@ -99,8 +99,13 @@ of bewust algemeen gehouden. Niets is verzonnen.
 
 - Vaartijd op een lading en ligplaats, per sloep. Staan niet op de site tot
   ze bekend zijn; toevoegen in `content/sloepen.ts`.
-- Vaker varen dan het vaste aantal: is dat gratis of tegen een tarief? Nu
-  staat er "Vaker varen als de sloep vrij is" zonder bedrag.
+- Varen: de site zegt "Varen wanneer je wilt, ook op de dag zelf" (hero,
+  prijskaarten, verwijzing op de voorpagina). Dat volgt uit de opzet in
+  `docs/reserveren.md` (vrije dagdelen binnen 48 uur kosten geen vaarpunt).
+  De regels zelf (vaarpunten, weekenden) staan alleen op /zo-werkt-het en in
+  de FAQ, bewust niet in de hero. Bevestig dat de belofte zo mag staan.
+- Vaker varen dan het minimum: is dat gratis of tegen een tarief? Nu staat
+  er "Minstens 8 vaarten per maand in het seizoen" zonder bedrag voor meer.
 - FAQ schade: eigen risico en afhandeling (`content/vragen.ts`).
 - FAQ hulp onderweg: de site belooft één aanspreekpunt en bereikbaarheid
   tijdens het varen. Bevestig telefoonnummer en tijden (`content/vragen.ts`).
@@ -122,8 +127,9 @@ hele sloep is geen prijs opgegeven; er staat "Op aanvraag". Geef een
 maandbedrag door en ik zet het erin (`content/aandeel.ts`). Het achtste
 aandeel is weggehaald.
 
-Elk met maandprijs, vaste vaarten in het vaarseizoen, vaker
-varen als de sloep vrij is, alles inbegrepen. Het rekenblok met
+Elk met maandprijs, "varen wanneer je wilt", een minimum aantal vaarten
+per maand in het seizoen (8 bij een kwart, 16 bij een half) en alles
+inbegrepen. Het rekenblok met
 schuifregelaar is bewust weggehaald: simpel en helder. Onder de kaarten
 staat één vergelijkingszin: een eigen sloep kost circa 15.200 euro per jaar
 (aannames in `content/kosten.ts`: 80.000 aanschaf, 35% restwaarde na tien
