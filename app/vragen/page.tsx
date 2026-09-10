@@ -18,7 +18,7 @@ export default function Vragen() {
           <div className="md:col-span-4">
             <Kop niveau={1} kop={vragen.kop} intro={vragen.intro} />
           </div>
-          <Accordion items={vragen.lijst} className="md:col-span-8" />
+          <Accordion items={vragen.lijst} niveau={2} className="md:col-span-8" />
         </div>
       </Container>
       <Slot />

@@ -6,11 +6,11 @@ import { Tekst } from "./Tekst";
 
 export type AccordionItem = { vraag: string; antwoord: string };
 
-function Item({ vraag, antwoord, open, onToggle }: AccordionItem & { open: boolean; onToggle: () => void }) {
+function Item({ vraag, antwoord, open, onToggle, Kop }: AccordionItem & { open: boolean; onToggle: () => void; Kop: "h2" | "h3" }) {
   const id = useId();
   return (
     <li className="border-b border-lijn">
-      <h3 className="text-[17px] font-medium md:text-[18px]">
+      <Kop className="text-[17px] font-medium tracking-normal md:text-[18px]">
         <button
           type="button"
           aria-expanded={open}
@@ -29,7 +29,7 @@ function Item({ vraag, antwoord, open, onToggle }: AccordionItem & { open: boole
             />
           </span>
         </button>
-      </h3>
+      </Kop>
       <div id={id} className="paneel" data-open={open} aria-hidden={!open}>
         <div>
           <p className="maat pb-6 leading-relaxed text-grijs">
@@ -41,13 +41,24 @@ function Item({ vraag, antwoord, open, onToggle }: AccordionItem & { open: boole
   );
 }
 
-/** Accordion met dunne lijnen, één item tegelijk open. */
-export function Accordion({ items, eersteOpen = true, className }: { items: AccordionItem[]; eersteOpen?: boolean; className?: string }) {
+/** Accordion met dunne lijnen, één item tegelijk open. `niveau` is het kopniveau van de vragen. */
+export function Accordion({
+  items,
+  eersteOpen = true,
+  className,
+  niveau = 3,
+}: {
+  items: AccordionItem[];
+  eersteOpen?: boolean;
+  className?: string;
+  niveau?: 2 | 3;
+}) {
   const [open, setOpen] = useState<number | null>(eersteOpen ? 0 : null);
+  const Kop = niveau === 2 ? "h2" : "h3";
   return (
     <ul className={cn("border-t border-lijn", className)}>
       {items.map((item, i) => (
-        <Item key={item.vraag} {...item} open={open === i} onToggle={() => setOpen(open === i ? null : i)} />
+        <Item key={item.vraag} {...item} Kop={Kop} open={open === i} onToggle={() => setOpen(open === i ? null : i)} />
       ))}
     </ul>
   );
