@@ -27,9 +27,9 @@ export const home = {
     kop: "Je ligplaats midden in de stad.",
     intro: "In de grachtengordel, of op een plek naar keuze. Vanaf kantoor het water op, en binnen tien minuten ligt de stad aan je voeten.",
     items: [
-      "De Herengracht, de Prinsengracht, de Amstel en het IJ",
+      "De Herengracht, de Keizersgracht, de Prinsengracht, de Amstel en het IJ",
       "Elektrisch en stil, dus ook welkom in het uitstootvrije centrum",
-      "Aanleggen bij een terras, of ankeren voor de Magere Brug",
+      "Langs de grachtenpanden en onder de Magere Brug door",
       "In december het Light Festival, met dekens en warme dranken",
     ],
   },
