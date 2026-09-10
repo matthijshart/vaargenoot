@@ -5,7 +5,7 @@ import { home } from "@/content/home";
 export default function Voorpagina() {
   return (
     <>
-      <Hero kop={home.hero.kop} sub={home.hero.sub} beeldNoot={home.hero.beeld} />
+      <Hero kop={home.hero.kop} sub={home.hero.sub} />
       <DuoSolo />
       <Garantie />
       <Inbegrepen />

@@ -3,9 +3,8 @@ import { bedrag } from "@/lib/utils";
 
 export const home = {
   hero: {
-    kop: "Een sloep voor je bedrijf. In deeleigendom.",
+    kop: "Een sloep voor je bedrijf.\nIn deeleigendom.",
     sub: "Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
-    beeld: "de Prinsen op het water, hoge resolutie",
   },
 
   duoSolo: {
