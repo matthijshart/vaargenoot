@@ -2,16 +2,16 @@ import { oprichter, site } from "./config";
 
 export const over = {
   kop: "Over Sloepmaten.",
-  intro: "Een verhuurder die al jaren in de grachten vaart, en een simpel idee: een sloep die van je bedrijf is.",
+  intro: "Een simpel idee: een sloep die van je bedrijf is. Alleen, of met één ander bedrijf.",
   blokken: [
     {
       kop: "De oprichter",
-      alinea: `${oprichter.naam} verhuurt sinds ${oprichter.sinds} sloepen in ${site.plaats} met ${oprichter.verhuurbedrijf}: ${oprichter.boten} boten, ${oprichter.vaarten} vaarten per jaar. Die vloot ligt aan dezelfde steiger als de sloepen van Sloepmaten en is het vangnet achter de altijd-varen-garantie.`,
+      alinea: oprichter,
     },
     {
       kop: "Waarom Sloepmaten",
       alinea:
-        "Een sloep ligt het grootste deel van het jaar stil, ook een geleasde. Tegelijk gaan de grachten elektrisch en wordt een eigen plek op het water schaars. Deeleigendom lost allebei op: twee bedrijven, één sloep, en toch altijd varen.",
+        "Een sloep ligt het grootste deel van het jaar stil, ook een geleasde. Tegelijk gaan de grachten elektrisch en wordt een eigen plek op het water schaars. Deeleigendom lost allebei op: twee bedrijven, één sloep, of één bedrijf dat hem helemaal heeft.",
     },
     {
       kop: "Wat we niet doen",

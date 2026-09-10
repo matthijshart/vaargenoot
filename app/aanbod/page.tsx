@@ -5,7 +5,7 @@ import { aanbod } from "@/content/aanbod";
 
 export const metadata: Metadata = {
   title: "Aanbod op één A4",
-  description: "Sloepmaten in het kort: Duo en Solo met prijzen, de altijd-varen-garantie, zo kopen we de sloepen, contact.",
+  description: "Sloepmaten in het kort: Duo en Solo met prijzen, alles inbegrepen, zo delen jullie, contact.",
   robots: { index: false, follow: false },
 };
 
@@ -49,17 +49,17 @@ export default function Aanbod() {
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2 print:mt-4 print:grid-cols-2 print:gap-5">
         <section>
-          <h2 className="text-[17px] font-semibold tracking-[-0.01em] print:text-[12pt]">{aanbod.garantie.kop}</h2>
+          <h2 className="text-[17px] font-semibold tracking-[-0.01em] print:text-[12pt]">{aanbod.samen.kop}</h2>
           <ul className="mt-1 space-y-1 text-grijs">
-            {aanbod.garantie.regels.map((r) => (
+            {aanbod.samen.regels.map((r) => (
               <li key={r}>{r}</li>
             ))}
           </ul>
         </section>
         <section>
-          <h2 className="text-[17px] font-semibold tracking-[-0.01em] print:text-[12pt]">{aanbod.kopen.kop}</h2>
+          <h2 className="text-[17px] font-semibold tracking-[-0.01em] print:text-[12pt]">{aanbod.verder.kop}</h2>
           <ul className="mt-1 space-y-1 text-grijs">
-            {aanbod.kopen.regels.map((r) => (
+            {aanbod.verder.regels.map((r) => (
               <li key={r}>
                 <Tekst>{r}</Tekst>
               </li>

@@ -6,7 +6,6 @@ import { KnopLink, PijlLink } from "./ui/Knop";
 import { Kop } from "./ui/Kop";
 import { Lijst } from "./ui/Rijen";
 import { Sectie } from "./ui/Sectie";
-import { Tekst } from "./ui/Tekst";
 
 /** Blok 2: Duo of Solo, twee rustige kolommen. */
 export function DuoSolo() {
@@ -31,11 +30,11 @@ export function DuoSolo() {
   );
 }
 
-/** Blok 3: de altijd-varen-garantie in vier zinnen. */
-export function Garantie() {
-  const t = home.garantie;
+/** Blok 3: samen delen, in vier zinnen. */
+export function Samen() {
+  const t = home.samen;
   return (
-    <Sectie id="garantie" toon="room">
+    <Sectie id="samen" toon="room">
       <Container className="grid gap-10 md:grid-cols-12 md:gap-8">
         <div className="md:col-span-5">
           <Kop boven={t.boven} kop={t.kop} />
@@ -114,56 +113,24 @@ export function LeasenOfDelen({ id = "leasen-of-delen" }: { id?: string }) {
   );
 }
 
-/** Blok 6: zo kopen we de sloepen, plus founding sloepmaten. */
-export function ZoKopen() {
-  const t = home.kopen;
+/** Blok: zo makkelijk is het, drie stappen naast elkaar. */
+export function Stappen() {
+  const t = home.stappen;
   return (
-    <Sectie id="zo-kopen-we">
-      <Container className="grid gap-10 md:grid-cols-12 md:gap-8">
-        <div className="md:col-span-5">
-          <Kop boven={t.boven} kop={t.kop} />
-        </div>
-        <div className="md:col-span-6 md:col-start-7">
-          <ol className="divide-y divide-lijn border-y border-lijn">
-            {t.stappen.map((stap, i) => (
-              <li key={stap} className="grid grid-cols-[2rem_1fr] gap-4 py-4">
-                <span className="text-[15px] text-grijs tabular-nums">{i + 1}</span>
-                <p className="leading-relaxed">
-                  <Tekst>{stap}</Tekst>
-                </p>
-              </li>
-            ))}
-          </ol>
-          <p className="mt-6 text-[17px] font-medium">{t.founding}</p>
-          <PijlLink href={t.href} className="mt-2">
-            {t.link}
-          </PijlLink>
-        </div>
-      </Container>
-    </Sectie>
-  );
-}
-
-/** Blok 7: wie zit hierachter, drie zinnen. */
-export function Wie() {
-  const t = home.wie;
-  return (
-    <Sectie id="wie" toon="room">
-      <Container className="grid gap-10 md:grid-cols-12 md:gap-8">
-        <div className="md:col-span-5">
-          <Kop boven={t.boven} kop={t.kop} />
-        </div>
-        <div className="md:col-span-6 md:col-start-7">
-          <div className="space-y-5 text-[18px] leading-relaxed md:text-[20px]">
-            {t.zinnen.map((zin) => (
-              <p key={zin}>
-                <Tekst>{zin}</Tekst>
-              </p>
-            ))}
-          </div>
-          <PijlLink href={t.href} className="mt-6">
-            {t.link}
-          </PijlLink>
+    <Sectie id="stappen">
+      <Container>
+        <Kop boven={t.boven} kop={t.kop} midden />
+        <ol className="mx-auto mt-14 grid max-w-[56rem] gap-8 border-t border-lijn pt-8 md:mt-20 md:grid-cols-3 md:gap-10">
+          {t.lijst.map((s, i) => (
+            <li key={s.kop}>
+              <p className="text-[15px] text-grijs tabular-nums">{i + 1}</p>
+              <h3 className="mt-2 text-[24px]">{s.kop}</h3>
+              <p className="mt-2 leading-relaxed text-grijs">{s.tekst}</p>
+            </li>
+          ))}
+        </ol>
+        <div className="mt-8 text-center">
+          <PijlLink href={t.href}>{t.link}</PijlLink>
         </div>
       </Container>
     </Sectie>

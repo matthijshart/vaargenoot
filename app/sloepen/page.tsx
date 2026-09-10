@@ -12,7 +12,7 @@ import { sloepenPagina as t } from "@/content/sloepen";
 
 export const metadata: Metadata = {
   title: "De sloepen",
-  description: "Prinsen: 10 m, tot 12 personen, lange tafel, koelkast, barbecue, bimini. Amstel: 8 m, tot 10 personen. Allebei elektrisch en stil.",
+  description: "Prinsen: 10 m, lange tafel, koelkast, barbecue, bimini. Amstel: 8 m. Allebei elektrisch en stil, tot 40 aan boord, net zo fijn met vier.",
 };
 
 export default function Sloepen() {

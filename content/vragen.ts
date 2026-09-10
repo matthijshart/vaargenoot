@@ -1,4 +1,4 @@
-import { checks, fiscaal, garantie, juridisch, looptijd, modellen, producten, reservering, schade, seizoen, vergelijking } from "./config";
+import { checks, fiscaal, juridisch, looptijd, modellen, producten, reservering, samen, schade, seizoen, vergelijking } from "./config";
 import { bedrag, procentMinder } from "@/lib/utils";
 
 const solo = producten.solo.prijs.prinsen;
@@ -11,11 +11,11 @@ export const vragen = {
   lijst: [
     {
       vraag: "Wat als ik wil varen en mijn duo-partner ook?",
-      antwoord: `${garantie.regels[0]} ${garantie.botsing} ${garantie.regels[2]}`,
+      antwoord: `${samen.regels[0]} ${samen.regels[1]} ${samen.regels[2]} Zo blijft het eerlijk, zonder punten en zonder vaste dagen.`,
     },
     {
       vraag: "Waarom niet gewoon een hele sloep leasen?",
-      antwoord: `Kan ook, elders. Een ${modellen.prinsen.naam} van ${modellen.prinsen.lengte} meter kost daar vanaf ${bedrag(lease)} per maand, vier tot vijf jaar vast. Bij ons kost dezelfde sloep als Solo ${bedrag(solo)}, dat is ${procentMinder(lease, solo)} procent minder, met volledige huisstijl en twaalf maanden looptijd. Duo is ${bedrag(duo)} per bedrijf, en je pakt hem toch altijd. Alle bedragen exclusief btw, indicatief.`,
+      antwoord: `Kan ook, elders. Een ${modellen.prinsen.naam} van ${modellen.prinsen.lengte} meter kost daar vanaf ${bedrag(lease)} per maand, vier tot vijf jaar vast. Bij ons kost dezelfde sloep als Solo ${bedrag(solo)}, dat is ${procentMinder(lease, solo)} procent minder, met volledige huisstijl en twaalf maanden looptijd. Duo is ${bedrag(duo)} per bedrijf, voor een sloep die je met één ander bedrijf deelt. Alle bedragen exclusief btw, indicatief.`,
     },
     {
       vraag: "Wat kost het per jaar en wat zit erin?",
@@ -35,15 +35,11 @@ export const vragen = {
     },
     {
       vraag: "Hoe lang zit ik vast en hoe stap ik uit?",
-      antwoord: `Twaalf maanden vanaf ${looptijd.start}, opzegtermijn ${looptijd.opzegtermijn}. ${looptijd.uitstappen} Geen vier of vijf jaar, zoals bij lease.`,
+      antwoord: `Twaalf maanden vanaf ${looptijd.start}. ${looptijd.uitstappen} Geen vier of vijf jaar, zoals bij lease.`,
     },
     {
       vraag: "Kunnen we onze huisstijl op de boot?",
       antwoord: `${producten.solo.naam}: ${producten.solo.huisstijl} ${producten.duo.naam}: ${producten.duo.huisstijl}`,
-    },
-    {
-      vraag: "Wat als de sloep niet vol komt?",
-      antwoord: `We bestellen per volle sloep. Wordt jouw sloep niet uiterlijk ${reservering.besteldatum} besteld, dan krijg je je reserveringsbijdrage van ${reservering.bijdrage} terug. Tot die tijd houden we je op de hoogte van de beschikbaarheid.`,
     },
     {
       vraag: "Wat als er schade is?",
@@ -52,10 +48,6 @@ export const vragen = {
     {
       vraag: "Heeft de bestuurder een vaarbewijs nodig?",
       antwoord: `Nee. Voor een elektrische sloep onder de 15 meter die niet harder kan dan 20 kilometer per uur is geen vaarbewijs nodig. ${checks.vaarbewijs} Voor je eerste vaart leggen we uit hoe de sloep werkt.`,
-    },
-    {
-      vraag: "Mogen we de sloep doorverhuren?",
-      antwoord: "Nee. De sloep is voor je bedrijf: je mensen, je klanten en je gasten. Gasten meenemen mag altijd, verhuren aan derden niet.",
     },
     {
       vraag: "Hoe zit het fiscaal?",

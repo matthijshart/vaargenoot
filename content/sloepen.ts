@@ -5,7 +5,7 @@ const ids: ModelId[] = ["prinsen", "amstel"];
 
 export const sloepenPagina = {
   kop: "De sloepen.",
-  intro: "Twee modellen, allebei elektrisch, allebei stil. Nergens meer dan twaalf personen.",
+  intro: "Twee modellen, allebei elektrisch, allebei stil. Voor een lunch met vier en een borrel met veertig.",
   modellen: ids.map((id) => {
     const m = modellen[id];
     return {
@@ -24,7 +24,7 @@ export const sloepenPagina = {
       beeldNoot: id === "prinsen" ? "Prinsen driekwart van voren, hoge resolutie" : "Amstel op het water",
     };
   }),
-  check: checks.barbecue,
+  check: `${checks.barbecue} ${checks.personen}`,
   past: {
     boven: "Welke past bij jou",
     kop: "Prinsen of Amstel.",
@@ -33,8 +33,8 @@ export const sloepenPagina = {
       tekst: modellen[id].voorWie,
       detail:
         id === "prinsen"
-          ? "De hoofdsloep. Tien meter, een lange tafel voor twaalf, bimini tegen zon en regen, barbecue aan boord."
-          : "Acht meter, tot tien personen, dezelfde uitrusting zonder bimini en barbecue. De laagste instap.",
+          ? "De hoofdsloep. Tien meter, een lange tafel, bimini tegen zon en regen, barbecue aan boord. Tot veertig aan boord, en net zo fijn met vier."
+          : "Acht meter, dezelfde uitrusting zonder bimini en barbecue. De laagste instap, voor kleinere groepen.",
     })),
   },
 };

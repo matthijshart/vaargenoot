@@ -4,7 +4,8 @@ Deeleigendom van een hoogwaardige elektrische sloep in de Amsterdamse
 grachten, voor bedrijven. Twee producten: Duo (twee bedrijven op één sloep,
 ieder de helft) en Solo (één bedrijf, de hele sloep). Alles inbegrepen, één
 vast bedrag per maand, twaalf maanden, schipper en catering erbij te regelen.
-Geen particulieren, geen puntensysteem. De site is een verkoopinstrument: de
+Geen particulieren, geen puntensysteem, geen verhuur. Tot 40 aan boord, net
+zo fijn met vier. De site is een verkoopinstrument: de
 oprichter laat hem persoonlijk zien en legt ter plekke een reservering vast.
 
 Twee acties, overal dezelfde tekst: "Kom proefvaren" (primair) en
@@ -21,7 +22,7 @@ Twee acties, overal dezelfde tekst: "Kom proefvaren" (primair) en
 ## Eén bron van waarheid
 
 Alle feiten staan in `content/config.ts`: modellen, producten en prijzen,
-dagdelen, seizoen, looptijd, reservering, garantie, inbegrepen,
+dagdelen, seizoen, looptijd, reservering, samen (hoe Duo deelt), inbegrepen,
 beschikbaarheid per sloep (live op /duo-of-solo), oprichter, vergelijking
 met leasen elders. Pas daar iets aan en de hele site volgt.
 
@@ -34,7 +35,7 @@ in de hero of de prijstabel.
 ## Structuur
 
 - `/app`: `/` (home), `/duo-of-solo` (prijzen, beschikbaarheid, vergelijking, kosten per vaart), `/reserveer`, `/zo-werkt-het`, `/vragen`, `/sloepen`, `/aanbod` (printvriendelijk, één A4, niet geïndexeerd), `/proefvaren`, `/over`, `/privacy`, `not-found`, `sitemap`, `robots`, `manifest`. Redirects van de oude routes in `next.config.ts`.
-- `/components`: Nav, Footer, Hero, Home (DuoSolo, Garantie, Inbegrepen, LeasenOfDelen, ZoKopen, Wie, Slot), Prijzen (Prijstabel, Beschikbaarheid, KostenPerVaart, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
+- `/components`: Nav, Footer, Hero, Home (DuoSolo, Samen, Stappen, Inbegrepen, LeasenOfDelen, Slot), Prijzen (Prijstabel, Beschikbaarheid, KostenPerVaart, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
 - `/components/ui`: Container (1200 px), Knop (Knop, KnopLink, PijlLink), Sectie (de enige beweging), Kop, Tekst (placeholders), Foto, Vlak, Accordion, Veld (Invoer, Keuze), Rijen (Rijen, Lijst).
 - `/content`: config plus per pagina een tekstbestand (home, prijzen, reserveer, werkt, vragen, sloepen, proefvaren, over met privacy, aanbod, site, foto).
 - `/lib`: utils (cn, bedrag, procentMinder), validatie (regels voor beide formulieren, client en server).
@@ -60,7 +61,9 @@ zin. "Sloepmaten" is het merk, "sloepmaat" de klant, "duo-partner" het
 andere bedrijf. "Deeleigenaar" en "deeleigendom" aan elkaar. Bedragen als
 "€ 1.295" (`bedrag()`), altijd "excl. btw", "indicatief" waar nog niet
 definitief. Het woord "boeken" komt niet voor: wij zeggen "aanvragen" en
-"pakken". "Altijd" alleen bij Solo en in "altijd-varen-garantie".
+"pakken". "Altijd" alleen bij Solo. Nergens "verhuur", "zustersloep",
+opzegtermijn, een inkoopproces of wie er achter Sloepmaten zit: je hebt
+gewoon je sloep, alleen of samen. Zo simpel mogelijk voor een bedrijf.
 
 ## Kwaliteit
 

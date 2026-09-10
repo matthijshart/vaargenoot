@@ -8,7 +8,7 @@ import { werkt } from "@/content/werkt";
 
 export const metadata: Metadata = {
   title: "Zo werkt het",
-  description: "Van kiezen tot wegvaren in zeven stappen, en alle spelregels voluit: dagdelen, seizoen, Duo, Solo, de altijd-varen-garantie, voorkeursrecht en looptijd.",
+  description: "Van kiezen tot wegvaren in zeven stappen, en alle spelregels voluit: dagdelen, seizoen, Duo, Solo, voorkeursrecht en looptijd.",
 };
 
 export default function ZoWerktHet() {

@@ -1,4 +1,4 @@
-import { garantie, inbegrepen, looptijd, modellen, producten, reservering, site, type ModelId } from "./config";
+import { inbegrepen, looptijd, modellen, producten, reservering, samen, site, type ModelId } from "./config";
 import { bedrag } from "@/lib/utils";
 
 const ids: ModelId[] = ["prinsen", "amstel"];
@@ -13,16 +13,16 @@ export const aanbod = {
     prijzen: ids.map((m) => `${modellen[m].naam} ${modellen[m].lengte} m: ${bedrag(producten[p].prijs[m])} per maand${p === "duo" ? " per bedrijf" : ""}`),
     punten: [producten[p].aanBoord, producten[p].beschikbaarheid, producten[p].huisstijl, producten[p].voorkeursrecht],
   })),
-  prijsnoot: "Exclusief btw, indicatief. Twaalf maanden vanaf 1 april, opzegtermijn " + looptijd.opzegtermijn + ".",
+  prijsnoot: `Exclusief btw, indicatief. Twaalf maanden vanaf ${looptijd.start}. ${reservering.founding}`,
   inbegrepen: inbegrepen.join(", ") + ". Schipper en catering regel je erbij.",
-  garantie: { kop: garantie.naam, regels: garantie.regels },
-  kopen: {
-    kop: "Zo kopen we de sloepen",
+  samen: { kop: `${producten.duo.naam}: ${samen.naam.toLowerCase()}`, regels: samen.regels },
+  verder: {
+    kop: "Zo gaat het verder",
     regels: [
-      "Per volle sloep. Duo: twee handtekeningen. Solo: één.",
-      `Deelnameovereenkomst onder opschortende voorwaarde, reserveringsbijdrage van ${reservering.bijdrage}.`,
-      `Niet besteld uiterlijk ${reservering.besteldatum}: bijdrage terug. Anders eerste maand, betaling vanaf oplevering in ${reservering.oplevering}.`,
-      reservering.founding,
+      `Reserveer op de site of ter plekke. Overeenkomst binnen ${reservering.overeenkomstBinnen}, in gewone taal.`,
+      `Je tekent, wij bevestigen je sloep. Oplevering ${reservering.oplevering}, in je huisstijl.`,
+      looptijd.uitstappen,
+      reservering.duoPartnerActie,
     ],
   },
   contact: [site.naam, site.plaats, site.email, site.telefoon, site.domein.replace("https://", "")],

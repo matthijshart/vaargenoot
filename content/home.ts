@@ -1,4 +1,4 @@
-import { garantie, inbegrepen, extra, looptijd, modellen, oprichter, producten, reservering, vergelijking } from "./config";
+import { inbegrepen, extra, looptijd, modellen, producten, samen, vergelijking } from "./config";
 import { bedrag } from "@/lib/utils";
 
 export const home = {
@@ -14,8 +14,7 @@ export const home = {
       {
         id: "duo",
         naam: producten.duo.naam,
-        tekst:
-          "Twee bedrijven op één sloep, ieder de helft. Je vraagt hem aan wanneer je wilt, ook op de dag zelf, met de altijd-varen-garantie.",
+        tekst: "Twee bedrijven op één sloep, ieder de helft. Je vraagt een dagdeel aan wanneer je wilt, ook op de dag zelf.",
         vanaf: `Vanaf ${bedrag(producten.duo.prijs.amstel)} per maand per bedrijf`,
         link: "Bekijk Duo",
         href: "/duo-of-solo#duo",
@@ -32,11 +31,23 @@ export const home = {
     onder: "Prijzen exclusief btw, indicatief. Amstel 8 m; de Prinsen van 10 m staat op de prijspagina.",
   },
 
-  garantie: {
-    boven: garantie.naam,
-    kop: "Je pakt hem altijd.",
-    zinnen: garantie.regels,
+  samen: {
+    boven: samen.naam,
+    kop: "Delen zonder gedoe.",
+    zinnen: samen.regels,
     link: "Zo werkt Duo in de praktijk",
+    href: "/zo-werkt-het",
+  },
+
+  stappen: {
+    boven: "Zo makkelijk is het",
+    kop: "Kiezen, tekenen, varen.",
+    lijst: [
+      { kop: "Kiezen", tekst: "Prinsen of Amstel, Duo of Solo. Kom proefvaren als je twijfelt." },
+      { kop: "Tekenen", tekst: "Eén overeenkomst in gewone taal. Daarna is de sloep van jullie." },
+      { kop: "Varen", tekst: "Vraag een dagdeel aan in de app en stap aan boord. Wij doen de rest." },
+    ],
+    link: "Zo werkt het",
     href: "/zo-werkt-het",
   },
 
@@ -65,7 +76,7 @@ export const home = {
         naam: `${producten.solo.naam} bij Sloepmaten`,
         prijs: bedrag(producten.solo.prijs.prinsen),
         prijsKlein: `${modellen.amstel.naam} ${bedrag(producten.solo.prijs.amstel)}`,
-        looptijd: `${looptijd.maanden} maanden, opzegtermijn ${looptijd.opzegtermijn}`,
+        looptijd: `${looptijd.maanden} maanden`,
         huisstijl: "Volledige huisstijl inbegrepen",
         aanBoord: "Alleen jouw bedrijf",
         wij: true,
@@ -74,7 +85,7 @@ export const home = {
         naam: `${producten.duo.naam} bij Sloepmaten`,
         prijs: bedrag(producten.duo.prijs.prinsen),
         prijsKlein: `${modellen.amstel.naam} ${bedrag(producten.duo.prijs.amstel)}`,
-        looptijd: `${looptijd.maanden} maanden, opzegtermijn ${looptijd.opzegtermijn}`,
+        looptijd: `${looptijd.maanden} maanden`,
         huisstijl: "Beide logo's, je eigen vlag als jij vaart",
         aanBoord: "Jouw bedrijf en één duo-partner",
         wij: true,
@@ -83,32 +94,6 @@ export const home = {
     rijen: ["Per maand", "Looptijd", "Huisstijl", "Aan boord"] as const,
     link: "Alle prijzen en de kosten per vaart",
     href: "/duo-of-solo",
-  },
-
-  kopen: {
-    boven: "Zo kopen we de sloepen",
-    kop: "Per volle sloep, met jouw handtekening erop.",
-    stappen: [
-      "We bestellen per volle sloep. Duo: twee handtekeningen. Solo: één.",
-      `Je tekent een deelnameovereenkomst onder opschortende voorwaarde en betaalt een reserveringsbijdrage van ${reservering.bijdrage}.`,
-      `Wordt de sloep niet uiterlijk ${reservering.besteldatum} besteld, dan krijg je die terug.`,
-      `Anders is het je eerste maand. De betaling start bij oplevering in ${reservering.oplevering}.`,
-    ],
-    founding: reservering.founding,
-    link: "Bekijk welke sloepen nog vrij zijn",
-    href: "/duo-of-solo#beschikbaarheid",
-  },
-
-  wie: {
-    boven: "Wie zit hierachter",
-    kop: "Wij varen hier al jaren.",
-    zinnen: [
-      `${oprichter.naam} verhuurt sinds ${oprichter.sinds} sloepen in de grachten met ${oprichter.verhuurbedrijf}: ${oprichter.boten} boten, ${oprichter.vaarten} vaarten per jaar.`,
-      "Die vloot is het vangnet achter de altijd-varen-garantie.",
-      "Sloepmaten is de volgende stap: een sloep die van je bedrijf is.",
-    ],
-    link: "Over Sloepmaten",
-    href: "/over",
   },
 
   slot: {

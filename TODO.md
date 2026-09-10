@@ -11,11 +11,10 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 | E-mailadres, telefoonnummer, KvK-nummer | footer, privacy, aanbod | `site.email`, `site.telefoon`, `site.kvk` |
 | Steiger of adres van de ligplaats | nog nergens getoond | `site.steiger` |
 | Werf en type per model | /sloepen | `modellen.*.werf` |
-| Uiterste besteldatum | home, /reserveer, /zo-werkt-het, /vragen, /aanbod | `reservering.besteldatum` |
 | Tarief schipper per dagdeel, cateringpartners | nog nergens getoond, alleen "regel je erbij" | `extra.schipper`, `extra.catering` |
-| Naam oprichter, verhuurbedrijf, sinds, aantal boten, vaarten per jaar | home blok 7, /over | `oprichter.*` |
+| Naam en één zin over de oprichter | /over | `oprichter` |
 | Juridische vorm in twee zinnen | /vragen (vraag 4) | `juridisch` |
-| Eigen risico bij schade | /vragen (vraag 10) | `schade.eigenRisico` |
+| Eigen risico bij schade | /vragen (vraag 9) | `schade.eigenRisico` |
 | Prijs proefvaart of gratis | /proefvaren | `proefvaren.prijs` |
 | Pdf voorbeeldovereenkomst | /duo-of-solo | `voorbeeldovereenkomst` |
 | Bewaartermijn gegevens | /privacy | `content/over.ts` |
@@ -26,6 +25,7 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 
 - Barbecue aan boord volgens APV en verzekeraar (`checks.barbecue`, op /sloepen).
 - Vaarbewijs: elektrische sloep onder 15 m en 20 km/u (`checks.vaarbewijs`, in /vragen).
+- Meer dan twaalf personen aan boord: regels en certificaat voor bedrijfsmatig vervoer (`checks.personen`, op /sloepen). Beide sloepen staan op tot 40.
 - Fiscaal: uitsluiting investeringsaftrek representatieve vaartuigen, BUA (`checks.fiscaal`, in /vragen). De site claimt niets, alleen "vraag je accountant".
 
 ## Aannames die je kunt wijzigen
@@ -34,6 +34,7 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 - Prijzen: Duo Prinsen € 1.295, Amstel € 995 per bedrijf; Solo Prinsen € 1.995, Amstel € 1.595. Exclusief btw, indicatief.
 - Vergelijking: leasen elders vanaf € 2.150 (8,5 m) tot € 2.650 (10 m) per maand exclusief btw, vier tot vijf jaar. Bron: openbare prijzen van een aanbieder, september 2026. De aanbieder wordt nergens genoemd.
 - Losse huur staat bewust niet in de vergelijking.
+- Bewust weggelaten op verzoek: zustersloep en verhuurvloot, de altijd-varen-garantie, opzegtermijn, "zo kopen we de sloepen" (reserveringsbijdrage, besteldatum) en "wie zit hierachter". Founding sloepmaten (prijs drie jaar vast) staat nog op /duo-of-solo, /reserveer en /aanbod; één regel in config om ook dat weg te halen.
 - Verrekenen van ongebruikte dagdelen via verhuur: uit, niet op de site.
 
 ## Open keuzes

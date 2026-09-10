@@ -9,7 +9,7 @@ import { over } from "@/content/over";
 
 export const metadata: Metadata = {
   title: "Over",
-  description: "Een verhuurder die al jaren in de Amsterdamse grachten vaart, en een simpel idee: een sloep die van je bedrijf is.",
+  description: "Een simpel idee: een sloep die van je bedrijf is. Alleen, of met één ander bedrijf. Waarom Sloepmaten, en wat we niet doen.",
 };
 
 export default function Over() {

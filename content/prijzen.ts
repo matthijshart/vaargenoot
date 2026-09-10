@@ -14,7 +14,6 @@ export const prijzen = {
       { label: "Wie aan boord", sleutel: "aanBoord" },
       { label: "Beschikbaarheid", sleutel: "beschikbaarheid" },
       { label: "Huisstijl", sleutel: "huisstijl" },
-      { label: "Garantie", sleutel: "garantie" },
       { label: "Looptijd", sleutel: "looptijd" },
       { label: "Voorkeursrecht", sleutel: "voorkeursrecht" },
     ] as const,
@@ -36,7 +35,7 @@ export const prijzen = {
   beschikbaarheid: {
     boven: "Beschikbaarheid",
     kop: "Welke sloepen nog vrij zijn.",
-    intro: `We bestellen per volle sloep. Een Duo-helft reserveer je alleen, een Solo reserveer je in één keer. Oplevering ${reservering.oplevering}.`,
+    intro: `Elke sloep heeft twee helften. Zijn ze allebei vrij, dan kan hij ook als Solo. Oplevering ${reservering.oplevering}.`,
     kolommen: ["Sloep", "Duo, helft 1", "Duo, helft 2", "Solo"],
     sloepen: sloepen.map((s) => ({
       naam: s.naam,
@@ -59,7 +58,7 @@ export const prijzen = {
       lengte: `${modellen[m].lengte} m`,
       maand: [vergelijking.lease.prijs[m], producten.solo.prijs[m], producten.duo.prijs[m]],
     })),
-    onder: "Bij Duo deel je de sloep, dus je vaart op je eigen dagdelen. Bij Solo en bij leasen elders is de sloep elke dag van jou, ook als hij stilligt.",
+    onder: "Bij Duo deel je de sloep met één ander bedrijf. Bij Solo en bij leasen elders is de sloep elke dag van jou, ook als hij stilligt.",
   },
 
   overeenkomst: {

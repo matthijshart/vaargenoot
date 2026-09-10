@@ -3,20 +3,17 @@ import { bedrag } from "@/lib/utils";
 
 export const reserveer = {
   kop: "Reserveer je sloep.",
-  intro: "Vier stappen, en in april 2027 ligt hij voor je klaar.",
+  intro: `Vier stappen, en in ${reservering.oplevering} ligt hij voor je klaar.`,
   stappen: [
     { kop: "Reserveren", tekst: "Vul het formulier in. Je kiest het model en Duo of Solo; een duo-partner is optioneel." },
     {
       kop: `Overeenkomst binnen ${reservering.overeenkomstBinnen}`,
-      tekst: `Je krijgt de deelnameovereenkomst onder opschortende voorwaarde. Na tekenen betaal je een reserveringsbijdrage van ${reservering.bijdrage}.`,
+      tekst: "Je krijgt de overeenkomst per e-mail, in gewone taal. Vragen? Dan bellen we.",
     },
-    {
-      kop: "Sloep vol, dan bestellen",
-      tekst: `Duo: twee handtekeningen, Solo: één. Wordt de sloep niet uiterlijk ${reservering.besteldatum} besteld, dan krijg je je bijdrage terug.`,
-    },
+    { kop: "Tekenen", tekst: "Je tekent, wij bevestigen je sloep en je helft. Vanaf dat moment is hij van jullie." },
     {
       kop: `Oplevering ${reservering.oplevering}`,
-      tekst: "Je bijdrage is je eerste maand. De betaling start bij oplevering, in je huisstijl, met de app op je telefoon.",
+      tekst: "In je huisstijl, met de app op je telefoon. De betaling start bij oplevering.",
     },
   ],
   founding: reservering.founding,

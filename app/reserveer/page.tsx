@@ -8,7 +8,7 @@ import { reserveer } from "@/content/reserveer";
 
 export const metadata: Metadata = {
   title: "Reserveer je sloep",
-  description: "Reserveer een Duo-helft of een Solo voor vaarseizoen 2027. Overeenkomst binnen twee werkdagen, oplevering april 2027.",
+  description: "Reserveer een Duo-helft of een Solo voor 2027. Overeenkomst binnen twee werkdagen, tekenen, oplevering april 2027.",
 };
 
 export default function Reserveer() {

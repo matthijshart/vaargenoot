@@ -7,7 +7,7 @@ import { vragen } from "@/content/vragen";
 
 export const metadata: Metadata = {
   title: "Vragen",
-  description: "Veertien vragen over Duo, Solo, de altijd-varen-garantie, deeleigendom, looptijd, huisstijl, schade, vaarbewijs en het seizoen.",
+  description: "Twaalf vragen over Duo, Solo, deeleigendom, looptijd, huisstijl, schade, vaarbewijs en het seizoen.",
 };
 
 export default function Vragen() {

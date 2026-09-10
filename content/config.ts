@@ -40,7 +40,7 @@ export const modellen: Record<
     id: "prinsen",
     naam: "Prinsen",
     lengte: 10,
-    personen: 12,
+    personen: 40,
     uitrusting: [
       "Lange tafel",
       "Koelkast",
@@ -52,22 +52,23 @@ export const modellen: Record<
       "Geluid",
       "230 V",
     ],
-    voorWie: "Teams tot 12 en klantenavonden.",
+    voorWie: "Het hele kantoor, een klantenavond, of een lunch met vier.",
     werf: invullen("werf en type"),
   },
   amstel: {
     id: "amstel",
     naam: "Amstel",
     lengte: 8,
-    personen: 10,
+    personen: 40,
     uitrusting: ["Lange tafel", "Koelkast", "Ligdek", "Kussens", "Zwemtrap", "Geluid", "230 V"],
-    voorWie: "Kleinere teams en een lagere prijs.",
+    voorWie: "Kleinere groepen en een lagere prijs.",
     werf: invullen("werf en type"),
   },
 };
 
 export const checks = {
   barbecue: check("barbecue aan boord volgens APV en verzekeraar"),
+  personen: check("meer dan twaalf personen aan boord: regels en certificaat voor bedrijfsmatig vervoer"),
   vaarbewijs: check("elektrische sloep onder 15 m en 20 km/u"),
   fiscaal: check("uitsluiting investeringsaftrek representatieve vaartuigen, BUA"),
 };
@@ -82,7 +83,6 @@ export const producten: Record<
     aanBoord: string;
     beschikbaarheid: string;
     huisstijl: string;
-    garantie: string;
     looptijd: string;
     voorkeursrecht: string;
   }
@@ -95,7 +95,6 @@ export const producten: Record<
     aanBoord: "Jouw mensen en gasten. Je duo-partner vaart op zijn eigen dagdelen.",
     beschikbaarheid: "Aanvragen in de app wanneer je wilt, ook op de dag zelf.",
     huisstijl: "Beide logo's op de sloep. Je eigen vlag en welkomstbord als jij vaart.",
-    garantie: "Altijd-varen-garantie.",
     looptijd: "Twaalf maanden vanaf 1 april.",
     voorkeursrecht: "Eerste recht op de andere helft. Per 1 april naar Solo.",
   },
@@ -104,10 +103,9 @@ export const producten: Record<
     naam: "Solo",
     kort: "Eén bedrijf, de hele sloep.",
     prijs: { prinsen: 1995, amstel: 1595 },
-    aanBoord: "Alleen jouw bedrijf. Nooit gedeeld, nooit verhuurd.",
+    aanBoord: "Alleen jouw bedrijf. Met niemand gedeeld.",
     beschikbaarheid: "Altijd beschikbaar.",
     huisstijl: "Volledige huisstijl en bestickering inbegrepen.",
-    garantie: "Altijd voor jou.",
     looptijd: "Twaalf maanden vanaf 1 april.",
     voorkeursrecht: "Draag een partner aan en ga terug naar Duo.",
   },
@@ -131,28 +129,25 @@ export const seizoen = {
 export const looptijd = {
   maanden: 12,
   start: "1 april",
-  opzegtermijn: "twee maanden",
   uitstappen: "Tussentijds uitstappen kan met een opvolger. Wij helpen daarbij.",
 };
 
 export const reservering = {
-  bijdrage: "één maandbedrag",
-  besteldatum: invullen("uiterste besteldatum"),
   oplevering: "april 2027",
   overeenkomstBinnen: "twee werkdagen",
   founding: "De eerste bedrijven zijn founding sloepmaten: hun prijs staat drie jaar vast.",
   duoPartnerActie: "Neem je je eigen duo-partner mee, dan varen jullie allebei de eerste maand gratis.",
 };
 
-export const garantie = {
-  naam: "Altijd-varen-garantie",
+/** Zo delen twee bedrijven één sloep. Geen punten, geen vaste dagen. */
+export const samen = {
+  naam: "Samen, zonder gedoe",
   regels: [
-    "Vraag je hem aan, dan vaar je. Op je eigen sloep, of anders op een zustersloep aan dezelfde steiger.",
-    "Lukt zelfs dat niet, dan is die maand gratis.",
-    "Eerlijk is eerlijk: op een drukke vrijdag vaar je soms op een zustersloep.",
-    "Zolang er één Prinsen ligt, is onze verhuurvloot het vangnet.",
+    "Geen punten, geen vaste dagen. Je vraagt een dagdeel aan in de app wanneer je wilt, ook op de dag zelf.",
+    "Je ziet meteen wat vrij is. Je duo-partner ook.",
+    "Willen jullie allebei hetzelfde dagdeel, dan wijkt wie de vorige keer voorging.",
+    "Beide logo's op de sloep. Je eigen vlag en welkomstbord als jij vaart.",
   ],
-  botsing: "Willen jullie allebei hetzelfde dagdeel en is er geen vrije zustersloep, dan wijkt wie de vorige keer voorging.",
 };
 
 export const inbegrepen = [
@@ -203,13 +198,7 @@ export const sloepen: { id: string; naam: string; model: ModelId; helften: [Helf
   { id: "amstel-2", naam: "Amstel 2", model: "amstel", helften: ["vrij", "vrij"] },
 ];
 
-export const oprichter = {
-  naam: invullen("naam oprichter"),
-  verhuurbedrijf: invullen("naam verhuurbedrijf"),
-  sinds: invullen("sinds welk jaar"),
-  boten: invullen("aantal boten"),
-  vaarten: invullen("vaarten per jaar"),
-};
+export const oprichter = invullen("naam en één zin over de oprichter");
 
 export const juridisch = invullen("juridische vorm in twee zinnen, in gewone taal");
 
