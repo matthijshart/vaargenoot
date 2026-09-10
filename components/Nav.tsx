@@ -41,7 +41,7 @@ export function Nav() {
       )}
     >
       <nav aria-label="Hoofdmenu" className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-5 md:px-8">
-        <Link href="/" className="text-[19px] font-semibold tracking-[-0.02em]">
+        <Link href="/" className="kop text-[26px]">
           {site.naam}
         </Link>
 

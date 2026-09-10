@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="niet-printen border-t border-lijn">
       <Container className="grid gap-10 pt-14 pb-32 md:grid-cols-12 md:gap-8 md:pb-14">
         <div className="md:col-span-5">
-          <p className="text-[19px] font-semibold tracking-[-0.02em]">{site.naam}</p>
+          <p className="kop text-[32px]">{site.naam}</p>
           <p className="mt-1 text-[15px] text-grijs">{site.plaats}</p>
           <ul className="mt-4 space-y-1 text-[15px] text-grijs">
             <li>

@@ -1,5 +1,5 @@
 import { Hero } from "@/components/Hero";
-import { DuoSolo, Inbegrepen, LeasenOfDelen, Samen, Slot, Stappen, VoorWie } from "@/components/Home";
+import { Amsterdam, DuoSolo, Inbegrepen, LeasenOfDelen, Samen, Slot, Stappen, VoorWie } from "@/components/Home";
 import { home } from "@/content/home";
 
 export default function Voorpagina() {
@@ -7,6 +7,7 @@ export default function Voorpagina() {
     <>
       <Hero kop={home.hero.kop} sub={home.hero.sub} />
       <VoorWie />
+      <Amsterdam />
       <DuoSolo />
       <Samen />
       <Stappen />

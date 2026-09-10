@@ -21,7 +21,7 @@ export default function Over() {
         <div className="mt-16 grid gap-12 md:mt-24 md:grid-cols-12 md:gap-8">
           {over.blokken.map((b) => (
             <div key={b.kop} className="grid gap-3 md:col-span-12 md:grid-cols-12 md:gap-8">
-              <h2 className="text-[24px] md:col-span-4 md:text-[28px]">{b.kop}</h2>
+              <h2 className="text-[30px] md:col-span-4 md:text-[36px]">{b.kop}</h2>
               <p className="maat leading-relaxed text-grijs md:col-span-7 md:col-start-6 md:text-[19px]">
                 <Tekst>{b.alinea}</Tekst>
               </p>

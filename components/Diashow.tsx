@@ -30,7 +30,7 @@ export function Diashow({ beelden, interval = 3500 }: { beelden: Beeld[]; interv
   }, [beelden.length, interval, stil]);
 
   return (
-    <div className="relative aspect-[4/3] overflow-hidden bg-room md:aspect-[16/7]">
+    <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-room md:aspect-[16/7] md:rounded-[28px]">
       {beelden.map((b, i) => (i === 0 || klaar) && (
         <Image
           key={b.alt}

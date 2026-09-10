@@ -3,8 +3,8 @@ import { bedrag } from "@/lib/utils";
 
 export const home = {
   hero: {
-    kop: "Een sloep voor je bedrijf.\nIn deeleigendom.",
-    sub: "Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
+    kop: "Een sloep voor je bedrijf.\nIn *deeleigendom*.",
+    sub: "In de Amsterdamse grachten. Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
   },
 
   voorWie: {
@@ -14,11 +14,23 @@ export const home = {
     items: [
       "Vrijdagmiddag op het water met het team",
       "Lunch of diner met klanten, midden in de stad",
-      "Relaties en partners ontvangen: Amsterdam vanaf het water",
+      "Relaties en partners ontvangen: Amsterdam vanaf het water, langs de grachtenpanden",
       "Teamdag, jubileum, zomerborrel, kerstborrel",
       "Vergaderen of een presentatie aan de lange tafel",
       "Gasten uit het buitenland de grachten laten zien",
       "Green Egg en koelkast aan boord, schipper erbij als iedereen een glas wil",
+    ],
+  },
+
+  amsterdam: {
+    boven: "Amsterdamse grachten",
+    kop: "Je ligplaats midden in de stad.",
+    intro: "In de grachtengordel, of op een plek naar keuze. Vanaf kantoor het water op, en binnen tien minuten ligt de stad aan je voeten.",
+    items: [
+      "De Herengracht, de Prinsengracht, de Amstel en het IJ",
+      "Elektrisch en stil, dus ook welkom in het uitstootvrije centrum",
+      "Aanleggen bij een terras, of ankeren voor de Magere Brug",
+      "In december het Light Festival, met dekens en warme dranken",
     ],
   },
 

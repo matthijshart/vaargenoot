@@ -17,7 +17,7 @@ export default function Privacy() {
       <div className="mt-14 max-w-[44rem] divide-y divide-lijn border-y border-lijn md:mt-20">
         {privacy.blokken.map((b) => (
           <div key={b.kop} className="grid gap-2 py-6 sm:grid-cols-[11rem_1fr] sm:gap-8">
-            <h2 className="text-[18px] font-semibold tracking-[-0.01em]">{b.kop}</h2>
+            <h2 className="text-[24px]">{b.kop}</h2>
             <p className="leading-relaxed text-grijs">
               <Tekst>{b.tekst}</Tekst>
             </p>

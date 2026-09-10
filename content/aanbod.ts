@@ -6,7 +6,7 @@ const ids: ModelId[] = ["prinsen", "amstel"];
 /** Printvriendelijke samenvatting op één A4. */
 export const aanbod = {
   kop: "Een sloep voor je bedrijf. In deeleigendom.",
-  sub: "Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
+  sub: "In de Amsterdamse grachten. Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
   producten: (["duo", "solo"] as const).map((p) => ({
     naam: producten[p].naam,
     kort: producten[p].kort,

@@ -30,7 +30,7 @@ export default function Sloepen() {
               </p>
             </div>
             <div className="md:col-span-5">
-              <h2 className="text-[32px] md:text-[40px]">{m.naam}</h2>
+              <h2 className="text-[44px] md:text-[56px]">{m.naam}</h2>
               <Rijen rijen={m.specificaties} className="mt-6" labelBreedte="7rem" />
               <p className="mt-4 text-[15px] text-grijs">{t.ligplaats}</p>
             </div>
@@ -43,7 +43,7 @@ export default function Sloepen() {
           <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-2 md:gap-12">
             {t.past.kolommen.map((k) => (
               <div key={k.naam} className="border-t border-lijn pt-6">
-                <h3 className="text-[26px]">{k.naam}</h3>
+                <h3 className="kop text-[34px]">{k.naam}</h3>
                 <p className="mt-3 text-[18px] font-medium">{k.tekst}</p>
                 <p className="mt-2 leading-relaxed text-grijs">{k.detail}</p>
               </div>

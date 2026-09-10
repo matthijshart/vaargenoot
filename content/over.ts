@@ -2,7 +2,7 @@ import { oprichter, site } from "./config";
 
 export const over = {
   kop: "Over Sloepmaten.",
-  intro: "Een simpel idee: een sloep die van je bedrijf is. Alleen, of met één ander bedrijf.",
+  intro: "Een simpel idee: een sloep in de Amsterdamse grachten die van je bedrijf is. Alleen, of met één ander bedrijf.",
   blokken: [
     {
       kop: "De oprichter",

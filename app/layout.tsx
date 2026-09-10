@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 import { MobieleBalk, Voortgang } from "@/components/Scroll";
@@ -10,6 +10,16 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "optional",
+  adjustFontFallback: true,
+});
+
+/** Instrument Serif voor koppen en prijzen: één gewicht, met cursief voor accenten. */
+const serif = Instrument_Serif({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
   display: "optional",
   adjustFontFallback: true,
 });
@@ -46,7 +56,7 @@ const structured = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="nl" className={`${inter.variable} h-full`}>
+    <html lang="nl" className={`${inter.variable} ${serif.variable} h-full`}>
       <body className="flex min-h-full flex-col">
         <Nav />
         <Voortgang />

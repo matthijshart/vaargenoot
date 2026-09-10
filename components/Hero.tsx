@@ -14,22 +14,24 @@ export function Hero({ kop, sub }: { kop: string; sub: string }) {
     <section className="pt-32 md:pt-44">
       <Container>
         <div className="mx-auto max-w-[60rem] text-center">
-          <h1 className="text-[40px] md:text-[60px] lg:text-[72px]">
+          <h1 className="text-[48px] md:text-[76px] lg:text-[92px]">
             {regels.map((regel, i) => (
               <span key={regel} className={i > 0 ? "md:block" : undefined}>
                 {i > 0 && " "}
-                {regel}
+                {regel.split(/(\*[^*]+\*)/).map((deel, j) =>
+                  deel.startsWith("*") ? <em key={j}>{deel.slice(1, -1)}</em> : <span key={j}>{deel}</span>,
+                )}
               </span>
             ))}
           </h1>
-          <p className="mx-auto mt-6 max-w-[38rem] text-[18px] leading-relaxed text-grijs md:text-[21px]">{sub}</p>
+          <p className="mx-auto mt-7 max-w-[38rem] text-[18px] leading-relaxed text-grijs md:text-[21px]">{sub}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 md:mt-10">
             <KnopLink href={cta.proefvaren.href}>{cta.proefvaren.label}</KnopLink>
             <PijlLink href={cta.reserveer.href}>{cta.reserveer.label}</PijlLink>
           </div>
         </div>
       </Container>
-      <div className="mt-14 md:mt-20">
+      <div className="mx-auto mt-14 w-full max-w-[1320px] px-3 md:mt-20 md:px-6">
         <Diashow
           beelden={[
             { src: foto.prinsen.src, alt: foto.prinsen.alt, positie: "50% 55%" },

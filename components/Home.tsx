@@ -17,10 +17,28 @@ export function VoorWie() {
       <Container className="grid gap-10 md:grid-cols-12 md:items-center md:gap-8">
         <div className="md:col-span-6">
           <Kop boven={t.boven} kop={t.kop} intro={t.intro} />
-          <Lijst items={t.items} className="mt-8" />
+          <Lijst items={t.items} vinkjes className="mt-8" />
         </div>
         <div className="md:col-span-5 md:col-start-8">
           <Foto src={foto.greenEgg.src} alt={foto.greenEgg.alt} ratio="1 / 1" sizes="(min-width: 768px) 40vw, 100vw" className="rounded-kaart" />
+        </div>
+      </Container>
+    </Sectie>
+  );
+}
+
+/** Blok: Amsterdam. De grachten dragen de pagina, één foto naast één kolom tekst. */
+export function Amsterdam() {
+  const t = home.amsterdam;
+  return (
+    <Sectie id="amsterdam" toon="room">
+      <Container className="grid gap-10 md:grid-cols-12 md:items-center md:gap-8">
+        <div className="md:col-span-6">
+          <Foto src={foto.grachtBrug.src} alt={foto.grachtBrug.alt} ratio="4 / 3" sizes="(min-width: 768px) 50vw, 100vw" className="rounded-kaart" positie="50% 60%" />
+        </div>
+        <div className="md:col-span-5 md:col-start-8">
+          <Kop boven={t.boven} kop={t.kop} intro={t.intro} />
+          <Lijst items={t.items} vinkjes className="mt-8" />
         </div>
       </Container>
     </Sectie>
@@ -37,7 +55,7 @@ export function DuoSolo() {
         <div className="mx-auto mt-14 grid max-w-[56rem] gap-10 md:mt-20 md:grid-cols-2 md:gap-16">
           {t.kolommen.map((k) => (
             <div key={k.id} className="border-t border-lijn pt-6">
-              <h3 className="text-[28px] md:text-[32px]">{k.naam}</h3>
+              <h3 className="kop text-[36px] md:text-[44px]">{k.naam}</h3>
               <p className="mt-4 leading-relaxed text-grijs">{k.tekst}</p>
               <p className="mt-6 text-[17px] font-medium">{k.vanaf}</p>
               <PijlLink href={k.href}>{k.link}</PijlLink>
@@ -85,7 +103,7 @@ export function Inbegrepen() {
           <p className="mt-6 text-grijs">{t.extra}</p>
         </div>
         <div className="md:col-span-6 md:col-start-7">
-          <Lijst items={t.items} kolommen={2} />
+          <Lijst items={t.items} kolommen={2} vinkjes />
         </div>
       </Container>
     </Sectie>
@@ -105,8 +123,8 @@ export function LeasenOfDelen({ id = "leasen-of-delen" }: { id?: string }) {
               key={k.naam}
               className={cn("rounded-kaart border p-6 md:p-7", k.wij ? "border-lijn bg-wit" : "border-lijn/80")}
             >
-              <h3 className="text-[19px] font-medium tracking-normal">{k.naam}</h3>
-              <p className="mt-5 text-[34px] font-semibold tracking-[-0.02em] tabular-nums">{k.prijs}</p>
+              <h3 className="text-[17px] font-medium tracking-normal">{k.naam}</h3>
+              <p className="kop mt-5 text-[44px] tabular-nums">{k.prijs}</p>
               <p className="mt-1 text-[14px] text-grijs">
                 {t.rijen[0].toLowerCase()}, {k.prijsKlein}
               </p>
@@ -144,7 +162,7 @@ export function Stappen() {
           {t.lijst.map((s, i) => (
             <li key={s.kop}>
               <p className="text-[15px] text-grijs tabular-nums">{i + 1}</p>
-              <h3 className="mt-2 text-[24px]">{s.kop}</h3>
+              <h3 className="kop mt-2 text-[32px]">{s.kop}</h3>
               <p className="mt-2 leading-relaxed text-grijs">{s.tekst}</p>
             </li>
           ))}
@@ -163,7 +181,7 @@ export function Slot({ kop = home.slot.kop, tekst = home.slot.tekst }: { kop?: s
     <Sectie id="slot" className="border-t border-lijn">
       <Container>
         <div className="mx-auto max-w-[40rem] text-center">
-          <h2 className="text-[32px] md:text-[44px]">{kop}</h2>
+          <h2 className="text-[38px] md:text-[52px]">{kop}</h2>
           <p className="mt-5 text-[18px] text-grijs md:text-[20px]">{tekst}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
             <KnopLink href={cta.proefvaren.href}>{cta.proefvaren.label}</KnopLink>

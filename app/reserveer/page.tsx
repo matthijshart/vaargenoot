@@ -20,7 +20,7 @@ export default function Reserveer() {
           {reserveer.stappen.map((s, i) => (
             <li key={s.kop}>
               <p className="text-[15px] text-grijs tabular-nums">{i + 1}</p>
-              <h2 className="mt-2 text-[20px] font-semibold tracking-[-0.01em]">{s.kop}</h2>
+              <h2 className="mt-2 text-[26px]">{s.kop}</h2>
               <p className="mt-2 text-[15px] leading-relaxed text-grijs">
                 <Tekst>{s.tekst}</Tekst>
               </p>

@@ -14,7 +14,7 @@ export function Prijstabel() {
         <div className="grid gap-8 md:grid-cols-2 md:gap-8 lg:gap-12">
           {t.kolommen.map((k) => (
             <div key={k.id} id={k.id} className="scroll-mt-24 rounded-kaart border border-lijn p-6 md:p-8">
-              <h2 className="text-[32px] md:text-[40px]">{k.naam}</h2>
+              <h2 className="text-[44px] md:text-[56px]">{k.naam}</h2>
               <p className="mt-2 text-grijs">{k.kort}</p>
               <ul className="mt-8 divide-y divide-lijn border-y border-lijn">
                 {k.prijzen.map((p) => (
@@ -24,7 +24,7 @@ export function Prijstabel() {
                       <p className="text-[14px] text-grijs">{p.lengte}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-[28px] font-semibold tracking-[-0.02em] tabular-nums md:text-[32px]">{p.bedrag}</p>
+                      <p className="kop text-[34px] tabular-nums md:text-[40px]">{p.bedrag}</p>
                       <p className="text-[13px] text-grijs">per maand{p.perBedrijf ? " per bedrijf" : ""}, excl. btw</p>
                     </div>
                   </li>
@@ -135,7 +135,7 @@ export function KostenPerVaart() {
         <div className="mt-12 grid gap-10 md:mt-16 lg:grid-cols-2 lg:gap-12">
           {t.modellen.map((m) => (
             <div key={m.naam}>
-              <h3 className="text-[22px]">
+              <h3 className="kop text-[30px]">
                 {m.naam} <span className="font-normal text-grijs">{m.lengte}</span>
               </h3>
               <table className="mt-4 w-full border-collapse text-[15px]">
@@ -182,7 +182,7 @@ export function Overeenkomst() {
     <Sectie id="overeenkomst" toon="room">
       <Container className="grid gap-8 md:grid-cols-12">
         <div className="md:col-span-7">
-          <h2 className="text-[28px] md:text-[36px]">{t.kop}</h2>
+          <h2 className="text-[34px] md:text-[44px]">{t.kop}</h2>
           <p className="mt-4 text-grijs">{t.tekst}</p>
           <p className="mt-6 text-[15px]">
             Download: <Tekst>{t.bestand}</Tekst>

@@ -18,14 +18,14 @@ export default function Aanbod() {
         <PrintKnop label={aanbod.knop} />
       </div>
 
-      <p className="text-[13px] font-medium text-blauw">Sloepmaten</p>
-      <h1 className="mt-2 text-[30px] print:text-[22pt]">{aanbod.kop}</h1>
+      <p className="label text-blauw">Sloepmaten</p>
+      <h1 className="mt-2 text-[36px] print:text-[24pt]">{aanbod.kop}</h1>
       <p className="mt-2 text-grijs">{aanbod.sub}</p>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 print:mt-5 print:grid-cols-2 print:gap-5">
         {aanbod.producten.map((p) => (
           <section key={p.naam} className="rounded-kaart border border-lijn p-4">
-            <h2 className="text-[20px] print:text-[14pt]">{p.naam}</h2>
+            <h2 className="text-[28px] print:text-[17pt]">{p.naam}</h2>
             <p className="text-grijs">{p.kort}</p>
             <ul className="mt-3 space-y-1 font-medium">
               {p.prijzen.map((r) => (
@@ -43,13 +43,13 @@ export default function Aanbod() {
       <p className="mt-2 text-[13px] text-grijs">{aanbod.prijsnoot}</p>
 
       <section className="mt-6 print:mt-4">
-        <h2 className="text-[17px] font-semibold tracking-[-0.01em] print:text-[12pt]">Alles inbegrepen</h2>
+        <h2 className="text-[24px] print:text-[14pt]">Alles inbegrepen</h2>
         <p className="mt-1 text-grijs">{aanbod.inbegrepen}</p>
       </section>
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2 print:mt-4 print:grid-cols-2 print:gap-5">
         <section>
-          <h2 className="text-[17px] font-semibold tracking-[-0.01em] print:text-[12pt]">{aanbod.samen.kop}</h2>
+          <h2 className="text-[24px] print:text-[14pt]">{aanbod.samen.kop}</h2>
           <ul className="mt-1 space-y-1 text-grijs">
             {aanbod.samen.regels.map((r) => (
               <li key={r}>{r}</li>
@@ -57,7 +57,7 @@ export default function Aanbod() {
           </ul>
         </section>
         <section>
-          <h2 className="text-[17px] font-semibold tracking-[-0.01em] print:text-[12pt]">{aanbod.verder.kop}</h2>
+          <h2 className="text-[24px] print:text-[14pt]">{aanbod.verder.kop}</h2>
           <ul className="mt-1 space-y-1 text-grijs">
             {aanbod.verder.regels.map((r) => (
               <li key={r}>
@@ -69,7 +69,7 @@ export default function Aanbod() {
       </div>
 
       <section className="mt-6 border-t border-lijn pt-4 print:mt-4">
-        <h2 className="text-[17px] font-semibold tracking-[-0.01em] print:text-[12pt]">Contact</h2>
+        <h2 className="text-[24px] print:text-[14pt]">Contact</h2>
         <p className="mt-1 text-grijs">
           {aanbod.contact.map((c, i) => (
             <span key={c}>

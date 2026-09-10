@@ -20,7 +20,7 @@ export default function ZoWerktHet() {
           {werkt.stappen.map((s, i) => (
             <li key={s.kop} className="grid gap-2 py-5 md:grid-cols-12 md:gap-8 md:py-6">
               <p className="text-[15px] text-grijs tabular-nums md:col-span-1">{i + 1}</p>
-              <h2 className="text-[20px] font-semibold tracking-[-0.01em] md:col-span-4 md:text-[22px]">{s.kop}</h2>
+              <h2 className="text-[26px] md:col-span-4 md:text-[30px]">{s.kop}</h2>
               <p className="leading-relaxed text-grijs md:col-span-7">
                 <Tekst>{s.tekst}</Tekst>
               </p>
@@ -35,7 +35,7 @@ export default function ZoWerktHet() {
           <div className="mt-12 grid gap-12 md:mt-16 md:grid-cols-2 md:gap-x-12 md:gap-y-14">
             {werkt.spelregels.blokken.map((b) => (
               <div key={b.kop}>
-                <h3 className="text-[22px]">{b.kop}</h3>
+                <h3 className="kop text-[30px]">{b.kop}</h3>
                 <ul className="mt-4 space-y-3 leading-relaxed">
                   {b.regels.map((r) => (
                     <li key={r}>

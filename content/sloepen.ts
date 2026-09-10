@@ -5,7 +5,7 @@ const ids: ModelId[] = ["prinsen", "amstel"];
 
 export const sloepenPagina = {
   kop: "De sloepen.",
-  intro: "Twee modellen, allebei elektrisch, allebei stil. Voor een lunch met vier en een borrel met veertig.",
+  intro: "Twee modellen, allebei elektrisch, allebei stil, gebouwd voor de Amsterdamse grachten. Voor een lunch met vier en een borrel met veertig.",
   modellen: ids.map((id) => {
     const m = modellen[id];
     return {

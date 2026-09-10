@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 const basis =
-  "inline-flex h-12 items-center justify-center rounded-knop bg-blauw px-6 text-[16px] font-medium text-wit whitespace-nowrap transition-colors duration-200 hover:bg-blauw-donker disabled:opacity-60";
+  "inline-flex h-12 items-center justify-center rounded-knop bg-blauw px-7 text-[16px] font-medium text-wit whitespace-nowrap transition-[background-color,transform] duration-200 hover:bg-blauw-donker active:scale-[0.98] disabled:opacity-60";
 
 /** De enige primaire knop: blauw met witte tekst. */
 export function Knop({ className, ...rest }: React.ButtonHTMLAttributes<HTMLButtonElement>) {

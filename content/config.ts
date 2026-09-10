@@ -14,7 +14,7 @@ export const site = {
   domein: "https://sloepmaten.nl",
   plaats: "Amsterdam",
   omschrijving:
-    "Een sloep voor je bedrijf, in deeleigendom. Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
+    "Een sloep voor je bedrijf in de Amsterdamse grachten, in deeleigendom. Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
   email: invullen("e-mailadres"),
   telefoon: invullen("telefoonnummer"),
   kvk: invullen("KvK-nummer"),
