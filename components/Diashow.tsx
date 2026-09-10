@@ -14,6 +14,13 @@ type Beeld = { src: StaticImageData; alt: string; positie?: string };
 export function Diashow({ beelden, interval = 6000 }: { beelden: Beeld[]; interval?: number }) {
   const [actief, setActief] = useState(0);
   const [stil, setStil] = useState(false);
+  // Foto twee en drie laden pas na de eerste paint, zodat de eerste foto de LCP blijft.
+  const [klaar, setKlaar] = useState(false);
+
+  useEffect(() => {
+    const t = window.setTimeout(() => setKlaar(true), 2500);
+    return () => window.clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -23,8 +30,8 @@ export function Diashow({ beelden, interval = 6000 }: { beelden: Beeld[]; interv
   }, [beelden.length, interval, stil]);
 
   return (
-    <div className="relative overflow-hidden bg-room" style={{ aspectRatio: "16 / 7" }}>
-      {beelden.map((b, i) => (
+    <div className="relative aspect-[4/3] overflow-hidden bg-room md:aspect-[16/7]">
+      {beelden.map((b, i) => (i === 0 || klaar) && (
         <Image
           key={b.alt}
           src={b.src}

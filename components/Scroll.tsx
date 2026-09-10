@@ -63,7 +63,7 @@ export function MobieleBalk() {
 
   return (
     <div
-      aria-hidden={!zichtbaar}
+      inert={!zichtbaar}
       className={cn(
         "niet-printen fixed inset-x-0 bottom-0 z-40 border-t border-lijn bg-wit/95 backdrop-blur-sm transition-transform duration-300 ease-out md:hidden",
         zichtbaar ? "translate-y-0" : "translate-y-full",
@@ -71,7 +71,7 @@ export function MobieleBalk() {
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="flex items-center justify-between gap-4 px-5 py-3">
-        <Link href={cta.reserveer.href} tabIndex={zichtbaar ? 0 : -1} className="text-[15px] font-medium text-blauw">
+        <Link href={cta.reserveer.href} className="text-[15px] font-medium text-blauw">
           {cta.reserveer.label}
         </Link>
         <KnopLink href={cta.proefvaren.href} className="h-11 px-5 text-[15px]">
