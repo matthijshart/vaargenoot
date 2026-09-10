@@ -86,10 +86,10 @@ Zet de bestanden in `public/foto/lagen/` en pas de imports in
 
 ## Sloepen
 
-Beide sloepen 10 meter. Amstel tot 30 personen, zonder bimini. Prinsen tot
-45 personen, met bimini. Aan boord van beide: koelkast, Green Egg, tafel,
-ligdek, kussens, zwemtrap, geluid. Let op: boven de twaalf opvarenden gelden
-in Nederland andere regels dan voor pleziervaart, en de FAQ zegt dat een
+Beide sloepen 10 meter en tot 40 personen. Amstel zonder bimini, Prinsen
+met bimini. Aan boord van beide: koelkast, Green Egg, tafel, ligdek,
+kussens, zwemtrap, geluid. Let op: boven de twaalf opvarenden gelden in
+Nederland andere regels dan voor pleziervaart, en de FAQ zegt dat een
 vaarbewijs onder 15 meter en 20 km/u niet nodig is. Check of dat zo blijft.
 
 ## Inhoud die nog bevestigd moet worden
@@ -161,9 +161,17 @@ getallen: 1, 2 en 3 vaarpunten, weekendgrens 2 en 4, 48 uur, overloop 2.
 
 ## Bedrijven
 
-Sectie "Voor bedrijven" op de voorpagina, met keuze "Een aandeel voor mijn
-bedrijf" in het formulier. Nog te bevestigen: geldt dezelfde prijstabel, en
-is er een zakelijk aanbod met schipper standaard erbij.
+Eigen pagina /bedrijven: wat het oplevert (zes punten), het aanbod (aandeel,
+reserveren, inbegrepen, schipper), de drie aandelen met prijs en de knop.
+In het formulier de keuze "Een aandeel voor mijn bedrijf". Nog te
+bevestigen:
+- Geldt dezelfde prijstabel voor bedrijven? Nu staan dezelfde bedragen er,
+  indicatief.
+- Is er een zakelijk aanbod met schipper standaard erbij? Nu: bij te boeken.
+- Fiscaal (btw, kosten voor personeel of representatie): staat bewust
+  nergens op de site. Pas opnemen na advies van een accountant.
+- Mogen meerdere collega's reserveren in de app, of één beheerder per
+  bedrijf? Staat nu niet op de site.
 
 ## Formulier en livegang
 

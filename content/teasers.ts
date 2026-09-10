@@ -12,7 +12,7 @@ export const teasers = {
   bedrijven: {
     label: "Voor bedrijven",
     kop: "Ook voor je bedrijf.",
-    tekst: "Altijd een sloep klaar voor je mensen, je uitjes en je gasten uit het buitenland. Met schipper als je wilt.",
+    tekst: "Voor je mensen, je klanten en je gasten. Zonder aanschaf, zonder beheer, met schipper als je wilt.",
     link: "Lees meer over bedrijven",
     href: "/bedrijven",
   },
