@@ -7,18 +7,18 @@ import { cn } from "@/lib/utils";
 type Beeld = { src: StaticImageData; alt: string; positie?: string };
 
 /**
- * Rustige diavoorstelling voor de hero: de foto's vloeien elke zes
- * seconden in elkaar over. Drie stippen om zelf te kiezen. Bij
+ * Diavoorstelling voor de hero: de foto's wisselen elke 3,5 seconde met
+ * een overvloeiing van 0,7 seconde. Drie stippen om zelf te kiezen. Bij
  * prefers-reduced-motion blijft de eerste foto staan.
  */
-export function Diashow({ beelden, interval = 6000 }: { beelden: Beeld[]; interval?: number }) {
+export function Diashow({ beelden, interval = 3500 }: { beelden: Beeld[]; interval?: number }) {
   const [actief, setActief] = useState(0);
   const [stil, setStil] = useState(false);
   // Foto twee en drie laden pas na de eerste paint, zodat de eerste foto de LCP blijft.
   const [klaar, setKlaar] = useState(false);
 
   useEffect(() => {
-    const t = window.setTimeout(() => setKlaar(true), 2500);
+    const t = window.setTimeout(() => setKlaar(true), 1200);
     return () => window.clearTimeout(t);
   }, []);
 
@@ -42,7 +42,7 @@ export function Diashow({ beelden, interval = 6000 }: { beelden: Beeld[]; interv
           placeholder="blur"
           aria-hidden={i !== actief}
           className={cn(
-            "object-cover transition-opacity duration-[1200ms] ease-out motion-reduce:transition-none",
+            "object-cover transition-opacity duration-[700ms] ease-out motion-reduce:transition-none",
             i === actief ? "opacity-100" : "opacity-0",
           )}
           style={b.positie ? { objectPosition: b.positie } : undefined}

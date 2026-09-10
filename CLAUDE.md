@@ -35,7 +35,7 @@ in de hero of de prijstabel.
 ## Structuur
 
 - `/app`: `/` (home), `/duo-of-solo` (prijzen, beschikbaarheid, vergelijking, kosten per vaart), `/reserveer`, `/zo-werkt-het`, `/vragen`, `/sloepen`, `/aanbod` (printvriendelijk, één A4, niet geïndexeerd), `/proefvaren`, `/over`, `/privacy`, `not-found`, `sitemap`, `robots`, `manifest`. Redirects van de oude routes in `next.config.ts`.
-- `/components`: Nav, Footer, Scroll (Voortgang, MobieleBalk), Hero met Diashow (drie foto's, overvloeien elke zes seconden, stippen om te kiezen, stil bij reduced motion), Home (VoorWie, DuoSolo, Samen, Stappen, Inbegrepen, LeasenOfDelen, Slot), Prijzen (Prijstabel, Beschikbaarheid, KostenPerVaart, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
+- `/components`: Nav, Footer, Scroll (Voortgang, MobieleBalk), Hero met Diashow (drie foto's, wisselen elke 3,5 seconde, stippen om te kiezen, stil bij reduced motion), Home (VoorWie, DuoSolo, Samen, Stappen, Inbegrepen, LeasenOfDelen, Slot), Prijzen (Prijstabel, Beschikbaarheid, KostenPerVaart, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
 - `/components/ui`: Container (1200 px), Knop (Knop, KnopLink, PijlLink), Sectie (de enige beweging), Kop, Tekst (placeholders), Foto, Vlak, Accordion, Veld (Invoer, Keuze), Rijen (Rijen, Lijst).
 - `/content`: config plus per pagina een tekstbestand (home, prijzen, reserveer, werkt, vragen, sloepen, proefvaren, over met privacy, aanbod, site, foto).
 - `/lib`: utils (cn, bedrag, procentMinder), validatie (regels voor beide formulieren, client en server).
