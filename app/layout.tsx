@@ -5,11 +5,11 @@ import { Nav } from "@/components/Nav";
 import { site } from "@/content/config";
 import "./globals.css";
 
-/** Inter, variabel, latin. next/font host hem zelf, zonder flits (swap met metrische fallback). */
+/** Inter, variabel, latin. next/font host hem zelf. display optional: geen flits en geen verschuiving, de metrische fallback vangt een trage lading op. */
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
   adjustFontFallback: true,
 });
 
@@ -33,6 +33,16 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
+/** LocalBusiness zonder verzonnen gegevens: alleen naam, site en plaats. */
+const structured = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: site.naam,
+  url: site.domein,
+  description: site.omschrijving,
+  address: { "@type": "PostalAddress", addressLocality: site.plaats, addressCountry: "NL" },
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="nl" className={`${inter.variable} h-full`}>
@@ -42,6 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
       </body>
     </html>
   );

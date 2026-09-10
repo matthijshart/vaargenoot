@@ -1,94 +1,72 @@
 # Sloepmaten
 
-Gedeeld eigendom van elektrische sloepen in de Amsterdamse grachten. Leden
-(sloepmaten) betalen een vast maandbedrag voor een aandeel in een specifieke
-sloep, alles inbegrepen. Zes nieuwe sloepen in vaarseizoen 2027, vol is vol.
-De site heeft één doel: aanmelden voor 2027, of voor meer informatie. Eén
-knoptekst overal: `site.cta`. Gevoel: gemak, rustige luxe, alles glijdt.
+Deeleigendom van een hoogwaardige elektrische sloep in de Amsterdamse
+grachten, voor bedrijven. Twee producten: Duo (twee bedrijven op één sloep,
+ieder de helft) en Solo (één bedrijf, de hele sloep). Alles inbegrepen, één
+vast bedrag per maand, twaalf maanden, schipper en catering erbij te regelen.
+Geen particulieren, geen puntensysteem. De site is een verkoopinstrument: de
+oprichter laat hem persoonlijk zien en legt ter plekke een reservering vast.
+
+Twee acties, overal dezelfde tekst: "Kom proefvaren" (primair) en
+"Reserveer je sloep" (tekstlink met pijl), uit `content/site.ts`.
 
 ## Stack
 
-- Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Framer Motion, Lenis
-- Alle beelden via `next/image` met statische import en `placeholder="blur"`
-- Content in `/content/*.ts`, geen CMS
-- Aanmeldformulier als Server Action in `app/actions.ts`: logt altijd, mailt via Resend als `RESEND_API_KEY` en `AANMELD_NAAR` gezet zijn (zie `.env.example`)
-- Deploy op Vercel
+- Next.js 16 (App Router), TypeScript, Tailwind CSS v4. Geen Framer Motion, geen Lenis.
+- Inter via next/font (self-hosted, `display: optional`, metrische fallback), met `-apple-system` ervoor in de stack.
+- Beelden via `next/image` met statische import en blur, in `components/ui/Foto.tsx`. Ontbreekt beeld: `components/ui/Vlak.tsx` met [INVULLEN], nooit een placeholderfoto.
+- Twee formulieren als Server Actions in `app/actions.ts` (reserveren, proefvaren): valideren, loggen altijd, mailen via Resend zodra `RESEND_API_KEY` en `AANMELD_NAAR` gezet zijn (zie `.env.example`). Honeypotveld `website`.
+- Deploy op Vercel.
+
+## Eén bron van waarheid
+
+Alle feiten staan in `content/config.ts`: modellen, producten en prijzen,
+dagdelen, seizoen, looptijd, reservering, garantie, inbegrepen,
+beschikbaarheid per sloep (live op /duo-of-solo), oprichter, vergelijking
+met leasen elders. Pas daar iets aan en de hele site volgt.
+
+Wat nog niet vaststaat, staat als `invullen("...")` en verschijnt op de site
+als `[INVULLEN: ...]` met gele markering via `components/ui/Tekst.tsx`;
+wat getoetst moet worden als `check("...")`. Verzin nooit feiten (klanten,
+logo's, reviews, KvK, certificaten, fiscale voordelen). Geen placeholders
+in de hero of de prijstabel.
 
 ## Structuur
 
-- `/app` layout, page (voorpagina), actions, globals.css; onderliggende pagina's in `/app/prijzen`, `/app/bedrijven`, `/app/zo-werkt-het`, `/app/vragen`, elk via `components/Pagina.tsx` (nav, inhoud, aanmelden, footer)
-- `/components` voorpagina: Hero (foto van rand tot rand, naamplaat met kop en knop, feitenbalk), Ervaring, Sloepen, BedrijvenTeaser, Fotoband (brede foto met parallax en één regel), PrijsTeaser en VerwijsTeasers (Teasers.tsx: zo werkt het, vragen), Aanmelden. Onderliggend: Aandeel (/prijzen), Bedrijven met Vergelijk (/bedrijven: de verkooppagina, met kopen/leasen/deel-eigenaar en zakelijke vragen), ZoWerktHet en Verdelen (/zo-werkt-het), Vragen (/vragen). Bewaard maar nergens op een pagina: Inzicht, SloepLagen, Schipper, Inbegrepen, Weekstrook
-- `/components/ui` primitieven (Knop, Foto, Onderschrift, Sectie, SectieKop, Container, AnkerLink, Vinkje, VraagLijst, PuntKaarten: lijst met lijnen op mobiel, kaarten met hover vanaf sm)
-- Een link naar `#kennismaking` scrolt naar het formulier en vult "Ik wil" voor met een kennismaking (AnkerLink stuurt een hashchange, Aanmelden luistert)
-- `/content` alle teksten, prijzen, aannames en fotoverwijzingen
-- `/docs/reserveren.md` de opzet van het verdeelsysteem (punten, weekendgrens, ruilen)
-- `/lib` motion-varianten, validatie, hulpfuncties
-- `/fonts` lokaal gehoste Newsreader
-- `/foto-bron` bronfoto's (niet uitgeleverd), `/scripts/foto-crops.mjs` snijdt daaruit `/public/foto/*.jpg`
-- `/public/foto` foto's op de site, `/public/foto/tmp` plaatshouders
-- `/public/foto/lagen` lagen van de sloep van bovenaf (transparante PNG, zelfde kader), `/tmp` plaatshouders
-- `/scripts/plaatshouders.mjs` en `/scripts/lagen.mjs` maken de plaatshouders
+- `/app`: `/` (home), `/duo-of-solo` (prijzen, beschikbaarheid, vergelijking, kosten per vaart), `/reserveer`, `/zo-werkt-het`, `/vragen`, `/sloepen`, `/aanbod` (printvriendelijk, één A4, niet geïndexeerd), `/proefvaren`, `/over`, `/privacy`, `not-found`, `sitemap`, `robots`, `manifest`. Redirects van de oude routes in `next.config.ts`.
+- `/components`: Nav, Footer, Hero, Home (DuoSolo, Garantie, Inbegrepen, LeasenOfDelen, ZoKopen, Wie, Slot), Prijzen (Prijstabel, Beschikbaarheid, KostenPerVaart, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
+- `/components/ui`: Container (1200 px), Knop (Knop, KnopLink, PijlLink), Sectie (de enige beweging), Kop, Tekst (placeholders), Foto, Vlak, Accordion, Veld (Invoer, Keuze), Rijen (Rijen, Lijst).
+- `/content`: config plus per pagina een tekstbestand (home, prijzen, reserveer, werkt, vragen, sloepen, proefvaren, over met privacy, aanbod, site, foto).
+- `/lib`: utils (cn, bedrag, procentMinder), validatie (regels voor beide formulieren, client en server).
+- `/foto-bron` bronfoto's (niet uitgeleverd), `scripts/foto-crops.mjs` maakt `public/foto/*.jpg`.
 
-## Tokens
+## Ontwerp
 
-Tailwind v4 kent geen `theme.extend`; de tokens staan in `@theme` in
-`app/globals.css`. Gebruik uitsluitend deze namen.
+Niveau Apple: rust, één boodschap per scherm, het product en het water
+dragen de pagina. Twijfel je, laat het weg.
 
-| Naam    | Hex     | Gebruik                                              |
-| ------- | ------- | ---------------------------------------------------- |
-| nacht   | #0B1F33 | donkere secties, primaire knop, koppen op licht      |
-| gracht  | #1F4E79 | accent, hover, links, beschikbaarheid                |
-| lucht   | #A7C7E7 | lichte accentvlakken, tags, focusring                |
-| nevel   | #DCE6F0 | lijnen, randen, tabellen                             |
-| schuim  | #F4F7FA | achtergrond                                          |
-| wit     | #FFFFFF | velden, tekst op donker                              |
-| messing | #C9A26B | één warm accent: vinkjes, bevestiging, kleine details. Niet voor knoppen |
-| inkt    | #0F1B26 | broodtekst                                           |
-| zacht   | #5A6B7C | secundaire tekst                                     |
+- Tokens in `@theme` in `app/globals.css`, alleen deze namen: `wit`, `room` (warm off-white voor afwisselende secties), `antraciet` (tekst), `grijs` (secundaire tekst), `lijn`, `blauw` (enige accent: knoppen, links, actieve staat), `blauw-donker` (hover), `markeer` (placeholders). Geen gradients, geen kleurvlakken achter koppen.
+- Typografie: één sans. Koppen 600, tracking -0.02em, regelhoogte 1,05; h1 40 px mobiel tot 72 px desktop. Body 17 tot 18 px, regelhoogte 1,5, maximaal 65 tekens (`maat`). Geen bold in lopende tekst.
+- Layout: inhoud maximaal 1200 px, secties 80 px mobiel tot 160 px desktop verticale ruimte (`Sectie`). Eén kolom tekst naast één beeld, of één centrale kop met beeld eronder. Nooit drie kolommen met een icoon boven elke tekst.
+- Beweging: alleen `Sectie`: fade met 12 px verschuiving, 400 ms, één keer, via IntersectionObserver. Secties die bij laden al in beeld staan bewegen niet. `prefers-reduced-motion` schakelt alles uit. Geen parallax, geen autoplay, geen animerende cijfers.
+- Componenten: sticky nav transparant, wit met dunne onderlijn bij scrollen. Eén primaire knop (blauw), secundair als tekstlink met pijl. Radius `knop` 8 px, `kaart` 12 px. Schaduw maximaal `shadow-licht`. Accordion met dunne lijnen (CSS grid-rows). Formulieren: label boven het veld, grote velden, duidelijke focus, één knop.
+- Niet: emoji's, gradientknoppen, glassmorphism, zware schaduwen, carrousels, pop-ups, chatwidgets, badges, sterren, logo's die niet echt zijn, cookiebanner (we tracken niet).
 
-Geen zwart, geen paars, geen gradiënt als decoratie. Blauw is het water, de
-warmte komt uit de foto's en het messing.
+## Tekst en toon
 
-Overige tokens: `font-kop` (Newsreader), `font-sans` (Manrope),
-`ease-zacht` (cubic-bezier 0.2, 0.7, 0.2, 1), utility `maat` (max 62ch).
+Kort, concreet, Amsterdams, "je". Geen uitroeptekens, geen Engelse
+marketingtermen, geen gedachtestreepjes, geen drieslagen. Eén gedachte per
+zin. "Sloepmaten" is het merk, "sloepmaat" de klant, "duo-partner" het
+andere bedrijf. "Deeleigenaar" en "deeleigendom" aan elkaar. Bedragen als
+"€ 1.295" (`bedrag()`), altijd "excl. btw", "indicatief" waar nog niet
+definitief. Het woord "boeken" komt niet voor: wij zeggen "aanvragen" en
+"pakken". "Altijd" alleen bij Solo en in "altijd-varen-garantie".
 
-## Typografie
+## Kwaliteit
 
-- Koppen: Newsreader 300, optische maat schaalt mee (`font-variation-settings: "opsz"`). Nooit bold in koppen.
-- Broodtekst en interface: Manrope 400, 500, 600.
-- Regellengte maximaal 62 tekens. Sentence case overal. Geen hoofdletters als labels.
-
-## Beelden
-
-- Elke foto via `components/ui/Foto.tsx`: vaste verhouding, blur-placeholder, bij laden een fade (0,9 s) met een zachte inzoom van 1.04 naar 1 (1,4 s) op een eigen laag, zodat de hoverzoom op de foto zelf kan blijven.
-- `priority` alleen op de hero. De hero gebruikt de `staand`-prop van Foto: een picture-element met twee uitsnedes van dezelfde foto, `hero-breed` (1194 x 500) vanaf md en `hero-staand` (720 x 900) daaronder, met preload per media query en zonder fade via JavaScript. Hoogte van de band via `.hero-kader` in globals.css (svh met vaste terugval).
-- Verhoudingen: sloepen 4:3, schipper 5:6, details vierkant.
-
-## Beweging
-
-- Lenis smooth scroll, ankerlinks via `AnkerLink` (Lenis `scrollTo` voor `#id` en `/#id` op dezelfde pagina, anders `next/link`).
-- Hero-entree via CSS-keyframes (`opkomen` voor tekst, `foto-opkomen` voor de foto: alleen schaal 1.04 naar 1, geen opacity, anders telt de LCP pas na de fade), parallax via Framer Motion en een lichte inzoom terwijl de foto uit beeld glijdt. `Fotoband` gebruikt dezelfde parallax (hoogte via `.fotoband` in globals.css).
-- De navknop is op desktop omlijnd zolang de knop in de hero in beeld is (`<Nav hero />`, IntersectionObserver op `#hero-knop`) en vult zich daarna. Nooit twee gevulde knoppen tegelijk in beeld. Op mobiel en op de onderliggende pagina's is hij altijd gevuld.
-- `Verdelen` is de scrollgestuurde sectie op de pagina (vastgepind, 350vh); `SloepLagen` (400vh) staat klaar voor als er echte lagen zijn. Beide: `useScroll` en `useTransform` met functies (geen keyframes: framer-motion zet die om in een native ScrollTimeline die hier het verkeerde element volgt). Bij reduced motion een gewone sectie.
-- Secties komen één keer op via `components/ui/Sectie.tsx` (whileInView, once, 24px omhoog in 0,9 s). Nooit per element, nooit per kaartje.
-- Framer Motion via `LazyMotion` met `domAnimation` en `strict`: gebruik `m.` in plaats van `motion.`.
-- Hover op desktop (`md:`): kaarten komen 4px omhoog met zachte schaduw, foto's zoomen 4% in 700ms, gevulde knoppen krijgen een zachte schaduw. Alleen CSS, nooit op touch.
-- `prefers-reduced-motion`: alles uit, direct zichtbaar. Gebruik `useReducedMotion` in nieuwe componenten.
-
-## Teksten
-
-Nederlands, je-vorm, korte zinnen, actieve werkwoorden. Geen gedachtestreepjes,
-geen uitroeptekens, geen pijltjes in knoppen, geen opsommingstekens in lopende
-tekst. Gebruik "aandeel", "sloepmaat" en "deel-eigenaar"; "maximaal vier
-sloepmaten per sloep" is de exclusiviteitsclaim (volgt uit het kleinste
-aandeel, een kwart). De hero zegt in één regel wat Sloepmaten is ("Word
-deel-eigenaar van een sloep.") en in één alinea wat je ervoor hoeft te doen
-(niets, alleen varen). Laat
-"indicatief" staan bij elke prijs. Verzin geen feiten of cijfers; ontbreekt
-iets, zet het in TODO.md.
-
-## Git
-
-Korte Nederlandse commit messages. Branch per feature.
+Build en lint slagen bij elke commit. Elke pagina getest op 375 px en
+desktop (schermafbeeldingen via Playwright in de scratchpad). Lighthouse
+mobiel: performance, accessibility en best practices minimaal 95, CLS 0.
+Per pagina unieke title en description. Korte Nederlandse commit messages.
 
 @AGENTS.md

@@ -64,8 +64,32 @@ export function Beschikbaarheid() {
     <Sectie id="beschikbaarheid" toon="room">
       <Container>
         <Kop boven={t.boven} kop={t.kop} intro={t.intro} />
-        <div className="mt-12 overflow-x-auto md:mt-16">
-          <table className="w-full min-w-[36rem] border-collapse text-[15px]">
+        {/* Mobiel: per sloep een regel met drie statussen. */}
+        <ul className="mt-10 divide-y divide-lijn border-y border-lijn md:hidden">
+          {t.sloepen.map((s) => (
+            <li key={s.naam} className="py-4">
+              <p className="font-medium">
+                {s.naam} <span className="font-normal text-grijs">{s.model}</span>
+              </p>
+              <dl className="mt-2 grid grid-cols-3 gap-2 text-[14px]">
+                {[
+                  [t.kolommen[1], t.status[s.helften[0]]],
+                  [t.kolommen[2], t.status[s.helften[1]]],
+                  [t.kolommen[3], s.solo],
+                ].map(([label, waarde]) => (
+                  <div key={label}>
+                    <dt className="text-grijs">{label}</dt>
+                    <dd className="mt-0.5">
+                      <Status waarde={waarde} />
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-12 hidden md:mt-16 md:block">
+          <table className="w-full border-collapse text-[15px]">
             <thead>
               <tr className="border-b border-lijn text-left text-grijs">
                 {t.kolommen.map((k) => (

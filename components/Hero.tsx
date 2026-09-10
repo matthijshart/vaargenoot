@@ -13,8 +13,8 @@ export function Hero({ kop, sub }: { kop: string; sub: string }) {
   return (
     <section className="pt-32 md:pt-44">
       <Container>
-        <div className="mx-auto max-w-[52rem] text-center">
-          <h1 className="text-[40px] md:text-[64px] lg:text-[76px]">
+        <div className="mx-auto max-w-[60rem] text-center">
+          <h1 className="text-[40px] md:text-[60px] lg:text-[72px]">
             {regels.map((regel, i) => (
               <span key={regel} className={i > 0 ? "md:block" : undefined}>
                 {i > 0 && " "}
