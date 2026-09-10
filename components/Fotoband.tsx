@@ -4,6 +4,7 @@ import { m, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { fotoband } from "@/content/fotoband";
 import { Foto } from "./ui/Foto";
+import { Onderschrift } from "./ui/Onderschrift";
 
 /**
  * Brede foto van rand tot rand, met parallax en één regel onderin.
@@ -32,10 +33,7 @@ export function Fotoband() {
           fotoClassName="object-[50%_60%]"
         />
       </m.div>
-      <p className="absolute inset-x-0 bottom-5 mx-auto flex max-w-6xl items-center gap-3 px-5 text-[13px] font-medium text-wit/90 [text-shadow:0_1px_2px_rgba(11,31,51,0.45)] sm:bottom-6 sm:px-8 sm:text-[14px]">
-        <span aria-hidden className="h-px w-6 shrink-0 bg-messing" />
-        {fotoband.tekst}
-      </p>
+      <Onderschrift>{fotoband.tekst}</Onderschrift>
     </div>
   );
 }

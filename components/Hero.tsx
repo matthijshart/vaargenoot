@@ -6,6 +6,7 @@ import { foto } from "@/content/foto";
 import { hero } from "@/content/hero";
 import { Container } from "./ui/Container";
 import { Foto } from "./ui/Foto";
+import { Onderschrift } from "./ui/Onderschrift";
 import { KnopLink, TekstLink } from "./ui/Knop";
 
 /**
@@ -47,10 +48,7 @@ export function Hero() {
             />
           </m.div>
         </div>
-        <p className="absolute inset-x-0 bottom-5 mx-auto flex max-w-6xl items-center gap-3 px-5 text-[13px] font-medium text-wit/90 [text-shadow:0_1px_2px_rgba(11,31,51,0.45)] sm:bottom-6 sm:px-8">
-          <span aria-hidden className="h-px w-6 shrink-0 bg-messing" />
-          {hero.onderschrift}
-        </p>
+        <Onderschrift>{hero.onderschrift}</Onderschrift>
       </div>
 
       <Container className="pt-10 sm:pt-12">
