@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import { MobieleBalk, Voortgang } from "@/components/Scroll";
 import { site } from "@/content/config";
 import "./globals.css";
 
@@ -48,10 +49,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="nl" className={`${inter.variable} h-full`}>
       <body className="flex min-h-full flex-col">
         <Nav />
+        <Voortgang />
         <main id="inhoud" className="flex-1">
           {children}
         </main>
         <Footer />
+        <MobieleBalk />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
       </body>
     </html>

@@ -6,13 +6,12 @@ import { Kop } from "@/components/ui/Kop";
 import { Rijen } from "@/components/ui/Rijen";
 import { Sectie } from "@/components/ui/Sectie";
 import { Tekst } from "@/components/ui/Tekst";
-import { Vlak } from "@/components/ui/Vlak";
 import { foto } from "@/content/foto";
 import { sloepenPagina as t } from "@/content/sloepen";
 
 export const metadata: Metadata = {
   title: "De sloepen",
-  description: "Prinsen: 10 m, lange tafel, koelkast, barbecue, bimini. Amstel: 8 m. Allebei elektrisch en stil, tot 40 aan boord, net zo fijn met vier.",
+  description: "Prinsen: 10 m, lange tafel, koelkast, Green Egg, bimini. Amstel: 8 m. Allebei elektrisch en stil, tot 40 aan boord, net zo fijn met vier. Altijd schoon klaar in de grachtengordel.",
 };
 
 export default function Sloepen() {
@@ -25,25 +24,15 @@ export default function Sloepen() {
         <Sectie key={m.id} id={m.id} className={i === 0 ? "pb-0 md:pb-0 lg:pb-0" : undefined}>
           <Container className="grid gap-10 md:grid-cols-12 md:items-start md:gap-8">
             <div className="md:col-span-7">
-              {m.beeld ? (
-                <Foto src={foto.prinsen.src} alt={foto.prinsen.alt} ratio="4 / 3" sizes="(min-width: 768px) 58vw, 100vw" className="rounded-kaart" />
-              ) : (
-                <Vlak wat={m.beeldNoot} />
-              )}
-              {m.beeld && (
-                <p className="mt-3 text-[13px] text-grijs">
-                  <Tekst>{`[INVULLEN: beeld, ${m.beeldNoot}]`}</Tekst>
-                </p>
-              )}
+              <Foto src={foto[m.beeld].src} alt={foto[m.beeld].alt} ratio="4 / 3" sizes="(min-width: 768px) 58vw, 100vw" className="rounded-kaart" />
+              <p className="mt-3 text-[13px] text-grijs">
+                <Tekst>{`[INVULLEN: beeld, ${m.beeldNoot}]`}</Tekst>
+              </p>
             </div>
             <div className="md:col-span-5">
               <h2 className="text-[32px] md:text-[40px]">{m.naam}</h2>
               <Rijen rijen={m.specificaties} className="mt-6" labelBreedte="7rem" />
-              {m.id === "prinsen" && (
-                <p className="mt-4 text-[14px] text-grijs">
-                  <Tekst>{t.check}</Tekst>
-                </p>
-              )}
+              <p className="mt-4 text-[15px] text-grijs">{t.ligplaats}</p>
             </div>
           </Container>
         </Sectie>

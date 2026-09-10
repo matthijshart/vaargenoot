@@ -35,7 +35,7 @@ in de hero of de prijstabel.
 ## Structuur
 
 - `/app`: `/` (home), `/duo-of-solo` (prijzen, beschikbaarheid, vergelijking, kosten per vaart), `/reserveer`, `/zo-werkt-het`, `/vragen`, `/sloepen`, `/aanbod` (printvriendelijk, één A4, niet geïndexeerd), `/proefvaren`, `/over`, `/privacy`, `not-found`, `sitemap`, `robots`, `manifest`. Redirects van de oude routes in `next.config.ts`.
-- `/components`: Nav, Footer, Hero, Home (DuoSolo, Samen, Stappen, Inbegrepen, LeasenOfDelen, Slot), Prijzen (Prijstabel, Beschikbaarheid, KostenPerVaart, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
+- `/components`: Nav, Footer, Scroll (Voortgang, MobieleBalk), Hero met Diashow (drie foto's, overvloeien elke zes seconden, stippen om te kiezen, stil bij reduced motion), Home (VoorWie, DuoSolo, Samen, Stappen, Inbegrepen, LeasenOfDelen, Slot), Prijzen (Prijstabel, Beschikbaarheid, KostenPerVaart, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
 - `/components/ui`: Container (1200 px), Knop (Knop, KnopLink, PijlLink), Sectie (de enige beweging), Kop, Tekst (placeholders), Foto, Vlak, Accordion, Veld (Invoer, Keuze), Rijen (Rijen, Lijst).
 - `/content`: config plus per pagina een tekstbestand (home, prijzen, reserveer, werkt, vragen, sloepen, proefvaren, over met privacy, aanbod, site, foto).
 - `/lib`: utils (cn, bedrag, procentMinder), validatie (regels voor beide formulieren, client en server).
@@ -49,9 +49,9 @@ dragen de pagina. Twijfel je, laat het weg.
 - Tokens in `@theme` in `app/globals.css`, alleen deze namen: `wit`, `room` (warm off-white voor afwisselende secties), `antraciet` (tekst), `grijs` (secundaire tekst), `lijn`, `blauw` (enige accent: knoppen, links, actieve staat), `blauw-donker` (hover), `markeer` (placeholders). Geen gradients, geen kleurvlakken achter koppen.
 - Typografie: één sans. Koppen 600, tracking -0.02em, regelhoogte 1,05; h1 40 px mobiel tot 72 px desktop. Body 17 tot 18 px, regelhoogte 1,5, maximaal 65 tekens (`maat`). Geen bold in lopende tekst.
 - Layout: inhoud maximaal 1200 px, secties 80 px mobiel tot 160 px desktop verticale ruimte (`Sectie`). Eén kolom tekst naast één beeld, of één centrale kop met beeld eronder. Nooit drie kolommen met een icoon boven elke tekst.
-- Beweging: alleen `Sectie`: fade met 12 px verschuiving, 400 ms, één keer, via IntersectionObserver. Secties die bij laden al in beeld staan bewegen niet. `prefers-reduced-motion` schakelt alles uit. Geen parallax, geen autoplay, geen animerende cijfers.
+- Beweging: `Sectie`: fade met 12 px verschuiving, 400 ms, één keer, via IntersectionObserver. Secties die bij laden al in beeld staan bewegen niet. `prefers-reduced-motion` schakelt alles uit. Geen parallax, geen autoplay, geen animerende cijfers. Daarnaast twee scrollhulpen in `components/Scroll.tsx`: een dunne voortgangslijn onder de nav (alle schermen) en op de telefoon een vaste knoppenbalk onderin die verschijnt na 560 px scrollen, niet op de formulierpagina's en /aanbod.
 - Componenten: sticky nav transparant, wit met dunne onderlijn bij scrollen. Eén primaire knop (blauw), secundair als tekstlink met pijl. Radius `knop` 8 px, `kaart` 12 px. Schaduw maximaal `shadow-licht`. Accordion met dunne lijnen (CSS grid-rows). Formulieren: label boven het veld, grote velden, duidelijke focus, één knop.
-- Niet: emoji's, gradientknoppen, glassmorphism, zware schaduwen, carrousels, pop-ups, chatwidgets, badges, sterren, logo's die niet echt zijn, cookiebanner (we tracken niet).
+- Niet: emoji's, gradientknoppen, glassmorphism, zware schaduwen, pop-ups, chatwidgets, badges, sterren, logo's die niet echt zijn, cookiebanner (we tracken niet).
 
 ## Tekst en toon
 

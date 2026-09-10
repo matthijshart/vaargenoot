@@ -1,10 +1,25 @@
-import { inbegrepen, extra, looptijd, modellen, producten, samen, vergelijking } from "./config";
+import { inbegrepen, extra, looptijd, modellen, producten, samen, site, vergelijking } from "./config";
 import { bedrag } from "@/lib/utils";
 
 export const home = {
   hero: {
     kop: "Een sloep voor je bedrijf.\nIn deeleigendom.",
     sub: "Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
+  },
+
+  voorWie: {
+    boven: "Waar je hem voor gebruikt",
+    kop: "Voor je mensen, je klanten en iedereen daartussen.",
+    intro: "Iedereen in je bedrijf kan de sloep pakken, via de app. Van een lunch met vier tot een borrel met veertig.",
+    items: [
+      "Vrijdagmiddag op het water met het team",
+      "Lunch of diner met klanten, midden in de stad",
+      "Relaties en partners ontvangen: Amsterdam vanaf het water",
+      "Teamdag, jubileum, zomerborrel, kerstborrel",
+      "Vergaderen of een presentatie aan de lange tafel",
+      "Gasten uit het buitenland de grachten laten zien",
+      "Green Egg en koelkast aan boord, schipper erbij als iedereen een glas wil",
+    ],
   },
 
   duoSolo: {
@@ -45,17 +60,18 @@ export const home = {
     lijst: [
       { kop: "Kiezen", tekst: "Prinsen of Amstel, Duo of Solo. Kom proefvaren als je twijfelt." },
       { kop: "Tekenen", tekst: "Eén overeenkomst in gewone taal. Daarna is de sloep van jullie." },
-      { kop: "Varen", tekst: "Vraag een dagdeel aan in de app en stap aan boord. Wij doen de rest." },
+      { kop: "Varen", tekst: "Vraag een dagdeel aan in de app en stap aan boord. Hij ligt schoon en opgeladen klaar. Wij doen de rest." },
     ],
     link: "Zo werkt het",
     href: "/zo-werkt-het",
   },
 
   inbegrepen: {
-    boven: "Alles inbegrepen",
-    kop: "Eén bedrag. Verder niets.",
+    boven: "Wij regelen alles",
+    kop: "Jij vaart. Wij doen de rest.",
+    intro: "Ligplaats, vergunningen, verzekering, opladen, onderhoud, schoonmaak. Alles zit in het maandbedrag, en jij hoeft er niet aan te denken.",
     items: inbegrepen,
-    extra: extra.zin,
+    extra: `${site.ligplaats} ${extra.zin}`,
   },
 
   leasen: {

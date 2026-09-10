@@ -1,11 +1,31 @@
+import { foto } from "@/content/foto";
 import { home } from "@/content/home";
 import { cta } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { Container } from "./ui/Container";
 import { KnopLink, PijlLink } from "./ui/Knop";
 import { Kop } from "./ui/Kop";
+import { Foto } from "./ui/Foto";
 import { Lijst } from "./ui/Rijen";
 import { Sectie } from "./ui/Sectie";
+
+/** Blok 1: waar je hem voor gebruikt. Eén kolom tekst naast één beeld. */
+export function VoorWie() {
+  const t = home.voorWie;
+  return (
+    <Sectie id="voor-wie">
+      <Container className="grid gap-10 md:grid-cols-12 md:items-center md:gap-8">
+        <div className="md:col-span-6">
+          <Kop boven={t.boven} kop={t.kop} intro={t.intro} />
+          <Lijst items={t.items} className="mt-8" />
+        </div>
+        <div className="md:col-span-5 md:col-start-8">
+          <Foto src={foto.greenEgg.src} alt={foto.greenEgg.alt} ratio="1 / 1" sizes="(min-width: 768px) 40vw, 100vw" className="rounded-kaart" />
+        </div>
+      </Container>
+    </Sectie>
+  );
+}
 
 /** Blok 2: Duo of Solo, twee rustige kolommen. */
 export function DuoSolo() {
@@ -61,7 +81,7 @@ export function Inbegrepen() {
     <Sectie id="inbegrepen">
       <Container className="grid gap-10 md:grid-cols-12 md:gap-8">
         <div className="md:col-span-5">
-          <Kop boven={t.boven} kop={t.kop} />
+          <Kop boven={t.boven} kop={t.kop} intro={t.intro} />
           <p className="mt-6 text-grijs">{t.extra}</p>
         </div>
         <div className="md:col-span-6 md:col-start-7">

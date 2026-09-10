@@ -1,12 +1,12 @@
 import { cta } from "@/content/site";
 import { foto } from "@/content/foto";
 import { Container } from "./ui/Container";
-import { Foto } from "./ui/Foto";
+import { Diashow } from "./Diashow";
 import { KnopLink, PijlLink } from "./ui/Knop";
 
 /**
- * Hero: één centrale kop met beeld eronder. Geen beweging, geen parallax.
- * De foto loopt van rand tot rand.
+ * Hero: één centrale kop met beeld eronder. De foto loopt van rand tot rand,
+ * als rustige diavoorstelling van drie beelden.
  */
 export function Hero({ kop, sub }: { kop: string; sub: string }) {
   const regels = kop.split("\n");
@@ -30,14 +30,12 @@ export function Hero({ kop, sub }: { kop: string; sub: string }) {
         </div>
       </Container>
       <div className="mt-14 md:mt-20">
-        <Foto
-          src={foto.prinsen.src}
-          alt={foto.prinsen.alt}
-          ratio="16 / 7"
-          sizes="100vw"
-          priority
-          positie="50% 55%"
-          className="max-h-[70svh] w-full"
+        <Diashow
+          beelden={[
+            { src: foto.prinsen.src, alt: foto.prinsen.alt, positie: "50% 55%" },
+            { src: foto.bovenaf.src, alt: foto.bovenaf.alt, positie: "50% 45%" },
+            { src: foto.greenEgg.src, alt: foto.greenEgg.alt, positie: "50% 60%" },
+          ]}
         />
       </div>
     </section>

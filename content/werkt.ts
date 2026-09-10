@@ -9,7 +9,7 @@ export const werkt = {
     { kop: "Teken", tekst: `Je krijgt de overeenkomst binnen ${reservering.overeenkomstBinnen}, in gewone taal. Je tekent, en de sloep is van jullie.` },
     { kop: "Wij leveren op", tekst: `In ${reservering.oplevering}, in je huisstijl, met de app op je telefoon.` },
     { kop: "Vraag aan in de app", tekst: "Kies een dagdeel, ook op de dag zelf. Je ziet meteen wat vrij is." },
-    { kop: "Stap aan boord", tekst: "De sloep ligt schoon en opgeladen aan de steiger. Jij vaart weg." },
+    { kop: "Stap aan boord", tekst: "De sloep ligt schoon en opgeladen klaar in de grachtengordel, of op een plek naar keuze. Jij vaart weg." },
     { kop: "Wij maken schoon en laden op", tekst: "Na elke vaart. Jij hoeft niets te doen." },
   ],
 

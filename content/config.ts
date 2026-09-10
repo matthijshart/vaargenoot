@@ -18,7 +18,7 @@ export const site = {
   email: invullen("e-mailadres"),
   telefoon: invullen("telefoonnummer"),
   kvk: invullen("KvK-nummer"),
-  steiger: invullen("steiger of adres van de ligplaats"),
+  ligplaats: "Altijd schoon en opgeladen klaar in de grachtengordel, of op een plek naar keuze.",
 };
 
 export type ModelId = "prinsen" | "amstel";
@@ -33,7 +33,6 @@ export const modellen: Record<
     personen: number;
     uitrusting: string[];
     voorWie: string;
-    werf: string;
   }
 > = {
   prinsen: {
@@ -44,7 +43,7 @@ export const modellen: Record<
     uitrusting: [
       "Lange tafel",
       "Koelkast",
-      "Barbecue aan boord",
+      "Green Egg",
       "Ligdek",
       "Kussens",
       "Bimini",
@@ -53,7 +52,6 @@ export const modellen: Record<
       "230 V",
     ],
     voorWie: "Het hele kantoor, een klantenavond, of een lunch met vier.",
-    werf: invullen("werf en type"),
   },
   amstel: {
     id: "amstel",
@@ -62,13 +60,10 @@ export const modellen: Record<
     personen: 40,
     uitrusting: ["Lange tafel", "Koelkast", "Ligdek", "Kussens", "Zwemtrap", "Geluid", "230 V"],
     voorWie: "Kleinere groepen en een lagere prijs.",
-    werf: invullen("werf en type"),
   },
 };
 
 export const checks = {
-  barbecue: check("barbecue aan boord volgens APV en verzekeraar"),
-  personen: check("meer dan twaalf personen aan boord: regels en certificaat voor bedrijfsmatig vervoer"),
   vaarbewijs: check("elektrische sloep onder 15 m en 20 km/u"),
   fiscaal: check("uitsluiting investeringsaftrek representatieve vaartuigen, BUA"),
 };
@@ -150,14 +145,15 @@ export const samen = {
   ],
 };
 
+/** Wat wij regelen. Staat overal als "alles inbegrepen". */
 export const inbegrepen = [
-  "Ligplaats met laadpunt",
-  "Stroom",
-  "Onderhoud",
+  "Ligplaats in de grachtengordel, of een plek naar keuze",
+  "Vergunningen en vignet",
   "Verzekering",
+  "Opladen en stroom",
+  "Onderhoud",
   "Schoonmaak na elke vaart",
   "Winterklaar",
-  "Vignet",
   "Vervangende sloep",
   "App",
   "Servicelijn",

@@ -14,7 +14,7 @@ export const aanbod = {
     punten: [producten[p].aanBoord, producten[p].beschikbaarheid, producten[p].huisstijl, producten[p].voorkeursrecht],
   })),
   prijsnoot: `Exclusief btw, indicatief. Twaalf maanden vanaf ${looptijd.start}. ${reservering.founding}`,
-  inbegrepen: inbegrepen.join(", ") + ". Schipper en catering regel je erbij.",
+  inbegrepen: inbegrepen.join(", ") + ". " + site.ligplaats + " Schipper en catering regel je erbij.",
   samen: { kop: `${producten.duo.naam}: ${samen.naam.toLowerCase()}`, regels: samen.regels },
   verder: {
     kop: "Zo gaat het verder",

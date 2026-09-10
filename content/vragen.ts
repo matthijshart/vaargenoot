@@ -19,7 +19,7 @@ export const vragen = {
     },
     {
       vraag: "Wat kost het per jaar en wat zit erin?",
-      antwoord: `Twaalf keer het maandbedrag. ${producten.duo.naam} ${modellen.prinsen.naam}: ${bedrag(duo * 12)} per bedrijf per jaar. ${producten.solo.naam} ${modellen.prinsen.naam}: ${bedrag(solo * 12)} per jaar. Exclusief btw, indicatief. Daar zit alles in: ligplaats met laadpunt, stroom, onderhoud, verzekering, schoonmaak na elke vaart, winterklaar, vignet, vervangende sloep, app en servicelijn. Schipper en catering regel je erbij.`,
+      antwoord: `Twaalf keer het maandbedrag. ${producten.duo.naam} ${modellen.prinsen.naam}: ${bedrag(duo * 12)} per bedrijf per jaar. ${producten.solo.naam} ${modellen.prinsen.naam}: ${bedrag(solo * 12)} per jaar. Exclusief btw, indicatief. Daar zit alles in, wij regelen het: ligplaats in de grachtengordel of op een plek naar keuze, vergunningen en vignet, verzekering, opladen en stroom, onderhoud, schoonmaak na elke vaart, winterklaar, vervangende sloep, app en servicelijn. Schipper en catering regel je erbij.`,
     },
     {
       vraag: "Wordt mijn bedrijf echt deeleigenaar?",

@@ -9,8 +9,6 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 | Wat | Waar op de site | Sleutel in config |
 | --- | --- | --- |
 | E-mailadres, telefoonnummer, KvK-nummer | footer, privacy, aanbod | `site.email`, `site.telefoon`, `site.kvk` |
-| Steiger of adres van de ligplaats | nog nergens getoond | `site.steiger` |
-| Werf en type per model | /sloepen | `modellen.*.werf` |
 | Tarief schipper per dagdeel, cateringpartners | nog nergens getoond, alleen "regel je erbij" | `extra.schipper`, `extra.catering` |
 | Naam en één zin over de oprichter | /over | `oprichter` |
 | Juridische vorm in twee zinnen | /vragen (vraag 4) | `juridisch` |
@@ -19,13 +17,11 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 | Pdf voorbeeldovereenkomst | /duo-of-solo | `voorbeeldovereenkomst` |
 | Bewaartermijn gegevens | /privacy | `content/over.ts` |
 | Beeld: Prinsen op het water in hoge resolutie | hero home, /sloepen | `public/foto/prinsen.jpg` (nu 768 px breed) |
-| Beeld: Amstel op het water | /sloepen (nu neutraal vlak) | `content/foto.ts` |
+| Beeld: Amstel in hoge resolutie | /sloepen (nu de sloep van bovenaf, 1094 px) | `content/foto.ts` |
 
 ## [CHECK]
 
-- Barbecue aan boord volgens APV en verzekeraar (`checks.barbecue`, op /sloepen).
 - Vaarbewijs: elektrische sloep onder 15 m en 20 km/u (`checks.vaarbewijs`, in /vragen).
-- Meer dan twaalf personen aan boord: regels en certificaat voor bedrijfsmatig vervoer (`checks.personen`, op /sloepen). Beide sloepen staan op tot 40.
 - Fiscaal: uitsluiting investeringsaftrek representatieve vaartuigen, BUA (`checks.fiscaal`, in /vragen). De site claimt niets, alleen "vraag je accountant".
 
 ## Aannames die je kunt wijzigen
@@ -43,4 +39,5 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 - De Open Graph-afbeelding (`app/opengraph-image.jpg`) is nog de oude foto van bovenaf met gasten. Vervang hem door de Prinsen in hoge resolutie zodra die er is.
 - De hero-foto is 768 px breed en daardoor zacht op grote schermen.
 - Sociale bewijskracht (klanten, logo's) pas als het echt is.
+- De foto's van bovenaf en van de Green Egg tonen gasten en een tas met een merknaam (Fever-Tree). Op verzoek weer op de site; vervang ze door eigen beeld zodra dat er is.
 - Domein: metadata rekent met `https://sloepmaten.nl` (`site.domein`). Zet het domein op Vercel of pas de waarde aan.
