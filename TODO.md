@@ -35,6 +35,8 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 
 ## Open keuzes
 
+- De diavoorstelling in de hero wisselt elke zes seconden. Lighthouse rekent die wissel mee in de Speed Index, waardoor de performance-score op mobiel van 98 naar 92 à 93 gaat. Wil je 95 of hoger, dan is de eenvoudigste keuze: wisselen pas na een tik op een stip (autoplay uit in `components/Diashow.tsx`).
+
 - Mailkoppeling: de formulieren loggen elke aanvraag en mailen pas als `RESEND_API_KEY` en `AANMELD_NAAR` op Vercel staan. Tot die tijd zie je wel de bevestigingsstaat, maar komt er geen e-mail.
 - De Open Graph-afbeelding (`app/opengraph-image.jpg`) is nog de oude foto van bovenaf met gasten. Vervang hem door de Prinsen in hoge resolutie zodra die er is.
 - De hero-foto is 768 px breed en daardoor zacht op grote schermen.
