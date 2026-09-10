@@ -4,8 +4,8 @@ Deeleigendom van een hoogwaardige elektrische sloep in de Amsterdamse
 grachten, voor bedrijven. Twee producten: Duo (twee bedrijven op één sloep,
 ieder de helft) en Solo (één bedrijf, de hele sloep). Alles inbegrepen, één
 vast bedrag per maand, twaalf maanden, schipper en catering erbij te regelen.
-Geen particulieren, geen puntensysteem, geen verhuur. Tot 40 aan boord, net
-zo fijn met vier. De site is een verkoopinstrument: de
+Geen particulieren, geen puntensysteem, geen verhuur. Prinsen tot 40 aan boord, Amstel tot 25,
+net zo fijn met vier. De site is een verkoopinstrument: de
 oprichter laat hem persoonlijk zien en legt ter plekke een reservering vast.
 
 Twee acties, overal dezelfde tekst: "Kom proefvaren" (primair) en

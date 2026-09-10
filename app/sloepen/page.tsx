@@ -11,7 +11,7 @@ import { sloepenPagina as t } from "@/content/sloepen";
 
 export const metadata: Metadata = {
   title: "De sloepen",
-  description: "Prinsen: 10 m, lange tafel, koelkast, Green Egg, bimini. Amstel: 8 m. Allebei elektrisch en stil, tot 40 aan boord, net zo fijn met vier. Altijd schoon klaar in de grachtengordel.",
+  description: "Prinsen: 10 m, lange tafel, koelkast, Green Egg, bimini. Amstel: 8 m, tot 25 aan boord. Allebei elektrisch en stil, net zo fijn met vier. Altijd schoon klaar in de grachtengordel.",
 };
 
 export default function Sloepen() {

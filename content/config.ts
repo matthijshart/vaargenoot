@@ -57,7 +57,7 @@ export const modellen: Record<
     id: "amstel",
     naam: "Amstel",
     lengte: 8,
-    personen: 40,
+    personen: 25,
     uitrusting: ["Lange tafel", "Koelkast", "Ligdek", "Kussens", "Zwemtrap", "Geluid", "230 V"],
     voorWie: "Kleinere groepen en een lagere prijs.",
   },

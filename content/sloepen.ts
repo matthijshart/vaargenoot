@@ -33,7 +33,7 @@ export const sloepenPagina = {
       detail:
         id === "prinsen"
           ? "De hoofdsloep. Tien meter, een lange tafel, bimini tegen zon en regen, Green Egg aan boord. Tot veertig aan boord, en net zo fijn met vier."
-          : "Acht meter, dezelfde uitrusting zonder bimini en Green Egg. De laagste instap, voor kleinere groepen.",
+          : "Acht meter, tot vijfentwintig aan boord, dezelfde uitrusting zonder bimini en Green Egg. De laagste instap, voor kleinere groepen.",
     })),
   },
 };
