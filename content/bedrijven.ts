@@ -43,7 +43,7 @@ export const bedrijven = {
   aanbodLabel: "Het aanbod",
   aanbodKop: "Eén vast bedrag per maand. Verder niets.",
   aanbodIntro:
-    "Geen aanschaf, geen ligplaats zoeken, geen onderhoud, geen winterstalling. Wij regelen alles, jij nodigt uit.",
+    "Geen aanschaf, geen lease van een hele sloep die de meeste dagen stilligt. Je betaalt alleen je deel. Wij regelen alles, jij nodigt uit.",
   feiten: [
     { label: "Aandeel", waarde: "Een kwart, een half of de hele sloep, op naam van je bedrijf" },
     { label: "Varen", waarde: "Je vaste deel via vaarpunten, plus elk vrij dagdeel zonder punten" },

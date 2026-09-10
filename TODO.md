@@ -182,6 +182,26 @@ bevestigen:
 - Mogen meerdere collega's reserveren in de app, of één beheerder per
   bedrijf? Staat nu niet op de site.
 
+## Positionering en concurrentie
+
+Bleaze (bleaze.nl) verleast hele elektrische sloepen aan bedrijven: vanaf
+2.150 tot 2.650 euro per maand exclusief btw, volledig ontzorgd, in
+huisstijl. Ons verschil: deel-eigenaarschap, dus vanaf 695 euro per maand,
+en een sloep die niet stilligt. Dat staat nu in de intro van het aanbod op
+/bedrijven, zonder naam en zonder hun bedragen. Wat van hen het overnemen
+waard is, nog te bevestigen voordat het op de site komt:
+
+- Vervangende sloep bij pech, en bereikbaarheid buiten kantooruren.
+- Schipper en catering via ons te regelen (nu alleen "schipper bij te
+  boeken").
+- Sloep in de huisstijl van het bedrijf (bestickering, kleur van de
+  kussens) als optie bij de hele sloep.
+- Sociale bewijskracht: klanten aan het woord, logo's, "recent geleverd".
+  Kan pas met echte klanten, dus na de eerste aanmeldingen.
+- Een kennismaking als laagdrempelige stap staat nu in het formulier
+  ("Een kennismaking"). Bevestig de vorm: bellen, langskomen of een
+  proefvaart, en hoe lang.
+
 ## Formulier en livegang
 
 De Server Action in `app/actions.ts` logt elke aanmelding en mailt via

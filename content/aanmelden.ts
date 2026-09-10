@@ -2,7 +2,7 @@ export const aanmelden = {
   label: "Aanmelden",
   kop: "Word sloepmaat.",
   intro:
-    "Zes nieuwe sloepen in vaarseizoen 2027. Vol is vol. Meld je aan voor een aandeel, of vraag eerst meer informatie.",
+    "Zes nieuwe sloepen in vaarseizoen 2027. Vol is vol. Meld je aan voor een aandeel, vraag eerst meer informatie of plan een kennismaking.",
   velden: {
     naam: "Naam",
     email: "E-mail",
@@ -13,7 +13,8 @@ export const aanmelden = {
   },
   doelen: [
     { waarde: "informatie", label: "Eerst meer informatie" },
-    { waarde: "2027", label: "Een aandeel in vaarseizoen 2027" },
+    { waarde: "kennismaking", label: "Een kennismaking" },
+    { waarde: "2027", label: "Een aandeel in 2027" },
   ],
   opties: [
     { waarde: "", label: "Kies een optie" },

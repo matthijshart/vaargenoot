@@ -56,7 +56,7 @@ export function Aanmelden() {
                   <p id="doel-label" className="mb-2 text-[14px] font-medium text-nacht">
                     {aanmelden.velden.doel}
                   </p>
-                  <div role="radiogroup" aria-labelledby="doel-label" aria-describedby={fouten.doel ? "doel-fout" : undefined} className="grid gap-2 sm:grid-cols-2">
+                  <div role="radiogroup" aria-labelledby="doel-label" aria-describedby={fouten.doel ? "doel-fout" : undefined} className="grid gap-2 sm:grid-cols-3">
                     {aanmelden.doelen.map((d) => {
                       const actief = waarden.doel === d.waarde;
                       return (
