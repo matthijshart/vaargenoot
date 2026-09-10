@@ -120,6 +120,19 @@ html.lenis body {
 }
 
 
+/* Hero-foto: van rand tot rand, hoogte naar het scherm. Eerst een vaste
+   hoogte als vangnet voor browsers zonder svh. */
+.hero-kader {
+  height: 380px;
+  height: clamp(320px, 46svh, 480px);
+}
+@media (min-width: 48rem) {
+  .hero-kader {
+    height: 520px;
+    height: clamp(420px, 52svh, 600px);
+  }
+}
+
 /* Hero-entree zonder te wachten op JavaScript. */
 @keyframes opkomen {
   from {

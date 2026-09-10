@@ -1,17 +1,32 @@
+import { aandelen } from "./aandeel";
+import { site } from "./site";
+import { sloepen } from "./sloepen";
+
+const amstel = sloepen.lijst[0];
+const spec = (label: string) => amstel.specs.find((s) => s.label === label)?.waarde ?? "";
+
+/**
+ * De hero: eerst de sloep, dan het naamplaatje. Eén kop die zegt wat
+ * Sloepmaten is, één regel die zegt wat je ervoor doet (niets) en de knop.
+ */
 export const hero = {
   boven: "Vaarseizoen 2027. Zes nieuwe sloepen. Vol is vol.",
-  kop: "Jouw sloep. Onze zorg.",
-  intro:
-    "Word deel-eigenaar van een hoogwaardige, grote elektrische sloep in de grachten, van alle gemakken voorzien. Maximaal vier sloepmaten per sloep, één vast bedrag per maand. Geen gedoe, gewoon varen.",
-  primair: "Aanmelden voor 2027",
-  secundair: "Bekijk de sloepen",
-  inbegrepen: [
-    "Ligplaats met laadpunt",
-    "Onderhoud",
-    "Verzekering",
-    "Schoonmaak",
-    "Winterklaar",
-    "Vignet",
+  kop: "Word deel-eigenaar van een sloep.",
+  sub: "Een hoogwaardige elektrische sloep in de grachten, met maximaal vier sloepmaten. Alles voor je geregeld, voor één vast bedrag per maand. Jij hoeft alleen te varen.",
+  primair: site.cta,
+  secundair: "Bekijk de prijzen",
+  secundairHref: "/prijzen",
+  toelichting: `Vanaf ${aandelen[0].prijs} euro per maand voor een kwart aandeel, indicatief. Aanmelden is vrijblijvend.`,
+  /** Onderschrift in de foto. De hero toont de Amstel. */
+  onderschrift: `${amstel.naam}, ${spec("Lengte").replace(/ m$/, " meter")}, elektrisch, ${spec("Personen")} personen`,
+  /** Vier feiten onder de kop, in één oogopslag. */
+  feiten: [
+    { label: "Aandeel", waarde: "Een kwart, een half of de hele sloep" },
+    { label: "Vaste vaarten", waarde: "Acht per maand bij een kwart, vaker als de sloep vrij is" },
+    {
+      label: "Inbegrepen",
+      waarde: "Ligplaats met laadpunt, stroom, onderhoud, verzekering, schoonmaak, winterklaar en vignet",
+    },
+    { label: "Schipper", waarde: "Bij te boeken" },
   ],
-  optioneel: "Schipper bij te boeken",
 };

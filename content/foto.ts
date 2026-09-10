@@ -3,7 +3,8 @@
  * foto-bron/ via scripts/foto-crops.mjs.
  * Zie TODO.md voor de shotlist van definitieve foto's.
  */
-import hero from "@/public/foto/hero.jpg";
+import heroBreed from "@/public/foto/hero-breed.jpg";
+import heroStaand from "@/public/foto/hero-staand.jpg";
 import sloepAmstel from "@/public/foto/amstel.jpg";
 import sloepPrinsen from "@/public/foto/prinsen.jpg";
 import schipper from "@/public/foto/schipper.jpg";
@@ -15,8 +16,13 @@ import greenEgg from "@/public/foto/green-egg.jpg";
 import sloepBovenaf from "@/public/foto/sloep-bovenaf.jpg";
 
 export const foto = {
-  hero: {
-    src: hero,
+  /** Hero: breed vanaf md, staand daaronder. Zelfde sloep, zelfde moment. */
+  heroBreed: {
+    src: heroBreed,
+    alt: "Sloep van bovenaf in de gracht, gasten aan een lange tafel",
+  },
+  heroStaand: {
+    src: heroStaand,
     alt: "Sloep van bovenaf in de gracht, gasten aan een lange tafel",
   },
   sloepAmstel: {

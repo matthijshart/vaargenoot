@@ -9,7 +9,7 @@ import { PrijsTeaser, VerwijsTeasers } from "@/components/Teasers";
 export default function Home() {
   return (
     <>
-      <Nav />
+      <Nav hero />
       <main id="top" className="flex-1">
         <Hero />
         <Ervaring />

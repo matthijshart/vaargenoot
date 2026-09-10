@@ -23,4 +23,11 @@ export const teasers = {
     link: "Zo werkt het",
     href: "/zo-werkt-het",
   },
+  vragen: {
+    label: "Vragen",
+    kop: "Word ik echt deel-eigenaar?",
+    tekst: "Ja. Een vast aandeel in een specifieke sloep, met maximaal drie andere sloepmaten. De inrichting staat in de overeenkomst, in gewone taal.",
+    link: "Alle vragen",
+    href: "/vragen",
+  },
 };

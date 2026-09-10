@@ -9,100 +9,90 @@ import { Foto } from "./ui/Foto";
 import { KnopLink, TekstLink } from "./ui/Knop";
 
 /**
- * De entree van kop, intro, knoppen en foto loopt via CSS (zie globals.css),
- * zodat de hero niet wacht op hydratie. Alleen de parallax vraagt JavaScript.
+ * Eerst de sloep, dan het naamplaatje. De foto loopt van rand tot rand,
+ * direct onder de nav. Daaronder de kop, één regel, de knop en vier feiten.
+ * De entree loopt via CSS (zie globals.css), alleen de parallax vraagt
+ * JavaScript.
  */
 export function Hero() {
   const reduced = useReducedMotion();
   const kader = useRef<HTMLDivElement>(null);
 
-  // Parallax: de foto beweegt maximaal 6% mee met de scroll.
+  // Parallax: de foto beweegt maximaal 5% mee met de scroll.
   const { scrollYProgress } = useScroll({
     target: kader,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["-3%", "3%"]);
+  const y = useTransform(scrollYProgress, (v) => `${(v - 0.5) * 10}%`);
 
   return (
-    <section className="pt-28 pb-8 sm:pt-36 sm:pb-12">
-      <Container>
-        <div className="max-w-3xl">
-          <p className="opkomen mb-5 text-[14px] font-medium text-gracht sm:mb-6 sm:text-[15px]">
+    <section className="pt-16 pb-10 sm:pb-14">
+      <div ref={kader} className="hero-kader relative overflow-hidden bg-nacht">
+        {/* De schaal bij laden zit op deze binnenlaag, binnen het kader dat afsnijdt. */}
+        <div className="foto-opkomen absolute inset-0">
+          <m.div
+            className="absolute inset-x-0 -top-[5%] -bottom-[5%]"
+            style={reduced ? undefined : { y }}
+          >
+            <Foto
+              src={foto.heroBreed.src}
+              staand={foto.heroStaand.src}
+              alt={foto.heroBreed.alt}
+              priority
+              sizes="100vw"
+              className="h-full w-full bg-nacht"
+              fotoClassName="object-[50%_45%] md:object-[50%_55%]"
+            />
+          </m.div>
+        </div>
+        <p className="absolute inset-x-0 bottom-5 mx-auto flex max-w-6xl items-center gap-3 px-5 text-[13px] font-medium text-wit/90 [text-shadow:0_1px_2px_rgba(11,31,51,0.45)] sm:bottom-6 sm:px-8">
+          <span aria-hidden className="h-px w-6 shrink-0 bg-messing" />
+          {hero.onderschrift}
+        </p>
+      </div>
+
+      <Container className="pt-10 sm:pt-12">
+        <div className="max-w-5xl">
+          <p className="opkomen flex items-center gap-3 text-[14px] font-medium text-gracht">
+            <span aria-hidden className="hidden h-px w-6 bg-messing sm:block" />
             {hero.boven}
           </p>
-          <h1 className="opkomen text-[44px] leading-[1.02] text-nacht sm:text-[64px] lg:text-[80px]">
+          <h1
+            className="opkomen mt-4 text-[40px] leading-[1.02] text-nacht sm:mt-5 sm:text-[52px] lg:text-[64px]"
+            style={{ "--vertraging": "0.08s" } as React.CSSProperties}
+          >
             {hero.kop}
           </h1>
           <p
-            className="opkomen mt-6 max-w-[34ch] text-[18px] leading-relaxed text-zacht sm:mt-8 sm:text-[21px]"
-            style={{ "--vertraging": "0.08s" } as React.CSSProperties}
-          >
-            {hero.intro}
-          </p>
-          <div
-            className="opkomen mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 sm:mt-10"
+            className="opkomen mt-5 max-w-[46ch] text-[17px] leading-relaxed text-inkt sm:mt-6 sm:text-[19px]"
             style={{ "--vertraging": "0.16s" } as React.CSSProperties}
           >
-            <KnopLink href="#aanmelden">{hero.primair}</KnopLink>
-            <TekstLink href="#sloepen-specificaties">
-              {hero.secundair}
-            </TekstLink>
-          </div>
-        </div>
-      </Container>
-
-      <div ref={kader} className="mt-14 sm:mt-20">
-        <div className="mx-auto w-full max-w-6xl sm:px-8">
+            {hero.sub}
+          </p>
           <div
-            className="relative overflow-hidden bg-nacht sm:rounded-2xl"
-            style={{ aspectRatio: "16 / 8" }}
+            id="hero-knop"
+            className="opkomen mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 sm:mt-8"
+            style={{ "--vertraging": "0.24s" } as React.CSSProperties}
           >
-            {/* De schaal bij laden zit op deze binnenlaag, binnen het kader dat afsnijdt. */}
-            <div className="foto-opkomen absolute inset-0">
-              <m.div
-                className="absolute inset-x-0 -top-[3%] -bottom-[3%]"
-                style={reduced ? undefined : { y }}
-              >
-                <Foto
-                  src={foto.hero.src}
-                  alt={foto.hero.alt}
-                  priority
-                  direct
-                  fetchPriority="high"
-                  sizes="(min-width: 1152px) 1088px, 100vw"
-                  className="h-full w-full bg-nacht"
-                />
-              </m.div>
-            </div>
+            <KnopLink href="#aanmelden">{hero.primair}</KnopLink>
+            <TekstLink href={hero.secundairHref}>{hero.secundair}</TekstLink>
           </div>
+          <p
+            className="opkomen mt-4 text-[14px] text-zacht"
+            style={{ "--vertraging": "0.32s" } as React.CSSProperties}
+          >
+            {hero.toelichting}
+          </p>
         </div>
-      </div>
 
-      <Container>
-        <p className="mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[14px] text-zacht sm:mt-8 sm:text-[15px]">
-          <span className="font-medium text-nacht">Inbegrepen</span>
-          {hero.inbegrepen.map((punt, i) => (
-            <span
-              key={punt}
-              className={
-                i >= 3
-                  ? "hidden items-baseline gap-2 sm:flex"
-                  : "flex items-baseline gap-2"
-              }
-            >
-              {i > 0 && (
-                <span aria-hidden className="text-nevel">
-                  ·
-                </span>
-              )}
-              {punt}
-            </span>
+        <dl className="mt-12 divide-y divide-nevel border-y border-nevel sm:mt-16 md:grid md:grid-cols-4 md:gap-8 md:divide-y-0 md:py-8">
+          {hero.feiten.map((feit) => (
+            <div key={feit.label} className="grid grid-cols-[6.5rem_1fr] gap-4 py-3.5 md:block md:py-0">
+              <dt className="text-[14px] font-medium text-zacht md:text-[13px]">{feit.label}</dt>
+              <dd className="text-[15px] leading-snug text-inkt md:mt-2">{feit.waarde}</dd>
+            </div>
           ))}
-          <span aria-hidden className="hidden text-nevel sm:inline">
-            ·
-          </span>
-          <span className="hidden sm:inline">{hero.optioneel}</span>
-        </p>
+        </dl>
       </Container>
     </section>
   );

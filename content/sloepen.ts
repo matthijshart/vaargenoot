@@ -16,7 +16,7 @@ const aanBoordPrinsen = "Koelkast, Green Egg, tafel, ligdek, kussens, bimini, zw
 export const sloepen = {
   label: "De sloepen",
   kop: "Zes nieuwe sloepen in 2027.",
-  intro: "Twee modellen, allebei elektrisch en stil. Vol is vol.",
+  intro: "Twee modellen, allebei elektrisch en stil.",
   lijst: [
     {
       naam: "Amstel",

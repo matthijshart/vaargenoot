@@ -5,9 +5,12 @@
 Bronfoto's in `foto-bron/`: de sloep van bovenaf (1194 x 1212), het
 zijaanzicht met bimini (768 x 576), en twee grachtfoto's (736 breed).
 Alle beelden op de site zijn uitsnedes daaruit, gemaakt door
-`scripts/foto-crops.mjs`. Dat werkt, maar let op:
+`scripts/foto-crops.mjs`. De hero gebruikt er twee: `hero-breed`
+(1194 x 500) vanaf tabletbreedte en `hero-staand` (720 x 900) op de
+telefoon. Dat werkt, maar let op:
 
-- De resolutie is laag voor de hero op grote schermen. Een bron van minimaal
+- De resolutie is laag voor de hero op grote schermen: de band loopt van
+  rand tot rand en de bron is 1194 pixels breed. Een bron van minimaal
   2400 pixels breed is nodig.
 - Op de foto staat een tas met een merknaam (Fever-Tree) en kijken mensen in
   de camera. Voor de definitieve site: eigen foto's zonder merken van derden.
@@ -40,10 +43,11 @@ toch tijdelijk gebruiken, zet ze dan in `public/foto/tmp/` en pas
 
 ## Pagina-indeling
 
-De voorpagina is kort: hero, een dag op het water, de sloepen, een
-prijsregel, twee verwijzingen (bedrijven, zo werkt het) en aanmelden. De
-details staan op /prijzen, /bedrijven, /zo-werkt-het en /vragen, elk met
-het formulier onderaan.
+De voorpagina is kort: hero (foto van rand tot rand, dan de kop "Word
+deel-eigenaar van een sloep.", één alinea, de knop en vier feiten), een dag
+op het water, de sloepen, een prijsregel, drie verwijzingen (bedrijven, zo
+werkt het, vragen) en aanmelden. De details staan op /prijzen, /bedrijven,
+/zo-werkt-het en /vragen, elk met het formulier onderaan.
 
 Niet meer op een pagina, bewaard in de code:
 Inzicht (kern staat in Een dag op het water, de vignetdata in de FAQ),
@@ -132,8 +136,8 @@ schipper bijboeken (prijs of voorwaarden). Ook: welke zeven maanden het
 vaarseizoen zijn.
 
 Winter: de site zegt dat je buiten het seizoen ook vaart (Light Festival,
-winterdagen, fleecedekens). Tegelijk staat "winterstalling" in de hero als
-inbegrepen. Bevestig hoe die twee samengaan.
+winterdagen, fleecedekens). Tegelijk staat "winterklaar" in de feitenbalk
+en bij de prijzen als inbegrepen. Bevestig hoe die twee samengaan.
 
 ## Deel-eigenaar
 
@@ -171,7 +175,10 @@ Nog te bevestigen voor de livegang:
 - Zes nieuwe sloepen in twee modellen (Amstel en Prinsen): klopt dat?
 - "Reserveer in de app": is er een app bij de start, of wordt het een
   ander kanaal?
-- "De meeste sloepen liggen bijna het hele jaar stil": bron of afzwakken.
+- Wie erachter zit: nergens staat wie Sloepmaten is (mensen, organisatie,
+  ervaring). Voor het vertrouwen hoort dat op de site, één alinea is
+  genoeg. Tekst aanleveren; past onder de feitenbalk of in de footer.
+- "Aanmelden is vrijblijvend" staat nu ook onder de knop in de hero.
 
 ## Techniek
 
@@ -181,6 +188,7 @@ Nog te bevestigen voor de livegang:
   hoort het stabiel boven 95 te komen.
 - De hero-foto heeft bewust geen fade bij laden (wel de lichte schaal): met
   fade telde Chrome de LCP pas na de animatie, 1,5 s later.
-- Open Graph-afbeelding en favicon ontbreken nog.
-- Mobiel menu: op smalle schermen staan alleen het logo en de knop in de
-  nav. De sectielinks zijn op mobiel niet bereikbaar via de nav.
+- Lighthouse rekent met "simulate" anders dan met "devtools"; vergelijk
+  alleen metingen met dezelfde methode. De hero-foto is de LCP; de
+  preload heeft een media query per uitsnede, zodat de telefoon het
+  brede beeld niet laadt.

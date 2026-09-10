@@ -1,7 +1,7 @@
 export const site = {
   naam: "Sloepmaten",
   plaats: "Amsterdam",
-  titel: "Sloepmaten. Jouw sloep. Onze zorg.",
+  titel: "Sloepmaten. Word deel-eigenaar van een sloep in Amsterdam.",
   omschrijving:
     "Word deel-eigenaar van een hoogwaardige, grote elektrische sloep in de Amsterdamse grachten, van alle gemakken voorzien. Geen gedoe, gewoon varen. Zes nieuwe sloepen in vaarseizoen 2027.",
   seizoen: "vaarseizoen 2027",

@@ -15,7 +15,8 @@ mkdirSync(uit, { recursive: true });
 
 // left, top, width, height in pixels van de bron.
 const kaders = {
-  "hero": { left: 0, top: 380, width: 1194, height: 597 }, // 2:1, tafel en gasten
+  "hero-breed": { left: 0, top: 310, width: 1194, height: 500 }, // breed, vanaf md: hele sloep met tafel
+  "hero-staand": { left: 130, top: 312, width: 720, height: 900 }, // 4:5, op mobiel: de sloep staand
   "amstel": { left: 100, top: 330, width: 1094, height: 820 }, // 4:3, hele sloep
   "schipper": { left: 150, top: 330, width: 420, height: 504 }, // 5:6, roer en ijsemmer
   "detail-koelkast": { left: 260, top: 440, width: 380, height: 380 }, // 1:1, ijsemmer

@@ -10,7 +10,7 @@ const basis =
   "inline-flex items-center justify-center rounded-full font-medium leading-none transition-[background-color,color,transform,border-color] duration-150 ease-zacht active:scale-[0.98] disabled:opacity-60 disabled:active:scale-100 whitespace-nowrap";
 
 const maten: Record<Maat, string> = {
-  normaal: "h-11 px-6 text-[15px]",
+  normaal: "h-12 px-7 text-[15px]",
   klein: "h-10 px-4 text-[14px] sm:px-5",
 };
 

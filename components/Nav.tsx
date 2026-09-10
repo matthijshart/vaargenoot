@@ -17,14 +17,29 @@ import { KnopLink } from "./ui/Knop";
 /**
  * Sticky nav. Doorschijnend met blur na 8px scroll,
  * verbergt zich bij omlaag scrollen en komt terug bij omhoog.
+ * Met `hero` is de knop op desktop omlijnd zolang de knop in de hero in
+ * beeld is; daarna wordt hij gevuld. Zo staan er nooit twee zwarte knoppen.
  */
-export function Nav() {
+export function Nav({ hero = false }: { hero?: boolean }) {
   const { scrollY } = useScroll();
   const reduced = useReducedMotion();
   const [gescrold, setGescrold] = useState(false);
   const [verborgen, setVerborgen] = useState(false);
   const [open, setOpen] = useState(false);
+  const [rustig, setRustig] = useState(hero);
   const lenis = useLenis();
+
+  // Volg de knop in de hero; zodra hij onder de nav verdwijnt, vult de navknop zich.
+  useEffect(() => {
+    if (!hero) return;
+    const doel = document.getElementById("hero-knop");
+    if (!doel) return;
+    const kijker = new IntersectionObserver(([e]) => setRustig(e.isIntersecting), {
+      rootMargin: "-64px 0px 0px 0px",
+    });
+    kijker.observe(doel);
+    return () => kijker.disconnect();
+  }, [hero]);
 
   // Geen scroll achter het open menu.
   useEffect(() => {
@@ -84,10 +99,18 @@ export function Nav() {
 
           <div className="flex items-center gap-2">
             {/* Vaste breedte: geen verschuiving als het lettertype wisselt. */}
-          <KnopLink href="#aanmelden" maat="klein" className="sm:min-w-[200px]">
-            <span className="sm:hidden">{site.ctaKort}</span>
-            <span className="hidden sm:inline">{site.cta}</span>
-          </KnopLink>
+            <KnopLink
+              href="#aanmelden"
+              maat="klein"
+              className={cn(
+                "sm:min-w-[200px]",
+                rustig &&
+                  "md:border md:border-nevel md:bg-transparent md:text-nacht md:hover:border-gracht md:hover:bg-transparent md:hover:text-gracht",
+              )}
+            >
+              <span className="sm:hidden">{site.ctaKort}</span>
+              <span className="hidden sm:inline">{site.cta}</span>
+            </KnopLink>
             <button
               type="button"
               aria-label={open ? "Menu sluiten" : "Menu openen"}
