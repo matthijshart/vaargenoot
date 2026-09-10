@@ -1,40 +1,52 @@
 "use client";
 
-import { m, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
-import { sectieVariants, viewportOnce } from "@/lib/motion";
+import { useEffect, useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * Sectie die één keer opkomt bij in beeld komen.
- * Alleen de sectie beweegt, nooit de losse onderdelen.
+ * Sectie met de enige beweging op de site: een fade met 12 px verschuiving
+ * bij het inscrollen, 400 ms, één keer. Staat de sectie al in beeld bij
+ * laden, dan gebeurt er niets. Zonder JavaScript is alles zichtbaar.
  */
 export function Sectie({
   id,
   children,
   className,
-  donker = false,
+  toon = "wit",
 }: {
   id?: string;
   children: ReactNode;
   className?: string;
-  donker?: boolean;
+  toon?: "wit" | "room";
 }) {
-  const reduced = useReducedMotion();
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+    el.classList.add("onthul");
+    const kijker = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          el.classList.add("zichtbaar");
+          kijker.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -8% 0px" },
+    );
+    kijker.observe(el);
+    return () => kijker.disconnect();
+  }, []);
+
   return (
-    <m.section
+    <section
+      ref={ref}
       id={id}
-      className={cn(
-        "scroll-mt-16 py-20 sm:py-28 lg:py-32",
-        donker ? "bg-nacht text-wit" : "bg-schuim text-inkt",
-        className,
-      )}
-      initial={reduced ? false : "verborgen"}
-      whileInView="zichtbaar"
-      viewport={viewportOnce}
-      variants={sectieVariants}
+      className={cn("scroll-mt-20 py-20 md:py-32 lg:py-40", toon === "room" && "bg-room", className)}
     >
       {children}
-    </m.section>
+    </section>
   );
 }

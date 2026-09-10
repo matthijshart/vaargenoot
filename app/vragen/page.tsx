@@ -1,17 +1,10 @@
-import type { Metadata } from "next";
-import { Pagina } from "@/components/Pagina";
-import { Vragen } from "@/components/Vragen";
-import { site } from "@/content/site";
+import { Container } from "@/components/ui/Container";
+import { Kop } from "@/components/ui/Kop";
 
-export const metadata: Metadata = {
-  title: `Vragen. ${site.naam}`,
-  description: "Veelgestelde vragen over deeleigendom van een elektrische sloep in Amsterdam.",
-};
-
-export default function VragenPagina() {
+export default function Pagina() {
   return (
-    <Pagina>
-      <Vragen />
-    </Pagina>
+    <Container className="pt-36 pb-24">
+      <Kop niveau={1} kop="In aanbouw." />
+    </Container>
   );
 }

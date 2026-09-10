@@ -1,24 +1,27 @@
-export const site = {
-  naam: "Sloepmaten",
-  plaats: "Amsterdam",
-  titel: "Sloepmaten. Word deel-eigenaar van een sloep in Amsterdam.",
-  omschrijving:
-    "Word deel-eigenaar van een hoogwaardige, grote elektrische sloep in de Amsterdamse grachten, van alle gemakken voorzien. Geen gedoe, gewoon varen. Zes nieuwe sloepen in vaarseizoen 2027.",
-  seizoen: "vaarseizoen 2027",
-  /** Eén werkwoord op elke knop. */
-  cta: "Aanmelden voor 2027",
-  /** Korte variant voor de nav op mobiel. */
-  ctaKort: "Aanmelden",
-  disclaimer: "Prijzen en specificaties zijn indicatief.",
-  /** Contactgegevens. Leeg laten tot ze vaststaan; de footer toont ze alleen als ze ingevuld zijn. */
-  email: "",
-  kvk: "",
+import { site } from "./config";
+
+export { site };
+
+export const cta = {
+  proefvaren: { label: "Kom proefvaren", href: "/proefvaren" },
+  reserveer: { label: "Reserveer je sloep", href: "/reserveer" },
 };
 
 export const nav = [
-  { label: "De sloepen", href: "/#sloepen-specificaties" },
-  { label: "Prijzen", href: "/prijzen" },
-  { label: "Bedrijven", href: "/bedrijven" },
+  { label: "Duo of Solo", href: "/duo-of-solo" },
   { label: "Zo werkt het", href: "/zo-werkt-het" },
+  { label: "De sloepen", href: "/sloepen" },
   { label: "Vragen", href: "/vragen" },
+  { label: "Over", href: "/over" },
 ] as const;
+
+export const footer = {
+  links: [
+    ...nav,
+    { label: "Proefvaren", href: "/proefvaren" },
+    { label: "Reserveer je sloep", href: "/reserveer" },
+    { label: "Aanbod op één A4", href: "/aanbod" },
+    { label: "Privacy", href: "/privacy" },
+  ],
+  regel: "Prijzen indicatief en exclusief btw. Deeleigendom voor bedrijven, geen particulieren.",
+};

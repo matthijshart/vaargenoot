@@ -1,33 +1,36 @@
 @import "tailwindcss";
 
 /*
-  Sloepmaten design tokens.
-  Tailwind v4 kent geen theme.extend; tokens leven hier in @theme.
-  Gebruik uitsluitend deze kleurnamen.
+  Sloepmaten design-systeem.
+  Tailwind v4 kent geen theme.extend; alle tokens staan hier in @theme.
+  Bijna monochroom: wit, een warm off-white, antraciet en één blauw.
 */
 @theme {
-  --color-nacht: #0b1f33;
-  --color-gracht: #1f4e79;
-  --color-lucht: #a7c7e7;
-  --color-nevel: #dce6f0;
-  --color-schuim: #f4f7fa;
   --color-wit: #ffffff;
-  --color-messing: #c9a26b;
-  --color-inkt: #0f1b26;
-  --color-zacht: #5a6b7c;
+  --color-room: #f6f4ef;
+  --color-antraciet: #1d2126;
+  --color-grijs: #5f6670;
+  --color-lijn: #e5e7ea;
+  --color-blauw: #1f4e79;
+  --color-blauw-donker: #163a5c;
+  --color-markeer: #fff3c4;
 
-  --font-kop: var(--font-newsreader), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-sans:
+    -apple-system, "SF Pro Text", "SF Pro Display", var(--font-inter), system-ui,
+    sans-serif;
 
-  --ease-zacht: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-uit: cubic-bezier(0.2, 0.7, 0.2, 1);
 
-  --breakpoint-xs: 30rem;
+  --radius-knop: 0.5rem;
+  --radius-kaart: 0.75rem;
+
+  --shadow-licht: 0 1px 2px rgba(29, 33, 38, 0.08);
 }
 
 @layer base {
   html {
-    background: var(--color-schuim);
-    color: var(--color-inkt);
+    background: var(--color-wit);
+    color: var(--color-antraciet);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -35,25 +38,29 @@
 
   body {
     min-height: 100%;
-    font-weight: 400;
-    line-height: 1.6;
-    /* Vangnet: niets mag de pagina breder maken dan het scherm. */
+    font-size: 17px;
+    line-height: 1.5;
     overflow-x: clip;
+  }
+
+  @media (min-width: 64rem) {
+    body {
+      font-size: 18px;
+    }
   }
 
   h1,
   h2,
   h3 {
-    font-family: var(--font-kop);
-    font-weight: 300;
-    font-variation-settings: "opsz" 72;
-    letter-spacing: -0.01em;
-    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
     text-wrap: balance;
   }
 
   h3 {
-    font-variation-settings: "opsz" 32;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
   }
 
   p {
@@ -61,12 +68,12 @@
   }
 
   ::selection {
-    background: var(--color-lucht);
-    color: var(--color-nacht);
+    background: var(--color-blauw);
+    color: var(--color-wit);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-lucht);
+    outline: 2px solid var(--color-blauw);
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -79,114 +86,74 @@
   }
 }
 
+/* Broodtekst: maximaal 65 tekens per regel. */
 @utility maat {
-  max-width: 62ch;
+  max-width: 65ch;
 }
 
-@utility kop-groot {
-  font-variation-settings: "opsz" 72;
+/* Eén beweging op de hele site: een fade met 12 px verschuiving, één keer. */
+.onthul {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.4s var(--ease-uit),
+    transform 0.4s var(--ease-uit);
 }
-
-/* Lenis */
-html.lenis,
-html.lenis body {
-  height: auto;
+.onthul.zichtbaar {
+  opacity: 1;
+  transform: none;
 }
-.lenis:not(.lenis-autoToggle).lenis-stopped {
-  overflow: clip;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
-}
-.lenis.lenis-autoToggle {
-  transition-property: overflow;
-  transition-duration: 1ms;
-  transition-behavior: allow-discrete;
-}
-
-/* Bewegen mag niet verplicht zijn */
 @media (prefers-reduced-motion: reduce) {
+  .onthul {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
-
-
-/* Hero-foto: van rand tot rand, hoogte naar het scherm. Eerst een vaste
-   hoogte als vangnet voor browsers zonder svh. */
-.hero-kader {
-  height: 380px;
-  height: clamp(320px, 46svh, 480px);
-}
-@media (min-width: 48rem) {
-  .hero-kader {
-    height: 520px;
-    height: clamp(420px, 52svh, 600px);
-  }
-}
-
-/* Fotoband tussen secties: lager dan de hero, zelfde opbouw. */
-.fotoband {
-  height: 300px;
-  height: clamp(260px, 40svh, 420px);
-}
-@media (min-width: 48rem) {
-  .fotoband {
-    height: 460px;
-    height: clamp(380px, 52svh, 560px);
-  }
-}
-
-/* Hero-entree zonder te wachten op JavaScript. */
-@keyframes opkomen {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
+@media print {
+  .onthul {
     opacity: 1;
     transform: none;
   }
 }
-@keyframes foto-opkomen {
-  from {
-    transform: scale(1.04);
-  }
-  to {
-    transform: scale(1);
-  }
+
+/* Accordion: hoogte via grid, zonder JavaScript-meting. */
+.paneel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s var(--ease-uit);
 }
-.opkomen {
-  animation: opkomen 0.7s var(--ease-zacht) both;
-  animation-delay: var(--vertraging, 0s);
+.paneel[data-open="true"] {
+  grid-template-rows: 1fr;
 }
-.foto-opkomen {
-  animation: foto-opkomen 1.4s var(--ease-zacht) both;
-  animation-delay: 0.16s;
+.paneel > div {
+  overflow: hidden;
 }
 
-/* Scrollhint in de verdeelsectie: een streepje dat naar beneden loopt. */
-@keyframes scrollhint {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(260%);
-    opacity: 0;
-  }
+/* Placeholders die nog ingevuld of getoetst moeten worden. */
+.invullen {
+  background: var(--color-markeer);
+  border-radius: 3px;
+  padding: 0 0.25em;
+  box-decoration-break: clone;
 }
-.scrollhint {
-  animation: scrollhint 1.6s var(--ease-zacht) infinite;
+
+/* Printpagina /aanbod. */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  html {
+    font-size: 11pt;
+  }
+  .niet-printen {
+    display: none !important;
+  }
 }

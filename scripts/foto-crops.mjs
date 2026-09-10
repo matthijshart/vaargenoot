@@ -1,47 +1,20 @@
 /**
- * Snijdt uit één bronfoto (foto-bron/sloep-bovenaf.png, 1194 x 1212) de
- * beelden voor de site, in de juiste verhoudingen. Draaien:
- * node scripts/foto-crops.mjs
- * Komt er een betere of hogere-resolutie bron, pas dan hier de kaders aan.
+ * Maakt uit de bronfoto's in foto-bron/ de beelden in public/foto/.
+ * Draaien: node scripts/foto-crops.mjs
+ * Alleen beelden zonder mensen die in de camera kijken (zie de ontwerpbrief).
  */
 import sharp from "sharp";
 import { mkdirSync } from "node:fs";
 
-const bron = "foto-bron/sloep-bovenaf.png";
-/** Tweede bron: zijaanzicht met bimini, 768 x 576. */
-const bronZij = "foto-bron/sloep-zijaanzicht.webp";
 const uit = "public/foto";
 mkdirSync(uit, { recursive: true });
 
-// left, top, width, height in pixels van de bron.
-const kaders = {
-  "hero-breed": { left: 0, top: 310, width: 1194, height: 500 }, // breed, vanaf md: hele sloep met tafel
-  "hero-staand": { left: 130, top: 312, width: 720, height: 900 }, // 4:5, op mobiel: de sloep staand
-  "amstel": { left: 100, top: 330, width: 1094, height: 820 }, // 4:3, hele sloep
-  "schipper": { left: 150, top: 330, width: 420, height: 504 }, // 5:6, roer en ijsemmer
-  "detail-koelkast": { left: 260, top: 440, width: 380, height: 380 }, // 1:1, ijsemmer
-  "detail-tafel": { left: 520, top: 600, width: 480, height: 480 }, // 1:1, tafel
-  "sloep-bovenaf": { left: 0, top: 9, width: 1194, height: 1194 }, // 1:1, alles
-};
+// Prinsen op het water, zijaanzicht, 768 x 576. Lage resolutie: zie TODO.md.
+await sharp("foto-bron/sloep-zijaanzicht.webp").jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/prinsen.jpg`);
+console.log("ok prinsen 768x576");
 
-// Grachten: twee staande foto's, uitgesneden op 4:3 en 1:1.
+// Grachten, twee staande foto's, uitgesneden op 4:3 en 1:1.
 await sharp("foto-bron/gracht-brug.jpeg").extract({ left: 0, top: 400, width: 736, height: 552 }).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/gracht-brug.jpg`);
 console.log("ok gracht-brug 736x552");
 await sharp("foto-bron/gracht-bloemen.jpeg").extract({ left: 0, top: 400, width: 736, height: 736 }).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/gracht-bloemen.jpg`);
 console.log("ok gracht-bloemen 736x736");
-
-// Green Egg op de sloep, vierkant rond de eggs en de koelers.
-await sharp("foto-bron/green-egg-boot.png").extract({ left: 340, top: 0, width: 949, height: 949 }).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/green-egg.jpg`);
-console.log("ok green-egg 949x949");
-// Brede band voor de voorpagina: de eggs en de koelers, van rand tot rand.
-await sharp("foto-bron/green-egg-boot.png").extract({ left: 0, top: 200, width: 1400, height: 640 }).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/band-green-egg.jpg`);
-console.log("ok band-green-egg 1400x640");
-
-// Prinsen: het zijaanzicht, al 4:3.
-await sharp(bronZij).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/prinsen.jpg`);
-console.log("ok prinsen 768x576");
-
-for (const [naam, k] of Object.entries(kaders)) {
-  await sharp(bron).extract(k).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/${naam}.jpg`);
-  console.log("ok", naam, `${k.width}x${k.height}`);
-}

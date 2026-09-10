@@ -1,44 +1,54 @@
-import { aanmelden } from "@/content/aanmelden";
+/**
+ * Validatie voor de twee formulieren: reserveren en proefvaren.
+ * Dezelfde regels op de client (bij blur) en op de server (bij verzenden).
+ */
+export type Fouten = Record<string, string | undefined>;
 
-export type Veld = "naam" | "email" | "doel" | "aandeel" | "bedrijf";
-export type Fouten = Partial<Record<Veld, string>>;
-export type Invoer = Record<Veld, string>;
+const emailPatroon = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-const geldigeDoelen = aanmelden.doelen.map((d) => d.waarde);
-const geldigeAandelen = aanmelden.opties.map((o) => o.waarde).filter(Boolean);
+export const fouttekst = {
+  verplicht: "Vul dit in.",
+  email: "Vul een geldig e-mailadres in.",
+  keuze: "Maak een keuze.",
+  algemeen: "Er ging iets mis. Probeer het nog een keer, of mail ons.",
+};
 
-/** Maximale lengtes, ook op de server afgedwongen. */
-export const MAX = { naam: 80, email: 120, bedrijf: 120 } as const;
+export type Regel = { naam: string; verplicht?: boolean; email?: boolean; keuzes?: readonly string[] };
 
-export function valideerVeld(veld: Veld, waarde: string, invoer?: Partial<Invoer>): string | undefined {
+export function valideerVeld(regel: Regel, waarde: string): string | undefined {
   const w = waarde.trim();
-  switch (veld) {
-    case "naam":
-      if (w.length < 2 || w.length > MAX.naam) return aanmelden.fouten.naam;
-      return undefined;
-    case "email":
-      if (w.length > MAX.email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(w)) return aanmelden.fouten.email;
-      return undefined;
-    case "doel":
-      if (!geldigeDoelen.includes(w)) return aanmelden.fouten.doel;
-      return undefined;
-    case "aandeel":
-      // Optioneel: leeg mag, anders een waarde uit de lijst.
-      if (w && !geldigeAandelen.includes(w)) return aanmelden.fouten.aandeel;
-      return undefined;
-    case "bedrijf":
-      // Alleen verplicht bij een aandeel voor een bedrijf.
-      if (invoer?.aandeel === "bedrijf" && w.length < 2) return aanmelden.fouten.bedrijf;
-      if (w.length > MAX.bedrijf) return aanmelden.fouten.bedrijf;
-      return undefined;
-  }
+  if (regel.verplicht && !w) return regel.keuzes ? fouttekst.keuze : fouttekst.verplicht;
+  if (!w) return undefined;
+  if (regel.email && !emailPatroon.test(w)) return fouttekst.email;
+  if (regel.keuzes && !regel.keuzes.includes(w)) return fouttekst.keuze;
+  return undefined;
 }
 
-export function valideer(invoer: Invoer): Fouten {
+export function valideer(regels: Regel[], waarden: Record<string, string>): Fouten {
   const fouten: Fouten = {};
-  (Object.keys(invoer) as Veld[]).forEach((veld) => {
-    const fout = valideerVeld(veld, invoer[veld], invoer);
-    if (fout) fouten[veld] = fout;
-  });
+  for (const regel of regels) {
+    const fout = valideerVeld(regel, waarden[regel.naam] ?? "");
+    if (fout) fouten[regel.naam] = fout;
+  }
   return fouten;
 }
+
+export const reserveerRegels: Regel[] = [
+  { naam: "bedrijf", verplicht: true },
+  { naam: "contactpersoon", verplicht: true },
+  { naam: "email", verplicht: true, email: true },
+  { naam: "telefoon", verplicht: true },
+  { naam: "model", verplicht: true, keuzes: ["prinsen", "amstel"] },
+  { naam: "product", verplicht: true, keuzes: ["duo", "solo"] },
+  { naam: "duoPartner" },
+  { naam: "teamgrootte" },
+];
+
+export const proefvaarRegels: Regel[] = [
+  { naam: "bedrijf", verplicht: true },
+  { naam: "naam", verplicht: true },
+  { naam: "email", verplicht: true, email: true },
+  { naam: "telefoon", verplicht: true },
+  { naam: "teamgrootte" },
+  { naam: "voorkeursdag" },
+];

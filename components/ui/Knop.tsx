@@ -1,73 +1,52 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { AnkerLink } from "./AnkerLink";
-
-type Variant = "primair" | "licht" | "omlijnd";
-
-type Maat = "normaal" | "klein";
 
 const basis =
-  "inline-flex items-center justify-center rounded-full font-medium leading-none transition-[background-color,color,transform,border-color,box-shadow] duration-200 ease-zacht active:scale-[0.98] disabled:opacity-60 disabled:active:scale-100 whitespace-nowrap";
+  "inline-flex h-12 items-center justify-center rounded-knop bg-blauw px-6 text-[16px] font-medium text-wit whitespace-nowrap transition-colors duration-200 hover:bg-blauw-donker disabled:opacity-60";
 
-const maten: Record<Maat, string> = {
-  normaal: "h-12 px-7 text-[15px]",
-  klein: "h-10 px-4 text-[14px] sm:px-5",
-};
-
-const varianten: Record<Variant, string> = {
-  primair: "bg-nacht text-wit hover:bg-gracht hover:shadow-[0_10px_24px_-14px_rgba(11,31,51,0.6)]",
-  licht: "bg-wit text-nacht hover:bg-lucht hover:shadow-[0_10px_24px_-14px_rgba(0,0,0,0.5)]",
-  omlijnd: "border border-nevel text-nacht hover:border-gracht hover:text-gracht",
-};
-
-export function Knop({
-  variant = "primair",
-  maat = "normaal",
-  className,
-  ...rest
-}: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant; maat?: Maat }) {
-  return <button className={cn(basis, maten[maat], varianten[variant], className)} {...rest} />;
+/** De enige primaire knop: blauw met witte tekst. */
+export function Knop({ className, ...rest }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  return <button className={cn(basis, className)} {...rest} />;
 }
 
-export function KnopLink({
-  href,
-  variant = "primair",
-  maat = "normaal",
-  className,
-  children,
-}: {
-  href: string;
-  variant?: Variant;
-  maat?: Maat;
-  className?: string;
-  children: ReactNode;
-}) {
+export function KnopLink({ href, className, children }: { href: string; className?: string; children: ReactNode }) {
   return (
-    <AnkerLink href={href} className={cn(basis, maten[maat], varianten[variant], className)}>
+    <Link href={href} className={cn(basis, className)}>
       {children}
-    </AnkerLink>
+    </Link>
   );
 }
 
-/** Tekstlink met onderstreping die op hover van kleur wisselt. */
-export function TekstLink({
-  href,
-  className,
-  children,
-}: {
-  href: string;
-  className?: string;
-  children: ReactNode;
-}) {
+/** Secundaire actie: tekstlink met een dunne pijl. */
+export function PijlLink({ href, className, children }: { href: string; className?: string; children: ReactNode }) {
   return (
-    <AnkerLink
+    <Link
       href={href}
       className={cn(
-        "inline-flex items-center gap-1 py-3 font-medium text-gracht underline decoration-lucht decoration-1 underline-offset-[6px] transition-colors duration-150 hover:text-nacht hover:decoration-gracht active:scale-[0.98]",
+        "group inline-flex items-center gap-2 py-3 text-[16px] font-medium text-blauw transition-colors duration-200 hover:text-blauw-donker",
         className,
       )}
     >
       {children}
-    </AnkerLink>
+      <Pijl />
+    </Link>
+  );
+}
+
+export function Pijl({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 20 20"
+      className={cn("h-[18px] w-[18px] shrink-0 transition-transform duration-200 group-hover:translate-x-0.5", className)}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M3.5 10h13M11 4.5 16.5 10 11 15.5" />
+    </svg>
   );
 }

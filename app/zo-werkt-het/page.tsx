@@ -1,19 +1,10 @@
-import type { Metadata } from "next";
-import { Pagina } from "@/components/Pagina";
-import { Verdelen } from "@/components/Verdelen";
-import { ZoWerktHet } from "@/components/ZoWerktHet";
-import { site } from "@/content/site";
+import { Container } from "@/components/ui/Container";
+import { Kop } from "@/components/ui/Kop";
 
-export const metadata: Metadata = {
-  title: `Zo werkt het. ${site.naam}`,
-  description: "Kies je sloep en je aandeel, reserveer met vaarpunten, stap aan boord. Weekenden begrensd, ruilen kan altijd.",
-};
-
-export default function ZoWerktHetPagina() {
+export default function Pagina() {
   return (
-    <Pagina>
-      <ZoWerktHet />
-      <Verdelen />
-    </Pagina>
+    <Container className="pt-36 pb-24">
+      <Kop niveau={1} kop="In aanbouw." />
+    </Container>
   );
 }

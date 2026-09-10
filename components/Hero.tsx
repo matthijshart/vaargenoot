@@ -1,99 +1,45 @@
-"use client";
-
-import { m, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { cta } from "@/content/site";
 import { foto } from "@/content/foto";
-import { hero } from "@/content/hero";
+import { Tekst } from "./ui/Tekst";
 import { Container } from "./ui/Container";
 import { Foto } from "./ui/Foto";
-import { Onderschrift } from "./ui/Onderschrift";
-import { KnopLink, TekstLink } from "./ui/Knop";
+import { KnopLink, PijlLink } from "./ui/Knop";
 
 /**
- * Eerst de sloep, dan het naamplaatje. De foto loopt van rand tot rand,
- * direct onder de nav. Daaronder de kop, één regel, de knop en vier feiten.
- * De entree loopt via CSS (zie globals.css), alleen de parallax vraagt
- * JavaScript.
+ * Hero: één centrale kop met beeld eronder. Geen beweging, geen parallax.
+ * De foto loopt van rand tot rand.
  */
-export function Hero() {
-  const reduced = useReducedMotion();
-  const kader = useRef<HTMLDivElement>(null);
-
-  // Parallax: de foto beweegt maximaal 5% mee met de scroll.
-  const { scrollYProgress } = useScroll({
-    target: kader,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, (v) => `${(v - 0.5) * 10}%`);
-  // En zoomt heel licht in terwijl hij uit beeld glijdt.
-  const scale = useTransform(scrollYProgress, (v) => 1 + Math.max(0, v - 0.5) * 0.08);
-
+export function Hero({ kop, sub, beeldNoot }: { kop: string; sub: string; beeldNoot?: string }) {
   return (
-    <section className="pt-16 pb-10 sm:pb-14">
-      <div ref={kader} className="hero-kader relative overflow-hidden bg-nacht">
-        {/* De schaal bij laden zit op deze binnenlaag, binnen het kader dat afsnijdt. */}
-        <div className="foto-opkomen absolute inset-0">
-          <m.div
-            className="absolute inset-x-0 -top-[5%] -bottom-[5%]"
-            style={reduced ? undefined : { y, scale }}
-          >
-            <Foto
-              src={foto.heroBreed.src}
-              staand={foto.heroStaand.src}
-              alt={foto.heroBreed.alt}
-              priority
-              sizes="100vw"
-              className="h-full w-full bg-nacht"
-              fotoClassName="object-[50%_45%] md:object-[50%_55%]"
-            />
-          </m.div>
-        </div>
-        <Onderschrift>{hero.onderschrift}</Onderschrift>
-      </div>
-
-      <Container className="pt-10 sm:pt-12">
-        <div className="max-w-5xl">
-          <p className="opkomen flex items-center gap-3 text-[14px] font-medium text-gracht">
-            <span aria-hidden className="hidden h-px w-6 bg-messing sm:block" />
-            {hero.boven}
-          </p>
-          <h1
-            className="opkomen mt-4 text-[40px] leading-[1.02] text-nacht sm:mt-5 sm:text-[52px] lg:text-[64px]"
-            style={{ "--vertraging": "0.08s" } as React.CSSProperties}
-          >
-            {hero.kop}
-          </h1>
-          <p
-            className="opkomen mt-5 max-w-[46ch] text-[17px] leading-relaxed text-inkt sm:mt-6 sm:text-[19px]"
-            style={{ "--vertraging": "0.16s" } as React.CSSProperties}
-          >
-            {hero.sub}
-          </p>
-          <div
-            id="hero-knop"
-            className="opkomen mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 sm:mt-8"
-            style={{ "--vertraging": "0.24s" } as React.CSSProperties}
-          >
-            <KnopLink href="#aanmelden">{hero.primair}</KnopLink>
-            <TekstLink href={hero.secundairHref}>{hero.secundair}</TekstLink>
+    <section className="pt-32 md:pt-44">
+      <Container>
+        <div className="mx-auto max-w-[52rem] text-center">
+          <h1 className="text-[40px] md:text-[64px] lg:text-[76px]">{kop}</h1>
+          <p className="mx-auto mt-6 max-w-[38rem] text-[18px] leading-relaxed text-grijs md:text-[21px]">{sub}</p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 md:mt-10">
+            <KnopLink href={cta.proefvaren.href}>{cta.proefvaren.label}</KnopLink>
+            <PijlLink href={cta.reserveer.href}>{cta.reserveer.label}</PijlLink>
           </div>
-          <p
-            className="opkomen mt-4 text-[14px] text-zacht"
-            style={{ "--vertraging": "0.32s" } as React.CSSProperties}
-          >
-            {hero.toelichting}
-          </p>
         </div>
-
-        <dl className="mt-12 divide-y divide-nevel border-y border-nevel sm:mt-16 md:grid md:grid-cols-4 md:gap-8 md:divide-y-0 md:py-8">
-          {hero.feiten.map((feit) => (
-            <div key={feit.label} className="grid grid-cols-[6.5rem_1fr] gap-4 py-3.5 md:block md:py-0">
-              <dt className="text-[14px] font-medium text-zacht md:text-[13px]">{feit.label}</dt>
-              <dd className="text-[15px] leading-snug text-inkt md:mt-2">{feit.waarde}</dd>
-            </div>
-          ))}
-        </dl>
       </Container>
+      <div className="mt-14 md:mt-20">
+        <Foto
+          src={foto.prinsen.src}
+          alt={foto.prinsen.alt}
+          ratio="16 / 7"
+          sizes="100vw"
+          priority
+          positie="50% 55%"
+          className="max-h-[70svh] w-full"
+        />
+        {beeldNoot && (
+          <Container>
+            <p className="mt-3 text-[13px] text-grijs">
+              <Tekst>{`[INVULLEN: beeld, ${beeldNoot}]`}</Tekst>
+            </p>
+          </Container>
+        )}
+      </div>
     </section>
   );
 }

@@ -1,27 +1,18 @@
-import { Aanmelden } from "@/components/Aanmelden";
-import { Ervaring } from "@/components/Ervaring";
-import { Footer } from "@/components/Footer";
-import { Fotoband } from "@/components/Fotoband";
 import { Hero } from "@/components/Hero";
-import { Nav } from "@/components/Nav";
-import { Sloepen } from "@/components/Sloepen";
-import { BedrijvenTeaser, PrijsTeaser, VerwijsTeasers } from "@/components/Teasers";
+import { DuoSolo, Garantie, Inbegrepen, LeasenOfDelen, Slot, Wie, ZoKopen } from "@/components/Home";
+import { home } from "@/content/home";
 
-export default function Home() {
+export default function Voorpagina() {
   return (
     <>
-      <Nav hero />
-      <main id="top" className="flex-1">
-        <Hero />
-        <Ervaring />
-        <Sloepen />
-        <BedrijvenTeaser />
-        <Fotoband />
-        <PrijsTeaser />
-        <VerwijsTeasers />
-        <Aanmelden />
-      </main>
-      <Footer />
+      <Hero kop={home.hero.kop} sub={home.hero.sub} beeldNoot={home.hero.beeld} />
+      <DuoSolo />
+      <Garantie />
+      <Inbegrepen />
+      <LeasenOfDelen />
+      <ZoKopen />
+      <Wie />
+      <Slot />
     </>
   );
 }
