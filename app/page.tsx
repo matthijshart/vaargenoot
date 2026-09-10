@@ -1,6 +1,7 @@
 import { Aanmelden } from "@/components/Aanmelden";
 import { Ervaring } from "@/components/Ervaring";
 import { Footer } from "@/components/Footer";
+import { Fotoband } from "@/components/Fotoband";
 import { Hero } from "@/components/Hero";
 import { Nav } from "@/components/Nav";
 import { Sloepen } from "@/components/Sloepen";
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <Ervaring />
         <Sloepen />
+        <Fotoband />
         <PrijsTeaser />
         <VerwijsTeasers />
         <Aanmelden />

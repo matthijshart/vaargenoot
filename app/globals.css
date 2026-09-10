@@ -133,6 +133,18 @@ html.lenis body {
   }
 }
 
+/* Fotoband tussen secties: lager dan de hero, zelfde opbouw. */
+.fotoband {
+  height: 300px;
+  height: clamp(260px, 40svh, 420px);
+}
+@media (min-width: 48rem) {
+  .fotoband {
+    height: 460px;
+    height: clamp(380px, 52svh, 560px);
+  }
+}
+
 /* Hero-entree zonder te wachten op JavaScript. */
 @keyframes opkomen {
   from {

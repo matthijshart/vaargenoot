@@ -17,7 +17,7 @@ knoptekst overal: `site.cta`. Gevoel: gemak, rustige luxe, alles glijdt.
 ## Structuur
 
 - `/app` layout, page (voorpagina), actions, globals.css; onderliggende pagina's in `/app/prijzen`, `/app/bedrijven`, `/app/zo-werkt-het`, `/app/vragen`, elk via `components/Pagina.tsx` (nav, inhoud, aanmelden, footer)
-- `/components` voorpagina: Hero (foto van rand tot rand, naamplaat met kop en knop, feitenbalk), Ervaring, Sloepen, PrijsTeaser en VerwijsTeasers (Teasers.tsx: bedrijven, zo werkt het, vragen), Aanmelden. Onderliggend: Aandeel (/prijzen), Bedrijven (/bedrijven), ZoWerktHet en Verdelen (/zo-werkt-het), Vragen (/vragen). Bewaard maar nergens op een pagina: Inzicht, SloepLagen, Schipper, Inbegrepen, Weekstrook
+- `/components` voorpagina: Hero (foto van rand tot rand, naamplaat met kop en knop, feitenbalk), Ervaring, Sloepen, Fotoband (brede foto met parallax en één regel), PrijsTeaser en VerwijsTeasers (Teasers.tsx: bedrijven, zo werkt het, vragen), Aanmelden. Onderliggend: Aandeel (/prijzen), Bedrijven (/bedrijven), ZoWerktHet en Verdelen (/zo-werkt-het), Vragen (/vragen). Bewaard maar nergens op een pagina: Inzicht, SloepLagen, Schipper, Inbegrepen, Weekstrook
 - `/components/ui` primitieven (Knop, Foto, Sectie, SectieKop, Container, AnkerLink, Vinkje, PuntKaarten: lijst met lijnen op mobiel, kaarten met hover vanaf sm)
 - `/content` alle teksten, prijzen, aannames en fotoverwijzingen
 - `/docs/reserveren.md` de opzet van het verdeelsysteem (punten, weekendgrens, ruilen)
@@ -59,19 +59,19 @@ Overige tokens: `font-kop` (Newsreader), `font-sans` (Manrope),
 
 ## Beelden
 
-- Elke foto via `components/ui/Foto.tsx`: vaste verhouding, blur-placeholder, fade bij laden.
+- Elke foto via `components/ui/Foto.tsx`: vaste verhouding, blur-placeholder, bij laden een fade (0,9 s) met een zachte inzoom van 1.04 naar 1 (1,4 s) op een eigen laag, zodat de hoverzoom op de foto zelf kan blijven.
 - `priority` alleen op de hero. De hero gebruikt de `staand`-prop van Foto: een picture-element met twee uitsnedes van dezelfde foto, `hero-breed` (1194 x 500) vanaf md en `hero-staand` (720 x 900) daaronder, met preload per media query en zonder fade via JavaScript. Hoogte van de band via `.hero-kader` in globals.css (svh met vaste terugval).
 - Verhoudingen: sloepen 4:3, schipper 5:6, details vierkant.
 
 ## Beweging
 
 - Lenis smooth scroll, ankerlinks via `AnkerLink` (Lenis `scrollTo` voor `#id` en `/#id` op dezelfde pagina, anders `next/link`).
-- Hero-entree via CSS-keyframes (`opkomen` voor tekst, `foto-opkomen` voor de foto: alleen schaal 1.04 naar 1, geen opacity, anders telt de LCP pas na de fade), parallax via Framer Motion.
+- Hero-entree via CSS-keyframes (`opkomen` voor tekst, `foto-opkomen` voor de foto: alleen schaal 1.04 naar 1, geen opacity, anders telt de LCP pas na de fade), parallax via Framer Motion en een lichte inzoom terwijl de foto uit beeld glijdt. `Fotoband` gebruikt dezelfde parallax (hoogte via `.fotoband` in globals.css).
 - De navknop is op desktop omlijnd zolang de knop in de hero in beeld is (`<Nav hero />`, IntersectionObserver op `#hero-knop`) en vult zich daarna. Nooit twee gevulde knoppen tegelijk in beeld. Op mobiel en op de onderliggende pagina's is hij altijd gevuld.
 - `Verdelen` is de scrollgestuurde sectie op de pagina (vastgepind, 350vh); `SloepLagen` (400vh) staat klaar voor als er echte lagen zijn. Beide: `useScroll` en `useTransform` met functies (geen keyframes: framer-motion zet die om in een native ScrollTimeline die hier het verkeerde element volgt). Bij reduced motion een gewone sectie.
-- Secties komen één keer op via `components/ui/Sectie.tsx` (whileInView, once). Nooit per element, nooit per kaartje.
+- Secties komen één keer op via `components/ui/Sectie.tsx` (whileInView, once, 24px omhoog in 0,9 s). Nooit per element, nooit per kaartje.
 - Framer Motion via `LazyMotion` met `domAnimation` en `strict`: gebruik `m.` in plaats van `motion.`.
-- Hover op desktop (`md:`): kaarten komen 4px omhoog met zachte schaduw, foto's zoomen 4% in 700ms. Alleen CSS, nooit op touch.
+- Hover op desktop (`md:`): kaarten komen 4px omhoog met zachte schaduw, foto's zoomen 4% in 700ms, gevulde knoppen krijgen een zachte schaduw. Alleen CSS, nooit op touch.
 - `prefers-reduced-motion`: alles uit, direct zichtbaar. Gebruik `useReducedMotion` in nieuwe componenten.
 
 ## Teksten

@@ -7,7 +7,7 @@ type Variant = "primair" | "licht" | "omlijnd";
 type Maat = "normaal" | "klein";
 
 const basis =
-  "inline-flex items-center justify-center rounded-full font-medium leading-none transition-[background-color,color,transform,border-color] duration-150 ease-zacht active:scale-[0.98] disabled:opacity-60 disabled:active:scale-100 whitespace-nowrap";
+  "inline-flex items-center justify-center rounded-full font-medium leading-none transition-[background-color,color,transform,border-color,box-shadow] duration-200 ease-zacht active:scale-[0.98] disabled:opacity-60 disabled:active:scale-100 whitespace-nowrap";
 
 const maten: Record<Maat, string> = {
   normaal: "h-12 px-7 text-[15px]",
@@ -15,8 +15,8 @@ const maten: Record<Maat, string> = {
 };
 
 const varianten: Record<Variant, string> = {
-  primair: "bg-nacht text-wit hover:bg-gracht",
-  licht: "bg-wit text-nacht hover:bg-lucht",
+  primair: "bg-nacht text-wit hover:bg-gracht hover:shadow-[0_10px_24px_-14px_rgba(11,31,51,0.6)]",
+  licht: "bg-wit text-nacht hover:bg-lucht hover:shadow-[0_10px_24px_-14px_rgba(0,0,0,0.5)]",
   omlijnd: "border border-nevel text-nacht hover:border-gracht hover:text-gracht",
 };
 

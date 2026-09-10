@@ -2,14 +2,14 @@ import { foto } from "./foto";
 
 /**
  * Voor bedrijven. Een aandeel als vast onderdeel van je bedrijf:
- * voor je mensen, je klanten en je gasten. Eerst wat het oplevert,
+ * voor je mensen en je klantrelaties. Eerst wat het oplevert,
  * dan het aanbod, dan de prijs en de knop.
  */
 export const bedrijven = {
   label: "Voor bedrijven",
   kop: "Een sloep voor je bedrijf. Altijd klaar.",
   intro:
-    "Je bedrijf wordt deel-eigenaar van een sloep in de grachten. Zonder aanschaf, zonder beheer, voor één vast bedrag per maand. Voor je mensen, je klanten en je gasten.",
+    "Je bedrijf wordt deel-eigenaar van een sloep in de grachten. Zonder aanschaf, zonder beheer, voor één vast bedrag per maand. Voor je mensen en je klantrelaties.",
 
   voordelenLabel: "Wat het je oplevert",
   voordelenKop: "Meer dan een boot.",
@@ -19,12 +19,12 @@ export const bedrijven = {
       tekst: "Een vrijdagmiddag op het water, een teamdag, een zomerborrel. Daar blijven mensen voor.",
     },
     {
-      kop: "Voor je klanten",
-      tekst: "Een lunch of diner aan boord, midden in de stad. Amsterdam vanaf het water vergeten ze niet.",
+      kop: "Klantrelaties",
+      tekst: "Amsterdam vanaf het water. Dat vergeten ze niet.",
     },
     {
-      kop: "Gasten uit het buitenland",
-      tekst: "De grachten door aan een gedekte tafel. Jouw stad, van de beste kant.",
+      kop: "Altijd klaar",
+      tekst: "Schoon en opgeladen aan de steiger. Jij stuurt alleen de uitnodiging.",
     },
     {
       kop: "Tot 40 personen",

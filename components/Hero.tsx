@@ -24,6 +24,8 @@ export function Hero() {
     offset: ["start end", "end start"],
   });
   const y = useTransform(scrollYProgress, (v) => `${(v - 0.5) * 10}%`);
+  // En zoomt heel licht in terwijl hij uit beeld glijdt.
+  const scale = useTransform(scrollYProgress, (v) => 1 + Math.max(0, v - 0.5) * 0.08);
 
   return (
     <section className="pt-16 pb-10 sm:pb-14">
@@ -32,7 +34,7 @@ export function Hero() {
         <div className="foto-opkomen absolute inset-0">
           <m.div
             className="absolute inset-x-0 -top-[5%] -bottom-[5%]"
-            style={reduced ? undefined : { y }}
+            style={reduced ? undefined : { y, scale }}
           >
             <Foto
               src={foto.heroBreed.src}

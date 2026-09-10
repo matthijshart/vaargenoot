@@ -33,6 +33,9 @@ console.log("ok gracht-bloemen 736x736");
 // Green Egg op de sloep, vierkant rond de eggs en de koelers.
 await sharp("foto-bron/green-egg-boot.png").extract({ left: 340, top: 0, width: 949, height: 949 }).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/green-egg.jpg`);
 console.log("ok green-egg 949x949");
+// Brede band voor de voorpagina: de eggs en de koelers, van rand tot rand.
+await sharp("foto-bron/green-egg-boot.png").extract({ left: 0, top: 200, width: 1400, height: 640 }).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/band-green-egg.jpg`);
+console.log("ok band-green-egg 1400x640");
 
 // Prinsen: het zijaanzicht, al 4:3.
 await sharp(bronZij).jpeg({ quality: 84, mozjpeg: true }).toFile(`${uit}/prinsen.jpg`);

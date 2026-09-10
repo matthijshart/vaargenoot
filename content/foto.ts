@@ -13,6 +13,7 @@ import detailTafel from "@/public/foto/detail-tafel.jpg";
 import grachtBrug from "@/public/foto/gracht-brug.jpg";
 import grachtBloemen from "@/public/foto/gracht-bloemen.jpg";
 import greenEgg from "@/public/foto/green-egg.jpg";
+import bandGreenEgg from "@/public/foto/band-green-egg.jpg";
 import sloepBovenaf from "@/public/foto/sloep-bovenaf.jpg";
 
 export const foto = {
@@ -52,6 +53,10 @@ export const foto = {
   greenEgg: {
     src: greenEgg,
     alt: "Twee Big Green Eggs en champagnekoelers aan boord van de sloep",
+  },
+  bandGreenEgg: {
+    src: bandGreenEgg,
+    alt: "Big Green Eggs, champagnekoelers en glazen op de tafel aan boord",
   },
   grachtBloemen: {
     src: grachtBloemen,

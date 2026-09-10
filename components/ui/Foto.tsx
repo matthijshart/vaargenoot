@@ -48,21 +48,29 @@ export function Foto({ src, alt, ratio, className, fotoClassName, sizes, priorit
           fotoClassName={fotoClassName}
         />
       ) : (
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes={sizes}
-          priority={priority}
-          placeholder="blur"
-          onLoad={direct ? undefined : () => setGeladen(true)}
+        /* De zachte inzoom bij laden zit op deze laag, de hoverzoom op de foto zelf. */
+        <div
           className={cn(
-            "object-cover transition-opacity duration-[600ms] ease-zacht motion-reduce:transition-none",
-            zichtbaar ? "opacity-100" : "opacity-0",
-            fotoClassName,
+            "absolute inset-0 transition-transform duration-[1400ms] ease-zacht motion-reduce:transition-none",
+            zichtbaar ? "scale-100" : "scale-[1.04]",
           )}
-          {...rest}
-        />
+        >
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            sizes={sizes}
+            priority={priority}
+            placeholder="blur"
+            onLoad={direct ? undefined : () => setGeladen(true)}
+            className={cn(
+              "object-cover transition-opacity duration-[900ms] ease-zacht motion-reduce:transition-none",
+              zichtbaar ? "opacity-100" : "opacity-0",
+              fotoClassName,
+            )}
+            {...rest}
+          />
+        </div>
       )}
     </div>
   );
