@@ -22,11 +22,11 @@ export const hero = {
   /** Vier feiten onder de kop, in één oogopslag. */
   feiten: [
     { label: "Aandeel", waarde: "Een kwart, een half of de hele sloep" },
-    { label: "Varen", waarde: "Wanneer je wilt. Reserveren in de app, ook op de dag zelf" },
+    { label: "Varen", waarde: "Je vaste deel via vaarpunten, plus elk vrij dagdeel zonder punten" },
     {
       label: "Inbegrepen",
       waarde: "Ligplaats met laadpunt, stroom, onderhoud, verzekering, schoonmaak, winterklaar en vignet",
     },
-    { label: "Schipper", waarde: "Bij te boeken" },
+    { label: "Schipper", waarde: "Bij te boeken. Dan drinkt iedereen mee" },
   ],
 };

@@ -12,7 +12,7 @@ export const ervaring = {
     { kop: "Barbecue met je gezin", tekst: "Green Egg aan boord, een lange avond op het water." },
     { kop: "Ligdek en koelkast", tekst: "Liggen in de zon, koud drinken binnen handbereik." },
     { kop: "Een dagje zwemmen", tekst: "Aanmeren op een stille plek en het water in." },
-    { kop: "Schipper aan boord", tekst: "Boek er een bij en zit zelf aan tafel." },
+    { kop: "Iedereen een glas", tekst: "Boek de schipper bij en zit zelf aan tafel. Niemand hoeft nuchter te blijven." },
     { kop: "Ook in de winter", tekst: "Het Light Festival, soep en thee, fleecedekens aan boord." },
   ],
   beelden: [foto.greenEgg, foto.detailKoelkast],

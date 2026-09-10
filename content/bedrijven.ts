@@ -32,7 +32,7 @@ export const bedrijven = {
     },
     {
       kop: "Met schipper",
-      tekst: "Boek een schipper bij en zit zelf aan tafel. Jij bent gastheer, wij varen.",
+      tekst: "Iedereen een glas? Boek de schipper bij en zit zelf aan tafel. Jij bent gastheer, wij varen.",
     },
     {
       kop: "Het hele jaar",
@@ -46,12 +46,12 @@ export const bedrijven = {
     "Geen aanschaf, geen ligplaats zoeken, geen onderhoud, geen winterstalling. Wij regelen alles, jij nodigt uit.",
   feiten: [
     { label: "Aandeel", waarde: "Een kwart, een half of de hele sloep, op naam van je bedrijf" },
-    { label: "Reserveren", waarde: "In de app, wanneer je wilt. Ook op de dag zelf" },
+    { label: "Varen", waarde: "Je vaste deel via vaarpunten, plus elk vrij dagdeel zonder punten" },
     {
       label: "Inbegrepen",
       waarde: "Ligplaats met laadpunt, stroom, onderhoud, verzekering, schoonmaak, winterklaar en vignet",
     },
-    { label: "Schipper", waarde: "Bij te boeken" },
+    { label: "Schipper", waarde: "Bij te boeken. Dan drinkt iedereen mee" },
   ],
   perMaand: "per maand, indicatief",
   opAanvraag: "Op aanvraag",

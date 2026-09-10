@@ -1,7 +1,7 @@
 import { aandeelTekst, aandelen } from "@/content/aandeel";
 import { euro } from "@/lib/utils";
 import { Container } from "./ui/Container";
-import { KnopLink } from "./ui/Knop";
+import { KnopLink, TekstLink } from "./ui/Knop";
 import { Sectie } from "./ui/Sectie";
 import { SectieKop } from "./ui/SectieKop";
 import { Vinkje } from "./ui/Vinkje";
@@ -20,10 +20,8 @@ export function Aandeel() {
         <ul className="mt-14 grid gap-4 md:grid-cols-3 md:gap-6 lg:mt-20">
           {aandelen.map((a) => {
             const punten = [
-              a.vaarten === null ? aandeelTekst.altijd : aandeelTekst.wanneer,
-              a.vaarten === null
-                ? aandeelTekst.eigenSchipper
-                : `${aandeelTekst.minstens} ${a.vaarten} ${aandeelTekst.vaarten}`,
+              a.vaarten === null ? aandeelTekst.altijd : `${a.vaarten} ${aandeelTekst.vaarten}`,
+              a.vaarten === null ? aandeelTekst.eigenSchipper : aandeelTekst.vrij,
               aandeelTekst.inbegrepen,
             ];
             return (
@@ -62,7 +60,16 @@ export function Aandeel() {
 
         <div className="mt-10 flex flex-col gap-8 lg:mt-14 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           <div className="max-w-[56ch] space-y-4 text-[15px] leading-relaxed text-lucht sm:text-[16px]">
-            <p className="text-wit">{aandeelTekst.inbegrepenLijst}</p>
+            <p className="text-wit">
+              {aandeelTekst.puntenUitleg}{" "}
+              <TekstLink
+                href={aandeelTekst.puntenHref}
+                className="py-0 text-lucht decoration-lucht/50 hover:text-wit hover:decoration-wit"
+              >
+                {aandeelTekst.puntenLink}
+              </TekstLink>
+            </p>
+            <p>{aandeelTekst.inbegrepenLijst}</p>
             <p>{aandeelTekst.winter}</p>
             <p className="text-[14px] text-lucht/80">{aandeelTekst.vergelijking}</p>
           </div>

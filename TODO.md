@@ -99,13 +99,11 @@ of bewust algemeen gehouden. Niets is verzonnen.
 
 - Vaartijd op een lading en ligplaats, per sloep. Staan niet op de site tot
   ze bekend zijn; toevoegen in `content/sloepen.ts`.
-- Varen: de site zegt "Varen wanneer je wilt, ook op de dag zelf" (hero,
-  prijskaarten, verwijzing op de voorpagina). Dat volgt uit de opzet in
-  `docs/reserveren.md` (vrije dagdelen binnen 48 uur kosten geen vaarpunt).
-  De regels zelf (vaarpunten, weekenden) staan alleen op /zo-werkt-het en in
-  de FAQ, bewust niet in de hero. Bevestig dat de belofte zo mag staan.
-- Vaker varen dan het minimum: is dat gratis of tegen een tarief? Nu staat
-  er "Minstens 8 vaarten per maand in het seizoen" zonder bedrag voor meer.
+- Varen: de site zegt overal hetzelfde, in één formule: "je vaste deel via
+  vaarpunten, plus elk vrij dagdeel zonder punten". Dat is de opzet in
+  `docs/reserveren.md` (8 en 16 vaarpunten per maand, vrije dagdelen binnen
+  48 uur voor 0 punten). Bevestig de 48 uur en de 0 punten; daar hangt de
+  belofte "ook op de dag zelf" aan.
 - FAQ schade: eigen risico en afhandeling (`content/vragen.ts`).
 - FAQ hulp onderweg: de site belooft één aanspreekpunt en bereikbaarheid
   tijdens het varen. Bevestig telefoonnummer en tijden (`content/vragen.ts`).
@@ -127,9 +125,9 @@ hele sloep is geen prijs opgegeven; er staat "Op aanvraag". Geef een
 maandbedrag door en ik zet het erin (`content/aandeel.ts`). Het achtste
 aandeel is weggehaald.
 
-Elk met maandprijs, "varen wanneer je wilt", een minimum aantal vaarten
-per maand in het seizoen (8 bij een kwart, 16 bij een half) en alles
-inbegrepen. Het rekenblok met
+Elk met maandprijs, vaarpunten per maand (8 bij een kwart, 16 bij een
+half), vrije dagdelen zonder punten, en alles inbegrepen. Onder de kaarten
+staat het puntensysteem in vier zinnen, met een link naar /zo-werkt-het. Het rekenblok met
 schuifregelaar is bewust weggehaald: simpel en helder. Onder de kaarten
 staat één vergelijkingszin: een eigen sloep kost rond de 80.000 euro in
 aanschaf en daarna circa 16.000 euro per jaar (aannames in

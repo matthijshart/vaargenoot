@@ -5,7 +5,7 @@ export type Aandeel = {
   naam: string;
   /** Korte ondertitel onder de naam. */
   onder: string;
-  /** Minimum aantal vaarten per maand in het vaarseizoen. Null: altijd beschikbaar. */
+  /** Vaarpunten per maand naar aandeel (zie docs/reserveren.md). Null: altijd beschikbaar. */
   vaarten: number | null;
   /** Maandbedrag in euro, indicatief. Null: op aanvraag. */
   prijs: number | null;
@@ -28,14 +28,17 @@ export const aandeelTekst = {
   perMaand: "per maand",
   indicatief: "indicatief",
   opAanvraag: "Op aanvraag",
-  /** Voor de kaart: "Minstens 8 vaarten per maand in het seizoen". */
-  minstens: "Minstens",
-  vaarten: "vaarten per maand in het seizoen",
+  /** Voor de kaart: "8 vaarpunten per maand, jouw vaste deel". */
+  vaarten: "vaarpunten per maand, jouw vaste deel",
+  vrij: "Is de sloep vrij, dan vaar je zonder punten, ook op de dag zelf",
   altijd: "Altijd beschikbaar, alleen voor jou",
-  wanneer: "Varen wanneer je wilt, ook op de dag zelf",
   eigenSchipper: "Schipper bij te boeken",
   inbegrepen: "Alles inbegrepen",
-  inbegrepenLijst: "Inbegrepen: ligplaats met laadpunt, stroom, onderhoud, verzekering, schoonmaak, winterklaar en vignet. Schipper bij te boeken.",
+  puntenUitleg:
+    "Zo delen sloepmaten één sloep: elke maand krijg je vaarpunten naar je aandeel. Een dagdeel door de week kost er één, een weekend meer. Is een dagdeel 48 uur van tevoren nog vrij, dan boek je het zonder punten. Zo heeft iedereen zijn deel, en vaar je vaker als het kan.",
+  puntenLink: "Zo werkt het",
+  puntenHref: "/zo-werkt-het",
+  inbegrepenLijst: "Inbegrepen: ligplaats met laadpunt, stroom, onderhoud, verzekering, schoonmaak, winterklaar en vignet. Schipper bij te boeken, dan drinkt iedereen mee.",
   cta: "Aanmelden voor 2027",
   winter:
     "En buiten het seizoen? Dan vaar je ook. Het Amsterdam Light Festival, een knusse winterdag met soep en thee, met onze fleecedekens aan boord.",
