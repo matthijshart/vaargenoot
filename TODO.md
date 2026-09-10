@@ -131,11 +131,13 @@ Elk met maandprijs, "varen wanneer je wilt", een minimum aantal vaarten
 per maand in het seizoen (8 bij een kwart, 16 bij een half) en alles
 inbegrepen. Het rekenblok met
 schuifregelaar is bewust weggehaald: simpel en helder. Onder de kaarten
-staat één vergelijkingszin: een eigen sloep kost circa 15.200 euro per jaar
-(aannames in `content/kosten.ts`: 80.000 aanschaf, 35% restwaarde na tien
-jaar, 6.000 liggeld, 4.000 winterstalling; onderhoud, verzekering, vignet en
-stroom niet meegerekend). Verandert een aanname, pas dan ook de zin in
-`content/aandeel.ts` aan.
+staat één vergelijkingszin: een eigen sloep kost rond de 80.000 euro in
+aanschaf en daarna circa 16.000 euro per jaar (aannames in
+`content/kosten.ts`: 25% restwaarde na tien jaar, 6.000 liggeld, 4.000
+winterstalling; onderhoud, verzekering, vignet en stroom niet meegerekend).
+De zin in `content/aandeel.ts` rekent zichzelf uit met die aannames. Geef
+bedragen voor onderhoud en verzekering door, dan tellen die mee en wordt
+het jaarbedrag realistischer.
 
 Niet meer op de site, wel nog te bepalen: reserveren vooruit, weekenden,
 schipper bijboeken (prijs of voorwaarden). Ook: welke zeven maanden het
@@ -151,6 +153,15 @@ De site zegt nu overal dat je deel-eigenaar wordt, met maximaal vier
 sloepmaten per sloep (volgt uit het kleinste aandeel, een kwart).
 "Deel-eigenaar" heeft juridische betekenis. Zorg dat de overeenkomst dat
 waarmaakt, of pas het woord aan als de structuur een gebruiksrecht wordt.
+
+Let op bij "de hele sloep" en operational lease: lease is juridisch huur
+(art. 7:201 BW). Bedrijfsmatig verhuren van pleziervaartuigen is in
+Amsterdam vergunningplichtig (Verordening op het binnenwater, Nota Varen),
+en bedrijfsmatig vervoer van meer dan twaalf passagiers valt onder de
+Binnenvaartwet (passagiersschip, certificaat, bemanningseisen). Controleer
+de actuele definities en vraag een standpunt aan de gemeente of Waternet
+voordat "lease" op de site komt. Zie de chat voor de afweging tussen
+mede-eigendom, een entiteit per sloep en huur.
 
 ## Verdeelsysteem
 

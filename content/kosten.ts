@@ -9,7 +9,7 @@ export const kosten = {
   /** Aanschafprijs van een vergelijkbare elektrische sloep. */
   aanschaf: 80000,
   /** Restwaarde als deel van de aanschaf, na de afschrijvingsperiode. */
-  restwaarde: 0.35,
+  restwaarde: 0.25,
   /** Afschrijvingsperiode in jaren. */
   jaren: 10,
   /** Liggeld in de stad, per jaar, circa. */

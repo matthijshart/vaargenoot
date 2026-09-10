@@ -1,3 +1,5 @@
+import { eigenSloepPerJaar, kosten } from "./kosten";
+
 export type Aandeel = {
   id: "kwart" | "half" | "heel";
   naam: string;
@@ -14,6 +16,9 @@ export const aandelen: Aandeel[] = [
   { id: "half", naam: "Een half", onder: "Met één andere sloepmaat", vaarten: 16, prijs: 1195 },
   { id: "heel", naam: "De hele sloep", onder: "Alleen jij, of je bedrijf", vaarten: null, prijs: null },
 ];
+
+/** Getal in Nederlandse notatie, zonder valutateken: 80.000. */
+const getal = (n: number) => new Intl.NumberFormat("nl-NL", { maximumFractionDigits: 0 }).format(Math.round(n / 100) * 100);
 
 export const aandeelTekst = {
   label: "Jouw aandeel",
@@ -34,6 +39,5 @@ export const aandeelTekst = {
   cta: "Aanmelden voor 2027",
   winter:
     "En buiten het seizoen? Dan vaar je ook. Het Amsterdam Light Festival, een knusse winterdag met soep en thee, met onze fleecedekens aan boord.",
-  vergelijking:
-    "Ter vergelijking, indicatief: een eigen elektrische sloep kost al snel 15.200 euro per jaar aan afschrijving, liggeld en winterstalling. Onderhoud en verzekering komen daar nog bij.",
+  vergelijking: `Ter vergelijking, indicatief: een eigen elektrische sloep van dit formaat kost rond de ${getal(kosten.aanschaf)} euro in aanschaf. Daarna ben je al snel ${getal(eigenSloepPerJaar())} euro per jaar kwijt aan afschrijving, liggeld en winterstalling. Onderhoud, verzekering en vignet komen daar nog bij.`,
 };
