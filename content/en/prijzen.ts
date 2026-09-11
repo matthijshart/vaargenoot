@@ -1,6 +1,6 @@
 import type { prijzen as prijzenNl, PrijsRij } from "../prijzen";
 import { bedrag } from "@/lib/utils";
-import { btw, modellen, producten, reservering, sloepen, vergelijking, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
+import { btw, modellen, producten, reservering, sloepen, vaarten, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
 
 const en = (n: number) => bedrag(n, "en");
 const modelIds: ModelId[] = ["prinsen", "amstel"];
@@ -59,15 +59,15 @@ export const prijzen: typeof prijzenNl = {
     boven: "Cost per trip",
     kop: "What a trip costs, depending on how often you go.",
     intro: "Monthly amount divided by the number of trips a month. Excluding VAT, indicative.",
-    vaarten: vergelijking.vaartenPerMaand,
+    vaarten: vaarten.perMaand,
     vaartenKop: "Trips a month",
-    kolommen: ["Leasing elsewhere", `${producten.solo.naam} with us`, `${producten.duo.naam} with us`],
+    kolommen: [`${producten.solo.naam} owner`, `${producten.duo.naam} owner`],
     modellen: modelIds.map((m) => ({
       naam: modellen[m].naam,
       lengte: `${modellen[m].lengte} m`,
-      maand: [vergelijking.lease.prijs[m], producten.solo.prijs[m], producten.duo.prijs[m]],
+      maand: [producten.solo.prijs[m], producten.duo.prijs[m]],
     })),
-    onder: "With Duo you share the boat with one other company. With Solo and with leasing elsewhere the boat is yours every day, even when it's not moving.",
+    onder: "With Solo the boat is yours every day. With Duo you share it with one other company, and you pay half.",
   },
 
   overeenkomst: {

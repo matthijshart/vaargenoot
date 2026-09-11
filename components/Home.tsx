@@ -141,18 +141,17 @@ export function Inbegrepen({ taal }: { taal: Taal }) {
   );
 }
 
-/** Blok 5: leasen of delen. Drie kolommen op hairlines, zonder kaders. Ook op de prijspagina. */
-export function LeasenOfDelen({ taal, id = "leasen-of-delen" }: { taal: Taal; id?: string }) {
-  const t = inhoud(taal).home.leasen;
+/** Blok: wat het kost. Twee kolommen op hairlines, zonder kaders. Ook op de prijspagina. */
+export function WatHetKost({ taal, id = "wat-het-kost" }: { taal: Taal; id?: string }) {
+  const t = inhoud(taal).home.kosten;
   return (
     <Sectie id={id} toon="room">
       <Container>
         <Kop boven={t.boven} kop={t.kop} intro={t.intro} />
-        <div className="mt-12 grid border-t border-lijn md:mt-16 md:grid-cols-3 md:divide-x md:divide-lijn">
+        <div className="mt-12 grid border-t border-lijn md:mt-16 md:grid-cols-2 md:divide-x md:divide-lijn">
           {t.kolommen.map((k, i) => (
-            <div key={k.naam} className={cn("border-b border-lijn py-7 md:border-b-0 md:py-8", i > 0 && "md:pl-8", i < 2 && "md:pr-8")}>
-              <p className={cn("label", k.wij ? "text-blauw" : "text-grijs")}>{k.wij ? t.labels.wij : t.labels.elders}</p>
-              <h3 className="mt-4 text-[17px] font-medium tracking-normal">{k.naam}</h3>
+            <div key={k.naam} className={cn("border-b border-lijn py-7 md:border-b-0 md:py-8", i > 0 ? "md:pl-10 lg:pl-14" : "md:pr-10 lg:pr-14")}>
+              <h3 className="kop text-[34px] md:text-[40px]">{k.naam}</h3>
               <p className="kop mt-4 text-[48px] tabular-nums md:text-[56px]">{k.prijs}</p>
               <p className="mt-1 text-[14px] text-grijs">
                 {t.rijen[0].toLowerCase()}, {k.prijsKlein}

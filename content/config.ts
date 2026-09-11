@@ -165,17 +165,9 @@ export const extra = {
   catering: invullen("cateringpartners en tarieven"),
 };
 
-/** Vergelijking met de markt. Bedragen per maand, exclusief btw. */
-export const vergelijking = {
-  lease: {
-    naam: "Hele sloep leasen elders",
-    prijs: { amstel: 2150, prinsen: 2650 },
-    lengte: { amstel: "8,5 m", prinsen: "10 m" },
-    looptijd: "Vier tot vijf jaar vast",
-    huisstijl: "Wisselt per aanbieder",
-    aanBoord: "Alleen jouw bedrijf",
-  },
-  vaartenPerMaand: [4, 8, 12],
+/** Hoe vaak een sloepmaat gemiddeld vaart, voor de kosten per vaart. */
+export const vaarten = {
+  perMaand: [4, 8, 12],
 };
 
 export type HelftStatus = "vrij" | "gereserveerd";

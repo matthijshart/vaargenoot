@@ -28,8 +28,8 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 
 - Zes sloepen voor 2027: vier Prinsen, twee Amstel, allemaal vrij (`sloepen` in config). Werk de beschikbaarheid bij na elke reservering.
 - Prijzen: Duo Prinsen € 1.295, Amstel € 995 per bedrijf; Solo Prinsen € 1.995, Amstel € 1.595. Exclusief btw, indicatief.
-- Vergelijking: leasen elders vanaf € 2.150 (8,5 m) tot € 2.650 (10 m) per maand exclusief btw, vier tot vijf jaar. Bron: openbare prijzen van een aanbieder, september 2026. De aanbieder wordt nergens genoemd.
-- Losse huur staat bewust niet in de vergelijking.
+- De site vergelijkt zichzelf nergens met leasen of met een andere aanbieder: Sloepmaten is gewoon de manier waarop dit gaat. Wil je dat argument toch in een gesprek gebruiken, doe het mondeling.
+- Losse huur en leasen staan bewust nergens op de site.
 - Bewust weggelaten op verzoek: zustersloep en verhuurvloot, de altijd-varen-garantie, opzegtermijn, "zo kopen we de sloepen" (reserveringsbijdrage, besteldatum) en "wie zit hierachter". Founding sloepmaten (prijs drie jaar vast) staat nog op /duo-of-solo, /reserveer en /aanbod; één regel in config om ook dat weg te halen.
 - Verrekenen van ongebruikte dagdelen via verhuur: uit, niet op de site.
 

@@ -1,9 +1,8 @@
-import { checks, fiscaal, juridisch, looptijd, modellen, producten, reservering, samen, schade, seizoen, vergelijking } from "./config";
-import { bedrag, procentMinder } from "@/lib/utils";
+import { checks, fiscaal, inbegrepen, juridisch, looptijd, modellen, producten, reservering, samen, schade, seizoen } from "./config";
+import { bedrag } from "@/lib/utils";
 
 const solo = producten.solo.prijs.prinsen;
 const duo = producten.duo.prijs.prinsen;
-const lease = vergelijking.lease.prijs.prinsen;
 
 export const vragen = {
   meta: {
@@ -18,8 +17,8 @@ export const vragen = {
       antwoord: `${samen.regels[0]} ${samen.regels[1]} ${samen.regels[2]} Zo blijft het eerlijk, zonder punten en zonder vaste dagen.`,
     },
     {
-      vraag: "Waarom niet gewoon een hele sloep leasen?",
-      antwoord: `Kan ook, elders. Een ${modellen.prinsen.naam} van ${modellen.prinsen.lengte} meter kost daar vanaf ${bedrag(lease)} per maand, vier tot vijf jaar vast. Bij ons kost dezelfde sloep als Solo ${bedrag(solo)}, dat is ${procentMinder(lease, solo)} procent minder, met volledige huisstijl en twaalf maanden looptijd. Duo is ${bedrag(duo)} per bedrijf, voor een sloep die je met één ander bedrijf deelt. Alle bedragen exclusief btw, indicatief.`,
+      vraag: "Wat krijg ik voor dat bedrag?",
+      antwoord: `Een sloep die van je bedrijf is, in je eigen huisstijl, klaar in de grachtengordel of op een plek naar keuze. Wij regelen ${inbegrepen.join(", ").toLowerCase()}. Jij vraagt een dagdeel aan in de app en vaart weg. Schipper en catering regel je erbij.`,
     },
     {
       vraag: "Wat kost het per jaar en wat zit erin?",
@@ -39,7 +38,7 @@ export const vragen = {
     },
     {
       vraag: "Hoe lang zit ik vast en hoe stap ik uit?",
-      antwoord: `Twaalf maanden vanaf ${looptijd.start}. ${looptijd.uitstappen} Geen vier of vijf jaar, zoals bij lease.`,
+      antwoord: `Twaalf maanden vanaf ${looptijd.start}. ${looptijd.uitstappen}`,
     },
     {
       vraag: "Kunnen we onze huisstijl op de boot?",

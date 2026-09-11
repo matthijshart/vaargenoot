@@ -1,6 +1,6 @@
 import { inhoud } from "@/content";
 import type { Taal } from "@/lib/taal";
-import { Amsterdam, DuoSolo, Inbegrepen, LeasenOfDelen, Samen, Slot, Stappen, VoorWie, Waarom } from "./Home";
+import { Amsterdam, DuoSolo, Inbegrepen, Samen, Slot, Stappen, VoorWie, Waarom, WatHetKost } from "./Home";
 import { Hero } from "./Hero";
 import { Beschikbaarheid, KostenPerVaart, Overeenkomst, Prijstabel } from "./Prijzen";
 import { PrintKnop } from "./PrintKnop";
@@ -15,7 +15,7 @@ import { Lijst, Rijen } from "./ui/Rijen";
 import { Sectie } from "./ui/Sectie";
 import { Tekst } from "./ui/Tekst";
 
-/** De voorpagina: hero, waarom, Amsterdam, Duo of Solo, delen, stappen, inbegrepen, vergelijking, slot. */
+/** De voorpagina: hero, waarom, gebruik, Amsterdam, Duo of Solo, delen, stappen, inbegrepen, kosten, slot. */
 export function Voorpagina({ taal }: { taal: Taal }) {
   return (
     <>
@@ -27,7 +27,7 @@ export function Voorpagina({ taal }: { taal: Taal }) {
       <Samen taal={taal} />
       <Stappen taal={taal} />
       <Inbegrepen taal={taal} />
-      <LeasenOfDelen taal={taal} />
+      <WatHetKost taal={taal} />
       <Slot taal={taal} />
     </>
   );
@@ -42,7 +42,6 @@ export function DuoOfSoloPagina({ taal }: { taal: Taal }) {
       </Container>
       <Prijstabel taal={taal} />
       <Beschikbaarheid taal={taal} />
-      <LeasenOfDelen taal={taal} id="vergelijking" />
       <KostenPerVaart taal={taal} />
       <Overeenkomst taal={taal} />
       <Slot taal={taal} />

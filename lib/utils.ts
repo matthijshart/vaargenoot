@@ -15,8 +15,3 @@ export function bedrag(n: number, taal: Taal = "nl") {
 export function bedragRond(n: number, taal: Taal = "nl") {
   return bedrag(Math.round(n), taal);
 }
-
-/** Percentage verschil, afgerond: hoeveel goedkoper b is dan a. */
-export function procentMinder(a: number, b: number) {
-  return Math.round((1 - b / a) * 100);
-}

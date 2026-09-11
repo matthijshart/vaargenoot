@@ -1,6 +1,6 @@
 import type { home as homeNl } from "../home";
 import { bedrag } from "@/lib/utils";
-import { extra, inbegrepen, looptijd, modellen, producten, samen, site, vergelijking } from "./config";
+import { extra, inbegrepen, looptijd, modellen, producten, samen, site } from "./config";
 
 const en = (n: number) => bedrag(n, "en");
 
@@ -103,41 +103,29 @@ export const home: typeof homeNl = {
     extra: `${site.ligplaats} ${extra.zin}`,
   },
 
-  leasen: {
-    boven: "Lease or share",
-    kop: "What a whole boat costs elsewhere, and what it costs with us.",
+  kosten: {
+    boven: "What it costs",
+    kop: "One amount a month, and nothing else.",
     intro: `A ${modellen.prinsen.naam} of ${modellen.prinsen.lengte} metres. Per month, excluding VAT, indicative.`,
     kolommen: [
       {
-        naam: vergelijking.lease.naam,
-        prijs: en(vergelijking.lease.prijs.prinsen),
-        prijsKlein: `${modellen.amstel.naam} size ${en(vergelijking.lease.prijs.amstel)}`,
-        looptijd: vergelijking.lease.looptijd,
-        huisstijl: vergelijking.lease.huisstijl,
-        aanBoord: vergelijking.lease.aanBoord,
-        wij: false,
-      },
-      {
-        naam: `${producten.solo.naam} with Sloepmaten`,
+        naam: `${producten.solo.naam} owner`,
         prijs: en(producten.solo.prijs.prinsen),
         prijsKlein: `${modellen.amstel.naam} ${en(producten.solo.prijs.amstel)}`,
         looptijd: `${looptijd.maanden} months`,
         huisstijl: "Full branding included",
         aanBoord: "Only your company",
-        wij: true,
       },
       {
-        naam: `${producten.duo.naam} with Sloepmaten`,
-        prijs: en(producten.duo.prijs.prinsen),
+        naam: `${producten.duo.naam} owner`,
+        prijs: `${en(producten.duo.prijs.prinsen)} per company`,
         prijsKlein: `${modellen.amstel.naam} ${en(producten.duo.prijs.amstel)}`,
         looptijd: `${looptijd.maanden} months`,
         huisstijl: "Both logos, your own flag when you sail",
         aanBoord: "Your company and one duo partner",
-        wij: true,
       },
     ],
     rijen: ["Per month", "Term", "Branding", "On board"],
-    labels: { wij: "Sloepmaten", elders: "Elsewhere" },
     link: "All prices and the cost per trip",
     href: "/en/duo-or-solo",
   },

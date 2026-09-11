@@ -1,4 +1,4 @@
-import { inbegrepen, extra, looptijd, modellen, producten, samen, site, vergelijking } from "./config";
+import { inbegrepen, extra, looptijd, modellen, producten, samen, site } from "./config";
 import { bedrag } from "@/lib/utils";
 
 export const home = {
@@ -100,41 +100,29 @@ export const home = {
     extra: `${site.ligplaats} ${extra.zin}`,
   },
 
-  leasen: {
-    boven: "Leasen of delen",
-    kop: "Wat een hele sloep elders kost, en wat hij bij ons kost.",
+  kosten: {
+    boven: "Wat het kost",
+    kop: "Eén bedrag per maand, en verder niets.",
     intro: `Een ${modellen.prinsen.naam} van ${modellen.prinsen.lengte} meter. Per maand, exclusief btw, indicatief.`,
     kolommen: [
       {
-        naam: vergelijking.lease.naam,
-        prijs: bedrag(vergelijking.lease.prijs.prinsen),
-        prijsKlein: `${modellen.amstel.naam}-formaat ${bedrag(vergelijking.lease.prijs.amstel)}`,
-        looptijd: vergelijking.lease.looptijd,
-        huisstijl: vergelijking.lease.huisstijl,
-        aanBoord: vergelijking.lease.aanBoord,
-        wij: false,
-      },
-      {
-        naam: `${producten.solo.naam} bij Sloepmaten`,
+        naam: `${producten.solo.naam} eigenaar`,
         prijs: bedrag(producten.solo.prijs.prinsen),
         prijsKlein: `${modellen.amstel.naam} ${bedrag(producten.solo.prijs.amstel)}`,
         looptijd: `${looptijd.maanden} maanden`,
         huisstijl: "Volledige huisstijl inbegrepen",
         aanBoord: "Alleen jouw bedrijf",
-        wij: true,
       },
       {
-        naam: `${producten.duo.naam} bij Sloepmaten`,
-        prijs: bedrag(producten.duo.prijs.prinsen),
+        naam: `${producten.duo.naam} eigenaar`,
+        prijs: `${bedrag(producten.duo.prijs.prinsen)} per bedrijf`,
         prijsKlein: `${modellen.amstel.naam} ${bedrag(producten.duo.prijs.amstel)}`,
         looptijd: `${looptijd.maanden} maanden`,
         huisstijl: "Beide logo's, je eigen vlag als jij vaart",
         aanBoord: "Jouw bedrijf en één duo-partner",
-        wij: true,
       },
     ],
     rijen: ["Per maand", "Looptijd", "Huisstijl", "Aan boord"],
-    labels: { wij: "Sloepmaten", elders: "Elders" },
     link: "Alle prijzen en de kosten per vaart",
     href: "/duo-of-solo",
   },

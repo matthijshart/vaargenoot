@@ -12,7 +12,6 @@ import {
   producten as nlProducten,
   site as nlSite,
   sloepen as nlSloepen,
-  vergelijking as nlVergelijking,
 } from "../config";
 
 export { invullen, check };
@@ -123,16 +122,7 @@ export const extra = {
   catering: invullen("catering partners and rates"),
 };
 
-export const vergelijking: typeof nlVergelijking = {
-  lease: {
-    ...nlVergelijking.lease,
-    naam: "Leasing a whole boat elsewhere",
-    looptijd: "Four to five years, fixed",
-    huisstijl: "Varies per provider",
-    aanBoord: "Only your company",
-  },
-  vaartenPerMaand: nlVergelijking.vaartenPerMaand,
-};
+export { vaarten } from "../config";
 
 export const sloepen = nlSloepen;
 

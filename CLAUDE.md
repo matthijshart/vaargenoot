@@ -36,8 +36,8 @@ dezelfde feiten, alleen andere woorden.
 
 Alle feiten staan in `content/config.ts`: modellen, producten en prijzen,
 dagdelen, seizoen, looptijd, reservering, samen (hoe Duo deelt), inbegrepen,
-beschikbaarheid per sloep (live op /duo-of-solo), oprichter, vergelijking
-met leasen elders. Pas daar iets aan en de hele site volgt.
+beschikbaarheid per sloep (live op /duo-of-solo), oprichter, vaarten per
+maand voor de kosten per vaart. Pas daar iets aan en de hele site volgt.
 
 Wat nog niet vaststaat, staat als `invullen("...")` en verschijnt op de site
 als `[INVULLEN: ...]` met gele markering via `components/ui/Tekst.tsx`;
@@ -47,11 +47,11 @@ in de hero of de prijstabel.
 
 ## Structuur
 
-- `/app`: `(nl)` met `/` (home), `/duo-of-solo` (prijzen, beschikbaarheid, vergelijking, kosten per vaart), `/reserveer`, `/zo-werkt-het`, `/vragen`, `/sloepen`, `/aanbod` (printvriendelijk, één A4, niet geïndexeerd), `/proefvaren`, `/over`, `/privacy`, `not-found`; `(en)` met dezelfde pagina's onder `/en`. Daarnaast `actions`, `globals.css`, `global-not-found`, `sitemap` (beide talen met hreflang), `robots`, `manifest`, icons en opengraph-image. Redirects van de oude routes in `next.config.ts`.
-- `/components`: Basis (het skelet van elke pagina), paginas (de body van elke pagina, in beide talen), Nav, Footer, Scroll (Voortgang, MobieleBalk), Hero (kop links op wit, de sloep rechts in een hoog kader, tekst nooit op een foto), Diashow (drie foto's die hun kader vullen, laden en wisselen pas bij de eerste beweging van de bezoeker, daarna elke 3,5 seconde, stippen om te kiezen, stil bij reduced motion), Home (Waarom, VoorWie, Amsterdam, DuoSolo, Samen, Stappen, Inbegrepen, LeasenOfDelen, Slot), Prijzen (Prijstabel, Beschikbaarheid, KostenPerVaart, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
+- `/app`: `(nl)` met `/` (home), `/duo-of-solo` (prijzen, beschikbaarheid, kosten per vaart), `/reserveer`, `/zo-werkt-het`, `/vragen`, `/sloepen`, `/aanbod` (printvriendelijk, één A4, niet geïndexeerd), `/proefvaren`, `/over`, `/privacy`, `not-found`; `(en)` met dezelfde pagina's onder `/en`. Daarnaast `actions`, `globals.css`, `global-not-found`, `sitemap` (beide talen met hreflang), `robots`, `manifest`, icons en opengraph-image. Redirects van de oude routes in `next.config.ts`.
+- `/components`: Basis (het skelet van elke pagina), paginas (de body van elke pagina, in beide talen), Nav, Footer, Scroll (Voortgang, MobieleBalk), Hero (kop links op wit, de sloep rechts in een hoog kader, tekst nooit op een foto), Diashow (drie foto's die hun kader vullen, laden en wisselen pas bij de eerste beweging van de bezoeker, daarna elke 3,5 seconde, stippen om te kiezen, stil bij reduced motion), Home (Waarom, VoorWie, Amsterdam, DuoSolo, Samen, Stappen, Inbegrepen, WatHetKost, Slot), Prijzen (Prijstabel, Beschikbaarheid, KostenPerVaart, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
 - `/components/ui`: Container (1200 px), Knop (Knop, KnopLink, PijlLink), Sectie (de enige beweging), Kop, Tekst (placeholders), Foto, Vlak, Accordion, Veld (Invoer, Keuze), Rijen (Rijen, Lijst met optionele vinkjes, Vinkje).
 - `/content`: config plus per pagina een tekstbestand (home, prijzen, reserveer, werkt, vragen, sloepen, proefvaren, over met privacy, aanbod, site, foto), `nl.ts` en `en.ts` als bundel, `index.ts` met `inhoud(taal)`, `menu.ts` voor de client, en `en/` met dezelfde bestanden in het Engels.
-- `/lib`: taal (paden en wissel), meta (canonical en hreflang), fonts, utils (cn, bedrag per taal, procentMinder), validatie (regels en foutteksten per taal, client en server).
+- `/lib`: taal (paden en wissel), meta (canonical en hreflang), fonts, utils (cn, bedrag per taal), validatie (regels en foutteksten per taal, client en server).
 - `/foto-bron` bronfoto's (niet uitgeleverd), `scripts/foto-crops.mjs` maakt `public/foto/*.jpg`.
 
 ## Ontwerp
@@ -61,7 +61,7 @@ dragen de pagina. Twijfel je, laat het weg.
 
 - Tokens in `@theme` in `app/globals.css`, alleen deze namen: `wit`, `room` (warm off-white voor afwisselende secties), `antraciet` (tekst), `grijs` (secundaire tekst), `lijn`, `blauw` (enige accent: knoppen, links, actieve staat), `blauw-donker` (hover), `nacht` (de ene donkere band: hero-achtergrond en het slot), `markeer` (placeholders). Geen gradients, geen kleurvlakken achter koppen; alleen de waas onderin de hero.
 - Typografie: koppen in Instrument Serif 400, regelhoogte 1,0, h1 46 px mobiel tot 84 px desktop (hero 46 tot 72 px), met één cursief accent in blauw via `*woord*` in de herokop. h3 in Inter 600 of via `kop` in de serif. Korte koppen in interface-onderdelen (accordion) in Inter. Sectielabels als kleine kapitalen (`label`, 12 px, 0.14em). Body Inter 17 tot 18 px, regelhoogte 1,5, maximaal 65 tekens (`maat`). Geen bold in lopende tekst.
-- Layout: inhoud maximaal 1200 px, secties 80 px mobiel tot 160 px desktop verticale ruimte (`Sectie`, toon `wit`, `room` of `nacht`). Alles links uitgelijnd op één raster van twaalf kolommen: kop links, inhoud rechts, of één kolom tekst naast één beeld. Geen kaders: kolommen en rijen scheiden we met hairlines (`divide-lijn`, `border-lijn`), ook in de prijstabel en de vergelijking. Stappen als rijen met een serifnummer (01, 02, 03). Nooit drie kolommen met een icoon boven elke tekst, nooit gecentreerde tekst.
+- Layout: inhoud maximaal 1200 px, secties 80 px mobiel tot 160 px desktop verticale ruimte (`Sectie`, toon `wit`, `room` of `nacht`). Alles links uitgelijnd op één raster van twaalf kolommen: kop links, inhoud rechts, of één kolom tekst naast één beeld. Geen kaders: kolommen en rijen scheiden we met hairlines (`divide-lijn`, `border-lijn`), ook in de prijstabel en het kostenblok. Stappen als rijen met een serifnummer (01, 02, 03). Nooit drie kolommen met een icoon boven elke tekst, nooit gecentreerde tekst.
 - Beweging: `Sectie`: fade met 12 px verschuiving, 400 ms, één keer, via IntersectionObserver. Secties die bij laden al in beeld staan bewegen niet. `prefers-reduced-motion` schakelt alles uit. Geen parallax, geen autoplay, geen animerende cijfers. Daarnaast twee scrollhulpen in `components/Scroll.tsx`: een dunne voortgangslijn onder de nav (alle schermen) en op de telefoon een vaste knoppenbalk onderin die verschijnt na 560 px scrollen, niet op de formulierpagina's en /aanbod.
 - Componenten: sticky nav wit, met dunne onderlijn bij scrollen. Nooit tekst op een foto: de hero zet de kop links op wit en de foto ernaast. Eén primaire knop (blauw, pil; variant `licht` op donker), secundair als tekstlink met pijl (`licht` op donker). Radius `knop` pil, `kaart` 20 px voor foto's in de pagina, met een hairline aan de binnenkant (`Foto`). De hero loopt van rand tot rand. Schaduw maximaal `shadow-licht`. Accordion met dunne lijnen (CSS grid-rows). Formulieren: label boven het veld, grote velden, duidelijke focus, één knop.
 - Niet: emoji's, gradientknoppen, glassmorphism, zware schaduwen, pop-ups, chatwidgets, badges, sterren, logo's die niet echt zijn, cookiebanner (we tracken niet).
@@ -76,7 +76,10 @@ andere bedrijf. "Deeleigenaar" en "deeleigendom" aan elkaar. Bedragen als
 definitief. Het woord "boeken" komt niet voor: wij zeggen "aanvragen" en
 "pakken". "Altijd" alleen bij Solo. Nergens "verhuur", "zustersloep",
 opzegtermijn, een inkoopproces of wie er achter Sloepmaten zit: je hebt
-gewoon je sloep, alleen of samen. Zo simpel mogelijk voor een bedrijf.
+gewoon je sloep, alleen of samen. Ook nergens leasen, concurrenten of
+"elders": wij vergelijken niet, wij zijn gewoon de manier waarop dit gaat.
+Bij een prijs heet het "Solo eigenaar" en "Duo eigenaar", niet "bij
+Sloepmaten". Zo simpel mogelijk voor een bedrijf.
 
 ## Kwaliteit
 

@@ -16,7 +16,7 @@ export const over: typeof overNl = {
     {
       kop: "Why Sloepmaten",
       alinea:
-        "A boat sits idle most of the year, a leased one too. At the same time the canals are going electric and a place of your own on the water is getting scarce. Co-ownership solves both: two companies, one boat, or one company that has it all to itself.",
+        "A boat of your own sits idle most of the year. At the same time the canals are going electric and a place of your own on the water is getting scarce. Co-ownership solves both: two companies, one boat, or one company that has it all to itself.",
     },
     {
       kop: "What we don't do",

@@ -1,11 +1,10 @@
 import type { vragen as vragenNl } from "../vragen";
-import { bedrag, procentMinder } from "@/lib/utils";
-import { checks, fiscaal, juridisch, looptijd, modellen, producten, reservering, samen, schade, seizoen, vergelijking } from "./config";
+import { bedrag } from "@/lib/utils";
+import { checks, fiscaal, inbegrepen, juridisch, looptijd, modellen, producten, reservering, samen, schade, seizoen } from "./config";
 
 const en = (n: number) => bedrag(n, "en");
 const solo = producten.solo.prijs.prinsen;
 const duo = producten.duo.prijs.prinsen;
-const lease = vergelijking.lease.prijs.prinsen;
 
 export const vragen: typeof vragenNl = {
   meta: {
@@ -20,8 +19,8 @@ export const vragen: typeof vragenNl = {
       antwoord: `${samen.regels[0]} ${samen.regels[1]} ${samen.regels[2]} That keeps it fair, without points and without fixed days.`,
     },
     {
-      vraag: "Why not just lease a whole boat?",
-      antwoord: `You can, elsewhere. A ${modellen.prinsen.naam} of ${modellen.prinsen.lengte} metres costs from ${en(lease)} a month there, fixed for four to five years. With us the same boat as a Solo costs ${en(solo)}, which is ${procentMinder(lease, solo)} percent less, with full branding and a twelve-month term. Duo is ${en(duo)} per company, for a boat you share with one other company. All amounts excluding VAT, indicative.`,
+      vraag: "What do I get for that amount?",
+      antwoord: `A boat that belongs to your company, in your own branding, ready in the canal ring or at a spot of your choice. We take care of ${inbegrepen.join(", ").toLowerCase()}. You request a slot in the app and sail off. A skipper and catering you arrange on top.`,
     },
     {
       vraag: "What does it cost a year and what's included?",
@@ -41,7 +40,7 @@ export const vragen: typeof vragenNl = {
     },
     {
       vraag: "How long am I committed and how do I get out?",
-      antwoord: `Twelve months from ${looptijd.start}. ${looptijd.uitstappen} Not four or five years, as with a lease.`,
+      antwoord: `Twelve months from ${looptijd.start}. ${looptijd.uitstappen}`,
     },
     {
       vraag: "Can we put our branding on the boat?",

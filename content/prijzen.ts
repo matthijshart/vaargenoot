@@ -1,4 +1,4 @@
-import { btw, modellen, producten, reservering, sloepen, vergelijking, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
+import { btw, modellen, producten, reservering, sloepen, vaarten, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
 import { bedrag } from "@/lib/utils";
 
 const modelIds: ModelId[] = ["prinsen", "amstel"];
@@ -60,15 +60,15 @@ export const prijzen = {
     boven: "Kosten per vaart",
     kop: "Wat een vaart kost, afhankelijk van hoe vaak je gaat.",
     intro: "Maandbedrag gedeeld door het aantal vaarten per maand. Exclusief btw, indicatief.",
-    vaarten: vergelijking.vaartenPerMaand,
+    vaarten: vaarten.perMaand,
     vaartenKop: "Vaarten per maand",
-    kolommen: ["Leasen elders", `${producten.solo.naam} bij ons`, `${producten.duo.naam} bij ons`],
+    kolommen: [`${producten.solo.naam} eigenaar`, `${producten.duo.naam} eigenaar`],
     modellen: modelIds.map((m) => ({
       naam: modellen[m].naam,
       lengte: `${modellen[m].lengte} m`,
-      maand: [vergelijking.lease.prijs[m], producten.solo.prijs[m], producten.duo.prijs[m]],
+      maand: [producten.solo.prijs[m], producten.duo.prijs[m]],
     })),
-    onder: "Bij Duo deel je de sloep met één ander bedrijf. Bij Solo en bij leasen elders is de sloep elke dag van jou, ook als hij stilligt.",
+    onder: "Bij Solo is de sloep elke dag van jou. Bij Duo deel je hem met één ander bedrijf, en betaal je de helft.",
   },
 
   overeenkomst: {

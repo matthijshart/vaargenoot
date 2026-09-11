@@ -15,7 +15,7 @@ export const over = {
     {
       kop: "Waarom Sloepmaten",
       alinea:
-        "Een sloep ligt het grootste deel van het jaar stil, ook een geleasde. Tegelijk gaan de grachten elektrisch en wordt een eigen plek op het water schaars. Deeleigendom lost allebei op: twee bedrijven, één sloep, of één bedrijf dat hem helemaal heeft.",
+        "Een eigen sloep ligt het grootste deel van het jaar stil. Tegelijk gaan de grachten elektrisch en wordt een eigen plek op het water schaars. Deeleigendom lost allebei op: twee bedrijven, één sloep, of één bedrijf dat hem helemaal heeft.",
     },
     {
       kop: "Wat we niet doen",
