@@ -1,10 +1,17 @@
-import { modellen, producten, reservering, sloepen, vergelijking, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
+import { btw, modellen, producten, reservering, sloepen, vergelijking, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
 import { bedrag } from "@/lib/utils";
 
 const modelIds: ModelId[] = ["prinsen", "amstel"];
 const productIds: ProductId[] = ["duo", "solo"];
 
+export type PrijsRij = { label: string; sleutel: "aanBoord" | "beschikbaarheid" | "huisstijl" | "looptijd" | "voorkeursrecht" };
+
 export const prijzen = {
+  meta: {
+    title: "Duo of Solo, prijzen",
+    description:
+      "Duo: twee bedrijven op één sloep, vanaf € 995 per maand per bedrijf. Solo: de hele sloep, vanaf € 1.595 per maand. Exclusief btw, indicatief, alles inbegrepen.",
+  },
   kop: "Duo of Solo.",
   intro:
     "Twee producten, twee modellen. Per maand, exclusief btw, indicatief. Twaalf maanden, alles inbegrepen.",
@@ -16,7 +23,7 @@ export const prijzen = {
       { label: "Huisstijl", sleutel: "huisstijl" },
       { label: "Looptijd", sleutel: "looptijd" },
       { label: "Voorkeursrecht", sleutel: "voorkeursrecht" },
-    ] as const,
+    ] as PrijsRij[],
     kolommen: productIds.map((id) => ({
       id,
       naam: producten[id].naam,
@@ -25,7 +32,7 @@ export const prijzen = {
         model: modellen[m].naam,
         lengte: `${modellen[m].lengte} m, tot ${modellen[m].personen} personen`,
         bedrag: bedrag(producten[id].prijs[m]),
-        perBedrijf: id === "duo",
+        noot: `per maand${id === "duo" ? " per bedrijf" : ""}, ${btw}`,
       })),
       waarden: producten[id],
     })),
@@ -37,13 +44,15 @@ export const prijzen = {
     kop: "Welke sloepen nog vrij zijn.",
     intro: `Elke sloep heeft twee helften. Zijn ze allebei vrij, dan kan hij ook als Solo. Oplevering ${reservering.oplevering}.`,
     kolommen: ["Sloep", "Duo, helft 1", "Duo, helft 2", "Solo"],
-    sloepen: sloepen.map((s) => ({
-      naam: s.naam,
-      model: `${modellen[s.model].lengte} m`,
-      helften: s.helften,
-      solo: s.helften.every((h) => h === "vrij") ? "vrij" : "niet meer mogelijk",
-    })),
-    status: { vrij: "vrij", gereserveerd: "gereserveerd" },
+    sloepen: sloepen.map((s) => {
+      const alleVrij = s.helften.every((h) => h === "vrij");
+      return {
+        naam: s.naam,
+        model: `${modellen[s.model].lengte} m`,
+        helften: s.helften.map((h) => ({ tekst: h === "vrij" ? "vrij" : "gereserveerd", vrij: h === "vrij" })),
+        solo: { tekst: alleVrij ? "vrij" : "niet meer mogelijk", vrij: alleVrij },
+      };
+    }),
     onder: "Bijgewerkt bij elke reservering. Wil je zeker zijn van een helft of een Solo, reserveer dan vandaag.",
   },
 
@@ -52,7 +61,8 @@ export const prijzen = {
     kop: "Wat een vaart kost, afhankelijk van hoe vaak je gaat.",
     intro: "Maandbedrag gedeeld door het aantal vaarten per maand. Exclusief btw, indicatief.",
     vaarten: vergelijking.vaartenPerMaand,
-    kolommen: [vergelijking.lease.naam, `${producten.solo.naam} bij Sloepmaten`, `${producten.duo.naam} bij Sloepmaten`],
+    vaartenKop: "Vaarten per maand",
+    kolommen: ["Leasen elders", `${producten.solo.naam} bij ons`, `${producten.duo.naam} bij ons`],
     modellen: modelIds.map((m) => ({
       naam: modellen[m].naam,
       lengte: `${modellen[m].lengte} m`,
@@ -64,6 +74,7 @@ export const prijzen = {
   overeenkomst: {
     kop: "Lees de overeenkomst voordat je tekent.",
     tekst: "De voorbeeldovereenkomst staat hier als download, in gewone taal. Geen kleine lettertjes.",
+    download: "Download:",
     bestand: voorbeeldovereenkomst,
   },
 };

@@ -35,7 +35,7 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 
 ## Open keuzes
 
-- De diavoorstelling in de hero wisselt elke 3,5 seconde (de eerste wissel 5 seconden na het laden). Lighthouse rekent die wissels mee in de Speed Index; met de hero over het hele scherm gaat de performance-score op mobiel daardoor naar 90 (zonder wissels 95 of hoger). Wil je 95 of hoger, dan is de eenvoudigste keuze: wisselen pas na een tik op een stip (autoplay uit in `components/Diashow.tsx`).
+- De diavoorstelling in de hero laadt en wisselt pas bij de eerste beweging van de bezoeker (muis, scroll of aanraking). Zo blijft de pagina snel (Lighthouse mobiel 96) en ziet iedereen die de site echt gebruikt alle drie de foto's. Wil je dat hij meteen begint, zet dan het luisteren naar die eerste beweging uit in `components/Diashow.tsx`; de score zakt dan naar ongeveer 90.
 
 - Mailkoppeling: de formulieren loggen elke aanvraag en mailen pas als `RESEND_API_KEY` en `AANMELD_NAAR` op Vercel staan. Tot die tijd zie je wel de bevestigingsstaat, maar komt er geen e-mail.
 - De Open Graph-afbeelding (`app/opengraph-image.jpg`) is nog de oude foto van bovenaf met gasten. Vervang hem door de Prinsen in hoge resolutie zodra die er is.
@@ -43,3 +43,10 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 - Sociale bewijskracht (klanten, logo's) pas als het echt is.
 - De foto's van bovenaf en van de Green Egg tonen gasten en een tas met een merknaam (Fever-Tree). Op verzoek weer op de site; vervang ze door eigen beeld zodra dat er is.
 - Domein: metadata rekent met `https://sloepmaten.nl` (`site.domein`). Zet het domein op Vercel of pas de waarde aan.
+
+## Engels
+
+- De Engelse teksten staan in `content/en/`. Ze zijn een vertaling van mijn hand; laat ze nalezen door iemand die Engels als moedertaal heeft voordat je de site aan buitenlandse bedrijven laat zien.
+- De placeholders zijn in beide talen dezelfde Nederlandse markering ([INVULLEN: ...]), zodat je ze in één keer kunt vinden. Vul ze in `content/config.ts` en `content/en/config.ts` allebei in.
+- De naam Sloepmaten blijft in het Engels staan, net als Duo, Solo, Prinsen en Amstel.
+- Nieuwe tekst voeg je altijd in beide talen toe: de Engelse bestanden typen zich tegen de Nederlandse, dus de build valt om als er een veld mist.

@@ -1,6 +1,5 @@
-import { foto } from "@/content/foto";
-import { home } from "@/content/home";
-import { cta } from "@/content/site";
+import { inhoud } from "@/content";
+import type { Taal } from "@/lib/taal";
 import { cn } from "@/lib/utils";
 import { Container } from "./ui/Container";
 import { KnopLink, PijlLink } from "./ui/Knop";
@@ -9,8 +8,33 @@ import { Foto } from "./ui/Foto";
 import { Lijst } from "./ui/Rijen";
 import { Sectie } from "./ui/Sectie";
 
+/** Blok: waarom bedrijven dit doen. Vier korte voordelen op hairlines. */
+export function Waarom({ taal }: { taal: Taal }) {
+  const t = inhoud(taal).home.waarom;
+  return (
+    <Sectie id="waarom" toon="room">
+      <Container className="grid gap-12 md:grid-cols-12 md:gap-8">
+        <div className="md:col-span-5">
+          <Kop boven={t.boven} kop={t.kop} intro={t.intro} />
+        </div>
+        <div className="md:col-span-6 md:col-start-7">
+          <dl className="divide-y divide-lijn border-y border-lijn">
+            {t.items.map((i) => (
+              <div key={i.kop} className="py-6">
+                <dt className="text-[19px] font-semibold tracking-[-0.01em] md:text-[20px]">{i.kop}</dt>
+                <dd className="mt-2 max-w-[46ch] leading-relaxed text-grijs">{i.tekst}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </Container>
+    </Sectie>
+  );
+}
+
 /** Blok 1: waar je hem voor gebruikt. Eén kolom tekst naast één beeld. */
-export function VoorWie() {
+export function VoorWie({ taal }: { taal: Taal }) {
+  const { home, foto } = inhoud(taal);
   const t = home.voorWie;
   return (
     <Sectie id="voor-wie">
@@ -28,7 +52,8 @@ export function VoorWie() {
 }
 
 /** Blok: Amsterdam. De grachten dragen de pagina, één foto naast één kolom tekst. */
-export function Amsterdam() {
+export function Amsterdam({ taal }: { taal: Taal }) {
+  const { home, foto } = inhoud(taal);
   const t = home.amsterdam;
   return (
     <Sectie id="amsterdam" toon="room">
@@ -46,8 +71,8 @@ export function Amsterdam() {
 }
 
 /** Blok 2: Duo of Solo. Kop links, de twee opties rechts, gescheiden door een hairline. */
-export function DuoSolo() {
-  const t = home.duoSolo;
+export function DuoSolo({ taal }: { taal: Taal }) {
+  const t = inhoud(taal).home.duoSolo;
   return (
     <Sectie id="duo-of-solo">
       <Container className="grid gap-12 md:grid-cols-12 md:gap-8">
@@ -75,8 +100,8 @@ export function DuoSolo() {
 }
 
 /** Blok 3: samen delen, in vier zinnen. */
-export function Samen() {
-  const t = home.samen;
+export function Samen({ taal }: { taal: Taal }) {
+  const t = inhoud(taal).home.samen;
   return (
     <Sectie id="samen" toon="room">
       <Container className="grid gap-10 md:grid-cols-12 md:gap-8">
@@ -99,8 +124,8 @@ export function Samen() {
 }
 
 /** Blok 4: alles inbegrepen, als rustige lijst in twee kolommen. */
-export function Inbegrepen() {
-  const t = home.inbegrepen;
+export function Inbegrepen({ taal }: { taal: Taal }) {
+  const t = inhoud(taal).home.inbegrepen;
   return (
     <Sectie id="inbegrepen">
       <Container className="grid gap-10 md:grid-cols-12 md:gap-8">
@@ -117,8 +142,8 @@ export function Inbegrepen() {
 }
 
 /** Blok 5: leasen of delen. Drie kolommen op hairlines, zonder kaders. Ook op de prijspagina. */
-export function LeasenOfDelen({ id = "leasen-of-delen" }: { id?: string }) {
-  const t = home.leasen;
+export function LeasenOfDelen({ taal, id = "leasen-of-delen" }: { taal: Taal; id?: string }) {
+  const t = inhoud(taal).home.leasen;
   return (
     <Sectie id={id} toon="room">
       <Container>
@@ -126,7 +151,7 @@ export function LeasenOfDelen({ id = "leasen-of-delen" }: { id?: string }) {
         <div className="mt-12 grid border-t border-lijn md:mt-16 md:grid-cols-3 md:divide-x md:divide-lijn">
           {t.kolommen.map((k, i) => (
             <div key={k.naam} className={cn("border-b border-lijn py-7 md:border-b-0 md:py-8", i > 0 && "md:pl-8", i < 2 && "md:pr-8")}>
-              <p className={cn("label", k.wij ? "text-blauw" : "text-grijs")}>{k.wij ? "Sloepmaten" : "Elders"}</p>
+              <p className={cn("label", k.wij ? "text-blauw" : "text-grijs")}>{k.wij ? t.labels.wij : t.labels.elders}</p>
               <h3 className="mt-4 text-[17px] font-medium tracking-normal">{k.naam}</h3>
               <p className="kop mt-4 text-[48px] tabular-nums md:text-[56px]">{k.prijs}</p>
               <p className="mt-1 text-[14px] text-grijs">
@@ -156,8 +181,8 @@ export function LeasenOfDelen({ id = "leasen-of-delen" }: { id?: string }) {
 }
 
 /** Blok: zo makkelijk is het. Kop links, drie stappen rechts als rijen op hairlines. */
-export function Stappen() {
-  const t = home.stappen;
+export function Stappen({ taal }: { taal: Taal }) {
+  const t = inhoud(taal).home.stappen;
   return (
     <Sectie id="stappen">
       <Container className="grid gap-12 md:grid-cols-12 md:gap-8">
@@ -186,12 +211,13 @@ export function Stappen() {
 }
 
 /** Slot: één donkere band met de twee acties. Ook onderaan de andere pagina's. */
-export function Slot({ kop = home.slot.kop, tekst = home.slot.tekst }: { kop?: string; tekst?: string }) {
+export function Slot({ taal }: { taal: Taal }) {
+  const { home, cta } = inhoud(taal);
   return (
     <Sectie id="slot" toon="nacht">
       <Container>
-        <h2 className="max-w-[16ch] text-[40px] text-wit md:text-[56px] lg:text-[64px]">{kop}</h2>
-        <p className="mt-5 max-w-[36rem] text-[18px] text-wit/75 md:text-[20px]">{tekst}</p>
+        <h2 className="max-w-[16ch] text-[40px] text-wit md:text-[56px] lg:text-[64px]">{home.slot.kop}</h2>
+        <p className="mt-5 max-w-[36rem] text-[18px] text-wit/75 md:text-[20px]">{home.slot.tekst}</p>
         <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 md:mt-10">
           <KnopLink href={cta.proefvaren.href} variant="licht">
             {cta.proefvaren.label}

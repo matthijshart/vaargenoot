@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { cta, nav, site } from "@/content/site";
+import { menu } from "@/content/menu";
+import { taalUitPad, wissel } from "@/lib/taal";
 import { cn } from "@/lib/utils";
 import { KnopLink } from "./ui/Knop";
 
@@ -15,6 +16,9 @@ export function Nav() {
   const [gescrold, setGescrold] = useState(false);
   const [open, setOpen] = useState(false);
   const pad = usePathname();
+  const taal = taalUitPad(pad);
+  const { cta, nav, site, ui } = menu(taal);
+  const ander = wissel(pad);
 
   useEffect(() => {
     const lees = () => setGescrold(window.scrollY > 8);
@@ -33,19 +37,15 @@ export function Nav() {
     };
   }, [open]);
 
-  // Bovenaan de voorpagina staat de nav op de foto: wit, zonder achtergrond.
-  const opFoto = pad === "/" && !gescrold && !open;
-
   return (
     <header
       className={cn(
         "niet-printen fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,color] duration-200",
-        gescrold || open ? "border-b border-lijn bg-wit text-antraciet" : "border-b border-transparent bg-transparent",
-        opFoto && "text-wit",
+        gescrold || open ? "border-b border-lijn bg-wit" : "border-b border-transparent bg-wit/80 backdrop-blur-sm",
       )}
     >
-      <nav aria-label="Hoofdmenu" className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-5 md:px-8">
-        <Link href="/" className="kop text-[26px] text-current">
+      <nav aria-label={ui.hoofdmenu} className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-5 md:px-8">
+        <Link href="/" className="kop text-[26px]">
           {site.naam}
         </Link>
 
@@ -57,7 +57,7 @@ export function Nav() {
                 aria-current={pad === item.href ? "page" : undefined}
                 className={cn(
                   "text-[15px] font-medium transition-colors duration-200",
-                  opFoto ? "text-wit/80 hover:text-wit" : pad === item.href ? "text-antraciet" : "text-grijs hover:text-antraciet",
+                  pad === item.href ? "text-antraciet" : "text-grijs hover:text-antraciet",
                 )}
               >
                 {item.label}
@@ -67,15 +67,23 @@ export function Nav() {
         </ul>
 
         <div className="flex items-center gap-2 sm:gap-5">
-          <Link href={cta.reserveer.href} className={cn("hidden text-[15px] font-medium md:inline", opFoto ? "text-wit/90 hover:text-wit" : "text-blauw hover:text-blauw-donker")}>
+          <Link
+            href={ander.href}
+            hrefLang={ander.taal}
+            aria-label={`${ui.taal}: ${ander.label}`}
+            className="hidden text-[15px] font-medium text-grijs transition-colors duration-200 hover:text-antraciet lg:inline"
+          >
+            {ander.label}
+          </Link>
+          <Link href={cta.reserveer.href} className="hidden text-[15px] font-medium text-blauw transition-colors duration-200 hover:text-blauw-donker md:inline">
             {cta.reserveer.label}
           </Link>
-          <KnopLink href={cta.proefvaren.href} variant={opFoto ? "licht" : "blauw"} className="h-10 px-4 text-[15px] sm:px-5">
+          <KnopLink href={cta.proefvaren.href} className="h-10 px-4 text-[15px] sm:px-5">
             {cta.proefvaren.label}
           </KnopLink>
           <button
             type="button"
-            aria-label={open ? "Menu sluiten" : "Menu openen"}
+            aria-label={open ? ui.menuDicht : ui.menuOpen}
             aria-expanded={open}
             aria-controls="mobiel-menu"
             onClick={() => setOpen((o) => !o)}
@@ -93,7 +101,7 @@ export function Nav() {
         className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-lijn bg-wit lg:hidden"
       >
         <ul className="mx-auto flex max-w-[1200px] flex-col px-5 py-4">
-          {[...nav, cta.reserveer].map((item) => (
+          {[...nav, cta.reserveer, { label: ander.label, href: ander.href }].map((item) => (
             <li key={item.href} className="border-b border-lijn">
               <Link href={item.href} onClick={() => setOpen(false)} className="block py-4 text-[22px] font-medium">
                 {item.label}

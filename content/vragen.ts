@@ -6,6 +6,10 @@ const duo = producten.duo.prijs.prinsen;
 const lease = vergelijking.lease.prijs.prinsen;
 
 export const vragen = {
+  meta: {
+    title: "Vragen",
+    description: "Twaalf vragen over Duo, Solo, deeleigendom, looptijd, huisstijl, schade, vaarbewijs en het seizoen.",
+  },
   kop: "Vragen.",
   intro: "De vragen die bedrijven ons stellen, in de volgorde waarin ze komen.",
   lijst: [

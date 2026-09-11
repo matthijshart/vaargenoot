@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { cta } from "@/content/site";
+import { menu } from "@/content/menu";
+import { taalUitPad } from "@/lib/taal";
 import { cn } from "@/lib/utils";
 import { KnopLink } from "./ui/Knop";
 
@@ -39,7 +40,7 @@ export function Voortgang() {
   );
 }
 
-const zonderBalk = ["/reserveer", "/proefvaren", "/aanbod"];
+const zonderBalk = ["/reserveer", "/proefvaren", "/aanbod", "/en/reserve", "/en/trial-trip", "/en/offer"];
 
 /**
  * Vaste knoppenbalk onderin op de telefoon. Komt in beeld zodra je voorbij
@@ -47,6 +48,7 @@ const zonderBalk = ["/reserveer", "/proefvaren", "/aanbod"];
  */
 export function MobieleBalk() {
   const pad = usePathname();
+  const { cta } = menu(taalUitPad(pad));
   const [zichtbaar, setZichtbaar] = useState(false);
 
   useEffect(() => {

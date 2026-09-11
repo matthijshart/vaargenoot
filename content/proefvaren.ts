@@ -1,6 +1,10 @@
 import { proefvaren as p } from "./config";
 
 export const proefvaren = {
+  meta: {
+    title: "Kom proefvaren",
+    description: "Een uur mee het water op met de oprichter, met je team. Vrijblijvend. Daarna beslis je, of je reserveert ter plekke.",
+  },
   kop: "Kom proefvaren.",
   intro: `Een uur mee het water op met de oprichter, met je team. Vrijblijvend. ${p.prijs}`,
   wat: [
@@ -25,5 +29,6 @@ export const proefvaren = {
     klaar: "Aangevraagd.",
     bevestiging: "We bellen of mailen je om een moment te prikken.",
     onder: "We gebruiken je gegevens alleen om de proefvaart te plannen.",
+    privacy: { label: "Privacy", href: "/privacy" },
   },
 };

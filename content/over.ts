@@ -1,6 +1,10 @@
 import { oprichter, site } from "./config";
 
 export const over = {
+  meta: {
+    title: "Over",
+    description: "Een simpel idee: een sloep die van je bedrijf is. Alleen, of met één ander bedrijf. Waarom Sloepmaten, en wat we niet doen.",
+  },
   kop: "Over Sloepmaten.",
   intro: "Een simpel idee: een sloep in de Amsterdamse grachten die van je bedrijf is. Alleen, of met één ander bedrijf.",
   blokken: [
@@ -21,6 +25,10 @@ export const over = {
 };
 
 export const privacy = {
+  meta: {
+    title: "Privacy",
+    description: "Wat Sloepmaten doet met de gegevens uit het reserverings- en proefvaartformulier. Geen cookies, geen tracking.",
+  },
   kop: "Privacy.",
   intro: "Kort en in gewone taal. We tracken niet, dus er is geen cookiebanner.",
   blokken: [

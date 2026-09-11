@@ -10,7 +10,7 @@ function Item({ vraag, antwoord, open, onToggle, Kop }: AccordionItem & { open: 
   const id = useId();
   return (
     <li className="border-b border-lijn">
-      <Kop className="text-[17px] font-medium tracking-normal md:text-[18px]">
+      <Kop className="font-sans text-[17px] font-medium tracking-normal md:text-[18px]">
         <button
           type="button"
           aria-expanded={open}

@@ -1,6 +1,7 @@
 "use server";
 
 import { modellen, producten, site } from "@/content/config";
+import type { Taal } from "@/lib/taal";
 import { fouttekst, proefvaarRegels, reserveerRegels, valideer, type Fouten, type Regel } from "@/lib/validatie";
 
 export type FormulierStatus = {
@@ -20,12 +21,17 @@ function lees(formData: FormData, regels: Regel[]) {
   return waarden;
 }
 
+/** De taal van het formulier, voor de foutteksten. Het bericht aan ons is altijd Nederlands. */
+function taalVan(formData: FormData): Taal {
+  return formData.get("taal") === "en" ? "en" : "nl";
+}
+
 /**
  * Verstuurt een formulier per e-mail via Resend zodra RESEND_API_KEY en
  * AANMELD_NAAR in de omgeving staan. Zonder die twee wordt alleen gelogd,
  * zodat de site ook zonder mailkoppeling werkt en test.
  */
-async function verstuur(onderwerp: string, regels: string[], antwoordAan: string): Promise<FormulierStatus> {
+async function verstuur(onderwerp: string, regels: string[], antwoordAan: string, taal: Taal): Promise<FormulierStatus> {
   console.log(`[${onderwerp}]`, regels.join(" | "));
   const sleutel = process.env.RESEND_API_KEY;
   const naar = process.env.AANMELD_NAAR;
@@ -44,12 +50,12 @@ async function verstuur(onderwerp: string, regels: string[], antwoordAan: string
     });
     if (!antwoord.ok) {
       console.error(`[${onderwerp}] mail mislukt`, antwoord.status, await antwoord.text());
-      return { status: "fout", melding: fouttekst.algemeen };
+      return { status: "fout", melding: fouttekst[taal].algemeen };
     }
     return { status: "klaar" };
   } catch (fout) {
     console.error(`[${onderwerp}] mail mislukt`, fout);
-    return { status: "fout", melding: fouttekst.algemeen };
+    return { status: "fout", melding: fouttekst[taal].algemeen };
   }
 }
 
@@ -60,8 +66,9 @@ function spam(formData: FormData) {
 
 export async function reserveer(_vorige: FormulierStatus, formData: FormData): Promise<FormulierStatus> {
   if (spam(formData)) return { status: "klaar" };
+  const taal = taalVan(formData);
   const w = lees(formData, reserveerRegels);
-  const fouten = valideer(reserveerRegels, w);
+  const fouten = valideer(reserveerRegels, w, taal);
   if (Object.keys(fouten).length > 0) return { status: "fout", fouten };
 
   const model = modellen[w.model as keyof typeof modellen];
@@ -77,16 +84,19 @@ export async function reserveer(_vorige: FormulierStatus, formData: FormData): P
       `Product: ${product.naam}`,
       `Duo-partner: ${w.duoPartner || "geen"}`,
       `Teamgrootte: ${w.teamgrootte || "niet ingevuld"}`,
+      `Taal: ${taal === "en" ? "Engels" : "Nederlands"}`,
       `Tijd: ${new Date().toISOString()}`,
     ],
     w.email,
+    taal,
   );
 }
 
 export async function proefvaren(_vorige: FormulierStatus, formData: FormData): Promise<FormulierStatus> {
   if (spam(formData)) return { status: "klaar" };
+  const taal = taalVan(formData);
   const w = lees(formData, proefvaarRegels);
-  const fouten = valideer(proefvaarRegels, w);
+  const fouten = valideer(proefvaarRegels, w, taal);
   if (Object.keys(fouten).length > 0) return { status: "fout", fouten };
 
   return verstuur(
@@ -98,8 +108,10 @@ export async function proefvaren(_vorige: FormulierStatus, formData: FormData): 
       `Telefoon: ${w.telefoon}`,
       `Teamgrootte: ${w.teamgrootte || "niet ingevuld"}`,
       `Voorkeursdag: ${w.voorkeursdag || "geen voorkeur"}`,
+      `Taal: ${taal === "en" ? "Engels" : "Nederlands"}`,
       `Tijd: ${new Date().toISOString()}`,
     ],
     w.email,
+    taal,
   );
 }

@@ -1,6 +1,10 @@
 import { dagdelen, looptijd, modellen, producten, reservering, samen, seizoen } from "./config";
 
 export const werkt = {
+  meta: {
+    title: "Zo werkt het",
+    description: "Van kiezen tot wegvaren in zeven stappen, en alle spelregels voluit: dagdelen, seizoen, Duo, Solo, voorkeursrecht en looptijd.",
+  },
   kop: "Zo werkt het.",
   intro: "Van kiezen tot wegvaren in zeven stappen. Daarna alle spelregels, voluit.",
   stappen: [

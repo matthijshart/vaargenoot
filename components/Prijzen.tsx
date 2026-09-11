@@ -1,4 +1,5 @@
-import { prijzen } from "@/content/prijzen";
+import { inhoud } from "@/content";
+import type { Taal } from "@/lib/taal";
 import { bedragRond, cn } from "@/lib/utils";
 import { Container } from "./ui/Container";
 import { Kop } from "./ui/Kop";
@@ -6,26 +7,38 @@ import { Sectie } from "./ui/Sectie";
 import { Tekst } from "./ui/Tekst";
 
 /** Prijstabel: Duo en Solo als twee rustige kolommen, per model een prijs. */
-export function Prijstabel() {
-  const t = prijzen.tabel;
+export function Prijstabel({ taal }: { taal: Taal }) {
+  const t = inhoud(taal).prijzen.tabel;
   return (
     <Sectie id="prijzen" className="pt-10 md:pt-16 lg:pt-20">
       <Container>
         <div className="grid border-t border-lijn md:grid-cols-2 md:divide-x md:divide-lijn">
           {t.kolommen.map((k, i) => (
-            <div key={k.id} id={k.id} className={cn("scroll-mt-24 border-b border-lijn py-8 md:border-b-0 md:py-10", i > 0 ? "md:pl-10 lg:pl-14" : "md:pr-10 lg:pr-14")}>
+            <div
+              key={k.id}
+              id={k.id}
+              className={cn(
+                "scroll-mt-24 border-b border-lijn py-8 md:border-b-0 md:py-10",
+                i > 0 ? "md:pl-10 lg:pl-14" : "md:pr-10 lg:pr-14",
+              )}
+            >
               <h2 className="text-[44px] md:text-[56px]">{k.naam}</h2>
               <p className="mt-2 text-grijs">{k.kort}</p>
               <ul className="mt-8 divide-y divide-lijn border-y border-lijn">
                 {k.prijzen.map((p) => (
-                  <li key={p.model} className="flex items-baseline justify-between gap-4 py-4">
+                  <li
+                    key={p.model}
+                    className="flex items-baseline justify-between gap-4 py-4"
+                  >
                     <div>
                       <p className="text-[18px] font-medium">{p.model}</p>
                       <p className="text-[14px] text-grijs">{p.lengte}</p>
                     </div>
                     <div className="text-right">
-                      <p className="kop text-[34px] tabular-nums md:text-[40px]">{p.bedrag}</p>
-                      <p className="text-[13px] text-grijs">per maand{p.perBedrijf ? " per bedrijf" : ""}, excl. btw</p>
+                      <p className="kop text-[34px] tabular-nums md:text-[40px]">
+                        {p.bedrag}
+                      </p>
+                      <p className="text-[13px] text-grijs">{p.noot}</p>
                     </div>
                   </li>
                 ))}
@@ -34,32 +47,43 @@ export function Prijstabel() {
                 {t.rijen.map((r) => (
                   <div key={r.sleutel}>
                     <dt className="text-grijs">{r.label}</dt>
-                    <dd className="mt-0.5 leading-snug">{k.waarden[r.sleutel]}</dd>
+                    <dd className="mt-0.5 leading-snug">
+                      {k.waarden[r.sleutel]}
+                    </dd>
                   </div>
                 ))}
               </dl>
             </div>
           ))}
         </div>
-        <p className="mt-8 max-w-[65ch] text-[15px] leading-relaxed text-grijs">{t.onder}</p>
+        <p className="mt-8 max-w-[65ch] text-[15px] leading-relaxed text-grijs">
+          {t.onder}
+        </p>
       </Container>
     </Sectie>
   );
 }
 
-function Status({ waarde }: { waarde: string }) {
-  const vrij = waarde === "vrij";
+type Staat = { tekst: string; vrij: boolean };
+
+function Status({ waarde }: { waarde: Staat }) {
   return (
     <span className="inline-flex items-center gap-2">
-      <span aria-hidden className={cn("h-2 w-2 rounded-full", vrij ? "bg-blauw" : "bg-lijn")} />
-      {waarde}
+      <span
+        aria-hidden
+        className={cn(
+          "h-2 w-2 rounded-full",
+          waarde.vrij ? "bg-blauw" : "bg-lijn",
+        )}
+      />
+      {waarde.tekst}
     </span>
   );
 }
 
 /** Live beschikbaarheid per sloep, uit het configbestand. */
-export function Beschikbaarheid() {
-  const t = prijzen.beschikbaarheid;
+export function Beschikbaarheid({ taal }: { taal: Taal }) {
+  const t = inhoud(taal).prijzen.beschikbaarheid;
   return (
     <Sectie id="beschikbaarheid" toon="room">
       <Container>
@@ -69,18 +93,19 @@ export function Beschikbaarheid() {
           {t.sloepen.map((s) => (
             <li key={s.naam} className="py-4">
               <p className="font-medium">
-                {s.naam} <span className="font-normal text-grijs">{s.model}</span>
+                {s.naam}{" "}
+                <span className="font-normal text-grijs">{s.model}</span>
               </p>
               <dl className="mt-2 grid grid-cols-3 gap-2 text-[14px]">
                 {[
-                  [t.kolommen[1], t.status[s.helften[0]]],
-                  [t.kolommen[2], t.status[s.helften[1]]],
+                  [t.kolommen[1], s.helften[0]],
+                  [t.kolommen[2], s.helften[1]],
                   [t.kolommen[3], s.solo],
                 ].map(([label, waarde]) => (
-                  <div key={label}>
-                    <dt className="text-grijs">{label}</dt>
+                  <div key={label as string}>
+                    <dt className="text-grijs">{label as string}</dt>
                     <dd className="mt-0.5">
-                      <Status waarde={waarde} />
+                      <Status waarde={waarde as Staat} />
                     </dd>
                   </div>
                 ))}
@@ -103,13 +128,14 @@ export function Beschikbaarheid() {
               {t.sloepen.map((s) => (
                 <tr key={s.naam} className="border-b border-lijn">
                   <th scope="row" className="py-4 pr-6 text-left font-medium">
-                    {s.naam} <span className="font-normal text-grijs">{s.model}</span>
+                    {s.naam}{" "}
+                    <span className="font-normal text-grijs">{s.model}</span>
                   </th>
                   <td className="py-4 pr-6">
-                    <Status waarde={t.status[s.helften[0]]} />
+                    <Status waarde={s.helften[0]} />
                   </td>
                   <td className="py-4 pr-6">
-                    <Status waarde={t.status[s.helften[1]]} />
+                    <Status waarde={s.helften[1]} />
                   </td>
                   <td className="py-4 pr-6">
                     <Status waarde={s.solo} />
@@ -126,8 +152,8 @@ export function Beschikbaarheid() {
 }
 
 /** Kosten per vaart bij 4, 8 en 12 vaarten per maand, per model. */
-export function KostenPerVaart() {
-  const t = prijzen.perVaart;
+export function KostenPerVaart({ taal }: { taal: Taal }) {
+  const t = inhoud(taal).prijzen.perVaart;
   return (
     <Sectie id="per-vaart">
       <Container>
@@ -136,48 +162,66 @@ export function KostenPerVaart() {
           {t.modellen.map((m) => (
             <div key={m.naam}>
               <h3 className="kop text-[30px]">
-                {m.naam} <span className="font-normal text-grijs">{m.lengte}</span>
+                {m.naam}{" "}
+                <span className="font-normal text-grijs">{m.lengte}</span>
               </h3>
-              <table className="mt-4 w-full border-collapse text-[15px]">
-                <thead>
-                  <tr className="border-b border-lijn text-left text-grijs">
-                    <th scope="col" className="py-3 pr-4 font-medium">
-                      Vaarten per maand
-                    </th>
-                    {t.kolommen.map((k) => (
-                      <th key={k} scope="col" className="py-3 pr-4 font-medium">
-                        {k}
+              <div className="mt-4 overflow-x-auto">
+                <table className="w-full border-collapse text-[15px]">
+                  <thead>
+                    <tr className="border-b border-lijn text-left text-grijs">
+                      <th scope="col" className="py-3 pr-4 font-medium">
+                        {t.vaartenKop}
                       </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {t.vaarten.map((n) => (
-                    <tr key={n} className="border-b border-lijn">
-                      <th scope="row" className="py-3 pr-4 text-left font-medium tabular-nums">
-                        {n}
-                      </th>
-                      {m.maand.map((bedrag, i) => (
-                        <td key={i} className={cn("py-3 pr-4 tabular-nums", i > 0 && "font-medium")}>
-                          {bedragRond(bedrag / n)}
-                        </td>
+                      {t.kolommen.map((k) => (
+                        <th
+                          key={k}
+                          scope="col"
+                          className="py-3 pr-4 font-medium"
+                        >
+                          {k}
+                        </th>
                       ))}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {t.vaarten.map((n) => (
+                      <tr key={n} className="border-b border-lijn">
+                        <th
+                          scope="row"
+                          className="py-3 pr-4 text-left font-medium tabular-nums"
+                        >
+                          {n}
+                        </th>
+                        {m.maand.map((bedrag, i) => (
+                          <td
+                            key={i}
+                            className={cn(
+                              "py-3 pr-4 tabular-nums",
+                              i > 0 && "font-medium",
+                            )}
+                          >
+                            {bedragRond(bedrag / n, taal)}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           ))}
         </div>
-        <p className="mt-8 max-w-[65ch] text-[15px] leading-relaxed text-grijs">{t.onder}</p>
+        <p className="mt-8 max-w-[65ch] text-[15px] leading-relaxed text-grijs">
+          {t.onder}
+        </p>
       </Container>
     </Sectie>
   );
 }
 
 /** Voorbeeldovereenkomst als download. */
-export function Overeenkomst() {
-  const t = prijzen.overeenkomst;
+export function Overeenkomst({ taal }: { taal: Taal }) {
+  const t = inhoud(taal).prijzen.overeenkomst;
   return (
     <Sectie id="overeenkomst" toon="room">
       <Container className="grid gap-8 md:grid-cols-12">
@@ -185,7 +229,7 @@ export function Overeenkomst() {
           <h2 className="text-[34px] md:text-[44px]">{t.kop}</h2>
           <p className="mt-4 text-grijs">{t.tekst}</p>
           <p className="mt-6 text-[15px]">
-            Download: <Tekst>{t.bestand}</Tekst>
+            {t.download} <Tekst>{t.bestand}</Tekst>
           </p>
         </div>
       </Container>

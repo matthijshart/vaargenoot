@@ -5,7 +5,20 @@ export const home = {
   hero: {
     boven: "Amsterdamse grachten",
     kop: "Een sloep voor je bedrijf.\nIn *deeleigendom*.",
-    sub: "Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
+    sub: "Iedereen bij jou op kantoor pakt de sloep via de app. Alleen, of samen met één ander bedrijf. Wij regelen de rest.",
+    punten: ["Eén vast bedrag per maand", "Alles inbegrepen", "Twaalf maanden"],
+  },
+
+  waarom: {
+    boven: "Waarom bedrijven dit doen",
+    kop: "Het leukste secundaire arbeidsvoorwaarde van de gracht.",
+    intro: "Een sloep op naam van je bedrijf zegt in één keer wie je bent. Naar je mensen, je klanten en de kandidaat die twijfelt.",
+    items: [
+      { kop: "Je valt op bij sollicitaties", tekst: "Een eigen sloep in de gracht staat in elke vacaturetekst, en blijft hangen na het gesprek." },
+      { kop: "Je geeft je mensen iets extra's", tekst: "Vrijdagmiddag varen in plaats van vrijdagmiddagborrel. Iedereen mag hem pakken." },
+      { kop: "Je klanten onthouden het", tekst: "Een uur op het water doet meer dan een vergaderzaal met uitzicht op de A10." },
+      { kop: "Het kost je geen tijd", tekst: "Aanvragen in de app, aan boord stappen, wegvaren. Wij doen schoonmaak, onderhoud en de rest." },
+    ],
   },
 
   voorWie: {
@@ -120,7 +133,8 @@ export const home = {
         wij: true,
       },
     ],
-    rijen: ["Per maand", "Looptijd", "Huisstijl", "Aan boord"] as const,
+    rijen: ["Per maand", "Looptijd", "Huisstijl", "Aan boord"],
+    labels: { wij: "Sloepmaten", elders: "Elders" },
     link: "Alle prijzen en de kosten per vaart",
     href: "/duo-of-solo",
   },

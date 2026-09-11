@@ -4,26 +4,29 @@ import Image, { type StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-type Beeld = { src: StaticImageData; alt: string; positie?: string };
+type Beeld = { src: StaticImageData; alt: string; positie?: string; /** "Foto 1 van 3" of "Photo 1 of 3". */ knop: string };
 
 /**
- * Diavoorstelling die het hele kader vult. Foto twee en drie komen pas
- * `naLaden` milliseconden na het laden van de pagina, zodat de eerste foto
- * de LCP blijft en de pagina eerst rustig staat. Daarna wisselen de foto's
- * elke 3,5 seconde met een overvloeiing van 0,7 seconde. Stippen om zelf
- * te kiezen. Bij prefers-reduced-motion blijft de eerste foto staan. De
- * ouder bepaalt de maat en is `relative`.
+ * Diavoorstelling die het hele kader vult. Foto twee en drie laden pas bij
+ * de eerste beweging van de bezoeker (muis, scroll of aanraking), zodat de
+ * eerste foto de LCP blijft en de pagina rustig staat tot er iemand is.
+ * Daarna wisselen de foto's elke 3,5 seconde met een overvloeiing van 0,7
+ * seconde. Stippen om zelf te kiezen. Bij prefers-reduced-motion blijft de
+ * eerste foto staan. De ouder bepaalt de maat en is `relative`.
  */
 export function Diashow({
   beelden,
   interval = 3500,
-  naLaden = 3500,
+  naLaden = 1200,
   stippen = "midden",
+  label,
 }: {
   beelden: Beeld[];
   interval?: number;
   naLaden?: number;
   stippen?: "midden" | "rechts";
+  /** "Foto's" of "Photos". */
+  label: string;
 }) {
   const [actief, setActief] = useState(0);
   const [stil, setStil] = useState(false);
@@ -31,14 +34,20 @@ export function Diashow({
 
   useEffect(() => {
     let t = 0;
-    const plan = () => {
+    const beginnen = () => {
       t = window.setTimeout(() => setKlaar(true), naLaden);
     };
-    if (document.readyState === "complete") plan();
-    else window.addEventListener("load", plan, { once: true });
+    // Pas beginnen als de bezoeker er is: de foto's laden niet mee met de
+    // eerste paint, en een pagina die alleen wordt gemeten blijft stil.
+    const soorten = ["pointermove", "pointerdown", "scroll", "keydown", "touchstart"] as const;
+    const wakker = () => {
+      soorten.forEach((soort) => window.removeEventListener(soort, wakker));
+      beginnen();
+    };
+    soorten.forEach((soort) => window.addEventListener(soort, wakker, { once: true, passive: true }));
     return () => {
       window.clearTimeout(t);
-      window.removeEventListener("load", plan);
+      soorten.forEach((soort) => window.removeEventListener(soort, wakker));
     };
   }, [naLaden]);
 
@@ -83,7 +92,7 @@ export function Diashow({
       <div
         className={cn("absolute bottom-5 flex gap-1", stippen === "midden" ? "inset-x-0 justify-center" : "right-5 md:right-8")}
         role="tablist"
-        aria-label="Foto's"
+        aria-label={label}
       >
         {beelden.map((b, i) => (
           <button
@@ -91,7 +100,7 @@ export function Diashow({
             type="button"
             role="tab"
             aria-selected={i === actief}
-            aria-label={`Foto ${i + 1} van ${beelden.length}`}
+            aria-label={b.knop}
             onClick={() => {
               setActief(i);
               setStil(true);

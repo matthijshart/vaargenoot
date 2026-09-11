@@ -4,11 +4,12 @@ import { cn } from "@/lib/utils";
 export const veldStijl =
   "w-full rounded-knop border border-lijn bg-wit px-4 py-3.5 text-[17px] text-antraciet transition-colors duration-200 placeholder:text-grijs/60 hover:border-grijs/60 focus:border-blauw focus:outline-none focus-visible:ring-2 focus-visible:ring-blauw/30 disabled:opacity-60";
 
-export function Label({ htmlFor, children, optioneel }: { htmlFor: string; children: ReactNode; optioneel?: boolean }) {
+/** `optioneel` is de tekst achter het label, bijvoorbeeld "optioneel" of "optional". */
+export function Label({ htmlFor, children, optioneel }: { htmlFor: string; children: ReactNode; optioneel?: string }) {
   return (
     <label htmlFor={htmlFor} className="mb-2 block text-[15px] font-medium">
       {children}
-      {optioneel && <span className="font-normal text-grijs"> (optioneel)</span>}
+      {optioneel && <span className="font-normal text-grijs"> ({optioneel})</span>}
     </label>
   );
 }
@@ -22,7 +23,7 @@ export function Fout({ id, tekst }: { id: string; tekst?: string }) {
   );
 }
 
-type InvoerProps = InputHTMLAttributes<HTMLInputElement> & { label: string; naam: string; fout?: string; optioneel?: boolean };
+type InvoerProps = InputHTMLAttributes<HTMLInputElement> & { label: string; naam: string; fout?: string; optioneel?: string };
 
 export function Invoer({ label, naam, fout, optioneel, className, ...rest }: InvoerProps) {
   const id = `veld-${naam}`;
@@ -48,7 +49,7 @@ type KeuzeProps = SelectHTMLAttributes<HTMLSelectElement> & {
   label: string;
   naam: string;
   fout?: string;
-  optioneel?: boolean;
+  optioneel?: string;
   opties: { waarde: string; label: string; uit?: boolean }[];
 };
 

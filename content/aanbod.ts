@@ -5,6 +5,13 @@ const ids: ModelId[] = ["prinsen", "amstel"];
 
 /** Printvriendelijke samenvatting op één A4. */
 export const aanbod = {
+  meta: {
+    title: "Aanbod op één A4",
+    description: "Sloepmaten in het kort: Duo en Solo met prijzen, alles inbegrepen, zo delen jullie, contact.",
+  },
+  noot: "Deze pagina past op één A4.",
+  inbegrepenKop: "Alles inbegrepen",
+  contactKop: "Contact",
   kop: "Een sloep voor je bedrijf. In deeleigendom.",
   sub: "In de Amsterdamse grachten. Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
   producten: (["duo", "solo"] as const).map((p) => ({

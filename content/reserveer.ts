@@ -2,6 +2,10 @@ import { modellen, producten, reservering } from "./config";
 import { bedrag } from "@/lib/utils";
 
 export const reserveer = {
+  meta: {
+    title: "Reserveer je sloep",
+    description: "Reserveer een Duo-helft of een Solo voor 2027. Overeenkomst binnen twee werkdagen, tekenen, oplevering april 2027.",
+  },
   kop: "Reserveer je sloep.",
   intro: `Vier stappen, en in ${reservering.oplevering} ligt hij voor je klaar.`,
   stappen: [
@@ -55,5 +59,6 @@ export const reserveer = {
     klaar: "Gereserveerd.",
     bevestiging: `Je hoort binnen ${reservering.overeenkomstBinnen} van ons, met de overeenkomst erbij.`,
     onder: "Reserveren is pas bindend na het tekenen van de overeenkomst. We gebruiken je gegevens alleen voor deze reservering.",
+    privacy: { label: "Privacy", href: "/privacy" },
   },
 };

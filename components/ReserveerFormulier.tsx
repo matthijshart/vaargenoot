@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useActionState, useState, type ChangeEvent, type FocusEvent } from "react";
 import { reserveer, type FormulierStatus } from "@/app/actions";
-import { reserveer as t } from "@/content/reserveer";
+import { inhoud } from "@/content";
+import { type Taal } from "@/lib/taal";
 import { reserveerRegels, valideerVeld, type Fouten } from "@/lib/validatie";
 import { Invoer, Keuze } from "./ui/Veld";
 import { Knop } from "./ui/Knop";
@@ -26,7 +27,7 @@ type Waarden = {
  * op de server. Werkt ook zonder JavaScript: de Server Action valideert
  * en geeft de fouten terug.
  */
-export function ReserveerFormulier() {
+export function ReserveerFormulier({ taal }: { taal: Taal }) {
   const [state, actie, bezig] = useActionState(reserveer, begin);
   const [lokaal, setLokaal] = useState<Fouten>({});
   const [w, setW] = useState<Waarden>({
@@ -39,6 +40,7 @@ export function ReserveerFormulier() {
     duoPartner: "",
     teamgrootte: "",
   });
+  const { reserveer: t, ui } = inhoud(taal);
   const f = t.formulier;
   const fouten: Fouten = { ...state.fouten, ...lokaal };
   const klaar = state.status === "klaar";
@@ -46,7 +48,7 @@ export function ReserveerFormulier() {
   function controleer(e: FocusEvent<HTMLInputElement | HTMLSelectElement>) {
     const regel = reserveerRegels.find((r) => r.naam === e.target.name);
     if (!regel) return;
-    setLokaal((x) => ({ ...x, [regel.naam]: valideerVeld(regel, e.target.value) }));
+    setLokaal((x) => ({ ...x, [regel.naam]: valideerVeld(regel, e.target.value, taal) }));
   }
 
   function wijzig(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
@@ -78,14 +80,15 @@ export function ReserveerFormulier() {
         )}
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
-            <Invoer label={f.velden.duoPartner} naam="duoPartner" optioneel autoComplete="off" value={w.duoPartner} onChange={wijzig} />
+            <Invoer label={f.velden.duoPartner} naam="duoPartner" optioneel={ui.optioneel} autoComplete="off" value={w.duoPartner} onChange={wijzig} />
             <p className="mt-2 text-[14px] text-grijs">{f.duoPartnerHulp}</p>
           </div>
           <div>
-            <Invoer label={f.velden.teamgrootte} naam="teamgrootte" optioneel type="text" inputMode="numeric" value={w.teamgrootte} onChange={wijzig} />
+            <Invoer label={f.velden.teamgrootte} naam="teamgrootte" optioneel={ui.optioneel} type="text" inputMode="numeric" value={w.teamgrootte} onChange={wijzig} />
             <p className="mt-2 text-[14px] text-grijs">{f.teamgrootteHulp}</p>
           </div>
         </div>
+        <input type="hidden" name="taal" value={taal} />
         {/* Honeypot: mensen zien dit veld niet. */}
         <div className="hidden" aria-hidden>
           <label htmlFor="website">Website</label>
@@ -110,7 +113,11 @@ export function ReserveerFormulier() {
             {bezig ? f.bezig : f.knop}
           </Knop>
           <p className="mt-4 max-w-[52ch] text-[14px] leading-relaxed text-grijs">
-            {f.onder} <Link href="/privacy" className="underline underline-offset-4 hover:text-antraciet">Privacy</Link>.
+            {f.onder}{" "}
+            <Link href={f.privacy.href} className="underline underline-offset-4 hover:text-antraciet">
+              {f.privacy.label}
+            </Link>
+            .
           </p>
         </div>
       )}

@@ -1,9 +1,15 @@
 import { modellen, producten, site, type ModelId } from "./config";
+import type { FotoId } from "./foto";
 import { bedrag } from "@/lib/utils";
 
 const ids: ModelId[] = ["prinsen", "amstel"];
 
 export const sloepenPagina = {
+  meta: {
+    title: "De sloepen",
+    description:
+      "Prinsen: 10 m, lange tafel, koelkast, Green Egg, bimini. Amstel: 8 m, tot 25 aan boord. Allebei elektrisch en stil, net zo fijn met vier. Altijd schoon klaar in de grachtengordel.",
+  },
   kop: "De sloepen.",
   intro: "Twee modellen, allebei elektrisch, allebei stil, gebouwd voor de Amsterdamse grachten. Voor een lunch met vier en een borrel met veertig.",
   modellen: ids.map((id) => {
@@ -19,8 +25,8 @@ export const sloepenPagina = {
         { label: `${producten.duo.naam}`, waarde: `${bedrag(producten.duo.prijs[id])} per maand per bedrijf, excl. btw` },
         { label: `${producten.solo.naam}`, waarde: `${bedrag(producten.solo.prijs[id])} per maand, excl. btw` },
       ],
-      beeld: id === "prinsen" ? ("prinsen" as const) : ("bovenaf" as const),
-      beeldNoot: id === "prinsen" ? "Prinsen driekwart van voren, hoge resolutie" : "Amstel, hoge resolutie",
+      beeld: (id === "prinsen" ? "prinsen" : "bovenaf") as FotoId,
+      beeldNoot: `[INVULLEN: beeld, ${id === "prinsen" ? "Prinsen driekwart van voren, hoge resolutie" : "Amstel, hoge resolutie"}]`,
     };
   }),
   ligplaats: site.ligplaats,
