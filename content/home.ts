@@ -11,7 +11,7 @@ export const home = {
 
   waarom: {
     boven: "Waarom bedrijven dit doen",
-    kop: "De leukste secundaire arbeidsvoorwaarde van de gracht.",
+    kop: "De leukste secundaire arbeidsvoorwaarde ligt in de gracht.",
     intro: "Een sloep op naam van je bedrijf zegt in één keer wie je bent. Naar je mensen, je klanten en de kandidaat die twijfelt.",
     items: [
       { kop: "Je valt op bij sollicitaties", tekst: "Een eigen sloep in de gracht staat in elke vacaturetekst, en blijft hangen na het gesprek." },

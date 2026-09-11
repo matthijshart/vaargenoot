@@ -14,7 +14,7 @@ export const home: typeof homeNl = {
 
   waarom: {
     boven: "Why companies do this",
-    kop: "The best perk on the canal.",
+    kop: "The best perk you can offer is moored on the canal.",
     intro: "A boat in your company's name says who you are in one go. To your people, your clients and the candidate who is still in doubt.",
     items: [
       { kop: "You stand out when hiring", tekst: "Your own boat on the canal goes in every job ad, and it sticks after the interview." },
