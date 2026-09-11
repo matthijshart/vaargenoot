@@ -18,7 +18,7 @@ dezelfde feiten, alleen andere woorden.
 ## Stack
 
 - Next.js 16 (App Router), TypeScript, Tailwind CSS v4. Geen Framer Motion, geen Lenis.
-- Twee lettertypen via next/font (self-hosted, `display: optional`, metrische fallback): Instrument Serif (`--font-serif`, utility `kop`) voor h1, h2, woordmerk, productnamen en prijzen, en Inter (`--font-inter`) voor tekst en interface, met `-apple-system` ervoor in de stack.
+- Drie lettertypen via next/font in `lib/fonts.ts` (self-hosted, `display: optional`, metrische fallback): Inter Tight (`--font-tight`, utility `kop`, gewicht 500) voor h1, h2, h3, woordmerk, productnamen en prijzen; Inter (`--font-inter`) voor tekst en interface; JetBrains Mono (`--font-mono`, utility `label`) voor de kleine labels in kapitalen. Geen serif.
 - Beelden via `next/image` met statische import en blur, in `components/ui/Foto.tsx`. Ontbreekt beeld: `components/ui/Vlak.tsx` met [INVULLEN], nooit een placeholderfoto.
 - Twee formulieren als Server Actions in `app/actions.ts` (reserveren, proefvaren): valideren, loggen altijd, mailen via Resend zodra `RESEND_API_KEY` en `AANMELD_NAAR` gezet zijn (zie `.env.example`). Honeypotveld `website`.
 - Deploy op Vercel.
@@ -56,14 +56,16 @@ in de hero of de prijstabel.
 
 ## Ontwerp
 
-Niveau Apple: rust, één boodschap per scherm, het product en het water
-dragen de pagina. Twijfel je, laat het weg.
+Niveau Mollie: rust, één boodschap per scherm, het product en het water
+dragen de pagina. Grote strakke koppen, monospace-labels, donkere
+pilknoppen, secties als grote afgeronde kaarten op wit. Twijfel je, laat
+het weg.
 
-- Tokens in `@theme` in `app/globals.css`, alleen deze namen: `wit`, `room` (warm off-white voor afwisselende secties), `antraciet` (tekst), `grijs` (secundaire tekst), `lijn`, `blauw` (enige accent: knoppen, links, actieve staat), `blauw-donker` (hover), `nacht` (de ene donkere band: hero-achtergrond en het slot), `markeer` (placeholders). Geen gradients, geen kleurvlakken achter koppen; alleen de waas onderin de hero.
-- Typografie: koppen in Instrument Serif 400, regelhoogte 1,0, h1 46 px mobiel tot 84 px desktop (hero 46 tot 72 px), met één cursief accent in blauw via `*woord*` in de herokop. h3 in Inter 600 of via `kop` in de serif. Korte koppen in interface-onderdelen (accordion) in Inter. Sectielabels als kleine kapitalen (`label`, 12 px, 0.14em). Body Inter 17 tot 18 px, regelhoogte 1,5, maximaal 65 tekens (`maat`). Geen bold in lopende tekst.
-- Layout: inhoud maximaal 1200 px, secties 80 px mobiel tot 160 px desktop verticale ruimte (`Sectie`, toon `wit`, `room` of `nacht`). Alles links uitgelijnd op één raster van twaalf kolommen: kop links, inhoud rechts, of één kolom tekst naast één beeld. Geen kaders: kolommen en rijen scheiden we met hairlines (`divide-lijn`, `border-lijn`), ook in de prijstabel en het kostenblok. Stappen als rijen met een serifnummer (01, 02, 03). Nooit drie kolommen met een icoon boven elke tekst, nooit gecentreerde tekst.
+- Tokens in `@theme` in `app/globals.css`, alleen deze namen: `wit`, `room` (warm off-white voor afwisselende secties), `antraciet` (tekst), `grijs` (secundaire tekst), `lijn`, `blauw` (enige accent: knoppen, links, actieve staat), `blauw-donker` (hover), `nacht` (de ene donkere kaart: het slot), `markeer` (placeholders). Geen gradients, geen kleurvlakken achter koppen.
+- Typografie: koppen in Inter Tight 500, letterspatiëring -0.035em, regelhoogte 0,98, h1 44 px mobiel tot 88 px desktop (hero 48 tot 104 px), met één accent in grijs (niet cursief) via `*woord*` in de herokop. h3 via `kop`. Vragen in de accordion in Inter. Sectielabels in JetBrains Mono kapitalen (`label`, 12 px, 0.08em, grijs). Body Inter 17 tot 18 px, regelhoogte 1,5, maximaal 65 tekens (`maat`). Geen bold in lopende tekst.
+- Layout: inhoud maximaal 1200 px. `Sectie` met toon `wit` staat gewoon op de pagina (80 tot 144 px verticale ruimte); toon `room` en `nacht` worden een afgeronde kaart (radius `kaart`, 28 px) van maximaal 1360 px binnen de paginamarge, met 12 tot 14 px lucht tussen kaarten, zoals de foto in de hero. Alles links uitgelijnd op één raster van twaalf kolommen: kop links, inhoud rechts, of één kolom tekst naast één beeld. Geen kaders: kolommen en rijen scheiden we met hairlines (`divide-lijn`, `border-lijn`), ook in de prijstabel en het kostenblok. Stappen als rijen met een serifnummer (01, 02, 03). Nooit drie kolommen met een icoon boven elke tekst, nooit gecentreerde tekst.
 - Beweging: `Sectie`: fade met 12 px verschuiving, 400 ms, één keer, via IntersectionObserver. Secties die bij laden al in beeld staan bewegen niet. `prefers-reduced-motion` schakelt alles uit. Geen parallax, geen autoplay, geen animerende cijfers. Daarnaast twee scrollhulpen in `components/Scroll.tsx`: een dunne voortgangslijn onder de nav (alle schermen) en op de telefoon een vaste knoppenbalk onderin die verschijnt na 560 px scrollen, niet op de formulierpagina's en /aanbod.
-- Componenten: sticky nav wit, met dunne onderlijn bij scrollen. Nooit tekst op een foto: de hero zet de kop links op wit en de foto ernaast. Eén primaire knop (blauw, pil; variant `licht` op donker), secundair als tekstlink met pijl (`licht` op donker). Radius `knop` pil, `kaart` 20 px voor foto's in de pagina, met een hairline aan de binnenkant (`Foto`). De hero loopt van rand tot rand. Schaduw maximaal `shadow-licht`. Accordion met dunne lijnen (CSS grid-rows). Formulieren: label boven het veld, grote velden, duidelijke focus, één knop.
+- Componenten: sticky nav wit met de links naast het woordmerk, dunne onderlijn bij scrollen. Nooit tekst op een foto: de hero zet label, kop en uitleg op wit, de foto eronder in één breed kader. Knoppen als pil: `donker` (antraciet) primair, `licht` (room) ernaast, `wit` op de donkere kaart; tekstlink met pijl voor links in een blok. Blauw alleen nog voor links in tekst en de actieve staat. Radius `knop` pil, `kaart` 28 px, foto's met een hairline aan de binnenkant (`Foto`). Schaduw maximaal `shadow-licht`. Accordion met dunne lijnen (CSS grid-rows). Formulieren: label boven het veld, grote velden, duidelijke focus, één knop.
 - Niet: emoji's, gradientknoppen, glassmorphism, zware schaduwen, pop-ups, chatwidgets, badges, sterren, logo's die niet echt zijn, cookiebanner (we tracken niet).
 
 ## Tekst en toon

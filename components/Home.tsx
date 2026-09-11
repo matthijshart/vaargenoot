@@ -21,7 +21,7 @@ export function Waarom({ taal }: { taal: Taal }) {
           <dl className="divide-y divide-lijn border-y border-lijn">
             {t.items.map((i) => (
               <div key={i.kop} className="py-6">
-                <dt className="text-[19px] font-semibold tracking-[-0.01em] md:text-[20px]">{i.kop}</dt>
+                <dt className="kop text-[22px] md:text-[24px]">{i.kop}</dt>
                 <dd className="mt-2 max-w-[46ch] leading-relaxed text-grijs">{i.tekst}</dd>
               </div>
             ))}
@@ -192,7 +192,7 @@ export function Stappen({ taal }: { taal: Taal }) {
           <ol className="divide-y divide-lijn border-y border-lijn">
             {t.lijst.map((s, i) => (
               <li key={s.kop} className="grid gap-x-8 gap-y-2 py-7 sm:grid-cols-[4rem_1fr] md:py-8">
-                <p className="kop text-[28px] text-grijs tabular-nums">{String(i + 1).padStart(2, "0")}</p>
+                <p className="label pt-2 text-grijs">{String(i + 1).padStart(2, "0")}</p>
                 <div>
                   <h3 className="kop text-[32px] md:text-[36px]">{s.kop}</h3>
                   <p className="mt-2 max-w-[44ch] leading-relaxed text-grijs">{s.tekst}</p>
@@ -218,7 +218,7 @@ export function Slot({ taal }: { taal: Taal }) {
         <h2 className="max-w-[16ch] text-[40px] text-wit md:text-[56px] lg:text-[64px]">{home.slot.kop}</h2>
         <p className="mt-5 max-w-[36rem] text-[18px] text-wit/75 md:text-[20px]">{home.slot.tekst}</p>
         <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 md:mt-10">
-          <KnopLink href={cta.proefvaren.href} variant="licht">
+          <KnopLink href={cta.proefvaren.href} variant="wit">
             {cta.proefvaren.label}
           </KnopLink>
           <PijlLink href={cta.reserveer.href} licht>

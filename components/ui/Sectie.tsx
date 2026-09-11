@@ -7,6 +7,9 @@ import { cn } from "@/lib/utils";
  * Sectie met de enige beweging op de site: een fade met 12 px verschuiving
  * bij het inscrollen, 400 ms, één keer. Staat de sectie al in beeld bij
  * laden, dan gebeurt er niets. Zonder JavaScript is alles zichtbaar.
+ *
+ * Toon `wit` staat gewoon op de pagina. Toon `room` en `nacht` worden een
+ * grote afgeronde kaart binnen de paginamarge, met de inhoud erin.
  */
 export function Sectie({
   id,
@@ -40,13 +43,24 @@ export function Sectie({
     return () => kijker.disconnect();
   }, []);
 
+  if (toon === "wit") {
+    return (
+      <section ref={ref} id={id} className={cn("scroll-mt-20 py-20 md:py-28 lg:py-36", className)}>
+        {children}
+      </section>
+    );
+  }
+
   return (
-    <section
-      ref={ref}
-      id={id}
-      className={cn("scroll-mt-20 py-20 md:py-32 lg:py-40", toon === "room" && "bg-room", toon === "nacht" && "bg-nacht text-wit", className)}
-    >
-      {children}
+    <section ref={ref} id={id} className={cn("scroll-mt-20 px-3 py-2 md:px-5 md:py-3.5", className)}>
+      <div
+        className={cn(
+          "mx-auto max-w-[1360px] rounded-kaart px-5 py-16 md:px-16 md:py-24 lg:py-28 [&>div]:px-0",
+          toon === "room" ? "bg-room" : "bg-nacht text-wit",
+        )}
+      >
+        {children}
+      </div>
     </section>
   );
 }

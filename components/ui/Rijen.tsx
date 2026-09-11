@@ -28,7 +28,7 @@ export function Rijen({
 /** Dun vinkje, alleen waar het betekenis draagt: iets dat je krijgt of kunt. */
 export function Vinkje({ className }: { className?: string }) {
   return (
-    <svg aria-hidden viewBox="0 0 20 20" className={cn("h-[18px] w-[18px] shrink-0 text-blauw", className)} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg aria-hidden viewBox="0 0 20 20" className={cn("h-[18px] w-[18px] shrink-0 text-antraciet", className)} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
       <path d="M4 10.5l4 4 8-9" />
     </svg>
   );

@@ -24,12 +24,12 @@ export function Kop({
   const Tag = niveau === 1 ? "h1" : "h2";
   return (
     <div className={cn("max-w-[44rem]", className)}>
-      {boven && <p className="label mb-5 text-blauw">{boven}</p>}
+      {boven && <p className="label mb-5 text-grijs">{boven}</p>}
       <Tag
         className={cn(
           niveau === 1
-            ? "text-[46px] md:text-[72px] lg:text-[84px]"
-            : "text-[38px] md:text-[52px] lg:text-[60px]",
+            ? "text-[44px] md:text-[72px] lg:text-[88px]"
+            : "text-[36px] md:text-[52px] lg:text-[60px]",
         )}
       >
         {kop}

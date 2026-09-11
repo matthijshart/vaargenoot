@@ -73,7 +73,7 @@ function Status({ waarde }: { waarde: Staat }) {
         aria-hidden
         className={cn(
           "h-2 w-2 rounded-full",
-          waarde.vrij ? "bg-blauw" : "bg-lijn",
+          waarde.vrij ? "bg-antraciet" : "bg-lijn",
         )}
       />
       {waarde.tekst}

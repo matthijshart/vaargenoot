@@ -62,7 +62,7 @@ export function ReserveerFormulier({ taal }: { taal: Taal }) {
   return (
     <form action={actie} noValidate aria-busy={bezig} className="grid gap-6">
       <fieldset disabled={klaar} className="grid gap-6">
-        <legend className="mb-2 text-[22px] font-semibold tracking-[-0.01em]">{f.kop}</legend>
+        <legend className="kop mb-2 text-[26px]">{f.kop}</legend>
         <div className="grid gap-6 sm:grid-cols-2">
           <Invoer label={f.velden.bedrijf} naam="bedrijf" autoComplete="organization" value={w.bedrijf} onChange={wijzig} onBlur={controleer} fout={fouten.bedrijf} />
           <Invoer label={f.velden.contactpersoon} naam="contactpersoon" autoComplete="name" value={w.contactpersoon} onChange={wijzig} onBlur={controleer} fout={fouten.contactpersoon} />
@@ -103,8 +103,8 @@ export function ReserveerFormulier({ taal }: { taal: Taal }) {
       )}
 
       {klaar ? (
-        <div role="status" className="rounded-kaart border border-lijn bg-room p-6">
-          <p className="text-[20px] font-semibold tracking-[-0.01em]">{f.klaar}</p>
+        <div role="status" className="rounded-kaart bg-room p-6">
+          <p className="kop text-[24px]">{f.klaar}</p>
           <p className="mt-2 text-grijs">{f.bevestiging}</p>
         </div>
       ) : (

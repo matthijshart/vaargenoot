@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { inhoud } from "@/content";
 import type { Taal } from "@/lib/taal";
-import { inter, serif } from "@/lib/fonts";
+import { inter, mono, tight } from "@/lib/fonts";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 import { MobieleBalk, Voortgang } from "./Scroll";
@@ -22,7 +22,7 @@ export function Basis({ taal, children }: { taal: Taal; children: ReactNode }) {
     address: { "@type": "PostalAddress", addressLocality: site.plaats, addressCountry: "NL" },
   };
   return (
-    <html lang={taal} className={`${inter.variable} ${serif.variable} h-full`}>
+    <html lang={taal} className={`${inter.variable} ${tight.variable} ${mono.variable} h-full`}>
       <body className="flex min-h-full flex-col">
         <Nav />
         <Voortgang />

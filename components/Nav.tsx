@@ -45,11 +45,12 @@ export function Nav() {
       )}
     >
       <nav aria-label={ui.hoofdmenu} className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-5 md:px-8">
-        <Link href="/" className="kop text-[26px]">
-          {site.naam}
-        </Link>
+        <div className="flex items-center gap-10">
+          <Link href={taal === "nl" ? "/" : "/en"} className="kop text-[20px] tracking-[-0.03em] md:text-[24px]">
+            {site.naam}
+          </Link>
 
-        <ul className="hidden items-center gap-7 lg:flex">
+          <ul className="hidden items-center gap-7 lg:flex">
           {nav.map((item) => (
             <li key={item.href}>
               <Link
@@ -64,7 +65,8 @@ export function Nav() {
               </Link>
             </li>
           ))}
-        </ul>
+          </ul>
+        </div>
 
         <div className="flex items-center gap-2 sm:gap-5">
           <Link
@@ -75,10 +77,10 @@ export function Nav() {
           >
             {ander.label}
           </Link>
-          <Link href={cta.reserveer.href} className="hidden text-[15px] font-medium text-blauw transition-colors duration-200 hover:text-blauw-donker md:inline">
+          <Link href={cta.reserveer.href} className="hidden text-[15px] font-medium text-antraciet transition-colors duration-200 hover:text-grijs md:inline">
             {cta.reserveer.label}
           </Link>
-          <KnopLink href={cta.proefvaren.href} className="h-10 px-4 text-[15px] sm:px-5">
+          <KnopLink href={cta.proefvaren.href} className="h-9 px-4 text-[14px] sm:h-10 sm:px-5 sm:text-[15px]">
             {cta.proefvaren.label}
           </KnopLink>
           <button

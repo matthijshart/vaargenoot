@@ -35,7 +35,7 @@ export function Voortgang() {
   }, []);
   return (
     <div aria-hidden className="niet-printen pointer-events-none fixed inset-x-0 top-16 z-50 h-0.5">
-      <div ref={balk} className="h-full w-full origin-left bg-blauw" style={{ transform: "scaleX(0)" }} />
+      <div ref={balk} className="h-full w-full origin-left bg-antraciet" style={{ transform: "scaleX(0)" }} />
     </div>
   );
 }
@@ -73,7 +73,7 @@ export function MobieleBalk() {
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="flex items-center justify-between gap-4 px-5 py-3">
-        <Link href={cta.reserveer.href} className="text-[15px] font-medium text-blauw">
+        <Link href={cta.reserveer.href} className="text-[15px] font-medium text-antraciet">
           {cta.reserveer.label}
         </Link>
         <KnopLink href={cta.proefvaren.href} className="h-11 px-5 text-[15px]">

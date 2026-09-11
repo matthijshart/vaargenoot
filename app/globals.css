@@ -4,13 +4,14 @@
   Sloepmaten design-systeem.
   Tailwind v4 kent geen theme.extend; alle tokens staan hier in @theme.
   Bijna monochroom: wit, een warm off-white, antraciet en één blauw.
+  Secties als grote afgeronde kaarten op wit, koppen strak en groot.
 */
 @theme {
   --color-wit: #ffffff;
-  --color-room: #f5f3ee;
-  --color-antraciet: #14181d;
-  --color-grijs: #5b6470;
-  --color-lijn: #e3e1db;
+  --color-room: #f4f2ed;
+  --color-antraciet: #17181a;
+  --color-grijs: #6b6f76;
+  --color-lijn: #e4e2dc;
   --color-blauw: #1f4e79;
   --color-blauw-donker: #163a5c;
   --color-nacht: #0f1d2b;
@@ -19,12 +20,13 @@
   --font-sans:
     -apple-system, "SF Pro Text", "SF Pro Display", var(--font-inter), system-ui,
     sans-serif;
-  --font-kop: var(--font-serif), "Iowan Old Style", "Times New Roman", serif;
+  --font-kop: var(--font-tight), var(--font-inter), -apple-system, "SF Pro Display", system-ui, sans-serif;
+  --font-code: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
 
   --ease-uit: cubic-bezier(0.2, 0.7, 0.2, 1);
 
   --radius-knop: 9999px;
-  --radius-kaart: 1.25rem;
+  --radius-kaart: 1.75rem;
 
   --shadow-licht: 0 1px 2px rgba(29, 33, 38, 0.08);
 }
@@ -54,22 +56,24 @@
   h1,
   h2 {
     font-family: var(--font-kop);
-    font-weight: 400;
-    letter-spacing: -0.015em;
-    line-height: 1.0;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
     text-wrap: balance;
   }
 
+  /* Het accent in een kop: geen cursief, alleen een tint lichter. */
   h1 em,
   h2 em {
-    font-style: italic;
-    color: var(--color-blauw);
+    font-style: normal;
+    color: var(--color-grijs);
   }
 
   h3 {
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
+    font-family: var(--font-kop);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
     text-wrap: balance;
   }
 
@@ -96,19 +100,20 @@
   }
 }
 
-/* Sectielabel: kleine kapitalen met ruimte. */
+/* Sectielabel: monospace in kapitalen, zoals een regel uit een terminal. */
 @utility label {
+  font-family: var(--font-code);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-/* Koppen en prijzen in de serif. */
+/* Koppen, woordmerk en prijzen: strak en dicht op elkaar. */
 @utility kop {
   font-family: var(--font-kop);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-weight: 500;
+  letter-spacing: -0.03em;
   line-height: 1;
 }
 
