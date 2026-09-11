@@ -11,9 +11,9 @@ export function Prijstabel() {
   return (
     <Sectie id="prijzen" className="pt-10 md:pt-16 lg:pt-20">
       <Container>
-        <div className="grid gap-8 md:grid-cols-2 md:gap-8 lg:gap-12">
-          {t.kolommen.map((k) => (
-            <div key={k.id} id={k.id} className="scroll-mt-24 rounded-kaart border border-lijn p-6 md:p-8">
+        <div className="grid border-t border-lijn md:grid-cols-2 md:divide-x md:divide-lijn">
+          {t.kolommen.map((k, i) => (
+            <div key={k.id} id={k.id} className={cn("scroll-mt-24 border-b border-lijn py-8 md:border-b-0 md:py-10", i > 0 ? "md:pl-10 lg:pl-14" : "md:pr-10 lg:pr-14")}>
               <h2 className="text-[44px] md:text-[56px]">{k.naam}</h2>
               <p className="mt-2 text-grijs">{k.kort}</p>
               <ul className="mt-8 divide-y divide-lijn border-y border-lijn">

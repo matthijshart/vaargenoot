@@ -2,29 +2,37 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-const basis =
-  "inline-flex h-12 items-center justify-center rounded-knop bg-blauw px-7 text-[16px] font-medium text-wit whitespace-nowrap transition-[background-color,transform] duration-200 hover:bg-blauw-donker active:scale-[0.98] disabled:opacity-60";
+type Variant = "blauw" | "licht";
 
-/** De enige primaire knop: blauw met witte tekst. */
-export function Knop({ className, ...rest }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
-  return <button className={cn(basis, className)} {...rest} />;
+const basis =
+  "inline-flex h-12 items-center justify-center rounded-knop px-7 text-[16px] font-medium whitespace-nowrap transition-[background-color,color,transform] duration-200 active:scale-[0.98] disabled:opacity-60";
+
+const varianten: Record<Variant, string> = {
+  blauw: "bg-blauw text-wit hover:bg-blauw-donker",
+  licht: "bg-wit text-antraciet hover:bg-room",
+};
+
+/** De primaire knop: blauw op licht, wit op een foto of een donkere band. */
+export function Knop({ className, variant = "blauw", ...rest }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant }) {
+  return <button className={cn(basis, varianten[variant], className)} {...rest} />;
 }
 
-export function KnopLink({ href, className, children }: { href: string; className?: string; children: ReactNode }) {
+export function KnopLink({ href, className, children, variant = "blauw" }: { href: string; className?: string; children: ReactNode; variant?: Variant }) {
   return (
-    <Link href={href} className={cn(basis, className)}>
+    <Link href={href} className={cn(basis, varianten[variant], className)}>
       {children}
     </Link>
   );
 }
 
-/** Secundaire actie: tekstlink met een dunne pijl. */
-export function PijlLink({ href, className, children }: { href: string; className?: string; children: ReactNode }) {
+/** Secundaire actie: tekstlink met een dunne pijl. `licht` op een foto of donkere band. */
+export function PijlLink({ href, className, children, licht = false }: { href: string; className?: string; children: ReactNode; licht?: boolean }) {
   return (
     <Link
       href={href}
       className={cn(
-        "group inline-flex items-center gap-2 py-3 text-[16px] font-medium text-blauw transition-colors duration-200 hover:text-blauw-donker",
+        "group inline-flex items-center gap-2 py-3 text-[16px] font-medium transition-colors duration-200",
+        licht ? "text-wit hover:text-wit/80" : "text-blauw hover:text-blauw-donker",
         className,
       )}
     >

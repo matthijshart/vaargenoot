@@ -33,15 +33,19 @@ export function Nav() {
     };
   }, [open]);
 
+  // Bovenaan de voorpagina staat de nav op de foto: wit, zonder achtergrond.
+  const opFoto = pad === "/" && !gescrold && !open;
+
   return (
     <header
       className={cn(
-        "niet-printen fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-200",
-        gescrold || open ? "border-b border-lijn bg-wit" : "border-b border-transparent bg-transparent",
+        "niet-printen fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,color] duration-200",
+        gescrold || open ? "border-b border-lijn bg-wit text-antraciet" : "border-b border-transparent bg-transparent",
+        opFoto && "text-wit",
       )}
     >
       <nav aria-label="Hoofdmenu" className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-5 md:px-8">
-        <Link href="/" className="kop text-[26px]">
+        <Link href="/" className="kop text-[26px] text-current">
           {site.naam}
         </Link>
 
@@ -52,8 +56,8 @@ export function Nav() {
                 href={item.href}
                 aria-current={pad === item.href ? "page" : undefined}
                 className={cn(
-                  "text-[15px] font-medium transition-colors duration-200 hover:text-antraciet",
-                  pad === item.href ? "text-antraciet" : "text-grijs",
+                  "text-[15px] font-medium transition-colors duration-200",
+                  opFoto ? "text-wit/80 hover:text-wit" : pad === item.href ? "text-antraciet" : "text-grijs hover:text-antraciet",
                 )}
               >
                 {item.label}
@@ -63,10 +67,10 @@ export function Nav() {
         </ul>
 
         <div className="flex items-center gap-2 sm:gap-5">
-          <Link href={cta.reserveer.href} className="hidden text-[15px] font-medium text-blauw hover:text-blauw-donker md:inline">
+          <Link href={cta.reserveer.href} className={cn("hidden text-[15px] font-medium md:inline", opFoto ? "text-wit/90 hover:text-wit" : "text-blauw hover:text-blauw-donker")}>
             {cta.reserveer.label}
           </Link>
-          <KnopLink href={cta.proefvaren.href} className="h-10 px-4 text-[15px] sm:px-5">
+          <KnopLink href={cta.proefvaren.href} variant={opFoto ? "licht" : "blauw"} className="h-10 px-4 text-[15px] sm:px-5">
             {cta.proefvaren.label}
           </KnopLink>
           <button

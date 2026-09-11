@@ -35,6 +35,8 @@ export function Foto({
         className="object-cover"
         style={positie ? { objectPosition: positie } : undefined}
       />
+      {/* Hairline aan de binnenkant: de foto ligt in de pagina in plaats van erop. */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-antraciet/10 ring-inset" />
     </div>
   );
 }

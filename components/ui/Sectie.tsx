@@ -17,7 +17,7 @@ export function Sectie({
   id?: string;
   children: ReactNode;
   className?: string;
-  toon?: "wit" | "room";
+  toon?: "wit" | "room" | "nacht";
 }) {
   const ref = useRef<HTMLElement>(null);
 
@@ -44,7 +44,7 @@ export function Sectie({
     <section
       ref={ref}
       id={id}
-      className={cn("scroll-mt-20 py-20 md:py-32 lg:py-40", toon === "room" && "bg-room", className)}
+      className={cn("scroll-mt-20 py-20 md:py-32 lg:py-40", toon === "room" && "bg-room", toon === "nacht" && "bg-nacht text-wit", className)}
     >
       {children}
     </section>

@@ -3,8 +3,9 @@ import { bedrag } from "@/lib/utils";
 
 export const home = {
   hero: {
+    boven: "Amsterdamse grachten",
     kop: "Een sloep voor je bedrijf.\nIn *deeleigendom*.",
-    sub: "In de Amsterdamse grachten. Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
+    sub: "Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
   },
 
   voorWie: {

@@ -5,41 +5,44 @@ import { Diashow } from "./Diashow";
 import { KnopLink, PijlLink } from "./ui/Knop";
 
 /**
- * Hero: één centrale kop met beeld eronder. De foto loopt van rand tot rand,
- * als rustige diavoorstelling van drie beelden.
+ * Hero: de sloep over de volle hoogte, de kop links onderin op de foto.
+ * Drie beelden als rustige diavoorstelling, een donkere waas onderin voor
+ * de leesbaarheid.
  */
-export function Hero({ kop, sub }: { kop: string; sub: string }) {
+export function Hero({ boven, kop, sub }: { boven: string; kop: string; sub: string }) {
   const regels = kop.split("\n");
   return (
-    <section className="pt-32 md:pt-44">
-      <Container>
-        <div className="mx-auto max-w-[60rem] text-center">
-          <h1 className="text-[48px] md:text-[76px] lg:text-[92px]">
-            {regels.map((regel, i) => (
-              <span key={regel} className={i > 0 ? "md:block" : undefined}>
-                {i > 0 && " "}
-                {regel.split(/(\*[^*]+\*)/).map((deel, j) =>
-                  deel.startsWith("*") ? <em key={j}>{deel.slice(1, -1)}</em> : <span key={j}>{deel}</span>,
-                )}
-              </span>
-            ))}
-          </h1>
-          <p className="mx-auto mt-7 max-w-[38rem] text-[18px] leading-relaxed text-grijs md:text-[21px]">{sub}</p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 md:mt-10">
-            <KnopLink href={cta.proefvaren.href}>{cta.proefvaren.label}</KnopLink>
-            <PijlLink href={cta.reserveer.href}>{cta.reserveer.label}</PijlLink>
-          </div>
+    <section className="relative flex min-h-[86svh] items-end overflow-hidden bg-nacht text-wit md:min-h-[90svh]">
+      <Diashow
+        beelden={[
+          { src: foto.prinsen.src, alt: foto.prinsen.alt, positie: "50% 50%" },
+          { src: foto.bovenaf.src, alt: foto.bovenaf.alt, positie: "50% 45%" },
+          { src: foto.greenEgg.src, alt: foto.greenEgg.alt, positie: "50% 60%" },
+        ]}
+        stippen="rechts"
+      />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-nacht/75 via-nacht/25 to-nacht/10" />
+      <Container className="relative pt-44 pb-16 md:pb-24">
+        <p className="label text-wit/70">{boven}</p>
+        <h1 className="mt-5 max-w-[13ch] text-[52px] text-wit md:text-[84px] lg:text-[104px] [&_em]:text-wit/85">
+          {regels.map((regel, i) => (
+            <span key={regel} className={i > 0 ? "block" : undefined}>
+              {regel.split(/(\*[^*]+\*)/).map((deel, j) =>
+                deel.startsWith("*") ? <em key={j}>{deel.slice(1, -1)}</em> : <span key={j}>{deel}</span>,
+              )}
+            </span>
+          ))}
+        </h1>
+        <p className="mt-6 max-w-[34rem] text-[18px] leading-relaxed text-wit/80 md:text-[21px]">{sub}</p>
+        <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 md:mt-10">
+          <KnopLink href={cta.proefvaren.href} variant="licht">
+            {cta.proefvaren.label}
+          </KnopLink>
+          <PijlLink href={cta.reserveer.href} licht>
+            {cta.reserveer.label}
+          </PijlLink>
         </div>
       </Container>
-      <div className="mx-auto mt-14 w-full max-w-[1320px] px-3 md:mt-20 md:px-6">
-        <Diashow
-          beelden={[
-            { src: foto.prinsen.src, alt: foto.prinsen.alt, positie: "50% 55%" },
-            { src: foto.bovenaf.src, alt: foto.bovenaf.alt, positie: "50% 45%" },
-            { src: foto.greenEgg.src, alt: foto.greenEgg.alt, positie: "50% 60%" },
-          ]}
-        />
-      </div>
     </section>
   );
 }

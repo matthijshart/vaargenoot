@@ -45,24 +45,30 @@ export function Amsterdam() {
   );
 }
 
-/** Blok 2: Duo of Solo, twee rustige kolommen. */
+/** Blok 2: Duo of Solo. Kop links, de twee opties rechts, gescheiden door een hairline. */
 export function DuoSolo() {
   const t = home.duoSolo;
   return (
     <Sectie id="duo-of-solo">
-      <Container>
-        <Kop boven={t.boven} kop={t.kop} midden />
-        <div className="mx-auto mt-14 grid max-w-[56rem] gap-10 md:mt-20 md:grid-cols-2 md:gap-16">
-          {t.kolommen.map((k) => (
-            <div key={k.id} className="border-t border-lijn pt-6">
-              <h3 className="kop text-[36px] md:text-[44px]">{k.naam}</h3>
-              <p className="mt-4 leading-relaxed text-grijs">{k.tekst}</p>
-              <p className="mt-6 text-[17px] font-medium">{k.vanaf}</p>
-              <PijlLink href={k.href}>{k.link}</PijlLink>
-            </div>
-          ))}
+      <Container className="grid gap-12 md:grid-cols-12 md:gap-8">
+        <div className="md:col-span-4">
+          <Kop boven={t.boven} kop={t.kop} />
         </div>
-        <p className="mx-auto mt-10 max-w-[56rem] text-[14px] text-grijs">{t.onder}</p>
+        <div className="md:col-span-7 md:col-start-6">
+          <div className="grid gap-10 border-t border-lijn sm:grid-cols-2 sm:gap-0 sm:divide-x sm:divide-lijn">
+            {t.kolommen.map((k, i) => (
+              <div key={k.id} className={cn("pt-6 sm:pt-8", i > 0 && "sm:pl-10")}>
+                <h3 className="kop text-[40px] md:text-[48px]">{k.naam}</h3>
+                <p className="mt-4 leading-relaxed text-grijs">{k.tekst}</p>
+                <p className="mt-8 text-[17px] font-medium">{k.vanaf}</p>
+                <PijlLink href={k.href} className="mt-2">
+                  {k.link}
+                </PijlLink>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-[14px] text-grijs">{t.onder}</p>
+        </div>
       </Container>
     </Sectie>
   );
@@ -110,31 +116,29 @@ export function Inbegrepen() {
   );
 }
 
-/** Blok 5: leasen of delen, drie kolommen. Ook op de prijspagina. */
+/** Blok 5: leasen of delen. Drie kolommen op hairlines, zonder kaders. Ook op de prijspagina. */
 export function LeasenOfDelen({ id = "leasen-of-delen" }: { id?: string }) {
   const t = home.leasen;
   return (
     <Sectie id={id} toon="room">
       <Container>
         <Kop boven={t.boven} kop={t.kop} intro={t.intro} />
-        <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-3 md:gap-8">
-          {t.kolommen.map((k) => (
-            <div
-              key={k.naam}
-              className={cn("rounded-kaart border p-6 md:p-7", k.wij ? "border-lijn bg-wit" : "border-lijn/80")}
-            >
-              <h3 className="text-[17px] font-medium tracking-normal">{k.naam}</h3>
-              <p className="kop mt-5 text-[44px] tabular-nums">{k.prijs}</p>
+        <div className="mt-12 grid border-t border-lijn md:mt-16 md:grid-cols-3 md:divide-x md:divide-lijn">
+          {t.kolommen.map((k, i) => (
+            <div key={k.naam} className={cn("border-b border-lijn py-7 md:border-b-0 md:py-8", i > 0 && "md:pl-8", i < 2 && "md:pr-8")}>
+              <p className={cn("label", k.wij ? "text-blauw" : "text-grijs")}>{k.wij ? "Sloepmaten" : "Elders"}</p>
+              <h3 className="mt-4 text-[17px] font-medium tracking-normal">{k.naam}</h3>
+              <p className="kop mt-4 text-[48px] tabular-nums md:text-[56px]">{k.prijs}</p>
               <p className="mt-1 text-[14px] text-grijs">
                 {t.rijen[0].toLowerCase()}, {k.prijsKlein}
               </p>
-              <dl className="mt-6 divide-y divide-lijn border-t border-lijn text-[15px]">
+              <dl className="mt-7 space-y-4 text-[15px]">
                 {[
                   [t.rijen[1], k.looptijd],
                   [t.rijen[2], k.huisstijl],
                   [t.rijen[3], k.aanBoord],
                 ].map(([label, waarde]) => (
-                  <div key={label} className="py-3">
+                  <div key={label}>
                     <dt className="text-grijs">{label}</dt>
                     <dd className="mt-0.5">{waarde}</dd>
                   </div>
@@ -151,42 +155,50 @@ export function LeasenOfDelen({ id = "leasen-of-delen" }: { id?: string }) {
   );
 }
 
-/** Blok: zo makkelijk is het, drie stappen naast elkaar. */
+/** Blok: zo makkelijk is het. Kop links, drie stappen rechts als rijen op hairlines. */
 export function Stappen() {
   const t = home.stappen;
   return (
     <Sectie id="stappen">
-      <Container>
-        <Kop boven={t.boven} kop={t.kop} midden />
-        <ol className="mx-auto mt-14 grid max-w-[56rem] gap-8 border-t border-lijn pt-8 md:mt-20 md:grid-cols-3 md:gap-10">
-          {t.lijst.map((s, i) => (
-            <li key={s.kop}>
-              <p className="text-[15px] text-grijs tabular-nums">{i + 1}</p>
-              <h3 className="kop mt-2 text-[32px]">{s.kop}</h3>
-              <p className="mt-2 leading-relaxed text-grijs">{s.tekst}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-8 text-center">
-          <PijlLink href={t.href}>{t.link}</PijlLink>
+      <Container className="grid gap-12 md:grid-cols-12 md:gap-8">
+        <div className="md:col-span-4">
+          <Kop boven={t.boven} kop={t.kop} />
+        </div>
+        <div className="md:col-span-7 md:col-start-6">
+          <ol className="divide-y divide-lijn border-y border-lijn">
+            {t.lijst.map((s, i) => (
+              <li key={s.kop} className="grid gap-x-8 gap-y-2 py-7 sm:grid-cols-[4rem_1fr] md:py-8">
+                <p className="kop text-[28px] text-grijs tabular-nums">{String(i + 1).padStart(2, "0")}</p>
+                <div>
+                  <h3 className="kop text-[32px] md:text-[36px]">{s.kop}</h3>
+                  <p className="mt-2 max-w-[44ch] leading-relaxed text-grijs">{s.tekst}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <PijlLink href={t.href} className="mt-8">
+            {t.link}
+          </PijlLink>
         </div>
       </Container>
     </Sectie>
   );
 }
 
-/** Slot: de twee acties nog een keer. Ook onderaan de andere pagina's. */
+/** Slot: één donkere band met de twee acties. Ook onderaan de andere pagina's. */
 export function Slot({ kop = home.slot.kop, tekst = home.slot.tekst }: { kop?: string; tekst?: string }) {
   return (
-    <Sectie id="slot" className="border-t border-lijn">
+    <Sectie id="slot" toon="nacht">
       <Container>
-        <div className="mx-auto max-w-[40rem] text-center">
-          <h2 className="text-[38px] md:text-[52px]">{kop}</h2>
-          <p className="mt-5 text-[18px] text-grijs md:text-[20px]">{tekst}</p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
-            <KnopLink href={cta.proefvaren.href}>{cta.proefvaren.label}</KnopLink>
-            <PijlLink href={cta.reserveer.href}>{cta.reserveer.label}</PijlLink>
-          </div>
+        <h2 className="max-w-[16ch] text-[40px] text-wit md:text-[56px] lg:text-[64px]">{kop}</h2>
+        <p className="mt-5 max-w-[36rem] text-[18px] text-wit/75 md:text-[20px]">{tekst}</p>
+        <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 md:mt-10">
+          <KnopLink href={cta.proefvaren.href} variant="licht">
+            {cta.proefvaren.label}
+          </KnopLink>
+          <PijlLink href={cta.reserveer.href} licht>
+            {cta.reserveer.label}
+          </PijlLink>
         </div>
       </Container>
     </Sectie>

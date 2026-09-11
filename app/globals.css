@@ -7,12 +7,13 @@
 */
 @theme {
   --color-wit: #ffffff;
-  --color-room: #f6f4ef;
-  --color-antraciet: #1d2126;
-  --color-grijs: #5f6670;
-  --color-lijn: #e5e7ea;
+  --color-room: #f5f3ee;
+  --color-antraciet: #14181d;
+  --color-grijs: #5b6470;
+  --color-lijn: #e3e1db;
   --color-blauw: #1f4e79;
   --color-blauw-donker: #163a5c;
+  --color-nacht: #0f1d2b;
   --color-markeer: #fff3c4;
 
   --font-sans:
