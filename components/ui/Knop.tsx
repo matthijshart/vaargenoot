@@ -2,23 +2,23 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "donker" | "licht" | "wit";
+type Variant = "blauw" | "licht" | "wit";
 
 const basis =
   "inline-flex h-12 items-center justify-center rounded-knop px-6 text-[16px] font-medium tracking-[-0.01em] whitespace-nowrap transition-[background-color,color,transform] duration-200 active:scale-[0.98] disabled:opacity-60";
 
 const varianten: Record<Variant, string> = {
-  donker: "bg-antraciet text-wit hover:bg-black",
+  blauw: "bg-blauw text-wit hover:bg-blauw-donker",
   licht: "bg-room text-antraciet hover:bg-lijn",
   wit: "bg-wit text-antraciet hover:bg-room",
 };
 
-/** Pilknop. `donker` is de primaire actie, `licht` de tweede ernaast, `wit` op een donkere band. */
-export function Knop({ className, variant = "donker", ...rest }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant }) {
+/** Pilknop. `blauw` is de primaire actie, `licht` de tweede ernaast, `wit` op een donkere kaart. */
+export function Knop({ className, variant = "blauw", ...rest }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant }) {
   return <button className={cn(basis, varianten[variant], className)} {...rest} />;
 }
 
-export function KnopLink({ href, className, children, variant = "donker" }: { href: string; className?: string; children: ReactNode; variant?: Variant }) {
+export function KnopLink({ href, className, children, variant = "blauw" }: { href: string; className?: string; children: ReactNode; variant?: Variant }) {
   return (
     <Link href={href} className={cn(basis, varianten[variant], className)}>
       {children}

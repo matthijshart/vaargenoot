@@ -45,7 +45,7 @@ export function Hero({ taal }: { taal: Taal }) {
             <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[14px] text-grijs">
               {punten.map((p) => (
                 <li key={p} className="flex items-center gap-1.5">
-                  <Vinkje className="h-3.5 w-3.5 text-antraciet" />
+                  <Vinkje className="h-3.5 w-3.5" />
                   {p}
                 </li>
               ))}

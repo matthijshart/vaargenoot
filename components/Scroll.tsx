@@ -35,7 +35,7 @@ export function Voortgang() {
   }, []);
   return (
     <div aria-hidden className="niet-printen pointer-events-none fixed inset-x-0 top-16 z-50 h-0.5">
-      <div ref={balk} className="h-full w-full origin-left bg-antraciet" style={{ transform: "scaleX(0)" }} />
+      <div ref={balk} className="h-full w-full origin-left bg-blauw" style={{ transform: "scaleX(0)" }} />
     </div>
   );
 }

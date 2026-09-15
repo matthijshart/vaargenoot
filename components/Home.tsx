@@ -218,9 +218,7 @@ export function Slot({ taal }: { taal: Taal }) {
         <h2 className="max-w-[16ch] text-[40px] text-wit md:text-[56px] lg:text-[64px]">{home.slot.kop}</h2>
         <p className="mt-5 max-w-[36rem] text-[18px] text-wit/75 md:text-[20px]">{home.slot.tekst}</p>
         <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 md:mt-10">
-          <KnopLink href={cta.proefvaren.href} variant="wit">
-            {cta.proefvaren.label}
-          </KnopLink>
+          <KnopLink href={cta.proefvaren.href}>{cta.proefvaren.label}</KnopLink>
           <PijlLink href={cta.reserveer.href} licht>
             {cta.reserveer.label}
           </PijlLink>
