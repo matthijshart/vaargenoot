@@ -43,7 +43,8 @@ Wat nog niet vaststaat, staat als `invullen("...")` en verschijnt op de site
 als `[INVULLEN: ...]` met gele markering via `components/ui/Tekst.tsx`;
 wat getoetst moet worden als `check("...")`. Verzin nooit feiten (klanten,
 logo's, reviews, KvK, certificaten, fiscale voordelen). Geen placeholders
-in de hero of de prijstabel.
+in de hero of de prijstabel. Contactgegevens (e-mail, telefoon, KvK) staan
+pas in de footer en op het A4 zodra ze echt ingevuld zijn (`ingevuld()`).
 
 ## Structuur
 
@@ -61,7 +62,7 @@ dragen de pagina. Grote strakke koppen, monospace-labels, felblauwe
 pilknoppen, secties als grote afgeronde kaarten op wit. Twijfel je, laat
 het weg.
 
-- Tokens in `@theme` in `app/globals.css`, alleen deze namen: `wit`, `room` (warm off-white voor afwisselende secties), `antraciet` (tekst), `grijs` (secundaire tekst), `lijn`, `blauw` (fel, het enige accent: de primaire knop, vinkjes, voortgangslijn, links), `blauw-donker` (hover), `nacht` (de ene donkere kaart: het slot), `markeer` (placeholders). Geen gradients, geen kleurvlakken achter koppen.
+- Tokens in `@theme` in `app/globals.css`, alleen deze namen: `wit`, `room` (warm off-white voor afwisselende secties), `antraciet` (tekst), `grijs` (secundaire tekst), `lijn`, `blauw` (fel, het enige accent: de primaire knop, vinkjes, voortgangslijn, links), `blauw-donker` (hover), `nacht` (de ene donkere kaart: het slot), `oranje` (alleen het stipje bij een gereserveerde helft), `markeer` (placeholders). Geen gradients, geen kleurvlakken achter koppen.
 - Typografie: koppen in Inter Tight 500, letterspatiëring -0.035em, regelhoogte 0,98, h1 44 px mobiel tot 88 px desktop (hero 48 tot 104 px), met één accent in grijs (niet cursief) via `*woord*` in de herokop. h3 via `kop`. Vragen in de accordion in Inter. Sectielabels in JetBrains Mono kapitalen (`label`, 12 px, 0.08em, grijs). Body Inter 17 tot 18 px, regelhoogte 1,5, maximaal 65 tekens (`maat`). Geen bold in lopende tekst.
 - Layout: inhoud maximaal 1200 px. `Sectie` met toon `wit` staat gewoon op de pagina (80 tot 144 px verticale ruimte); toon `room` en `nacht` worden een afgeronde kaart (radius `kaart`, 28 px) van maximaal 1360 px binnen de paginamarge, met 12 tot 14 px lucht tussen kaarten, zoals de foto in de hero. Alles links uitgelijnd op één raster van twaalf kolommen: kop links, inhoud rechts, of één kolom tekst naast één beeld. Geen kaders: kolommen en rijen scheiden we met hairlines (`divide-lijn`, `border-lijn`), ook in de prijstabel en het kostenblok. Stappen als rijen met een serifnummer (01, 02, 03). Nooit drie kolommen met een icoon boven elke tekst, nooit gecentreerde tekst.
 - Beweging: `Sectie`: fade met 12 px verschuiving, 400 ms, één keer, via IntersectionObserver. Secties die bij laden al in beeld staan bewegen niet. `prefers-reduced-motion` schakelt alles uit. Geen parallax, geen autoplay, geen animerende cijfers. Daarnaast twee scrollhulpen in `components/Scroll.tsx`: een dunne voortgangslijn onder de nav (alle schermen) en op de telefoon een vaste knoppenbalk onderin die verschijnt na 560 px scrollen, niet op de formulierpagina's en /aanbod.

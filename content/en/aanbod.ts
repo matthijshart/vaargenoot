@@ -1,5 +1,6 @@
 import type { aanbod as aanbodNl } from "../aanbod";
 import { bedrag } from "@/lib/utils";
+import { ingevuld } from "../config";
 import { inbegrepen, looptijd, modellen, producten, reservering, samen, site, type ModelId } from "./config";
 
 const en = (n: number) => bedrag(n, "en");
@@ -34,6 +35,6 @@ export const aanbod: typeof aanbodNl = {
       reservering.duoPartnerActie,
     ],
   },
-  contact: [site.naam, site.plaats, site.email, site.telefoon, site.domein.replace("https://", "")],
+  contact: [site.naam, site.plaats, site.email, site.telefoon, site.domein.replace("https://", "")].filter(ingevuld),
   knop: "Print or save as PDF",
 };

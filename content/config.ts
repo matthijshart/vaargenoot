@@ -8,6 +8,8 @@
  */
 export const invullen = (wat: string) => `[INVULLEN: ${wat}]`;
 export const check = (wat: string) => `[CHECK: ${wat}]`;
+/** Waar: de waarde is echt ingevuld en geen placeholder meer. */
+export const ingevuld = (x: string) => !x.startsWith("[INVULLEN") && !x.startsWith("[CHECK");
 
 export const site = {
   naam: "Sloepmaten",

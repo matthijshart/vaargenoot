@@ -1,4 +1,4 @@
-import { inbegrepen, looptijd, modellen, producten, reservering, samen, site, type ModelId } from "./config";
+import { inbegrepen, ingevuld, looptijd, modellen, producten, reservering, samen, site, type ModelId } from "./config";
 import { bedrag } from "@/lib/utils";
 
 const ids: ModelId[] = ["prinsen", "amstel"];
@@ -32,6 +32,6 @@ export const aanbod = {
       reservering.duoPartnerActie,
     ],
   },
-  contact: [site.naam, site.plaats, site.email, site.telefoon, site.domein.replace("https://", "")],
+  contact: [site.naam, site.plaats, site.email, site.telefoon, site.domein.replace("https://", "")].filter(ingevuld),
   knop: "Print of bewaar als pdf",
 };
