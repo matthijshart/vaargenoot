@@ -17,7 +17,7 @@ export const reserveer = {
     { kop: "Tekenen", tekst: "Je tekent, wij bevestigen je sloep en je helft. Vanaf dat moment is hij van jullie." },
     {
       kop: `Oplevering ${reservering.oplevering}`,
-      tekst: "Schoon en opgeladen klaar in de grachtengordel of op een plek naar keuze, in je huisstijl, met de app op je telefoon. De betaling start bij oplevering.",
+      tekst: "Opgeladen klaar in de grachtengordel of op een plek naar keuze, in je huisstijl, met de app op je telefoon. De betaling start bij oplevering.",
     },
   ],
 

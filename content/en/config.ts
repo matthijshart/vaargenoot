@@ -21,7 +21,7 @@ export const site: typeof nlSite = {
   ...nlSite,
   omschrijving:
     "A boat for your company on the Amsterdam canals, in co-ownership. On your own, or with one other company. Everything taken care of, one fixed amount a month, twelve months.",
-  ligplaats: "Always clean and charged, ready in the canal ring or at a spot of your choice.",
+  ligplaats: "Always charged and ready in the canal ring or at a spot of your choice.",
 };
 
 export const modellen: typeof nlModellen = {
@@ -98,6 +98,7 @@ export const samen = {
     "You see straight away what's free. So does your duo partner.",
     "If you both want the same slot, whoever went first last time gives way.",
     "Both logos on the boat. Your own flag and welcome board when you sail.",
+    "You leave it tidy for the next one. It's your own boat, after all.",
   ],
 };
 
@@ -108,7 +109,6 @@ export const inbegrepen = [
   "Insurance",
   "Charging and power",
   "Maintenance",
-  "Cleaning after every trip",
   "Winterising",
   "Replacement boat",
   "App",

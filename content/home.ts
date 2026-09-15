@@ -17,7 +17,7 @@ export const home = {
       { kop: "Je valt op bij sollicitaties", tekst: "Een eigen sloep in de gracht staat in elke vacaturetekst, en blijft hangen na het gesprek." },
       { kop: "Je geeft je mensen iets extra's", tekst: "Vrijdagmiddag varen in plaats van vrijdagmiddagborrel. Iedereen mag hem pakken." },
       { kop: "Je klanten onthouden het", tekst: "Een uur op het water doet meer dan een vergaderzaal met uitzicht op de A10." },
-      { kop: "Het kost je geen tijd", tekst: "Aanvragen in de app, aan boord stappen, wegvaren. Wij doen schoonmaak, onderhoud en de rest." },
+      { kop: "Het kost je geen tijd", tekst: "Aanvragen in de app, aan boord stappen, wegvaren. Wij doen opladen, onderhoud en de rest." },
     ],
   },
 
@@ -86,7 +86,7 @@ export const home = {
     lijst: [
       { kop: "Kiezen", tekst: "Prinsen of Amstel, Duo of Solo. Kom proefvaren als je twijfelt." },
       { kop: "Tekenen", tekst: "Eén overeenkomst in gewone taal. Daarna is de sloep van jullie." },
-      { kop: "Varen", tekst: "Vraag een dagdeel aan in de app en stap aan boord. Hij ligt schoon en opgeladen klaar. Wij doen de rest." },
+      { kop: "Varen", tekst: "Vraag een dagdeel aan in de app en stap aan boord. Hij ligt opgeladen klaar. Wij doen de rest." },
     ],
     link: "Zo werkt het",
     href: "/zo-werkt-het",
@@ -95,7 +95,7 @@ export const home = {
   inbegrepen: {
     boven: "Wij regelen alles",
     kop: "Jij vaart. Wij doen de rest.",
-    intro: "Ligplaats, vergunningen, verzekering, opladen, onderhoud, schoonmaak. Alles zit in het maandbedrag, en jij hoeft er niet aan te denken.",
+    intro: "Ligplaats, vergunningen, verzekering, opladen, onderhoud. Alles zit in het maandbedrag, en jij hoeft er niet aan te denken.",
     items: inbegrepen,
     extra: `${site.ligplaats} ${extra.zin}`,
   },

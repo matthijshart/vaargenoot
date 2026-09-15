@@ -20,7 +20,7 @@ export const site = {
   email: invullen("e-mailadres"),
   telefoon: invullen("telefoonnummer"),
   kvk: invullen("KvK-nummer"),
-  ligplaats: "Altijd schoon en opgeladen klaar in de grachtengordel, of op een plek naar keuze.",
+  ligplaats: "Altijd opgeladen klaar in de grachtengordel, of op een plek naar keuze.",
 };
 
 export type ModelId = "prinsen" | "amstel";
@@ -143,6 +143,7 @@ export const samen = {
     "Je ziet meteen wat vrij is. Je duo-partner ook.",
     "Willen jullie allebei hetzelfde dagdeel, dan wijkt wie de vorige keer voorging.",
     "Beide logo's op de sloep. Je eigen vlag en welkomstbord als jij vaart.",
+    "Je laat hem opgeruimd achter voor de volgende. Het is tenslotte jullie eigen sloep.",
   ],
 };
 
@@ -153,7 +154,6 @@ export const inbegrepen = [
   "Verzekering",
   "Opladen en stroom",
   "Onderhoud",
-  "Schoonmaak na elke vaart",
   "Winterklaar",
   "Vervangende sloep",
   "App",

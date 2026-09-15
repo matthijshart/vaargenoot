@@ -24,7 +24,7 @@ export const vragen: typeof vragenNl = {
     },
     {
       vraag: "What does it cost a year and what's included?",
-      antwoord: `Twelve times the monthly amount. ${producten.duo.naam} ${modellen.prinsen.naam}: ${en(duo * 12)} per company a year. ${producten.solo.naam} ${modellen.prinsen.naam}: ${en(solo * 12)} a year. Excluding VAT, indicative. Everything is in there, we take care of it: a berth in the canal ring or at a spot of your choice, permits and vignette, insurance, charging and power, maintenance, cleaning after every trip, winterising, a replacement boat, the app and the service line. A skipper and catering you arrange on top.`,
+      antwoord: `Twelve times the monthly amount. ${producten.duo.naam} ${modellen.prinsen.naam}: ${en(duo * 12)} per company a year. ${producten.solo.naam} ${modellen.prinsen.naam}: ${en(solo * 12)} a year. Excluding VAT, indicative. Everything is in there, we take care of it: a berth in the canal ring or at a spot of your choice, permits and vignette, insurance, charging and power, maintenance, winterising, a replacement boat, the app and the service line. A skipper and catering you arrange on top.`,
     },
     {
       vraag: "Does my company really become a co-owner?",

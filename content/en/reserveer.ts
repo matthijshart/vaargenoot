@@ -18,7 +18,7 @@ export const reserveer: typeof reserveerNl = {
     { kop: "Sign", tekst: "You sign, we confirm your boat and your half. From that moment it's yours." },
     {
       kop: `Delivery ${reservering.oplevering}`,
-      tekst: "Clean and charged in the canal ring or at a spot of your choice, in your branding, with the app on your phone. Payment starts at delivery.",
+      tekst: "Charged and ready in the canal ring or at a spot of your choice, in your branding, with the app on your phone. Payment starts at delivery.",
     },
   ],
 

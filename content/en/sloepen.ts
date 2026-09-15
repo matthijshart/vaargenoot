@@ -10,7 +10,7 @@ export const sloepenPagina: typeof sloepenNl = {
   meta: {
     title: "The boats",
     description:
-      "Prinsen: 10 m, long table, fridge, Green Egg, bimini. Amstel: 8 m, up to 25 on board. Both electric and quiet, just as nice with four. Always clean and ready in the canal ring.",
+      "Prinsen: 10 m, long table, fridge, Green Egg, bimini. Amstel: 8 m, up to 25 on board. Both electric and quiet, just as nice with four. Always charged and ready in the canal ring.",
   },
   kop: "The boats.",
   intro: "Two models, both electric, both quiet, built for the Amsterdam canals. For a lunch for four and drinks for forty.",

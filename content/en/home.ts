@@ -20,7 +20,7 @@ export const home: typeof homeNl = {
       { kop: "You stand out when hiring", tekst: "Your own boat on the canal goes in every job ad, and it sticks after the interview." },
       { kop: "You give your people something extra", tekst: "Friday afternoon on the water instead of Friday afternoon drinks. Anyone can take it out." },
       { kop: "Your clients remember it", tekst: "An hour on the water does more than a meeting room with a view of the ring road." },
-      { kop: "It costs you no time", tekst: "Request it in the app, step aboard, sail off. We handle cleaning, maintenance and the rest." },
+      { kop: "It costs you no time", tekst: "Request it in the app, step aboard, sail off. We handle charging, maintenance and the rest." },
     ],
   },
 
@@ -89,7 +89,7 @@ export const home: typeof homeNl = {
     lijst: [
       { kop: "Choose", tekst: "Prinsen or Amstel, Duo or Solo. Come for a trial trip if you're not sure." },
       { kop: "Sign", tekst: "One agreement in plain language. From then on the boat is yours." },
-      { kop: "Sail", tekst: "Request a slot in the app and step aboard. It's clean and charged, waiting for you. We do the rest." },
+      { kop: "Sail", tekst: "Request a slot in the app and step aboard. It's charged and waiting for you. We do the rest." },
     ],
     link: "How it works",
     href: "/en/how-it-works",
@@ -98,7 +98,7 @@ export const home: typeof homeNl = {
   inbegrepen: {
     boven: "We take care of everything",
     kop: "You sail. We do the rest.",
-    intro: "Berth, permits, insurance, charging, maintenance, cleaning. It's all in the monthly amount, and you never have to think about it.",
+    intro: "Berth, permits, insurance, charging, maintenance. It's all in the monthly amount, and you never have to think about it.",
     items: inbegrepen,
     extra: `${site.ligplaats} ${extra.zin}`,
   },

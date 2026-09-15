@@ -14,8 +14,8 @@ export const werkt: typeof werktNl = {
     { kop: "Sign", tekst: `You get the agreement within ${reservering.overeenkomstBinnen}, in plain language. You sign, and the boat is yours.` },
     { kop: "We deliver", tekst: `In ${reservering.oplevering}, in your branding, with the app on your phone.` },
     { kop: "Request in the app", tekst: "Pick a slot, even on the day itself. You see straight away what's free." },
-    { kop: "Step aboard", tekst: "The boat is clean and charged, waiting in the canal ring or at a spot of your choice. You sail off." },
-    { kop: "We clean and charge", tekst: "After every trip. You don't have to do a thing." },
+    { kop: "Step aboard", tekst: "The boat is charged and waiting in the canal ring or at a spot of your choice. You sail off." },
+    { kop: "We charge and maintain", tekst: "After every trip we charge it, and maintenance is on us. You leave it tidy for the next one. It's your own boat, after all." },
   ],
 
   spelregels: {

@@ -8,7 +8,7 @@ export const sloepenPagina = {
   meta: {
     title: "De sloepen",
     description:
-      "Prinsen: 10 m, lange tafel, koelkast, Green Egg, bimini. Amstel: 8 m, tot 25 aan boord. Allebei elektrisch en stil, net zo fijn met vier. Altijd schoon klaar in de grachtengordel.",
+      "Prinsen: 10 m, lange tafel, koelkast, Green Egg, bimini. Amstel: 8 m, tot 25 aan boord. Allebei elektrisch en stil, net zo fijn met vier. Altijd opgeladen klaar in de grachtengordel.",
   },
   kop: "De sloepen.",
   intro: "Twee modellen, allebei elektrisch, allebei stil, gebouwd voor de Amsterdamse grachten. Voor een lunch met vier en een borrel met veertig.",
