@@ -26,14 +26,14 @@ export function KnopLink({ href, className, children, variant = "blauw" }: { hre
   );
 }
 
-/** Tekstlink met een dunne pijl, voor een link in of onder een blok. `licht` op een donkere band. */
+/** Tekstlink in blauw met een dunne pijl die bij hover meeschuift, voor een link in of onder een blok. `licht` op een donkere kaart. */
 export function PijlLink({ href, className, children, licht = false }: { href: string; className?: string; children: ReactNode; licht?: boolean }) {
   return (
     <Link
       href={href}
       className={cn(
         "group inline-flex items-center gap-2 py-3 text-[16px] font-medium transition-colors duration-200",
-        licht ? "text-wit hover:text-wit/80" : "text-antraciet hover:text-grijs",
+        licht ? "text-wit hover:text-wit/80" : "text-blauw hover:text-blauw-donker",
         className,
       )}
     >
