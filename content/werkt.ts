@@ -48,7 +48,7 @@ export const werkt = {
       },
       {
         kop: "Looptijd en uitstappen",
-        regels: [`Twaalf maanden vanaf ${looptijd.start}.`, looptijd.uitstappen, reservering.founding],
+        regels: [`Twaalf maanden vanaf ${looptijd.start}.`, looptijd.uitstappen],
       },
     ],
   },

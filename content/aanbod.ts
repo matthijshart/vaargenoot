@@ -20,7 +20,7 @@ export const aanbod = {
     prijzen: ids.map((m) => `${modellen[m].naam} ${modellen[m].lengte} m: ${bedrag(producten[p].prijs[m])} per maand${p === "duo" ? " per bedrijf" : ""}`),
     punten: [producten[p].aanBoord, producten[p].beschikbaarheid, producten[p].huisstijl, producten[p].voorkeursrecht],
   })),
-  prijsnoot: `Exclusief btw, indicatief. Twaalf maanden vanaf ${looptijd.start}. ${reservering.founding}`,
+  prijsnoot: `Exclusief btw, indicatief. Twaalf maanden vanaf ${looptijd.start}.`,
   inbegrepen: inbegrepen.join(", ") + ". " + site.ligplaats + " Schipper en catering regel je erbij.",
   samen: { kop: `${producten.duo.naam}: ${samen.naam.toLowerCase()}`, regels: samen.regels },
   verder: {

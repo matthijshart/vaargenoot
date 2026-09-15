@@ -130,7 +130,6 @@ export const looptijd = {
 export const reservering = {
   oplevering: "april 2027",
   overeenkomstBinnen: "twee werkdagen",
-  founding: "De eerste bedrijven zijn founding sloepmaten: hun prijs staat drie jaar vast.",
   duoPartnerActie: "Neem je je eigen duo-partner mee, dan varen jullie allebei de eerste maand gratis.",
 };
 
@@ -178,11 +177,11 @@ export type HelftStatus = "vrij" | "gereserveerd";
  * Het aantal sloepen is een aanname: zes voor 2027, vier Prinsen en twee Amstel.
  */
 export const sloepen: { id: string; naam: string; model: ModelId; helften: [HelftStatus, HelftStatus] }[] = [
-  { id: "prinsen-1", naam: "Prinsen 1", model: "prinsen", helften: ["vrij", "vrij"] },
-  { id: "prinsen-2", naam: "Prinsen 2", model: "prinsen", helften: ["vrij", "vrij"] },
+  { id: "prinsen-1", naam: "Prinsen 1", model: "prinsen", helften: ["gereserveerd", "gereserveerd"] },
+  { id: "prinsen-2", naam: "Prinsen 2", model: "prinsen", helften: ["gereserveerd", "vrij"] },
   { id: "prinsen-3", naam: "Prinsen 3", model: "prinsen", helften: ["vrij", "vrij"] },
-  { id: "prinsen-4", naam: "Prinsen 4", model: "prinsen", helften: ["vrij", "vrij"] },
-  { id: "amstel-1", naam: "Amstel 1", model: "amstel", helften: ["vrij", "vrij"] },
+  { id: "prinsen-4", naam: "Prinsen 4", model: "prinsen", helften: ["vrij", "gereserveerd"] },
+  { id: "amstel-1", naam: "Amstel 1", model: "amstel", helften: ["gereserveerd", "vrij"] },
   { id: "amstel-2", naam: "Amstel 2", model: "amstel", helften: ["vrij", "vrij"] },
 ];
 

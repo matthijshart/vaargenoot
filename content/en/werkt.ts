@@ -49,7 +49,7 @@ export const werkt: typeof werktNl = {
       },
       {
         kop: "Term and leaving",
-        regels: [`Twelve months from ${looptijd.start}.`, looptijd.uitstappen, reservering.founding],
+        regels: [`Twelve months from ${looptijd.start}.`, looptijd.uitstappen],
       },
     ],
   },

@@ -20,7 +20,6 @@ export const reserveer = {
       tekst: "Schoon en opgeladen klaar in de grachtengordel of op een plek naar keuze, in je huisstijl, met de app op je telefoon. De betaling start bij oplevering.",
     },
   ],
-  founding: reservering.founding,
 
   formulier: {
     kop: "Je gegevens",

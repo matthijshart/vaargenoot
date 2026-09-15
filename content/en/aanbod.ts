@@ -22,7 +22,7 @@ export const aanbod: typeof aanbodNl = {
     prijzen: ids.map((m) => `${modellen[m].naam} ${modellen[m].lengte} m: ${en(producten[p].prijs[m])} a month${p === "duo" ? " per company" : ""}`),
     punten: [producten[p].aanBoord, producten[p].beschikbaarheid, producten[p].huisstijl, producten[p].voorkeursrecht],
   })),
-  prijsnoot: `Excluding VAT, indicative. Twelve months from ${looptijd.start}. ${reservering.founding}`,
+  prijsnoot: `Excluding VAT, indicative. Twelve months from ${looptijd.start}.`,
   inbegrepen: inbegrepen.join(", ") + ". " + site.ligplaats + " A skipper and catering you arrange on top.",
   samen: { kop: `${producten.duo.naam}: ${samen.naam.toLowerCase()}`, regels: samen.regels },
   verder: {

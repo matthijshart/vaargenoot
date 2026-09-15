@@ -87,7 +87,6 @@ export const looptijd: typeof nlLooptijd = {
 export const reservering = {
   oplevering: "April 2027",
   overeenkomstBinnen: "two working days",
-  founding: "The first companies are founding sloepmaten: their price is fixed for three years.",
   duoPartnerActie: "Bring your own duo partner and you both sail the first month for free.",
 };
 

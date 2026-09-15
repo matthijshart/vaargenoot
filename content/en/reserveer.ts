@@ -21,7 +21,6 @@ export const reserveer: typeof reserveerNl = {
       tekst: "Clean and charged in the canal ring or at a spot of your choice, in your branding, with the app on your phone. Payment starts at delivery.",
     },
   ],
-  founding: reservering.founding,
 
   formulier: {
     kop: "Your details",

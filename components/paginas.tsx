@@ -236,7 +236,6 @@ export function ReserveerPagina({ taal }: { taal: Taal }) {
             </li>
           ))}
         </ol>
-        <p className="mt-8 text-[17px] font-medium">{t.founding}</p>
       </Container>
       <Sectie id="formulier" className="pt-16 md:pt-24 lg:pt-28">
         <Container>

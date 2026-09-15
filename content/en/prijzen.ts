@@ -35,7 +35,7 @@ export const prijzen: typeof prijzenNl = {
       })),
       waarden: producten[id],
     })),
-    onder: `${reservering.founding} ${reservering.duoPartnerActie}`,
+    onder: reservering.duoPartnerActie,
   },
 
   beschikbaarheid: {

@@ -50,3 +50,8 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 - De placeholders zijn in beide talen dezelfde Nederlandse markering ([INVULLEN: ...]), zodat je ze in één keer kunt vinden. Vul ze in `content/config.ts` en `content/en/config.ts` allebei in.
 - De naam Sloepmaten blijft in het Engels staan, net als Duo, Solo, Prinsen en Amstel.
 - Nieuwe tekst voeg je altijd in beide talen toe: de Engelse bestanden typen zich tegen de Nederlandse, dus de build valt om als er een veld mist.
+
+## Beschikbaarheid
+
+- De beschikbaarheid in `content/config.ts` is op verzoek alvast deels gevuld (Prinsen 1 vol, Prinsen 2, Prinsen 4 en Amstel 1 elk één helft gereserveerd) zodat de pagina gewild oogt. Werk hem bij zodra er echte reserveringen zijn, zodat de site nooit iets belooft wat er niet is.
+- De zin over founding sloepmaten met drie jaar vaste prijs is weg; alleen de actie voor wie een eigen duo-partner meeneemt blijft staan.

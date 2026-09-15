@@ -36,7 +36,7 @@ export const prijzen = {
       })),
       waarden: producten[id],
     })),
-    onder: `${reservering.founding} ${reservering.duoPartnerActie}`,
+    onder: reservering.duoPartnerActie,
   },
 
   beschikbaarheid: {
