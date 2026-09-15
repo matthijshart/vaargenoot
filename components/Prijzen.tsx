@@ -1,6 +1,6 @@
 import { inhoud } from "@/content";
 import type { Taal } from "@/lib/taal";
-import { bedragRond, cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { Container } from "./ui/Container";
 import { Kop } from "./ui/Kop";
 import { Sectie } from "./ui/Sectie";
@@ -146,74 +146,6 @@ export function Beschikbaarheid({ taal }: { taal: Taal }) {
           </table>
         </div>
         <p className="mt-6 max-w-[65ch] text-[15px] text-grijs">{t.onder}</p>
-      </Container>
-    </Sectie>
-  );
-}
-
-/** Kosten per vaart bij 4, 8 en 12 vaarten per maand, per model. */
-export function KostenPerVaart({ taal }: { taal: Taal }) {
-  const t = inhoud(taal).prijzen.perVaart;
-  return (
-    <Sectie id="per-vaart">
-      <Container>
-        <Kop boven={t.boven} kop={t.kop} intro={t.intro} />
-        <div className="mt-12 grid gap-10 md:mt-16 lg:grid-cols-2 lg:gap-12">
-          {t.modellen.map((m) => (
-            <div key={m.naam}>
-              <h3 className="kop text-[30px]">
-                {m.naam}{" "}
-                <span className="font-normal text-grijs">{m.lengte}</span>
-              </h3>
-              <div className="mt-4 overflow-x-auto">
-                <table className="w-full border-collapse text-[15px]">
-                  <thead>
-                    <tr className="border-b border-lijn text-left text-grijs">
-                      <th scope="col" className="py-3 pr-4 font-medium">
-                        {t.vaartenKop}
-                      </th>
-                      {t.kolommen.map((k) => (
-                        <th
-                          key={k}
-                          scope="col"
-                          className="py-3 pr-4 font-medium"
-                        >
-                          {k}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {t.vaarten.map((n) => (
-                      <tr key={n} className="border-b border-lijn">
-                        <th
-                          scope="row"
-                          className="py-3 pr-4 text-left font-medium tabular-nums"
-                        >
-                          {n}
-                        </th>
-                        {m.maand.map((bedrag, i) => (
-                          <td
-                            key={i}
-                            className={cn(
-                              "py-3 pr-4 tabular-nums",
-                              i > 0 && "font-medium",
-                            )}
-                          >
-                            {bedragRond(bedrag / n, taal)}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-8 max-w-[65ch] text-[15px] leading-relaxed text-grijs">
-          {t.onder}
-        </p>
       </Container>
     </Sectie>
   );

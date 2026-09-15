@@ -166,11 +166,6 @@ export const extra = {
   catering: invullen("cateringpartners en tarieven"),
 };
 
-/** Hoe vaak een sloepmaat gemiddeld vaart, voor de kosten per vaart. */
-export const vaarten = {
-  perMaand: [4, 8, 12],
-};
-
 export type HelftStatus = "vrij" | "gereserveerd";
 
 /**

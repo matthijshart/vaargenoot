@@ -2,7 +2,7 @@ import { inhoud } from "@/content";
 import type { Taal } from "@/lib/taal";
 import { Amsterdam, DuoSolo, Inbegrepen, Samen, Slot, Stappen, VoorWie, Waarom, WatHetKost } from "./Home";
 import { Hero } from "./Hero";
-import { Beschikbaarheid, KostenPerVaart, Overeenkomst, Prijstabel } from "./Prijzen";
+import { Beschikbaarheid, Overeenkomst, Prijstabel } from "./Prijzen";
 import { PrintKnop } from "./PrintKnop";
 import { ProefvaarFormulier } from "./ProefvaarFormulier";
 import { ReserveerFormulier } from "./ReserveerFormulier";
@@ -42,7 +42,6 @@ export function DuoOfSoloPagina({ taal }: { taal: Taal }) {
       </Container>
       <Prijstabel taal={taal} />
       <Beschikbaarheid taal={taal} />
-      <KostenPerVaart taal={taal} />
       <Overeenkomst taal={taal} />
       <Slot taal={taal} />
     </>

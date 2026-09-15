@@ -126,7 +126,7 @@ export const home: typeof homeNl = {
       },
     ],
     rijen: ["Per month", "Term", "Branding", "On board"],
-    link: "All prices and the cost per trip",
+    link: "All prices and availability",
     href: "/en/duo-or-solo",
   },
 

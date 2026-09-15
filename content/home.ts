@@ -123,7 +123,7 @@ export const home = {
       },
     ],
     rijen: ["Per maand", "Looptijd", "Huisstijl", "Aan boord"],
-    link: "Alle prijzen en de kosten per vaart",
+    link: "Alle prijzen en de beschikbaarheid",
     href: "/duo-of-solo",
   },
 

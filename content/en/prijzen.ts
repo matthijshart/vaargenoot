@@ -1,6 +1,6 @@
 import type { prijzen as prijzenNl, PrijsRij } from "../prijzen";
 import { bedrag } from "@/lib/utils";
-import { btw, modellen, producten, reservering, sloepen, vaarten, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
+import { btw, modellen, producten, reservering, sloepen, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
 
 const en = (n: number) => bedrag(n, "en");
 const modelIds: ModelId[] = ["prinsen", "amstel"];
@@ -53,21 +53,6 @@ export const prijzen: typeof prijzenNl = {
       };
     }),
     onder: "Updated with every reservation. If you want to be sure of a half or a Solo, reserve today.",
-  },
-
-  perVaart: {
-    boven: "Cost per trip",
-    kop: "What a trip costs, depending on how often you go.",
-    intro: "Monthly amount divided by the number of trips a month. Excluding VAT, indicative.",
-    vaarten: vaarten.perMaand,
-    vaartenKop: "Trips a month",
-    kolommen: [`${producten.solo.naam} owner`, `${producten.duo.naam} owner`],
-    modellen: modelIds.map((m) => ({
-      naam: modellen[m].naam,
-      lengte: `${modellen[m].lengte} m`,
-      maand: [producten.solo.prijs[m], producten.duo.prijs[m]],
-    })),
-    onder: "With Solo the boat is yours every day. With Duo you share it with one other company, and you pay half.",
   },
 
   overeenkomst: {

@@ -10,8 +10,3 @@ const locale: Record<Taal, string> = { nl: "nl-NL", en: "en-GB" };
 export function bedrag(n: number, taal: Taal = "nl") {
   return `€ ${new Intl.NumberFormat(locale[taal], { maximumFractionDigits: 0 }).format(n)}`;
 }
-
-/** Afgerond bedrag, voor bedragen per vaart. */
-export function bedragRond(n: number, taal: Taal = "nl") {
-  return bedrag(Math.round(n), taal);
-}

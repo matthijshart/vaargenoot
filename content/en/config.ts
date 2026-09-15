@@ -121,8 +121,6 @@ export const extra = {
   catering: invullen("catering partners and rates"),
 };
 
-export { vaarten } from "../config";
-
 export const sloepen = nlSloepen;
 
 export const oprichter = invullen("founder's name and one sentence about the founder, in English");

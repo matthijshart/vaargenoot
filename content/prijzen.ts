@@ -1,4 +1,4 @@
-import { btw, modellen, producten, reservering, sloepen, vaarten, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
+import { btw, modellen, producten, reservering, sloepen, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
 import { bedrag } from "@/lib/utils";
 
 const modelIds: ModelId[] = ["prinsen", "amstel"];
@@ -54,21 +54,6 @@ export const prijzen = {
       };
     }),
     onder: "Bijgewerkt bij elke reservering. Wil je zeker zijn van een helft of een Solo, reserveer dan vandaag.",
-  },
-
-  perVaart: {
-    boven: "Kosten per vaart",
-    kop: "Wat een vaart kost, afhankelijk van hoe vaak je gaat.",
-    intro: "Maandbedrag gedeeld door het aantal vaarten per maand. Exclusief btw, indicatief.",
-    vaarten: vaarten.perMaand,
-    vaartenKop: "Vaarten per maand",
-    kolommen: [`${producten.solo.naam} eigenaar`, `${producten.duo.naam} eigenaar`],
-    modellen: modelIds.map((m) => ({
-      naam: modellen[m].naam,
-      lengte: `${modellen[m].lengte} m`,
-      maand: [producten.solo.prijs[m], producten.duo.prijs[m]],
-    })),
-    onder: "Bij Solo is de sloep elke dag van jou. Bij Duo deel je hem met één ander bedrijf, en betaal je de helft.",
   },
 
   overeenkomst: {

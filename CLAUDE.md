@@ -36,8 +36,8 @@ dezelfde feiten, alleen andere woorden.
 
 Alle feiten staan in `content/config.ts`: modellen, producten en prijzen,
 dagdelen, seizoen, looptijd, reservering, samen (hoe Duo deelt), inbegrepen,
-beschikbaarheid per sloep (live op /duo-of-solo), oprichter, vaarten per
-maand voor de kosten per vaart. Pas daar iets aan en de hele site volgt.
+beschikbaarheid per sloep (live op /duo-of-solo), oprichter. Pas daar iets
+aan en de hele site volgt.
 
 Wat nog niet vaststaat, staat als `invullen("...")` en verschijnt op de site
 als `[INVULLEN: ...]` met gele markering via `components/ui/Tekst.tsx`;
@@ -48,8 +48,8 @@ pas in de footer en op het A4 zodra ze echt ingevuld zijn (`ingevuld()`).
 
 ## Structuur
 
-- `/app`: `(nl)` met `/` (home), `/duo-of-solo` (prijzen, beschikbaarheid, kosten per vaart), `/reserveer`, `/zo-werkt-het`, `/vragen`, `/sloepen`, `/aanbod` (printvriendelijk, één A4, niet geïndexeerd), `/proefvaren`, `/over`, `/privacy`, `not-found`; `(en)` met dezelfde pagina's onder `/en`. Daarnaast `actions`, `globals.css`, `global-not-found`, `sitemap` (beide talen met hreflang), `robots`, `manifest`, icons en opengraph-image. Redirects van de oude routes in `next.config.ts`.
-- `/components`: Basis (het skelet van elke pagina), paginas (de body van elke pagina, in beide talen), Nav, Footer, Scroll (Voortgang, MobieleBalk), Hero (kop links op wit, de sloep rechts in een hoog kader, tekst nooit op een foto), Diashow (drie foto's die hun kader vullen, laden en wisselen pas bij de eerste beweging van de bezoeker, daarna elke 3,5 seconde, stippen om te kiezen, stil bij reduced motion), Home (Waarom, VoorWie, Amsterdam, DuoSolo, Samen, Stappen, Inbegrepen, WatHetKost, Slot), Prijzen (Prijstabel, Beschikbaarheid, KostenPerVaart, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
+- `/app`: `(nl)` met `/` (home), `/duo-of-solo` (prijzen, beschikbaarheid), `/reserveer`, `/zo-werkt-het`, `/vragen`, `/sloepen`, `/aanbod` (printvriendelijk, één A4, niet geïndexeerd), `/proefvaren`, `/over`, `/privacy`, `not-found`; `(en)` met dezelfde pagina's onder `/en`. Daarnaast `actions`, `globals.css`, `global-not-found`, `sitemap` (beide talen met hreflang), `robots`, `manifest`, icons en opengraph-image. Redirects van de oude routes in `next.config.ts`.
+- `/components`: Basis (het skelet van elke pagina), paginas (de body van elke pagina, in beide talen), Nav, Footer, Scroll (Voortgang, MobieleBalk), Hero (kop links op wit, de sloep rechts in een hoog kader, tekst nooit op een foto), Diashow (drie foto's die hun kader vullen, laden en wisselen pas bij de eerste beweging van de bezoeker, daarna elke 3,5 seconde, stippen om te kiezen, stil bij reduced motion), Home (Waarom, VoorWie, Amsterdam, DuoSolo, Samen, Stappen, Inbegrepen, WatHetKost, Slot), Prijzen (Prijstabel, Beschikbaarheid, Overeenkomst), ReserveerFormulier, ProefvaarFormulier, PrintKnop.
 - `/components/ui`: Container (1200 px), Knop (Knop, KnopLink, PijlLink), Sectie (de enige beweging), Kop, Tekst (placeholders), Foto, Vlak, Accordion, Veld (Invoer, Keuze), Rijen (Rijen, Lijst met optionele vinkjes, Vinkje).
 - `/content`: config plus per pagina een tekstbestand (home, prijzen, reserveer, werkt, vragen, sloepen, proefvaren, over met privacy, aanbod, site, foto), `nl.ts` en `en.ts` als bundel, `index.ts` met `inhoud(taal)`, `menu.ts` voor de client, en `en/` met dezelfde bestanden in het Engels.
 - `/lib`: taal (paden en wissel), meta (canonical en hreflang), fonts, utils (cn, bedrag per taal), validatie (regels en foutteksten per taal, client en server).
@@ -82,7 +82,9 @@ opzegtermijn, een inkoopproces of wie er achter Sloepmaten zit: je hebt
 gewoon je sloep, alleen of samen. Ook nergens leasen, concurrenten of
 "elders": wij vergelijken niet, wij zijn gewoon de manier waarop dit gaat.
 Bij een prijs heet het "Solo eigenaar" en "Duo eigenaar", niet "bij
-Sloepmaten". Zo simpel mogelijk voor een bedrijf.
+Sloepmaten". Geen rekensommen die een prijs per vaart of per dag laten
+zien: dat maakt het duur in plaats van simpel. Zo simpel mogelijk voor een
+bedrijf.
 
 ## Kwaliteit
 
