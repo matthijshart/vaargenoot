@@ -56,6 +56,7 @@ pas in de footer en op het A4 zodra ze echt ingevuld zijn (`ingevuld()`).
 - `/content`: config plus per pagina een tekstbestand (home, prijzen, reserveer, werkt, vragen, sloepen, proefvaren, over met privacy, aanbod, site, foto), `nl.ts` en `en.ts` als bundel, `index.ts` met `inhoud(taal)`, `menu.ts` voor de client, en `en/` met dezelfde bestanden in het Engels.
 - `/lib`: taal (paden en wissel), meta (canonical en hreflang), fonts, utils (cn, bedrag per taal), validatie (regels en foutteksten per taal, client en server).
 - `/foto-bron` bronfoto's (niet uitgeleverd), `scripts/foto-crops.mjs` maakt `public/foto/*.jpg`.
+- Logo: twee rompen, antraciet boven en blauw onder. Het beeldmerk staat vrijgesneden in `public/logo/beeldmerk.png` en gaat voor het woordmerk in nav en footer; `app/icon.png`, `app/apple-icon.png` en `app/opengraph-image.jpg` zijn ervan afgeleid (op off-white).
 
 ## Ontwerp
 

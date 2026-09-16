@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import beeldmerk from "@/public/logo/beeldmerk.png";
 import { inhoud } from "@/content";
 import { ingevuld } from "@/content/config";
 import type { Taal } from "@/lib/taal";
@@ -13,7 +15,10 @@ export function Footer({ taal }: { taal: Taal }) {
     <footer className="niet-printen border-t border-lijn">
       <Container className="grid gap-10 pt-14 pb-32 md:grid-cols-12 md:gap-8 md:pb-14">
         <div className="md:col-span-5">
-          <p className="kop text-[28px]">{site.naam}</p>
+          <p className="kop flex items-center gap-3 text-[28px]">
+            <Image src={beeldmerk} alt="" width={44} height={22} className="h-[22px] w-auto" />
+            {site.naam}
+          </p>
           <p className="mt-1 text-[15px] text-grijs">{site.plaats}</p>
           {contact.length > 0 && (
             <ul className="mt-4 space-y-1 text-[15px] text-grijs">

@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import beeldmerk from "@/public/logo/beeldmerk.png";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { menu } from "@/content/menu";
@@ -20,6 +22,8 @@ export function Nav() {
   const { cta, nav, site, ui } = menu(taal);
   const ander = wissel(pad);
 
+  // Op de telefoon staat de knop niet in de nav: de hero heeft hem, en na
+  // het scrollen komt de vaste balk onderin.
   useEffect(() => {
     const lees = () => setGescrold(window.scrollY > 8);
     const eerste = requestAnimationFrame(lees);
@@ -46,7 +50,8 @@ export function Nav() {
     >
       <nav aria-label={ui.hoofdmenu} className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-5 md:px-8">
         <div className="flex items-center gap-10">
-          <Link href={taal === "nl" ? "/" : "/en"} className="kop text-[20px] tracking-[-0.03em] md:text-[24px]">
+          <Link href={taal === "nl" ? "/" : "/en"} className="kop flex items-center gap-2.5 text-[20px] tracking-[-0.03em] md:text-[24px]">
+            <Image src={beeldmerk} alt="" width={36} height={18} priority className="h-[16px] w-auto md:h-[18px]" />
             {site.naam}
           </Link>
 
@@ -80,7 +85,7 @@ export function Nav() {
           <Link href={cta.reserveer.href} className="hidden text-[15px] font-medium text-antraciet transition-colors duration-200 hover:text-grijs md:inline">
             {cta.reserveer.label}
           </Link>
-          <KnopLink href={cta.proefvaren.href} className="h-9 px-4 text-[14px] sm:h-10 sm:px-5 sm:text-[15px]">
+          <KnopLink href={cta.proefvaren.href} className="h-10 px-5 text-[15px] max-sm:hidden">
             {cta.proefvaren.label}
           </KnopLink>
           <button
