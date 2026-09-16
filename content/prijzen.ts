@@ -1,4 +1,4 @@
-import { btw, modellen, producten, reservering, sloepen, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
+import { btw, modellen, producten, reservering, sloepen, type ModelId, type ProductId } from "./config";
 import { bedrag } from "@/lib/utils";
 
 const modelIds: ModelId[] = ["prinsen", "amstel"];
@@ -57,8 +57,6 @@ export const prijzen = {
 
   overeenkomst: {
     kop: "Lees de overeenkomst voordat je tekent.",
-    tekst: "De voorbeeldovereenkomst staat hier als download, in gewone taal. Geen kleine lettertjes.",
-    download: "Download:",
-    bestand: voorbeeldovereenkomst,
+    tekst: `Je krijgt de overeenkomst binnen ${reservering.overeenkomstBinnen} per e-mail, in gewone taal. Geen kleine lettertjes.`,
   },
 };

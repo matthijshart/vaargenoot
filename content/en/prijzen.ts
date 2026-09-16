@@ -1,6 +1,6 @@
 import type { prijzen as prijzenNl, PrijsRij } from "../prijzen";
 import { bedrag } from "@/lib/utils";
-import { btw, modellen, producten, reservering, sloepen, voorbeeldovereenkomst, type ModelId, type ProductId } from "./config";
+import { btw, modellen, producten, reservering, sloepen, type ModelId, type ProductId } from "./config";
 
 const en = (n: number) => bedrag(n, "en");
 const modelIds: ModelId[] = ["prinsen", "amstel"];
@@ -56,8 +56,6 @@ export const prijzen: typeof prijzenNl = {
 
   overeenkomst: {
     kop: "Read the agreement before you sign.",
-    tekst: "The sample agreement is here as a download, in plain language. No small print.",
-    download: "Download:",
-    bestand: voorbeeldovereenkomst,
+    tekst: `You get the agreement within ${reservering.overeenkomstBinnen} by email, in plain language. No small print.`,
   },
 };

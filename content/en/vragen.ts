@@ -1,6 +1,6 @@
 import type { vragen as vragenNl } from "../vragen";
 import { bedrag } from "@/lib/utils";
-import { checks, fiscaal, inbegrepen, juridisch, looptijd, modellen, producten, reservering, samen, schade, seizoen } from "./config";
+import { fiscaal, inbegrepen, looptijd, modellen, producten, reservering, samen, seizoen } from "./config";
 
 const en = (n: number) => bedrag(n, "en");
 const solo = producten.solo.prijs.prinsen;
@@ -28,7 +28,7 @@ export const vragen: typeof vragenNl = {
     },
     {
       vraag: "Does my company really become a co-owner?",
-      antwoord: `Yes. ${juridisch} Exactly how it works is in the agreement, in plain language.`,
+      antwoord: "Yes. Exactly how it works is in the agreement, in plain language.",
     },
     {
       vraag: "Can I go from Duo to Solo later, or the other way round?",
@@ -48,15 +48,15 @@ export const vragen: typeof vragenNl = {
     },
     {
       vraag: "What if there's damage?",
-      antwoord: `You call the service line, even when you're on the water. Insurance is included. The deductible is ${schade.eigenRisico} per event. Exactly what applies is in the agreement.`,
+      antwoord: "You call the service line, even when you're on the water. Insurance is included, with a deductible per incident. Exactly what applies is in the agreement.",
     },
     {
       vraag: "Does the driver need a boating licence?",
-      antwoord: `No. An electric boat under 15 metres that can't go faster than 20 kilometres an hour doesn't need a licence. ${checks.vaarbewijs} Before your first trip we explain how the boat works.`,
+      antwoord: `No. An electric boat under 15 metres that can't go faster than 20 kilometres an hour doesn't need a licence. Before your first trip we explain how the boat works.`,
     },
     {
       vraag: "What about tax?",
-      antwoord: `${fiscaal} ${checks.fiscaal}`,
+      antwoord: fiscaal,
     },
     {
       vraag: "What happens outside the season?",

@@ -3,13 +3,11 @@
  * prijzen, dagdelen, seizoen, looptijd, beschikbaarheid en de gegevens
  * van de oprichter. Bedragen in euro, exclusief btw, indicatief.
  *
- * Wat nog niet vaststaat, staat als [INVULLEN: ...] en verschijnt zichtbaar
- * op de site. Wat getoetst moet worden, staat als [CHECK: ...].
+ * Wat nog niet vaststaat, staat leeg ("") en blijft dan weg van de site.
+ * Nooit een placeholder in beeld.
  */
-export const invullen = (wat: string) => `[INVULLEN: ${wat}]`;
-export const check = (wat: string) => `[CHECK: ${wat}]`;
-/** Waar: de waarde is echt ingevuld en geen placeholder meer. */
-export const ingevuld = (x: string) => !x.startsWith("[INVULLEN") && !x.startsWith("[CHECK");
+/** Waar: de waarde is ingevuld en mag op de site. */
+export const ingevuld = (x: string) => x.trim() !== "" && !x.startsWith("[");
 
 export const site = {
   naam: "Sloepmaten",
@@ -17,9 +15,9 @@ export const site = {
   plaats: "Amsterdam",
   omschrijving:
     "Een sloep voor je bedrijf in de Amsterdamse grachten. Alleen, of in deeleigendom met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
-  email: invullen("e-mailadres"),
-  telefoon: invullen("telefoonnummer"),
-  kvk: invullen("KvK-nummer"),
+  email: "",
+  telefoon: "",
+  kvk: "",
   ligplaats: "Altijd opgeladen klaar in de grachtengordel, of op een plek naar keuze.",
 };
 
@@ -48,7 +46,6 @@ export const modellen: Record<
       "Green Egg",
       "Ligdek",
       "Kussens",
-      "Bimini",
       "Zwemtrap",
       "Geluid",
       "230 V",
@@ -60,14 +57,9 @@ export const modellen: Record<
     naam: "Amstel",
     lengte: 8,
     personen: 25,
-    uitrusting: ["Lange tafel", "Koelkast", "Ligdek", "Kussens", "Zwemtrap", "Geluid", "230 V"],
+    uitrusting: ["Lange tafel", "Koelkast", "Ligdek", "Kussens", "Bimini", "Zwemtrap", "Geluid", "230 V"],
     voorWie: "Kleinere groepen en een lagere prijs.",
   },
-};
-
-export const checks = {
-  vaarbewijs: check("elektrische sloep onder 15 m en 20 km/u"),
-  fiscaal: check("uitsluiting investeringsaftrek representatieve vaartuigen, BUA"),
 };
 
 export const producten: Record<
@@ -162,8 +154,6 @@ export const inbegrepen = [
 
 export const extra = {
   zin: "Schipper en catering regel je erbij.",
-  schipper: invullen("tarief schipper per dagdeel"),
-  catering: invullen("cateringpartners en tarieven"),
 };
 
 export type HelftStatus = "vrij" | "gereserveerd";
@@ -182,19 +172,8 @@ export const sloepen: { id: string; naam: string; model: ModelId; helften: [Helf
   { id: "amstel-2", naam: "Amstel 2", model: "amstel", helften: ["vrij", "vrij"] },
 ];
 
-export const oprichter = invullen("naam en één zin over de oprichter");
-
-export const juridisch = invullen("juridische vorm in twee zinnen, in gewone taal");
-
-export const schade = {
-  eigenRisico: invullen("eigen risico"),
-};
-
 export const proefvaren = {
   duur: "een uur",
-  prijs: invullen("prijs proefvaart of gratis"),
 };
 
 export const fiscaal = "Vraag je accountant naar de fiscale behandeling; voor vaartuigen gelden beperkingen.";
-
-export const voorbeeldovereenkomst = invullen("pdf voorbeeldovereenkomst");

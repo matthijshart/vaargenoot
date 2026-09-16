@@ -1,4 +1,3 @@
-import { proefvaren as p } from "./config";
 
 export const proefvaren = {
   meta: {
@@ -6,7 +5,7 @@ export const proefvaren = {
     description: "Een uur mee het water op met de oprichter, met je team. Vrijblijvend. Daarna beslis je, of je reserveert ter plekke.",
   },
   kop: "Kom proefvaren.",
-  intro: `Een uur mee het water op met de oprichter, met je team. Vrijblijvend. ${p.prijs}`,
+  intro: "Een uur mee het water op met de oprichter, met je team. Vrijblijvend.",
   wat: [
     "Je vaart zelf, wij leggen uit hoe de sloep werkt.",
     "Je ziet de tafel, de koelkast, het ligdek en de steiger waar hij komt te liggen.",

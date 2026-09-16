@@ -1,4 +1,4 @@
-import { oprichter, site } from "./config";
+import { ingevuld, site } from "./config";
 
 export const over = {
   meta: {
@@ -8,10 +8,6 @@ export const over = {
   kop: "Over Sloepmaten.",
   intro: "Een simpel idee: een sloep in de Amsterdamse grachten die van je bedrijf is. Alleen, of met één ander bedrijf.",
   blokken: [
-    {
-      kop: "De oprichter",
-      alinea: oprichter,
-    },
     {
       kop: "Waarom Sloepmaten",
       alinea:
@@ -43,15 +39,15 @@ export const privacy = {
     },
     {
       kop: "Waar het staat",
-      tekst: `Je bericht komt per e-mail bij ons binnen en staat in onze mailbox en in de logbestanden van de website. We bewaren het zolang het nodig is voor je reservering of proefvaart, en daarna maximaal ${"[INVULLEN: bewaartermijn]"}.`,
+      tekst: `Je bericht komt per e-mail bij ons binnen en staat in onze mailbox en in de logbestanden van de website. We bewaren het zolang het nodig is voor je reservering of proefvaart, en verwijderen het daarna.`,
     },
     {
       kop: "Je rechten",
-      tekst: `Je mag altijd vragen wat we van je hebben, het laten aanpassen of laten verwijderen. Mail naar ${site.email}.`,
+      tekst: `Je mag altijd vragen wat we van je hebben, het laten aanpassen of laten verwijderen.${ingevuld(site.email) ? ` Mail naar ${site.email}.` : " Eén bericht is genoeg."}`,
     },
     {
       kop: "Wie",
-      tekst: `${site.naam}, ${site.plaats}, KvK ${site.kvk}.`,
+      tekst: `${site.naam}, ${site.plaats}${ingevuld(site.kvk) ? `, KvK ${site.kvk}` : ""}.`,
     },
   ],
 };

@@ -1,5 +1,4 @@
 import type { proefvaren as proefvarenNl } from "../proefvaren";
-import { proefvaren as p } from "./config";
 
 export const proefvaren: typeof proefvarenNl = {
   meta: {
@@ -7,7 +6,7 @@ export const proefvaren: typeof proefvarenNl = {
     description: "An hour on the water with the founder, with your team. No obligation. Then you decide, or you reserve on the spot.",
   },
   kop: "Come for a trial trip.",
-  intro: `An hour on the water with the founder, with your team. No obligation. ${p.prijs}`,
+  intro: "An hour on the water with the founder, with your team. No obligation.",
   wat: [
     "You sail yourself, we explain how the boat works.",
     "You see the table, the fridge, the sun deck and the jetty where it will be moored.",

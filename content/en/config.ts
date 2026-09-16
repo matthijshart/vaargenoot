@@ -1,11 +1,9 @@
 /**
  * Engelse teksten bij de feiten in ../config.ts. De cijfers (prijzen,
  * lengtes, aantallen, beschikbaarheid) komen daarvandaan; hier staan alleen
- * de woorden. Wat in het Nederlands nog [INVULLEN] is, is dat hier ook.
+ * de woorden. Wat in het Nederlands leeg is, is dat hier ook.
  */
 import {
-  check,
-  invullen,
   dagdelen as nlDagdelen,
   looptijd as nlLooptijd,
   modellen as nlModellen,
@@ -14,7 +12,6 @@ import {
   sloepen as nlSloepen,
 } from "../config";
 
-export { invullen, check };
 export type { ModelId, ProductId, HelftStatus } from "../config";
 
 export const site: typeof nlSite = {
@@ -27,19 +24,14 @@ export const site: typeof nlSite = {
 export const modellen: typeof nlModellen = {
   prinsen: {
     ...nlModellen.prinsen,
-    uitrusting: ["Long table", "Fridge", "Green Egg", "Sun deck", "Cushions", "Bimini", "Swim ladder", "Sound", "230 V"],
+    uitrusting: ["Long table", "Fridge", "Green Egg", "Sun deck", "Cushions", "Swim ladder", "Sound", "230 V"],
     voorWie: "The whole office, a client evening, or a lunch for four.",
   },
   amstel: {
     ...nlModellen.amstel,
-    uitrusting: ["Long table", "Fridge", "Sun deck", "Cushions", "Swim ladder", "Sound", "230 V"],
+    uitrusting: ["Long table", "Fridge", "Sun deck", "Cushions", "Bimini", "Swim ladder", "Sound", "230 V"],
     voorWie: "Smaller groups and a lower price.",
   },
-};
-
-export const checks = {
-  vaarbewijs: check("electric boat under 15 m and 20 km/h"),
-  fiscaal: check("exclusion of investment deduction for representative vessels, BUA"),
 };
 
 export const producten: typeof nlProducten = {
@@ -117,25 +109,12 @@ export const inbegrepen = [
 
 export const extra = {
   zin: "A skipper and catering you arrange on top.",
-  schipper: invullen("skipper rate per slot"),
-  catering: invullen("catering partners and rates"),
 };
 
 export const sloepen = nlSloepen;
 
-export const oprichter = invullen("founder's name and one sentence about the founder, in English");
-
-export const juridisch = invullen("legal structure in two sentences, in plain English");
-
-export const schade = {
-  eigenRisico: invullen("deductible"),
-};
-
 export const proefvaren = {
   duur: "an hour",
-  prijs: invullen("price of the trial trip, or free"),
 };
 
 export const fiscaal = "Ask your accountant about the tax treatment; restrictions apply to vessels.";
-
-export const voorbeeldovereenkomst = invullen("sample agreement pdf");

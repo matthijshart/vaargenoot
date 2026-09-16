@@ -120,10 +120,7 @@ export function SloepenPagina({ taal }: { taal: Taal }) {
           <Container className="grid gap-10 md:grid-cols-12 md:items-start md:gap-8">
             <div className="md:col-span-7">
               <Foto src={foto[m.beeld].src} alt={foto[m.beeld].alt} ratio="4 / 3" sizes="(min-width: 768px) 58vw, 100vw" className="rounded-kaart" />
-              <p className="mt-3 flex flex-wrap items-baseline gap-x-3 text-[13px] text-grijs">
-                <span className="kop text-[16px] text-antraciet">{m.naam}</span>
-                {m.beeldNoot && <Tekst>{m.beeldNoot}</Tekst>}
-              </p>
+              <p className="kop mt-3 text-[16px]">{m.naam}</p>
             </div>
             <div className="md:col-span-5">
               <h2 className="text-[44px] md:text-[56px]">{m.naam}</h2>

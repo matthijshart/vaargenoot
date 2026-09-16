@@ -1,4 +1,4 @@
-import { checks, fiscaal, inbegrepen, juridisch, looptijd, modellen, producten, reservering, samen, schade, seizoen } from "./config";
+import { fiscaal, inbegrepen, looptijd, modellen, producten, reservering, samen, seizoen } from "./config";
 import { bedrag } from "@/lib/utils";
 
 const solo = producten.solo.prijs.prinsen;
@@ -26,7 +26,7 @@ export const vragen = {
     },
     {
       vraag: "Wordt mijn bedrijf echt deeleigenaar?",
-      antwoord: `Ja. ${juridisch} Hoe het precies zit, staat in de overeenkomst, in gewone taal.`,
+      antwoord: "Ja. Hoe dat precies zit, staat in de overeenkomst, in gewone taal.",
     },
     {
       vraag: "Kan ik later van Duo naar Solo, of andersom?",
@@ -46,15 +46,15 @@ export const vragen = {
     },
     {
       vraag: "Wat als er schade is?",
-      antwoord: `Je belt de servicelijn, ook als je op het water bent. De verzekering is inbegrepen. Het eigen risico is ${schade.eigenRisico} per gebeurtenis. Wat er precies geldt, staat in de overeenkomst.`,
+      antwoord: "Je belt de servicelijn, ook als je op het water bent. De verzekering is inbegrepen, met een eigen risico per gebeurtenis. Wat er precies geldt, staat in de overeenkomst.",
     },
     {
       vraag: "Heeft de bestuurder een vaarbewijs nodig?",
-      antwoord: `Nee. Voor een elektrische sloep onder de 15 meter die niet harder kan dan 20 kilometer per uur is geen vaarbewijs nodig. ${checks.vaarbewijs} Voor je eerste vaart leggen we uit hoe de sloep werkt.`,
+      antwoord: `Nee. Voor een elektrische sloep onder de 15 meter die niet harder kan dan 20 kilometer per uur is geen vaarbewijs nodig. Voor je eerste vaart leggen we uit hoe de sloep werkt.`,
     },
     {
       vraag: "Hoe zit het fiscaal?",
-      antwoord: `${fiscaal} ${checks.fiscaal}`,
+      antwoord: fiscaal,
     },
     {
       vraag: "Wat gebeurt er buiten het seizoen?",

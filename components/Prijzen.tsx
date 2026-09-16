@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { Container } from "./ui/Container";
 import { Kop } from "./ui/Kop";
 import { Sectie } from "./ui/Sectie";
-import { Tekst } from "./ui/Tekst";
 
 /** Prijstabel: Duo en Solo als twee rustige kolommen, per model een prijs. */
 export function Prijstabel({ taal }: { taal: Taal }) {
@@ -160,9 +159,6 @@ export function Overeenkomst({ taal }: { taal: Taal }) {
         <div className="md:col-span-7">
           <h2 className="text-[34px] md:text-[44px]">{t.kop}</h2>
           <p className="mt-4 text-grijs">{t.tekst}</p>
-          <p className="mt-6 text-[15px]">
-            {t.download} <Tekst>{t.bestand}</Tekst>
-          </p>
         </div>
       </Container>
     </Sectie>

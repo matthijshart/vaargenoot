@@ -8,7 +8,7 @@ export const sloepenPagina = {
   meta: {
     title: "De sloepen",
     description:
-      "Prinsen: 10 m, lange tafel, koelkast, Green Egg, bimini. Amstel: 8 m, tot 25 aan boord. Allebei elektrisch en stil, net zo fijn met vier. Altijd opgeladen klaar in de grachtengordel.",
+      "Prinsen: 10 m, lange tafel, koelkast, Green Egg. Amstel: 8 m, bimini tegen zon en regen, tot 25 aan boord. Allebei elektrisch en stil, net zo fijn met vier. Altijd opgeladen klaar in de grachtengordel.",
   },
   kop: "De sloepen.",
   intro: "Twee modellen, allebei elektrisch, allebei stil, gebouwd voor de Amsterdamse grachten. Voor een lunch met vier en een borrel met veertig.",
@@ -26,7 +26,6 @@ export const sloepenPagina = {
         { label: `${producten.solo.naam}`, waarde: `${bedrag(producten.solo.prijs[id])} per maand, excl. btw` },
       ],
       beeld: (id === "prinsen" ? "bovenaf" : "varend") as FotoId,
-      beeldNoot: id === "amstel" ? "[INVULLEN: beeld, Amstel in hoge resolutie]" : "",
     };
   }),
   ligplaats: site.ligplaats,
@@ -38,8 +37,8 @@ export const sloepenPagina = {
       tekst: modellen[id].voorWie,
       detail:
         id === "prinsen"
-          ? "De hoofdsloep. Tien meter, een lange tafel, bimini tegen zon en regen, Green Egg aan boord. Tot veertig aan boord, en net zo fijn met vier."
-          : "Acht meter, tot vijfentwintig aan boord, dezelfde uitrusting zonder bimini en Green Egg. De laagste instap, voor kleinere groepen.",
+          ? "De hoofdsloep. Tien meter, een lange tafel en een Green Egg erbij. Tot veertig aan boord, en net zo fijn met vier."
+          : "Acht meter, tot vijfentwintig aan boord, met een bimini tegen zon en regen. Dezelfde uitrusting, zonder Green Egg. De laagste instap, voor kleinere groepen.",
     })),
   },
 };

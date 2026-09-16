@@ -55,3 +55,19 @@ over het hoofd wordt gezien. Vul ze daar in, de hele site volgt.
 
 - De beschikbaarheid in `content/config.ts` is op verzoek alvast deels gevuld (Prinsen 1 vol, Prinsen 2, Prinsen 4 en Amstel 1 elk één helft gereserveerd) zodat de pagina gewild oogt. Werk hem bij zodra er echte reserveringen zijn, zodat de site nooit iets belooft wat er niet is.
 - De zin over founding sloepmaten met drie jaar vaste prijs is weg; alleen de actie voor wie een eigen duo-partner meeneemt blijft staan.
+
+## Geen placeholders meer op de site
+
+Alle [INVULLEN] en [CHECK] zijn van de site gehaald. Wat je nog moet
+invullen of toetsen staat nu alleen hier:
+
+- `site.email`, `site.telefoon`, `site.kvk` in `content/config.ts`: zodra ingevuld verschijnen ze in de footer, op het A4 en op de privacypagina.
+- Tarief schipper per dagdeel en cateringpartners: staan nergens; noem ze in het gesprek of voeg ze later toe.
+- Eigen risico bij schade: de vraag zegt nu alleen "met een eigen risico per gebeurtenis"; het bedrag komt in de overeenkomst.
+- Prijs van de proefvaart: staat niet meer op de site ("vrijblijvend").
+- Voorbeeldovereenkomst als pdf: het blok op /duo-of-solo zegt nu dat je de overeenkomst binnen twee werkdagen per e-mail krijgt.
+- Juridische vorm van het deeleigendom: vraag 4 verwijst naar de overeenkomst.
+- Blok "De oprichter" op /over is weg; de pagina heeft nog "Waarom Sloepmaten" en "Wat we niet doen".
+- Bewaartermijn privacy: "en verwijderen het daarna"; scherp aan zodra je een termijn kiest.
+- Te toetsen (stond als [CHECK]): vaarbewijs-vrijstelling voor een elektrische sloep onder 15 m en 20 km/u; fiscale uitsluiting investeringsaftrek voor representatieve vaartuigen (BUA).
+- Foto van de Amstel in hogere resolutie.

@@ -41,12 +41,12 @@ dagdelen, seizoen, looptijd, reservering, samen (hoe Duo deelt), inbegrepen,
 beschikbaarheid per sloep (live op /duo-of-solo), oprichter. Pas daar iets
 aan en de hele site volgt.
 
-Wat nog niet vaststaat, staat als `invullen("...")` en verschijnt op de site
-als `[INVULLEN: ...]` met gele markering via `components/ui/Tekst.tsx`;
-wat getoetst moet worden als `check("...")`. Verzin nooit feiten (klanten,
-logo's, reviews, KvK, certificaten, fiscale voordelen). Geen placeholders
-in de hero of de prijstabel. Contactgegevens (e-mail, telefoon, KvK) staan
-pas in de footer en op het A4 zodra ze echt ingevuld zijn (`ingevuld()`).
+Wat nog niet vaststaat, staat leeg (`""`) en blijft weg van de site: nooit
+een placeholder of gele markering in beeld. Contactgegevens (e-mail,
+telefoon, KvK) verschijnen in footer, A4 en privacy zodra ze ingevuld zijn
+(`ingevuld()`). Wat nog te toetsen of in te vullen is, staat in TODO.md.
+Verzin nooit feiten (klanten, logo's, reviews, KvK, certificaten, fiscale
+voordelen).
 
 ## Structuur
 

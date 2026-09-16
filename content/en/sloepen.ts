@@ -10,7 +10,7 @@ export const sloepenPagina: typeof sloepenNl = {
   meta: {
     title: "The boats",
     description:
-      "Prinsen: 10 m, long table, fridge, Green Egg, bimini. Amstel: 8 m, up to 25 on board. Both electric and quiet, just as nice with four. Always charged and ready in the canal ring.",
+      "Prinsen: 10 m, long table, fridge, Green Egg. Amstel: 8 m, a bimini against sun and rain, up to 25 on board. Both electric and quiet, just as nice with four. Always charged and ready in the canal ring.",
   },
   kop: "The boats.",
   intro: "Two models, both electric, both quiet, built for the Amsterdam canals. For a lunch for four and drinks for forty.",
@@ -28,7 +28,6 @@ export const sloepenPagina: typeof sloepenNl = {
         { label: `${producten.solo.naam}`, waarde: `${en(producten.solo.prijs[id])} a month, excl. VAT` },
       ],
       beeld: (id === "prinsen" ? "bovenaf" : "varend") as FotoId,
-      beeldNoot: id === "amstel" ? "[INVULLEN: beeld, Amstel in hoge resolutie]" : "",
     };
   }),
   ligplaats: site.ligplaats,
@@ -40,8 +39,8 @@ export const sloepenPagina: typeof sloepenNl = {
       tekst: modellen[id].voorWie,
       detail:
         id === "prinsen"
-          ? "The main boat. Ten metres, a long table, a bimini against sun and rain, Green Egg on board. Up to forty on board, and just as nice with four."
-          : "Eight metres, up to twenty-five on board, the same equipment without bimini and Green Egg. The lowest entry point, for smaller groups.",
+          ? "The main boat. Ten metres, a long table and a Green Egg on board. Up to forty people, and just as nice with four."
+          : "Eight metres, up to twenty-five on board, with a bimini against sun and rain. The same equipment, without the Green Egg. The most affordable option, for smaller groups.",
     })),
   },
 };
