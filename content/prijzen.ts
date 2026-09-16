@@ -9,8 +9,7 @@ export type PrijsRij = { label: string; sleutel: "aanBoord" | "beschikbaarheid" 
 export const prijzen = {
   meta: {
     title: "Duo of Solo, prijzen",
-    description:
-      "Duo: twee bedrijven op één sloep, vanaf € 995 per maand per bedrijf. Solo: de hele sloep, vanaf € 1.595 per maand. Exclusief btw, indicatief, alles inbegrepen.",
+    description: `Duo: twee bedrijven op één sloep, vanaf ${bedrag(producten.duo.prijs.amstel)} per maand per bedrijf. Solo: de hele sloep, vanaf ${bedrag(producten.solo.prijs.amstel)} per maand. Exclusief btw, indicatief, alles inbegrepen.`,
   },
   kop: "Duo of Solo.",
   intro:

@@ -9,8 +9,7 @@ const productIds: ProductId[] = ["duo", "solo"];
 export const prijzen: typeof prijzenNl = {
   meta: {
     title: "Duo or Solo, prices",
-    description:
-      "Duo: two companies on one boat, from € 995 a month per company. Solo: the whole boat, from € 1,595 a month. Excluding VAT, indicative, everything included.",
+    description: `Duo: two companies on one boat, from ${en(producten.duo.prijs.amstel)} a month per company. Solo: the whole boat, from ${en(producten.solo.prijs.amstel)} a month. Excluding VAT, indicative, everything included.`,
   },
   kop: "Duo or Solo.",
   intro: "Two products, two models. Per month, excluding VAT, indicative. Twelve months, everything included.",
