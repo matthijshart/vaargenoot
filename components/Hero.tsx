@@ -14,10 +14,10 @@ export function Hero({ taal }: { taal: Taal }) {
   const { home, cta, foto, ui } = inhoud(taal);
   const { boven, kop, sub, punten } = home.hero;
   const regels = kop.split("\n");
-  // De Amstel met gasten aan de lange tafel eerst, dan de Prinsen, dan de Green Egg.
+  // De Prinsen met gasten aan de lange tafel eerst, dan de Amstel, dan de Green Egg.
   const beelden = [
     { src: foto.bovenaf.src, alt: foto.bovenaf.alt, positie: "50% 45%" },
-    { src: foto.prinsen.src, alt: foto.prinsen.alt, positie: "50% 55%" },
+    { src: foto.varend.src, alt: foto.varend.alt, positie: "50% 55%" },
     { src: foto.greenEgg.src, alt: foto.greenEgg.alt, positie: "50% 60%" },
   ].map((b, i, alle) => ({ ...b, knop: ui.foto(i + 1, alle.length) }));
 

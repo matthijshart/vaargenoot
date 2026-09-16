@@ -27,8 +27,8 @@ export const sloepenPagina: typeof sloepenNl = {
         { label: `${producten.duo.naam}`, waarde: `${en(producten.duo.prijs[id])} a month per company, excl. VAT` },
         { label: `${producten.solo.naam}`, waarde: `${en(producten.solo.prijs[id])} a month, excl. VAT` },
       ],
-      beeld: (id === "prinsen" ? "prinsen" : "bovenaf") as FotoId,
-      beeldNoot: id === "prinsen" ? "[INVULLEN: beeld, Prinsen driekwart van voren, hoge resolutie]" : "",
+      beeld: (id === "prinsen" ? "bovenaf" : "varend") as FotoId,
+      beeldNoot: id === "amstel" ? "[INVULLEN: beeld, Amstel in hoge resolutie]" : "",
     };
   }),
   ligplaats: site.ligplaats,

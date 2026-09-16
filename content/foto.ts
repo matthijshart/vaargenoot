@@ -3,25 +3,25 @@
  * Ontbreekt beeld, dan een neutraal vlak met [INVULLEN] via components/ui/Vlak.tsx.
  */
 import type { StaticImageData } from "next/image";
-import prinsen from "@/public/foto/prinsen.jpg";
+import varend from "@/public/foto/prinsen.jpg";
 import bovenaf from "@/public/foto/bovenaf.jpg";
 import greenEgg from "@/public/foto/green-egg.jpg";
 import grachtBrug from "@/public/foto/gracht-brug.jpg";
 import grachtBloemen from "@/public/foto/gracht-bloemen.jpg";
 
-export type FotoId = "prinsen" | "bovenaf" | "greenEgg" | "grachtBrug" | "grachtBloemen";
+export type FotoId = "varend" | "bovenaf" | "greenEgg" | "grachtBrug" | "grachtBloemen";
 export type Beeld = { src: StaticImageData; alt: string };
 
-export const bronnen: Record<FotoId, StaticImageData> = { prinsen, bovenaf, greenEgg, grachtBrug, grachtBloemen };
+export const bronnen: Record<FotoId, StaticImageData> = { varend, bovenaf, greenEgg, grachtBrug, grachtBloemen };
 
 export const foto: Record<FotoId, Beeld> = {
-  prinsen: {
-    src: prinsen,
-    alt: "Sloep Prinsen met bimini, varend op het water",
+  varend: {
+    src: varend,
+    alt: "De Amstel, varend op het water",
   },
   bovenaf: {
     src: bovenaf,
-    alt: "De Amstel van bovenaf in de gracht, met een lange gedekte tafel en gasten",
+    alt: "De Prinsen van bovenaf in de gracht, met een lange gedekte tafel en gasten",
   },
   greenEgg: {
     src: greenEgg,
