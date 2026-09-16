@@ -21,7 +21,7 @@ export const foto: Record<FotoId, Beeld> = {
   },
   bovenaf: {
     src: bovenaf,
-    alt: "Sloep van bovenaf in de gracht, met een lange gedekte tafel en gasten",
+    alt: "De Amstel van bovenaf in de gracht, met een lange gedekte tafel en gasten",
   },
   greenEgg: {
     src: greenEgg,

@@ -26,7 +26,7 @@ export const sloepenPagina = {
         { label: `${producten.solo.naam}`, waarde: `${bedrag(producten.solo.prijs[id])} per maand, excl. btw` },
       ],
       beeld: (id === "prinsen" ? "prinsen" : "bovenaf") as FotoId,
-      beeldNoot: `[INVULLEN: beeld, ${id === "prinsen" ? "Prinsen driekwart van voren, hoge resolutie" : "Amstel, hoge resolutie"}]`,
+      beeldNoot: id === "prinsen" ? "[INVULLEN: beeld, Prinsen driekwart van voren, hoge resolutie]" : "",
     };
   }),
   ligplaats: site.ligplaats,
