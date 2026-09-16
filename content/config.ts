@@ -88,7 +88,7 @@ export const producten: Record<
     id: "duo",
     naam: "Duo",
     kort: "Twee bedrijven in deeleigendom van één sloep, ieder de helft.",
-    prijs: { prinsen: 1495, amstel: 1195 },
+    prijs: { prinsen: 1495, amstel: 995 },
     aanBoord: "Jouw mensen en gasten. Je duo-partner vaart op zijn eigen dagdelen.",
     beschikbaarheid: "Aanvragen in de app wanneer je wilt, ook op de dag zelf.",
     huisstijl: "Beide logo's op de sloep. Je eigen vlag en welkomstbord als jij vaart.",
