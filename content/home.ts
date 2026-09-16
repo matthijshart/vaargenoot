@@ -4,7 +4,7 @@ import { bedrag } from "@/lib/utils";
 export const home = {
   hero: {
     boven: "Amsterdamse grachten",
-    kop: "Een sloep voor je bedrijf.\nIn *deeleigendom*.",
+    kop: "Een sloep voor je bedrijf.\n*Alleen of samen*.",
     sub: "Iedereen bij jou op kantoor pakt de sloep via de app. Alleen, of samen met één ander bedrijf. Wij regelen de rest.",
     punten: ["Eén vast bedrag per maand", "Alles inbegrepen", "Twaalf maanden"],
   },
@@ -55,7 +55,7 @@ export const home = {
       {
         id: "duo",
         naam: producten.duo.naam,
-        tekst: "Twee bedrijven op één sloep, ieder de helft. Je vraagt een dagdeel aan wanneer je wilt, ook op de dag zelf.",
+        tekst: "Twee bedrijven in deeleigendom van één sloep, ieder de helft. Je vraagt een dagdeel aan wanneer je wilt, ook op de dag zelf.",
         vanaf: `Vanaf ${bedrag(producten.duo.prijs.amstel)} per maand per bedrijf`,
         link: "Bekijk Duo",
         href: "/duo-of-solo#duo",

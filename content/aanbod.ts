@@ -12,7 +12,7 @@ export const aanbod = {
   noot: "Deze pagina past op één A4.",
   inbegrepenKop: "Alles inbegrepen",
   contactKop: "Contact",
-  kop: "Een sloep voor je bedrijf. In deeleigendom.",
+  kop: "Een sloep voor je bedrijf. Alleen of samen.",
   sub: "In de Amsterdamse grachten. Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
   producten: (["duo", "solo"] as const).map((p) => ({
     naam: producten[p].naam,

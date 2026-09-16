@@ -39,7 +39,7 @@ export const ui = {
 };
 
 export const meta = {
-  titel: `${site.naam}. Een sloep voor je bedrijf, in deeleigendom.`,
+  titel: `${site.naam}. Een sloep voor je bedrijf, alleen of samen.`,
   sjabloon: `%s. ${site.naam}`,
   omschrijving: site.omschrijving,
   locale: "nl_NL",

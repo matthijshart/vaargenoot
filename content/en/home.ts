@@ -7,7 +7,7 @@ const en = (n: number) => bedrag(n, "en");
 export const home: typeof homeNl = {
   hero: {
     boven: "Amsterdam canals",
-    kop: "A boat for your company.\nIn *co-ownership*.",
+    kop: "A boat for your company.\n*Alone or together*.",
     sub: "Everyone at your office takes the boat out through the app. On your own, or together with one other company. We take care of the rest.",
     punten: ["One fixed amount a month", "Everything included", "Twelve months"],
   },
@@ -58,7 +58,7 @@ export const home: typeof homeNl = {
       {
         id: "duo",
         naam: producten.duo.naam,
-        tekst: "Two companies on one boat, half each. You request a slot whenever you like, even on the day itself.",
+        tekst: "Two companies co-own one boat, half each. You request a slot whenever you like, even on the day itself.",
         vanaf: `From ${en(producten.duo.prijs.amstel)} a month per company`,
         link: "See Duo",
         href: "/en/duo-or-solo#duo",

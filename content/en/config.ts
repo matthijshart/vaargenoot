@@ -20,7 +20,7 @@ export type { ModelId, ProductId, HelftStatus } from "../config";
 export const site: typeof nlSite = {
   ...nlSite,
   omschrijving:
-    "A boat for your company on the Amsterdam canals, in co-ownership. On your own, or with one other company. Everything taken care of, one fixed amount a month, twelve months.",
+    "A boat for your company on the Amsterdam canals. On your own, or co-owned with one other company. Everything taken care of, one fixed amount a month, twelve months.",
   ligplaats: "Always charged and ready in the canal ring or at a spot of your choice.",
 };
 
@@ -45,7 +45,7 @@ export const checks = {
 export const producten: typeof nlProducten = {
   duo: {
     ...nlProducten.duo,
-    kort: "Two companies on one boat, half each.",
+    kort: "Two companies co-own one boat, half each.",
     aanBoord: "Your people and guests. Your duo partner sails in their own slots.",
     beschikbaarheid: "Request in the app whenever you like, even on the day itself.",
     huisstijl: "Both logos on the boat. Your own flag and welcome board when you sail.",

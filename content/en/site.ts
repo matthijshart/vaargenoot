@@ -39,7 +39,7 @@ export const ui: typeof uiNl = {
 };
 
 export const meta: typeof metaNl = {
-  titel: `${site.naam}. A boat for your company, in co-ownership.`,
+  titel: `${site.naam}. A boat for your company, alone or together.`,
   sjabloon: `%s. ${site.naam}`,
   omschrijving: site.omschrijving,
   locale: "en_GB",

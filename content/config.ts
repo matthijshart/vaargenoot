@@ -16,7 +16,7 @@ export const site = {
   domein: "https://sloepmaten.nl",
   plaats: "Amsterdam",
   omschrijving:
-    "Een sloep voor je bedrijf in de Amsterdamse grachten, in deeleigendom. Alleen, of met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
+    "Een sloep voor je bedrijf in de Amsterdamse grachten. Alleen, of in deeleigendom met één ander bedrijf. Alles geregeld, één vast bedrag per maand, twaalf maanden.",
   email: invullen("e-mailadres"),
   telefoon: invullen("telefoonnummer"),
   kvk: invullen("KvK-nummer"),
@@ -87,7 +87,7 @@ export const producten: Record<
   duo: {
     id: "duo",
     naam: "Duo",
-    kort: "Twee bedrijven op één sloep, ieder de helft.",
+    kort: "Twee bedrijven in deeleigendom van één sloep, ieder de helft.",
     prijs: { prinsen: 1295, amstel: 995 },
     aanBoord: "Jouw mensen en gasten. Je duo-partner vaart op zijn eigen dagdelen.",
     beschikbaarheid: "Aanvragen in de app wanneer je wilt, ook op de dag zelf.",

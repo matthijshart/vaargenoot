@@ -15,7 +15,7 @@ export const aanbod: typeof aanbodNl = {
   noot: "This page fits on one A4.",
   inbegrepenKop: "Everything included",
   contactKop: "Contact",
-  kop: "A boat for your company. In co-ownership.",
+  kop: "A boat for your company. Alone or together.",
   sub: "On the Amsterdam canals. On your own, or with one other company. Everything taken care of, one fixed amount a month, twelve months.",
   producten: (["duo", "solo"] as const).map((p) => ({
     naam: producten[p].naam,
