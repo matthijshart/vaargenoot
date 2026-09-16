@@ -20,10 +20,11 @@ export function taalUitPad(pad: string): Taal {
 }
 
 /** Hetzelfde pad in de andere taal. Onbekend pad: de voorpagina. */
-export function wissel(pad: string): { taal: Taal; href: string; label: string } {
-  if (taalUitPad(pad) === "nl") return { taal: "en", href: paden[pad] ?? "/en", label: "English" };
+/** `kort` is de tweeletterige versie voor naast het menu op de telefoon. */
+export function wissel(pad: string): { taal: Taal; href: string; label: string; kort: string } {
+  if (taalUitPad(pad) === "nl") return { taal: "en", href: paden[pad] ?? "/en", label: "English", kort: "EN" };
   const nl = Object.entries(paden).find(([, en]) => en === pad)?.[0] ?? "/";
-  return { taal: "nl", href: nl, label: "Nederlands" };
+  return { taal: "nl", href: nl, label: "Nederlands", kort: "NL" };
 }
 
 /** Het pad in een taal, vanuit het Nederlandse pad. */

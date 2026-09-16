@@ -31,7 +31,7 @@ dezelfde feiten, alleen andere woorden.
 - Twee root layouts via routegroepen: `app/(nl)` en `app/(en)`, allebei via `components/Basis.tsx` (html lang, nav, footer, scrollhulpen). Eén 404 voor onbekende adressen in `app/global-not-found.tsx` (Nederlands), aangezet met `experimental.globalNotFound`.
 - Elke pagina is één regel: metadata via `paginaMeta(taal, nlPad, meta)` uit `lib/meta.ts` (canonical plus hreflang nl, en, x-default) en een body uit `components/paginas.tsx`. Componenten krijgen `taal` als prop en halen hun tekst uit `inhoud(taal)` (`content/index.ts`).
 - Nederlandse teksten in `content/*.ts` (gebundeld in `content/nl.ts`), Engelse in `content/en/*.ts` (gebundeld in `content/en.ts`). De Engelse bestanden typen zich tegen de Nederlandse (`typeof homeNl`), dus een nieuw veld moet in beide talen. Cijfers komen altijd uit `content/config.ts`; `content/en/config.ts` vertaalt alleen de woorden eromheen.
-- Nav, footer en de mobiele balk zijn client components: die lezen de taal uit het pad via `menu(taal)` in `content/menu.ts`. De taalwissel staat rechts in de nav en onderaan het mobiele menu.
+- Nav, footer en de mobiele balk zijn client components: die lezen de taal uit het pad via `menu(taal)` in `content/menu.ts`. De taalwissel staat rechts in de nav ("English"/"Nederlands" op desktop, "EN"/"NL" naast het menusymbool op kleinere schermen) en onderaan het mobiele menu.
 - Bedragen: `bedrag(n, taal)` geeft "€ 1.295" in het Nederlands en "€ 1,295" in het Engels. Formulierfouten komen uit `fouttekst[taal]`; het formulier stuurt een verborgen veld `taal` mee, zodat de melding aan ons vermeldt in welke taal iemand reserveerde.
 
 ## Eén bron van waarheid

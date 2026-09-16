@@ -78,9 +78,10 @@ export function Nav() {
             href={ander.href}
             hrefLang={ander.taal}
             aria-label={`${ui.taal}: ${ander.label}`}
-            className="hidden text-[15px] font-medium text-grijs transition-colors duration-200 hover:text-antraciet lg:inline"
+            className="text-[15px] font-medium text-grijs transition-colors duration-200 hover:text-antraciet"
           >
-            {ander.label}
+            <span className="lg:hidden">{ander.kort}</span>
+            <span className="hidden lg:inline">{ander.label}</span>
           </Link>
           <Link href={cta.reserveer.href} className="hidden text-[15px] font-medium text-antraciet transition-colors duration-200 hover:text-grijs md:inline">
             {cta.reserveer.label}
@@ -94,7 +95,7 @@ export function Nav() {
             aria-expanded={open}
             aria-controls="mobiel-menu"
             onClick={() => setOpen((o) => !o)}
-            className="relative -mr-2 flex h-10 w-10 items-center justify-center rounded-knop lg:hidden"
+            className="relative -mr-2 ml-1 flex h-10 w-10 items-center justify-center rounded-knop lg:hidden"
           >
             <span aria-hidden className={cn("absolute h-px w-[18px] bg-current transition-transform duration-300", open ? "rotate-45" : "-translate-y-[4px]")} />
             <span aria-hidden className={cn("absolute h-px w-[18px] bg-current transition-transform duration-300", open ? "-rotate-45" : "translate-y-[4px]")} />
